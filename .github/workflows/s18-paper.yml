@@ -1,0 +1,84 @@
+name: S18 20万元模拟仓
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'config.json'
+      - 'requirements.txt'
+      - '.github/workflows/**'
+  schedule:
+    - cron: '23 8,10 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: s18-paper-account
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test execution and ledger protections
+        run: python -m unittest discover -s tests -v
+      - name: Configuration check
+        id: config
+        env:
+          JQ_USERNAME: ${{ secrets.JQ_USERNAME }}
+          JQ_PASSWORD: ${{ secrets.JQ_PASSWORD }}
+        run: |
+          if [ -n "$JQ_USERNAME" ] && [ -n "$JQ_PASSWORD" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::配置 JQ_USERNAME / JQ_PASSWORD 后才会处理真实行情；当前20万元账本未开始。"
+            if [ "$GITHUB_EVENT_NAME" != "push" ]; then
+              echo "::error::定时/手动运行缺少 JQData 凭据。"
+              exit 1
+            fi
+          fi
+      - name: Replay completed market minutes
+        if: steps.config.outputs.ready == 'true'
+        env:
+          JQ_USERNAME: ${{ secrets.JQ_USERNAME }}
+          JQ_PASSWORD: ${{ secrets.JQ_PASSWORD }}
+        run: python -m src.run
+      - name: Publish report to run summary
+        if: always()
+        run: |
+          if [ -f outputs/latest.md ]; then
+            cat outputs/latest.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Persist successful days and failure status
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state outputs logs
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: update S18 paper ledger [skip ci]'
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s18-paper-reports-${{ github.run_id }}
+          path: |
+            outputs/
+            logs/
+          retention-days: 30

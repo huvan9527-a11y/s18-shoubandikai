@@ -1,0 +1,10 @@
+{
+  "initial_cash": 200000,
+  "start_date": "2026-10-08",
+  "slots": 2,
+  "max_new": 2,
+  "commission": 0.00025,
+  "min_commission": 5,
+  "sell_tax": 0.0005,
+  "slippage": 0.001
+}

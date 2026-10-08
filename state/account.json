@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "initial_cash": 200000.0,
+  "cash": 200000.0,
+  "start_date": "2026-10-08",
+  "last_processed": null,
+  "positions": {},
+  "trades": [],
+  "equity": [],
+  "days": [],
+  "ice_hist": {}
+}
