@@ -77,6 +77,6 @@
     "历史价格按新浪复权因子对齐；当日除权股票不记交易；开盘候选不等于分钟买入信号。"
   ],
   "minute_status": "failed_data_incomplete",
-  "minute_error": "ValueError: Invalid minute OHLC: 603919.XSHG 09:31",
+  "minute_error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
   "model_buys": null
 }
