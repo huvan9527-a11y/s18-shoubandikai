@@ -25,6 +25,10 @@ def code_id(s):
 def cent(x):
     return float(Decimal(str(x)).quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
 
+def price_limit(previous, rate):
+    reference = Decimal(str(cent(previous)))
+    return float((reference * (Decimal(1) + Decimal(str(rate)))).quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
+
 def get(url, **kwargs):
     error = None
     for _ in range(3):
@@ -68,13 +72,19 @@ class PublicData:
             factors = get(zh_sina_a_stock_qfq_url.format(symbol(code))).text
             factors = json.JSONDecoder().raw_decode(factors.split('=', 1)[1].lstrip())[0]['data']
             payload = {'rows': rows, 'factors': factors}
+        if not payload['rows']:
+            raise ValueError('Empty daily source: ' + code)
+        listed_date = pd.Timestamp(payload.get('listed_date', payload['rows'][0]['date'])).date()
+        cutoff = (self.today - dt.timedelta(days=400)).isoformat()
+        payload['listed_date'] = str(listed_date)
+        payload['rows'] = [r for r in payload['rows'] if str(r['date'])[:10] >= cutoff]
         if not path.exists():
             path.write_text(json.dumps(payload), encoding='utf-8')
         df = pd.DataFrame(payload['rows'])
         df['time'] = pd.to_datetime(df['date'], utc=True).dt.tz_localize(None).dt.normalize()
         df = df.sort_values('time').drop_duplicates('time').reset_index(drop=True)
         self.listed = getattr(self, 'listed', {})
-        self.listed[code] = df.time.iloc[0].date()
+        self.listed[code] = listed_date
         for f in ['open', 'high', 'low', 'close', 'volume', 'amount']:
             df[f] = pd.to_numeric(df[f], errors='raise')
         if df[['open', 'high', 'low', 'close', 'amount', 'volume']].isna().any().any():
@@ -86,8 +96,8 @@ class PublicData:
         for f in sorted(payload['factors'], key=lambda x: x['d'], reverse=True):
             df.loc[df.time < pd.Timestamp(f['d']), 'factor'] = 1 / float(f['f'])
         prev = df.close.shift(1) * df.factor.shift(1) / df.factor
-        df['high_limit'] = prev.map(lambda p: cent(p * (1 + band(code))) if pd.notna(p) else float('nan'))
-        df['low_limit'] = prev.map(lambda p: cent(p * (1 - band(code))) if pd.notna(p) else float('nan'))
+        df['high_limit'] = prev.map(lambda p: price_limit(p, band(code)) if pd.notna(p) else float('nan'))
+        df['low_limit'] = prev.map(lambda p: price_limit(p, -band(code)) if pd.notna(p) else float('nan'))
         # Dividend/split dates cannot use the prior raw close to infer exchange limits.
         df['corporate_action'] = df.factor.diff().abs().fillna(0) > 1e-10
         self.frames[code] = df

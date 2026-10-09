@@ -82,11 +82,11 @@ def process(provider, account, cfg, end_date, root):
             if not account['positions']:
                 raise
             candidates = []
-            preparation_error = f'{type(e).__name__}: 准备行情失败，禁止新增买入；请查看数据权限、额度和完整性。'
+            preparation_error = f'{type(e).__name__}: 准备行情失败，禁止新增买入；请查看公开行情接口、网络和完整性。'
         try:
             daily, minute = provider.session(day, candidates, account['positions'], cfg)
         except Exception:
-            if not candidates:
+            if not candidates or not account['positions']:
                 raise
             # If the buy-data branch fails, request held-stock data independently.
             candidates = []
@@ -127,7 +127,7 @@ def main():
         previous_day_count = len(account['days'])
         process(provider, account, cfg, end_date, ROOT)
         if any(day.get('preparation_error') for day in account['days'][previous_day_count:]):
-            print('部分日期禁止新增买入，请核对数据权限和完整性；已保存可确认的持仓退出。', file=sys.stderr)
+            print('部分日期禁止新增买入，请核对公开行情及完整性；已保存可确认的持仓退出。', file=sys.stderr)
             return 2
     except Exception as e:
         # Do not print SDK exceptions that might contain account identifiers.

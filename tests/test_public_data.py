@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 from unittest.mock import patch
-from src.data import PublicData, cent
+from src.data import PublicData, cent, price_limit
 from src import run, paper
 
 class PublicDataTests(unittest.TestCase):
@@ -33,6 +33,21 @@ class PublicDataTests(unittest.TestCase):
             account = paper.new_account('2026-10-08')
             before = copy.deepcopy(account)
             with patch.object(p, 'days', return_value=[date(2026,10,8)]), patch.object(p, 'prepare', side_effect=ValueError('missing history')):
+                with self.assertRaises(ValueError):
+                    run.process(p, account, paper.DEFAULTS, date(2026,10,8), Path(root))
+            self.assertEqual(account, before)
+
+    def test_limit_rounding_avoids_binary_float_half_cent_error(self):
+        self.assertEqual(price_limit(1.65, -.1), 1.49)
+        self.assertEqual(price_limit(8.45, -.1), 7.61)
+        self.assertEqual(price_limit(10.25, .1), 11.28)
+
+    def test_missing_buy_minutes_does_not_consume_empty_account_day(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = PublicData(root)
+            account = paper.new_account('2026-10-08')
+            before = copy.deepcopy(account)
+            with patch.object(p, 'days', return_value=[date(2026,10,8)]), patch.object(p, 'prepare', return_value=([{'code':'000001.XSHE'}], {})), patch.object(p, 'session', side_effect=ValueError('missing minutes')):
                 with self.assertRaises(ValueError):
                     run.process(p, account, paper.DEFAULTS, date(2026,10,8), Path(root))
             self.assertEqual(account, before)
