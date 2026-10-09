@@ -36,34 +36,18 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Test execution and ledger protections
         run: python -m unittest discover -s tests -v
-      - name: Configuration check
-        id: config
-        env:
-          JQ_USERNAME: ${{ secrets.JQ_USERNAME }}
-          JQ_PASSWORD: ${{ secrets.JQ_PASSWORD }}
-        run: |
-          if [ -n "$JQ_USERNAME" ] && [ -n "$JQ_PASSWORD" ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "::warning::配置 JQ_USERNAME / JQ_PASSWORD 后才会处理真实行情；当前20万元账本未开始。"
-            if [ "$GITHUB_EVENT_NAME" != "push" ]; then
-              echo "::error::定时/手动运行缺少 JQData 凭据。"
-              exit 1
-            fi
-          fi
-      - name: Replay completed market minutes
-        if: steps.config.outputs.ready == 'true'
-        env:
-          JQ_USERNAME: ${{ secrets.JQ_USERNAME }}
-          JQ_PASSWORD: ${{ secrets.JQ_PASSWORD }}
-        run: python -m src.run
+      - name: Scan latest two completed trading days without credentials
+        id: scan
+        run: python -u -m src.scan
+      - name: Replay verified completed minutes with public data
+        if: success()
+        run: python -u -m src.run
       - name: Publish report to run summary
         if: always()
         run: |
-          if [ -f outputs/latest.md ]; then
-            cat outputs/latest.md >> "$GITHUB_STEP_SUMMARY"
-          fi
+          for report in outputs/signals-*.md; do
+            [ ! -f "$report" ] || cat "$report" >> "$GITHUB_STEP_SUMMARY"
+          done
       - name: Persist successful days and failure status
         if: always()
         run: |

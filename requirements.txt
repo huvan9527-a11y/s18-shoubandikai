@@ -1,3 +1,4 @@
-jqdatasdk>=1.9.7,<2
+akshare>=1.18,<2
 pandas>=2.2,<3
 numpy>=1.26,<3
+requests>=2.32,<3

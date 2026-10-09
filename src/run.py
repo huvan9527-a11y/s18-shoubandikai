@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from .paper import DEFAULTS, new_account, replay_day, total_value
-from .data import JQData
+from .data import PublicData
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -48,7 +48,8 @@ def export(account, root, status, detail=''):
         f'- 账户权益：{total_value(account):,.2f} 元',
         f'- 累计收益：{(total_value(account) / account["initial_cash"] - 1) * 100:.2f}%',
         f'- 累计模拟成交：{len(account["trades"])} 笔', '',
-        '基于真实1分钟行情的收盘后模拟；所有成交均为撮合模型假设，不是券商成交回报。', '',
+        '公共行情参考口径：历史成分及ST状态未完整还原；分钟数据缺失不计模拟成交。',
+        '所有成交均为撮合模型假设，不是券商成交回报。', '',
         '| 股票 | 名称 | 组件 | 股数 | 买入日 | 含费成本 | 最新价 |',
         '|---|---|---|---:|---|---:|---:|',
     ]
@@ -78,6 +79,8 @@ def process(provider, account, cfg, end_date, root):
             candidates, temperature = provider.prepare(day, account, cfg)
         except Exception as e:
             # Failed preparation cannot stop liquidation of existing positions.
+            if not account['positions']:
+                raise
             candidates = []
             preparation_error = f'{type(e).__name__}: 准备行情失败，禁止新增买入；请查看数据权限、额度和完整性。'
         try:
@@ -120,7 +123,7 @@ def main():
     if end_date > completed_through:
         raise ValueError('禁止处理尚未收盘或未来日期')
     try:
-        provider = JQData()
+        provider = PublicData()
         previous_day_count = len(account['days'])
         process(provider, account, cfg, end_date, ROOT)
         if any(day.get('preparation_error') for day in account['days'][previous_day_count:]):
@@ -128,9 +131,7 @@ def main():
             return 2
     except Exception as e:
         # Do not print SDK exceptions that might contain account identifiers.
-        message = ('缺少 JQ_USERNAME / JQ_PASSWORD，请在 Actions secrets 配置。'
-                   if not os.getenv('JQ_USERNAME') or not os.getenv('JQ_PASSWORD')
-                   else f'{type(e).__name__}: 数据或账本校验失败，保留最后成功日；核对JQData权限、网络、额度、除权和行情完整性。')
+        message = f'{type(e).__name__}: {e}'
         export(account, ROOT, 'failed', message)
         print(message, file=sys.stderr)
         return 1
