@@ -1,7 +1,8 @@
 {
   "date": "2026-10-09",
   "previous_day": "2026-10-08",
-  "status": "reference_only",
+  "status": "scanned",
+  "data_quality": "current_constituent_reference",
   "temperature": {
     "ICE": false,
     "RUN": 0,
@@ -20,18 +21,6 @@
   "limitations": [
     "使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。",
     "市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。",
-    "历史价格按新浪复权因子对齐；当日除权股票不记交易；开盘候选不等于分钟买入信号。"
-  ],
-  "minute_status": "verified",
-  "model_buys": [],
-  "minute_events": [
-    {
-      "date": "2026-10-09",
-      "candidates": [],
-      "queue": [],
-      "events": [],
-      "preparation_error": null,
-      "unfilled_at_close": []
-    }
+    "信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。"
   ]
 }
