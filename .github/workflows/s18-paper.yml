@@ -1,4 +1,4 @@
-name: S18 20万元模拟仓
+name: S18 日线与开盘信号扫描
 
 on:
   push:
@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: s18-paper-account
-  cancel-in-progress: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[restart-scan]') }}
+  cancel-in-progress: false
 
 jobs:
   paper:
@@ -52,9 +52,6 @@ jobs:
           else
             python -u -m src.scan
           fi
-      - name: Replay verified completed minutes with public data
-        if: success()
-        run: python -u -m src.run
       - name: Publish report to run summary
         if: always()
         run: |
@@ -66,9 +63,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add state outputs logs
+          git add state/metadata outputs/signals-*
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: update S18 paper ledger [skip ci]'
+            git commit -m 'chore: update S18 daily signals [skip ci]'
             git push origin HEAD:main
           fi
       - uses: actions/upload-artifact@v4

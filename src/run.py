@@ -117,25 +117,9 @@ def main():
     if args.initialize:
         export(account, ROOT, 'waiting_for_configuration')
         return 0
-    now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
-    completed_through = now.date() if now.hour >= 16 else now.date() - dt.timedelta(days=1)
-    end_date = dt.date.fromisoformat(args.end_date) if args.end_date else completed_through
-    if end_date > completed_through:
-        raise ValueError('禁止处理尚未收盘或未来日期')
-    try:
-        provider = PublicData()
-        previous_day_count = len(account['days'])
-        process(provider, account, cfg, end_date, ROOT)
-        if any(day.get('preparation_error') for day in account['days'][previous_day_count:]):
-            print('部分日期禁止新增买入，请核对公开行情及完整性；已保存可确认的持仓退出。', file=sys.stderr)
-            return 2
-    except Exception as e:
-        # Do not print SDK exceptions that might contain account identifiers.
-        message = f'{type(e).__name__}: {e}'
-        export(account, ROOT, 'failed', message)
-        print(message, file=sys.stderr)
-        return 1
-    return 0
+    # The active strategy only scans daily/opening conditions; no minute replay.
+    from .scan import main as scan_main
+    return scan_main(['--end-date', args.end_date] if args.end_date else [])
 
 
 if __name__ == '__main__':

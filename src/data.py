@@ -214,62 +214,14 @@ class PublicData:
             marks[c['code']] = {f: float(r[f]) for f in ['open', 'close', 'money', 'paused', 'high_limit', 'low_limit', 'factor']}
             marks[c['code']].update(is_st=bool(re.search('ST|退', c['name'], re.I)), name=c['name'])
         qualified = opening_queue(candidates, marks, cfg)
-        return dict(date=str(date), previous_day=str(t), status='reference_only', temperature=temperature,
+        return dict(date=str(date), previous_day=str(t), status='scanned', data_quality='current_constituent_reference', temperature=temperature,
                     pool_size=len(self.pool), history_loaded=len(self.frames)-1, validated_stocks=len(flags), omitted=omitted,
                     candidates=candidates, opening_candidates=qualified,
                     limitations=['使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。',
                                  '市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。',
-                                 '历史价格按新浪复权因子对齐；当日除权股票不记交易；开盘候选不等于分钟买入信号。'])
+                                 '信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。'])
 
     def prepare(self, date, account, cfg):
         report = self.scan(date, account, cfg)
         temp = report['temperature'] | {'data_provenance': report['limitations'], 'reference_only': True}
         return report['candidates'], temp
-
-    def session(self, date, candidates, positions, cfg):
-        marks = {}
-        for code in sorted(set(c['code'] for c in candidates) | set(positions)):
-            df = self.daily(code)
-            rows = df[df.time.dt.date == date]
-            if len(rows) != 1 or rows.iloc[0].corporate_action:
-                raise ValueError('Daily missing or corporate action: ' + code)
-            r = rows.iloc[0]
-            marks[code] = {f: float(r[f]) for f in ['open', 'close', 'money', 'paused', 'high_limit', 'low_limit', 'factor']}
-            name = self.names.get(code, positions.get(code, {}).get('name', ''))
-            if not name:
-                raise ValueError('Missing security name: ' + code)
-            marks[code].update(is_st=bool(re.search('ST|退', name, re.I)), name=name)
-        qualified = opening_queue(candidates, marks, cfg)
-        codes = sorted(set(c['code'] for c in qualified) | {s for s in positions if not marks[s]['paused']})
-        bars = {}
-        for code in codes:
-            path = self.cache / f'minute-{code[:6]}-{date}.json'
-            if path.exists():
-                data = json.loads(path.read_text())
-            else:
-                response = get('https://push2his.eastmoney.com/api/qt/stock/trends2/get', params={
-                    'secid': ('1.' if code.endswith('XSHG') else '0.')+code[:6],
-                    'ndays': 5, 'iscr': 0,
-                    'fields1': 'f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11',
-                    'fields2': 'f51,f52,f53,f54,f55,f56,f57,f58'})
-                payload = response.json().get('data')
-                if not payload or not payload.get('trends'):
-                    raise ValueError('Minute source empty: ' + code)
-                data = {}
-                for item in payload['trends']:
-                    x = item.split(',')
-                    stamp = pd.Timestamp(x[0])
-                    if stamp.date() != date or stamp.strftime('%H:%M') < '09:31':
-                        continue
-                    tm = stamp.strftime('%H:%M')
-                    if tm in data:
-                        raise ValueError('Duplicate minute: ' + code)
-                    data[tm] = dict(zip(['open', 'close', 'high', 'low', 'volume', 'money'], map(float, x[1:7])))
-                    data[tm]['volume'] *= 100  # Eastmoney lots -> shares.
-                path.write_text(json.dumps(data), encoding='utf-8')
-            if code in {c['code'] for c in qualified} and any(f'09:{i:02d}' not in data for i in range(31, 37)):
-                raise ValueError('Buy minutes incomplete: ' + code)
-            if code in positions and any(f'14:{i:02d}' not in data for i in range(50, 58)):
-                raise ValueError('Exit minutes incomplete: ' + code)
-            bars[code] = data
-        return marks, bars

@@ -42,24 +42,5 @@ class PublicDataTests(unittest.TestCase):
         self.assertEqual(price_limit(8.45, -.1), 7.61)
         self.assertEqual(price_limit(10.25, .1), 11.28)
 
-    def test_missing_buy_minutes_does_not_consume_empty_account_day(self):
-        with tempfile.TemporaryDirectory() as root:
-            p = PublicData(root)
-            account = paper.new_account('2026-10-08')
-            before = copy.deepcopy(account)
-            with patch.object(p, 'days', return_value=[date(2026,10,8)]), patch.object(p, 'prepare', return_value=([{'code':'000001.XSHE'}], {})), patch.object(p, 'session', side_effect=ValueError('missing minutes')):
-                with self.assertRaises(ValueError):
-                    run.process(p, account, paper.DEFAULTS, date(2026,10,8), Path(root))
-            self.assertEqual(account, before)
-
-    def test_held_corporate_action_stops_session(self):
-        import pandas as pd
-        with tempfile.TemporaryDirectory() as root:
-            p = PublicData(root)
-            frame = pd.DataFrame([dict(time=pd.Timestamp('2026-10-09'),corporate_action=True)])
-            with patch.object(p, 'daily', return_value=frame):
-                with self.assertRaisesRegex(ValueError, 'corporate action'):
-                    p.session(date(2026,10,9), [], {'000001.XSHE':{'name':'test'}}, paper.DEFAULTS)
-
 if __name__ == '__main__':
     unittest.main()
