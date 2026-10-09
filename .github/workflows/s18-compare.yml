@@ -1,0 +1,29 @@
+name: S18 historical daily comparison
+on:
+  push:
+    paths:
+      - research/**
+      - .github/workflows/s18-compare.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -q
+      - run: python -u -m research.compare
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s18-comparison-20251001
+          path: |
+            outputs/comparison-20251001/
+            cache/research/
+          retention-days: 30
