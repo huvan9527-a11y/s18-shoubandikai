@@ -1,0 +1,6002 @@
+{
+  "000012.XSHE": {
+    "code": "000012.XSHE",
+    "name": "南  玻A",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000028.XSHE": {
+    "code": "000028.XSHE",
+    "name": "国药一致",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000029.XSHE": {
+    "code": "000029.XSHE",
+    "name": "深深房A",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000030.XSHE": {
+    "code": "000030.XSHE",
+    "name": "富奥股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000035.XSHE": {
+    "code": "000035.XSHE",
+    "name": "中国天楹",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000048.XSHE": {
+    "code": "000048.XSHE",
+    "name": "京基智农",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000049.XSHE": {
+    "code": "000049.XSHE",
+    "name": "德赛电池",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000058.XSHE": {
+    "code": "000058.XSHE",
+    "name": "深赛格",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000059.XSHE": {
+    "code": "000059.XSHE",
+    "name": "华锦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000061.XSHE": {
+    "code": "000061.XSHE",
+    "name": "农 产 品",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000065.XSHE": {
+    "code": "000065.XSHE",
+    "name": "北方国际",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000089.XSHE": {
+    "code": "000089.XSHE",
+    "name": "深圳机场",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000099.XSHE": {
+    "code": "000099.XSHE",
+    "name": "中信海直",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000156.XSHE": {
+    "code": "000156.XSHE",
+    "name": "华数传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000403.XSHE": {
+    "code": "000403.XSHE",
+    "name": "派林生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000420.XSHE": {
+    "code": "000420.XSHE",
+    "name": "吉林化纤",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000422.XSHE": {
+    "code": "000422.XSHE",
+    "name": "湖北宜化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000498.XSHE": {
+    "code": "000498.XSHE",
+    "name": "山东路桥",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000503.XSHE": {
+    "code": "000503.XSHE",
+    "name": "国新健康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000506.XSHE": {
+    "code": "000506.XSHE",
+    "name": "招金黄金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000534.XSHE": {
+    "code": "000534.XSHE",
+    "name": "万泽股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000543.XSHE": {
+    "code": "000543.XSHE",
+    "name": "皖能电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000550.XSHE": {
+    "code": "000550.XSHE",
+    "name": "江铃汽车",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000552.XSHE": {
+    "code": "000552.XSHE",
+    "name": "甘肃能化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000555.XSHE": {
+    "code": "000555.XSHE",
+    "name": "神州信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000563.XSHE": {
+    "code": "000563.XSHE",
+    "name": "陕国投A",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000567.XSHE": {
+    "code": "000567.XSHE",
+    "name": "海德股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000581.XSHE": {
+    "code": "000581.XSHE",
+    "name": "威孚高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000600.XSHE": {
+    "code": "000600.XSHE",
+    "name": "建投能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000603.XSHE": {
+    "code": "000603.XSHE",
+    "name": "盛达资源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000612.XSHE": {
+    "code": "000612.XSHE",
+    "name": "焦作万方",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000620.XSHE": {
+    "code": "000620.XSHE",
+    "name": "盈新发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000628.XSHE": {
+    "code": "000628.XSHE",
+    "name": "高新发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000636.XSHE": {
+    "code": "000636.XSHE",
+    "name": "风华高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000650.XSHE": {
+    "code": "000650.XSHE",
+    "name": "仁和药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000672.XSHE": {
+    "code": "000672.XSHE",
+    "name": "上峰材料",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000676.XSHE": {
+    "code": "000676.XSHE",
+    "name": "智度股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000680.XSHE": {
+    "code": "000680.XSHE",
+    "name": "山推股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000681.XSHE": {
+    "code": "000681.XSHE",
+    "name": "视觉中国",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000682.XSHE": {
+    "code": "000682.XSHE",
+    "name": "东方电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000685.XSHE": {
+    "code": "000685.XSHE",
+    "name": "中山公用",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000686.XSHE": {
+    "code": "000686.XSHE",
+    "name": "东北证券",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000688.XSHE": {
+    "code": "000688.XSHE",
+    "name": "国城矿业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000690.XSHE": {
+    "code": "000690.XSHE",
+    "name": "宝新能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000712.XSHE": {
+    "code": "000712.XSHE",
+    "name": "锦龙股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000719.XSHE": {
+    "code": "000719.XSHE",
+    "name": "中原传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000727.XSHE": {
+    "code": "000727.XSHE",
+    "name": "冠捷科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000758.XSHE": {
+    "code": "000758.XSHE",
+    "name": "中色股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000762.XSHE": {
+    "code": "000762.XSHE",
+    "name": "西藏矿业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000766.XSHE": {
+    "code": "000766.XSHE",
+    "name": "通化金马",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000767.XSHE": {
+    "code": "000767.XSHE",
+    "name": "晋控电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000778.XSHE": {
+    "code": "000778.XSHE",
+    "name": "新兴铸管",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000791.XSHE": {
+    "code": "000791.XSHE",
+    "name": "甘肃能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000795.XSHE": {
+    "code": "000795.XSHE",
+    "name": "英洛华",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000801.XSHE": {
+    "code": "000801.XSHE",
+    "name": "四川九洲",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000810.XSHE": {
+    "code": "000810.XSHE",
+    "name": "创维数字",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000811.XSHE": {
+    "code": "000811.XSHE",
+    "name": "冰轮环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000813.XSHE": {
+    "code": "000813.XSHE",
+    "name": "德展健康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000828.XSHE": {
+    "code": "000828.XSHE",
+    "name": "东莞控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000829.XSHE": {
+    "code": "000829.XSHE",
+    "name": "天音控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000833.XSHE": {
+    "code": "000833.XSHE",
+    "name": "粤桂股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000837.XSHE": {
+    "code": "000837.XSHE",
+    "name": "秦川机床",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000848.XSHE": {
+    "code": "000848.XSHE",
+    "name": "承德露露",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000860.XSHE": {
+    "code": "000860.XSHE",
+    "name": "顺鑫农业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000875.XSHE": {
+    "code": "000875.XSHE",
+    "name": "电投绿能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000880.XSHE": {
+    "code": "000880.XSHE",
+    "name": "潍柴重机",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000885.XSHE": {
+    "code": "000885.XSHE",
+    "name": "城发环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000899.XSHE": {
+    "code": "000899.XSHE",
+    "name": "赣能股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000901.XSHE": {
+    "code": "000901.XSHE",
+    "name": "航天科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000902.XSHE": {
+    "code": "000902.XSHE",
+    "name": "新洋丰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000913.XSHE": {
+    "code": "000913.XSHE",
+    "name": "钱江摩托",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000917.XSHE": {
+    "code": "000917.XSHE",
+    "name": "电广传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000923.XSHE": {
+    "code": "000923.XSHE",
+    "name": "河钢资源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000927.XSHE": {
+    "code": "000927.XSHE",
+    "name": "中国铁物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000928.XSHE": {
+    "code": "000928.XSHE",
+    "name": "中钢国际",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000930.XSHE": {
+    "code": "000930.XSHE",
+    "name": "中粮科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000935.XSHE": {
+    "code": "000935.XSHE",
+    "name": "四川双马",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000950.XSHE": {
+    "code": "000950.XSHE",
+    "name": "重药控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000962.XSHE": {
+    "code": "000962.XSHE",
+    "name": "东方钽业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000966.XSHE": {
+    "code": "000966.XSHE",
+    "name": "长源电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000969.XSHE": {
+    "code": "000969.XSHE",
+    "name": "安泰科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000970.XSHE": {
+    "code": "000970.XSHE",
+    "name": "中科三环",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000973.XSHE": {
+    "code": "000973.XSHE",
+    "name": "佛塑科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000990.XSHE": {
+    "code": "000990.XSHE",
+    "name": "诚志股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "000998.XSHE": {
+    "code": "000998.XSHE",
+    "name": "隆平高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001227.XSHE": {
+    "code": "001227.XSHE",
+    "name": "兰州银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001233.XSHE": {
+    "code": "001233.XSHE",
+    "name": "海安集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001236.XSHE": {
+    "code": "001236.XSHE",
+    "name": "弘业期货",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001267.XSHE": {
+    "code": "001267.XSHE",
+    "name": "汇绿生态",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001287.XSHE": {
+    "code": "001287.XSHE",
+    "name": "中电港",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001301.XSHE": {
+    "code": "001301.XSHE",
+    "name": "尚太科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001337.XSHE": {
+    "code": "001337.XSHE",
+    "name": "四川黄金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001339.XSHE": {
+    "code": "001339.XSHE",
+    "name": "智微智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001359.XSHE": {
+    "code": "001359.XSHE",
+    "name": "平安电工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001369.XSHE": {
+    "code": "001369.XSHE",
+    "name": "双欣材料",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001382.XSHE": {
+    "code": "001382.XSHE",
+    "name": "新亚电缆",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001896.XSHE": {
+    "code": "001896.XSHE",
+    "name": "豫能控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "001914.XSHE": {
+    "code": "001914.XSHE",
+    "name": "招商积余",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002003.XSHE": {
+    "code": "002003.XSHE",
+    "name": "伟星股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002004.XSHE": {
+    "code": "002004.XSHE",
+    "name": "华邦健康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002006.XSHE": {
+    "code": "002006.XSHE",
+    "name": "精工科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002010.XSHE": {
+    "code": "002010.XSHE",
+    "name": "传化智联",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002011.XSHE": {
+    "code": "002011.XSHE",
+    "name": "盾安环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002015.XSHE": {
+    "code": "002015.XSHE",
+    "name": "协鑫能科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002017.XSHE": {
+    "code": "002017.XSHE",
+    "name": "东信和平",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002019.XSHE": {
+    "code": "002019.XSHE",
+    "name": "亿帆医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002020.XSHE": {
+    "code": "002020.XSHE",
+    "name": "京新药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002023.XSHE": {
+    "code": "002023.XSHE",
+    "name": "海特高新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002036.XSHE": {
+    "code": "002036.XSHE",
+    "name": "联创电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002041.XSHE": {
+    "code": "002041.XSHE",
+    "name": "登海种业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002043.XSHE": {
+    "code": "002043.XSHE",
+    "name": "兔宝宝",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002045.XSHE": {
+    "code": "002045.XSHE",
+    "name": "国光电器",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002046.XSHE": {
+    "code": "002046.XSHE",
+    "name": "国机精工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002048.XSHE": {
+    "code": "002048.XSHE",
+    "name": "宁波华翔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002051.XSHE": {
+    "code": "002051.XSHE",
+    "name": "中工国际",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002053.XSHE": {
+    "code": "002053.XSHE",
+    "name": "云南能投",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002060.XSHE": {
+    "code": "002060.XSHE",
+    "name": "广东建工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002061.XSHE": {
+    "code": "002061.XSHE",
+    "name": "浙江交科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002063.XSHE": {
+    "code": "002063.XSHE",
+    "name": "远光软件",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002073.XSHE": {
+    "code": "002073.XSHE",
+    "name": "软控股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002075.XSHE": {
+    "code": "002075.XSHE",
+    "name": "沙钢股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002077.XSHE": {
+    "code": "002077.XSHE",
+    "name": "大港股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002081.XSHE": {
+    "code": "002081.XSHE",
+    "name": "金螳螂",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002091.XSHE": {
+    "code": "002091.XSHE",
+    "name": "江苏国泰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002093.XSHE": {
+    "code": "002093.XSHE",
+    "name": "国脉科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002096.XSHE": {
+    "code": "002096.XSHE",
+    "name": "易普力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002097.XSHE": {
+    "code": "002097.XSHE",
+    "name": "山河智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002099.XSHE": {
+    "code": "002099.XSHE",
+    "name": "海翔药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002100.XSHE": {
+    "code": "002100.XSHE",
+    "name": "天康生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002101.XSHE": {
+    "code": "002101.XSHE",
+    "name": "广东鸿图",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002104.XSHE": {
+    "code": "002104.XSHE",
+    "name": "恒宝股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002110.XSHE": {
+    "code": "002110.XSHE",
+    "name": "三钢闽光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002121.XSHE": {
+    "code": "002121.XSHE",
+    "name": "科陆电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002123.XSHE": {
+    "code": "002123.XSHE",
+    "name": "梦网科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002125.XSHE": {
+    "code": "002125.XSHE",
+    "name": "湘潭电化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002127.XSHE": {
+    "code": "002127.XSHE",
+    "name": "南极电商",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002139.XSHE": {
+    "code": "002139.XSHE",
+    "name": "拓邦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002145.XSHE": {
+    "code": "002145.XSHE",
+    "name": "钛能化学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002149.XSHE": {
+    "code": "002149.XSHE",
+    "name": "西部材料",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002151.XSHE": {
+    "code": "002151.XSHE",
+    "name": "北斗星通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002158.XSHE": {
+    "code": "002158.XSHE",
+    "name": "汉钟精机",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002163.XSHE": {
+    "code": "002163.XSHE",
+    "name": "海南发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002170.XSHE": {
+    "code": "002170.XSHE",
+    "name": "芭田股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002171.XSHE": {
+    "code": "002171.XSHE",
+    "name": "楚江新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002174.XSHE": {
+    "code": "002174.XSHE",
+    "name": "游族网络",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002176.XSHE": {
+    "code": "002176.XSHE",
+    "name": "江特电机",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002181.XSHE": {
+    "code": "002181.XSHE",
+    "name": "粤传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002182.XSHE": {
+    "code": "002182.XSHE",
+    "name": "宝武镁业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002183.XSHE": {
+    "code": "002183.XSHE",
+    "name": "怡亚通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002192.XSHE": {
+    "code": "002192.XSHE",
+    "name": "融捷股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002194.XSHE": {
+    "code": "002194.XSHE",
+    "name": "武汉凡谷",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002204.XSHE": {
+    "code": "002204.XSHE",
+    "name": "大连重工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002212.XSHE": {
+    "code": "002212.XSHE",
+    "name": "天融信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002215.XSHE": {
+    "code": "002215.XSHE",
+    "name": "诺普信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002216.XSHE": {
+    "code": "002216.XSHE",
+    "name": "三全食品",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002221.XSHE": {
+    "code": "002221.XSHE",
+    "name": "东华能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002222.XSHE": {
+    "code": "002222.XSHE",
+    "name": "福晶科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002226.XSHE": {
+    "code": "002226.XSHE",
+    "name": "江南化工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002233.XSHE": {
+    "code": "002233.XSHE",
+    "name": "塔牌集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002237.XSHE": {
+    "code": "002237.XSHE",
+    "name": "恒邦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002239.XSHE": {
+    "code": "002239.XSHE",
+    "name": "奥特佳",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002243.XSHE": {
+    "code": "002243.XSHE",
+    "name": "力合科创",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002245.XSHE": {
+    "code": "002245.XSHE",
+    "name": "蔚蓝锂芯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002246.XSHE": {
+    "code": "002246.XSHE",
+    "name": "北化股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002249.XSHE": {
+    "code": "002249.XSHE",
+    "name": "大洋电机",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002250.XSHE": {
+    "code": "002250.XSHE",
+    "name": "联化科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002251.XSHE": {
+    "code": "002251.XSHE",
+    "name": "步步高",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002254.XSHE": {
+    "code": "002254.XSHE",
+    "name": "泰和新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002258.XSHE": {
+    "code": "002258.XSHE",
+    "name": "利尔化学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002267.XSHE": {
+    "code": "002267.XSHE",
+    "name": "陕天然气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002268.XSHE": {
+    "code": "002268.XSHE",
+    "name": "电科网安",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002270.XSHE": {
+    "code": "002270.XSHE",
+    "name": "华明装备",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002276.XSHE": {
+    "code": "002276.XSHE",
+    "name": "万马股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002287.XSHE": {
+    "code": "002287.XSHE",
+    "name": "奇正藏药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002290.XSHE": {
+    "code": "002290.XSHE",
+    "name": "禾盛新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002292.XSHE": {
+    "code": "002292.XSHE",
+    "name": "奥飞娱乐",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002315.XSHE": {
+    "code": "002315.XSHE",
+    "name": "焦点科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002317.XSHE": {
+    "code": "002317.XSHE",
+    "name": "众生药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002320.XSHE": {
+    "code": "002320.XSHE",
+    "name": "海峡股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002324.XSHE": {
+    "code": "002324.XSHE",
+    "name": "普利特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002326.XSHE": {
+    "code": "002326.XSHE",
+    "name": "永太科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002332.XSHE": {
+    "code": "002332.XSHE",
+    "name": "仙琚制药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002338.XSHE": {
+    "code": "002338.XSHE",
+    "name": "奥普光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002345.XSHE": {
+    "code": "002345.XSHE",
+    "name": "潮宏基",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002351.XSHE": {
+    "code": "002351.XSHE",
+    "name": "漫步者",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002354.XSHE": {
+    "code": "002354.XSHE",
+    "name": "天娱数科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002364.XSHE": {
+    "code": "002364.XSHE",
+    "name": "中恒电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002368.XSHE": {
+    "code": "002368.XSHE",
+    "name": "太极股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002372.XSHE": {
+    "code": "002372.XSHE",
+    "name": "伟星新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002373.XSHE": {
+    "code": "002373.XSHE",
+    "name": "千方科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002378.XSHE": {
+    "code": "002378.XSHE",
+    "name": "章源钨业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002389.XSHE": {
+    "code": "002389.XSHE",
+    "name": "航天彩虹",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002396.XSHE": {
+    "code": "002396.XSHE",
+    "name": "星网锐捷",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002400.XSHE": {
+    "code": "002400.XSHE",
+    "name": "省广集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002405.XSHE": {
+    "code": "002405.XSHE",
+    "name": "四维图新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002408.XSHE": {
+    "code": "002408.XSHE",
+    "name": "齐翔腾达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002416.XSHE": {
+    "code": "002416.XSHE",
+    "name": "爱施德",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002428.XSHE": {
+    "code": "002428.XSHE",
+    "name": "云南锗业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002434.XSHE": {
+    "code": "002434.XSHE",
+    "name": "万里扬",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002456.XSHE": {
+    "code": "002456.XSHE",
+    "name": "欧菲光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002458.XSHE": {
+    "code": "002458.XSHE",
+    "name": "益生股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002468.XSHE": {
+    "code": "002468.XSHE",
+    "name": "申通快递",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002484.XSHE": {
+    "code": "002484.XSHE",
+    "name": "江海股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002488.XSHE": {
+    "code": "002488.XSHE",
+    "name": "金固股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002497.XSHE": {
+    "code": "002497.XSHE",
+    "name": "雅化集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002498.XSHE": {
+    "code": "002498.XSHE",
+    "name": "汉缆股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002506.XSHE": {
+    "code": "002506.XSHE",
+    "name": "协鑫集成",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002507.XSHE": {
+    "code": "002507.XSHE",
+    "name": "涪陵榨菜",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002511.XSHE": {
+    "code": "002511.XSHE",
+    "name": "中顺洁柔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002516.XSHE": {
+    "code": "002516.XSHE",
+    "name": "旷达科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002518.XSHE": {
+    "code": "002518.XSHE",
+    "name": "科士达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002531.XSHE": {
+    "code": "002531.XSHE",
+    "name": "天顺风能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002534.XSHE": {
+    "code": "002534.XSHE",
+    "name": "西子洁能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002536.XSHE": {
+    "code": "002536.XSHE",
+    "name": "飞龙股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002537.XSHE": {
+    "code": "002537.XSHE",
+    "name": "海联金汇",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002539.XSHE": {
+    "code": "002539.XSHE",
+    "name": "云图控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002541.XSHE": {
+    "code": "002541.XSHE",
+    "name": "鸿路钢构",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002544.XSHE": {
+    "code": "002544.XSHE",
+    "name": "普天科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002545.XSHE": {
+    "code": "002545.XSHE",
+    "name": "东方铁塔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002549.XSHE": {
+    "code": "002549.XSHE",
+    "name": "凯美特气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002550.XSHE": {
+    "code": "002550.XSHE",
+    "name": "千红制药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002557.XSHE": {
+    "code": "002557.XSHE",
+    "name": "洽洽食品",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002563.XSHE": {
+    "code": "002563.XSHE",
+    "name": "森马服饰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002572.XSHE": {
+    "code": "002572.XSHE",
+    "name": "索菲亚",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002588.XSHE": {
+    "code": "002588.XSHE",
+    "name": "史丹利",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002597.XSHE": {
+    "code": "002597.XSHE",
+    "name": "金禾实业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002605.XSHE": {
+    "code": "002605.XSHE",
+    "name": "姚记科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002611.XSHE": {
+    "code": "002611.XSHE",
+    "name": "东方精工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002617.XSHE": {
+    "code": "002617.XSHE",
+    "name": "露笑科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002626.XSHE": {
+    "code": "002626.XSHE",
+    "name": "金达威",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002635.XSHE": {
+    "code": "002635.XSHE",
+    "name": "安洁科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002636.XSHE": {
+    "code": "002636.XSHE",
+    "name": "金安国纪",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002639.XSHE": {
+    "code": "002639.XSHE",
+    "name": "雪人集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002643.XSHE": {
+    "code": "002643.XSHE",
+    "name": "万润股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002651.XSHE": {
+    "code": "002651.XSHE",
+    "name": "利君股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002654.XSHE": {
+    "code": "002654.XSHE",
+    "name": "万润科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002668.XSHE": {
+    "code": "002668.XSHE",
+    "name": "TCL智家",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002675.XSHE": {
+    "code": "002675.XSHE",
+    "name": "东诚药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002681.XSHE": {
+    "code": "002681.XSHE",
+    "name": "奋达科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002690.XSHE": {
+    "code": "002690.XSHE",
+    "name": "美亚光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002698.XSHE": {
+    "code": "002698.XSHE",
+    "name": "博实股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002701.XSHE": {
+    "code": "002701.XSHE",
+    "name": "奥瑞金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002705.XSHE": {
+    "code": "002705.XSHE",
+    "name": "新宝股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002706.XSHE": {
+    "code": "002706.XSHE",
+    "name": "良信股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002716.XSHE": {
+    "code": "002716.XSHE",
+    "name": "湖南白银",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002727.XSHE": {
+    "code": "002727.XSHE",
+    "name": "一心堂",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002737.XSHE": {
+    "code": "002737.XSHE",
+    "name": "葵花药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002745.XSHE": {
+    "code": "002745.XSHE",
+    "name": "木林森",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002747.XSHE": {
+    "code": "002747.XSHE",
+    "name": "埃斯顿",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002755.XSHE": {
+    "code": "002755.XSHE",
+    "name": "奥赛康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002761.XSHE": {
+    "code": "002761.XSHE",
+    "name": "浙江建投",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002768.XSHE": {
+    "code": "002768.XSHE",
+    "name": "国恩股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002779.XSHE": {
+    "code": "002779.XSHE",
+    "name": "中坚科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002807.XSHE": {
+    "code": "002807.XSHE",
+    "name": "江阴银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002815.XSHE": {
+    "code": "002815.XSHE",
+    "name": "崇达技术",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002827.XSHE": {
+    "code": "002827.XSHE",
+    "name": "高争民爆",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002832.XSHE": {
+    "code": "002832.XSHE",
+    "name": "比音勒芬",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002838.XSHE": {
+    "code": "002838.XSHE",
+    "name": "道恩股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002839.XSHE": {
+    "code": "002839.XSHE",
+    "name": "张家港行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002840.XSHE": {
+    "code": "002840.XSHE",
+    "name": "华统股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002847.XSHE": {
+    "code": "002847.XSHE",
+    "name": "盐津铺子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002859.XSHE": {
+    "code": "002859.XSHE",
+    "name": "洁美科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002867.XSHE": {
+    "code": "002867.XSHE",
+    "name": "周大生",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002881.XSHE": {
+    "code": "002881.XSHE",
+    "name": "美格智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002882.XSHE": {
+    "code": "002882.XSHE",
+    "name": "金龙羽",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002891.XSHE": {
+    "code": "002891.XSHE",
+    "name": "中宠股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002892.XSHE": {
+    "code": "002892.XSHE",
+    "name": "科力尔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002895.XSHE": {
+    "code": "002895.XSHE",
+    "name": "川恒股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002896.XSHE": {
+    "code": "002896.XSHE",
+    "name": "中大力德",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002897.XSHE": {
+    "code": "002897.XSHE",
+    "name": "意华股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002901.XSHE": {
+    "code": "002901.XSHE",
+    "name": "大博医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002906.XSHE": {
+    "code": "002906.XSHE",
+    "name": "华阳集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002911.XSHE": {
+    "code": "002911.XSHE",
+    "name": "佛燃能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002913.XSHE": {
+    "code": "002913.XSHE",
+    "name": "奥士康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002922.XSHE": {
+    "code": "002922.XSHE",
+    "name": "伊戈尔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002925.XSHE": {
+    "code": "002925.XSHE",
+    "name": "盈趣科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002928.XSHE": {
+    "code": "002928.XSHE",
+    "name": "华夏航空",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002929.XSHE": {
+    "code": "002929.XSHE",
+    "name": "润建股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002936.XSHE": {
+    "code": "002936.XSHE",
+    "name": "郑州银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002941.XSHE": {
+    "code": "002941.XSHE",
+    "name": "新疆交建",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002946.XSHE": {
+    "code": "002946.XSHE",
+    "name": "新乳业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002947.XSHE": {
+    "code": "002947.XSHE",
+    "name": "恒铭达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002948.XSHE": {
+    "code": "002948.XSHE",
+    "name": "青岛银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002958.XSHE": {
+    "code": "002958.XSHE",
+    "name": "青农商行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002960.XSHE": {
+    "code": "002960.XSHE",
+    "name": "青鸟智控",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002961.XSHE": {
+    "code": "002961.XSHE",
+    "name": "瑞达期货",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002965.XSHE": {
+    "code": "002965.XSHE",
+    "name": "祥鑫科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002967.XSHE": {
+    "code": "002967.XSHE",
+    "name": "广电计量",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002978.XSHE": {
+    "code": "002978.XSHE",
+    "name": "安宁股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002979.XSHE": {
+    "code": "002979.XSHE",
+    "name": "雷赛智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002985.XSHE": {
+    "code": "002985.XSHE",
+    "name": "北摩高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002987.XSHE": {
+    "code": "002987.XSHE",
+    "name": "京北方",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "002993.XSHE": {
+    "code": "002993.XSHE",
+    "name": "奥海科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "003006.XSHE": {
+    "code": "003006.XSHE",
+    "name": "百亚股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "003010.XSHE": {
+    "code": "003010.XSHE",
+    "name": "若羽臣",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "003039.XSHE": {
+    "code": "003039.XSHE",
+    "name": "顺控发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300007.XSHE": {
+    "code": "300007.XSHE",
+    "name": "汉威科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300008.XSHE": {
+    "code": "300008.XSHE",
+    "name": "天海防务",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300009.XSHE": {
+    "code": "300009.XSHE",
+    "name": "安科生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300026.XSHE": {
+    "code": "300026.XSHE",
+    "name": "红日药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300031.XSHE": {
+    "code": "300031.XSHE",
+    "name": "宝通科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300034.XSHE": {
+    "code": "300034.XSHE",
+    "name": "钢研高纳",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300035.XSHE": {
+    "code": "300035.XSHE",
+    "name": "中科电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300036.XSHE": {
+    "code": "300036.XSHE",
+    "name": "超图软件",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300045.XSHE": {
+    "code": "300045.XSHE",
+    "name": "华力创通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300047.XSHE": {
+    "code": "300047.XSHE",
+    "name": "天源迪科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300049.XSHE": {
+    "code": "300049.XSHE",
+    "name": "福瑞医科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300065.XSHE": {
+    "code": "300065.XSHE",
+    "name": "海兰信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300070.XSHE": {
+    "code": "300070.XSHE",
+    "name": "碧水源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300075.XSHE": {
+    "code": "300075.XSHE",
+    "name": "数字政通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300077.XSHE": {
+    "code": "300077.XSHE",
+    "name": "国民技术",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300080.XSHE": {
+    "code": "300080.XSHE",
+    "name": "易成新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300083.XSHE": {
+    "code": "300083.XSHE",
+    "name": "创世纪",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300085.XSHE": {
+    "code": "300085.XSHE",
+    "name": "银之杰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300088.XSHE": {
+    "code": "300088.XSHE",
+    "name": "长信科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300098.XSHE": {
+    "code": "300098.XSHE",
+    "name": "高新兴",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300101.XSHE": {
+    "code": "300101.XSHE",
+    "name": "振芯科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300102.XSHE": {
+    "code": "300102.XSHE",
+    "name": "乾照光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300113.XSHE": {
+    "code": "300113.XSHE",
+    "name": "顺网科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300119.XSHE": {
+    "code": "300119.XSHE",
+    "name": "瑞普生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300127.XSHE": {
+    "code": "300127.XSHE",
+    "name": "银河磁体",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300130.XSHE": {
+    "code": "300130.XSHE",
+    "name": "新国都",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300131.XSHE": {
+    "code": "300131.XSHE",
+    "name": "英唐智控",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300133.XSHE": {
+    "code": "300133.XSHE",
+    "name": "华策影视",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300134.XSHE": {
+    "code": "300134.XSHE",
+    "name": "大富科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300153.XSHE": {
+    "code": "300153.XSHE",
+    "name": "科泰电源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300166.XSHE": {
+    "code": "300166.XSHE",
+    "name": "东方国信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300170.XSHE": {
+    "code": "300170.XSHE",
+    "name": "汉得信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300171.XSHE": {
+    "code": "300171.XSHE",
+    "name": "东富龙",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300180.XSHE": {
+    "code": "300180.XSHE",
+    "name": "华峰超纤",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300181.XSHE": {
+    "code": "300181.XSHE",
+    "name": "佐力药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300182.XSHE": {
+    "code": "300182.XSHE",
+    "name": "捷成股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300184.XSHE": {
+    "code": "300184.XSHE",
+    "name": "力源信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300185.XSHE": {
+    "code": "300185.XSHE",
+    "name": "通裕重工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300188.XSHE": {
+    "code": "300188.XSHE",
+    "name": "国投智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300199.XSHE": {
+    "code": "300199.XSHE",
+    "name": "翰宇药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300224.XSHE": {
+    "code": "300224.XSHE",
+    "name": "正海磁材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300229.XSHE": {
+    "code": "300229.XSHE",
+    "name": "拓尔思",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300236.XSHE": {
+    "code": "300236.XSHE",
+    "name": "上海新阳",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300244.XSHE": {
+    "code": "300244.XSHE",
+    "name": "迪安诊断",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300253.XSHE": {
+    "code": "300253.XSHE",
+    "name": "卫宁健康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300257.XSHE": {
+    "code": "300257.XSHE",
+    "name": "开山股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300260.XSHE": {
+    "code": "300260.XSHE",
+    "name": "新莱应材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300276.XSHE": {
+    "code": "300276.XSHE",
+    "name": "三丰智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300284.XSHE": {
+    "code": "300284.XSHE",
+    "name": "苏交科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300294.XSHE": {
+    "code": "300294.XSHE",
+    "name": "博雅生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300296.XSHE": {
+    "code": "300296.XSHE",
+    "name": "利亚德",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300298.XSHE": {
+    "code": "300298.XSHE",
+    "name": "三诺生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300303.XSHE": {
+    "code": "300303.XSHE",
+    "name": "聚飞光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300315.XSHE": {
+    "code": "300315.XSHE",
+    "name": "掌趣科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300319.XSHE": {
+    "code": "300319.XSHE",
+    "name": "麦捷科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300322.XSHE": {
+    "code": "300322.XSHE",
+    "name": "硕贝德",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300323.XSHE": {
+    "code": "300323.XSHE",
+    "name": "华灿光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300327.XSHE": {
+    "code": "300327.XSHE",
+    "name": "中颖电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300337.XSHE": {
+    "code": "300337.XSHE",
+    "name": "银邦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300341.XSHE": {
+    "code": "300341.XSHE",
+    "name": "麦克奥迪",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300342.XSHE": {
+    "code": "300342.XSHE",
+    "name": "天银机电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300348.XSHE": {
+    "code": "300348.XSHE",
+    "name": "长亮科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300353.XSHE": {
+    "code": "300353.XSHE",
+    "name": "东土科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300357.XSHE": {
+    "code": "300357.XSHE",
+    "name": "我武生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300360.XSHE": {
+    "code": "300360.XSHE",
+    "name": "炬华科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300363.XSHE": {
+    "code": "300363.XSHE",
+    "name": "博腾股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300376.XSHE": {
+    "code": "300376.XSHE",
+    "name": "易事特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300378.XSHE": {
+    "code": "300378.XSHE",
+    "name": "鼎捷数智",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300398.XSHE": {
+    "code": "300398.XSHE",
+    "name": "飞凯材料",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300409.XSHE": {
+    "code": "300409.XSHE",
+    "name": "道氏技术",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300415.XSHE": {
+    "code": "300415.XSHE",
+    "name": "伊之密",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300416.XSHE": {
+    "code": "300416.XSHE",
+    "name": "苏试试验",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300428.XSHE": {
+    "code": "300428.XSHE",
+    "name": "立中集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300438.XSHE": {
+    "code": "300438.XSHE",
+    "name": "鹏辉能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300443.XSHE": {
+    "code": "300443.XSHE",
+    "name": "金雷股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300446.XSHE": {
+    "code": "300446.XSHE",
+    "name": "航天智造",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300455.XSHE": {
+    "code": "300455.XSHE",
+    "name": "航天智装",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300456.XSHE": {
+    "code": "300456.XSHE",
+    "name": "赛微电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300457.XSHE": {
+    "code": "300457.XSHE",
+    "name": "赢合科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300459.XSHE": {
+    "code": "300459.XSHE",
+    "name": "汤姆猫",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300468.XSHE": {
+    "code": "300468.XSHE",
+    "name": "四方精创",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300482.XSHE": {
+    "code": "300482.XSHE",
+    "name": "万孚生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300492.XSHE": {
+    "code": "300492.XSHE",
+    "name": "华图山鼎",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300493.XSHE": {
+    "code": "300493.XSHE",
+    "name": "润欣科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300503.XSHE": {
+    "code": "300503.XSHE",
+    "name": "昊志机电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300525.XSHE": {
+    "code": "300525.XSHE",
+    "name": "博思软件",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300529.XSHE": {
+    "code": "300529.XSHE",
+    "name": "健帆生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300568.XSHE": {
+    "code": "300568.XSHE",
+    "name": "星源材质",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300573.XSHE": {
+    "code": "300573.XSHE",
+    "name": "兴齐眼药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300576.XSHE": {
+    "code": "300576.XSHE",
+    "name": "容大感光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300579.XSHE": {
+    "code": "300579.XSHE",
+    "name": "数字认证",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300580.XSHE": {
+    "code": "300580.XSHE",
+    "name": "贝斯特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300593.XSHE": {
+    "code": "300593.XSHE",
+    "name": "新雷能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300595.XSHE": {
+    "code": "300595.XSHE",
+    "name": "欧普康视",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300598.XSHE": {
+    "code": "300598.XSHE",
+    "name": "诚迈科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300601.XSHE": {
+    "code": "300601.XSHE",
+    "name": "康泰生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300602.XSHE": {
+    "code": "300602.XSHE",
+    "name": "飞荣达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300607.XSHE": {
+    "code": "300607.XSHE",
+    "name": "拓斯达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300613.XSHE": {
+    "code": "300613.XSHE",
+    "name": "富瀚微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300618.XSHE": {
+    "code": "300618.XSHE",
+    "name": "寒锐钴业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300624.XSHE": {
+    "code": "300624.XSHE",
+    "name": "万兴科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300633.XSHE": {
+    "code": "300633.XSHE",
+    "name": "开立医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300634.XSHE": {
+    "code": "300634.XSHE",
+    "name": "彩讯股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300638.XSHE": {
+    "code": "300638.XSHE",
+    "name": "广和通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300641.XSHE": {
+    "code": "300641.XSHE",
+    "name": "正丹股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300655.XSHE": {
+    "code": "300655.XSHE",
+    "name": "晶瑞电材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300657.XSHE": {
+    "code": "300657.XSHE",
+    "name": "弘信电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300660.XSHE": {
+    "code": "300660.XSHE",
+    "name": "江苏雷利",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300672.XSHE": {
+    "code": "300672.XSHE",
+    "name": "国科微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300674.XSHE": {
+    "code": "300674.XSHE",
+    "name": "宇信科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300678.XSHE": {
+    "code": "300678.XSHE",
+    "name": "中科信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300680.XSHE": {
+    "code": "300680.XSHE",
+    "name": "隆盛科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300682.XSHE": {
+    "code": "300682.XSHE",
+    "name": "朗新科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300684.XSHE": {
+    "code": "300684.XSHE",
+    "name": "中石科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300685.XSHE": {
+    "code": "300685.XSHE",
+    "name": "艾德生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300687.XSHE": {
+    "code": "300687.XSHE",
+    "name": "赛意信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300693.XSHE": {
+    "code": "300693.XSHE",
+    "name": "盛弘股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300702.XSHE": {
+    "code": "300702.XSHE",
+    "name": "天宇股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300723.XSHE": {
+    "code": "300723.XSHE",
+    "name": "一品红",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300725.XSHE": {
+    "code": "300725.XSHE",
+    "name": "药石科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300726.XSHE": {
+    "code": "300726.XSHE",
+    "name": "宏达电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300738.XSHE": {
+    "code": "300738.XSHE",
+    "name": "奥飞数据",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300747.XSHE": {
+    "code": "300747.XSHE",
+    "name": "锐科激光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300761.XSHE": {
+    "code": "300761.XSHE",
+    "name": "立华股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300762.XSHE": {
+    "code": "300762.XSHE",
+    "name": "上海瀚讯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300768.XSHE": {
+    "code": "300768.XSHE",
+    "name": "迪普科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300770.XSHE": {
+    "code": "300770.XSHE",
+    "name": "新媒股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300772.XSHE": {
+    "code": "300772.XSHE",
+    "name": "运达股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300773.XSHE": {
+    "code": "300773.XSHE",
+    "name": "拉卡拉",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300775.XSHE": {
+    "code": "300775.XSHE",
+    "name": "三角防务",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300776.XSHE": {
+    "code": "300776.XSHE",
+    "name": "帝尔激光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300777.XSHE": {
+    "code": "300777.XSHE",
+    "name": "中简科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300779.XSHE": {
+    "code": "300779.XSHE",
+    "name": "惠城环保",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300783.XSHE": {
+    "code": "300783.XSHE",
+    "name": "三只松鼠",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300806.XSHE": {
+    "code": "300806.XSHE",
+    "name": "斯迪克",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300809.XSHE": {
+    "code": "300809.XSHE",
+    "name": "华辰装备",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300811.XSHE": {
+    "code": "300811.XSHE",
+    "name": "铂科新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300814.XSHE": {
+    "code": "300814.XSHE",
+    "name": "中富电路",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300820.XSHE": {
+    "code": "300820.XSHE",
+    "name": "英杰电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300821.XSHE": {
+    "code": "300821.XSHE",
+    "name": "东岳硅材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300827.XSHE": {
+    "code": "300827.XSHE",
+    "name": "上能电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300841.XSHE": {
+    "code": "300841.XSHE",
+    "name": "康华生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300850.XSHE": {
+    "code": "300850.XSHE",
+    "name": "新强联",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300855.XSHE": {
+    "code": "300855.XSHE",
+    "name": "图南股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300861.XSHE": {
+    "code": "300861.XSHE",
+    "name": "美畅股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300870.XSHE": {
+    "code": "300870.XSHE",
+    "name": "欧陆通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300872.XSHE": {
+    "code": "300872.XSHE",
+    "name": "天阳科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300910.XSHE": {
+    "code": "300910.XSHE",
+    "name": "瑞丰新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300913.XSHE": {
+    "code": "300913.XSHE",
+    "name": "兆龙互连",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300925.XSHE": {
+    "code": "300925.XSHE",
+    "name": "法本信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300926.XSHE": {
+    "code": "300926.XSHE",
+    "name": "博俊科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300969.XSHE": {
+    "code": "300969.XSHE",
+    "name": "恒帅股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "300990.XSHE": {
+    "code": "300990.XSHE",
+    "name": "同飞股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301000.XSHE": {
+    "code": "301000.XSHE",
+    "name": "肇民科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301005.XSHE": {
+    "code": "301005.XSHE",
+    "name": "超捷股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301015.XSHE": {
+    "code": "301015.XSHE",
+    "name": "百洋医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301018.XSHE": {
+    "code": "301018.XSHE",
+    "name": "申菱环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301029.XSHE": {
+    "code": "301029.XSHE",
+    "name": "怡合达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301031.XSHE": {
+    "code": "301031.XSHE",
+    "name": "中熔电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301035.XSHE": {
+    "code": "301035.XSHE",
+    "name": "润丰股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301039.XSHE": {
+    "code": "301039.XSHE",
+    "name": "中集车辆",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301047.XSHE": {
+    "code": "301047.XSHE",
+    "name": "义翘神州",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301050.XSHE": {
+    "code": "301050.XSHE",
+    "name": "雷电微力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301061.XSHE": {
+    "code": "301061.XSHE",
+    "name": "匠心家居",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301071.XSHE": {
+    "code": "301071.XSHE",
+    "name": "力量钻石",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301078.XSHE": {
+    "code": "301078.XSHE",
+    "name": "孩子王",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301087.XSHE": {
+    "code": "301087.XSHE",
+    "name": "可孚医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301091.XSHE": {
+    "code": "301091.XSHE",
+    "name": "深城交",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301095.XSHE": {
+    "code": "301095.XSHE",
+    "name": "广立微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301101.XSHE": {
+    "code": "301101.XSHE",
+    "name": "明月镜片",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301109.XSHE": {
+    "code": "301109.XSHE",
+    "name": "军信股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301127.XSHE": {
+    "code": "301127.XSHE",
+    "name": "武汉天源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301153.XSHE": {
+    "code": "301153.XSHE",
+    "name": "中科江南",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301155.XSHE": {
+    "code": "301155.XSHE",
+    "name": "海力风电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301171.XSHE": {
+    "code": "301171.XSHE",
+    "name": "易点天下",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301175.XSHE": {
+    "code": "301175.XSHE",
+    "name": "中科环保",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301177.XSHE": {
+    "code": "301177.XSHE",
+    "name": "迪阿股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301196.XSHE": {
+    "code": "301196.XSHE",
+    "name": "唯科科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301205.XSHE": {
+    "code": "301205.XSHE",
+    "name": "联特科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301207.XSHE": {
+    "code": "301207.XSHE",
+    "name": "华兰疫苗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301215.XSHE": {
+    "code": "301215.XSHE",
+    "name": "中汽股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301216.XSHE": {
+    "code": "301216.XSHE",
+    "name": "万凯新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301217.XSHE": {
+    "code": "301217.XSHE",
+    "name": "铜冠铜箔",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301219.XSHE": {
+    "code": "301219.XSHE",
+    "name": "腾远钴业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301225.XSHE": {
+    "code": "301225.XSHE",
+    "name": "恒勃股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301238.XSHE": {
+    "code": "301238.XSHE",
+    "name": "瑞泰新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301262.XSHE": {
+    "code": "301262.XSHE",
+    "name": "海看股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301263.XSHE": {
+    "code": "301263.XSHE",
+    "name": "泰恩康",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301267.XSHE": {
+    "code": "301267.XSHE",
+    "name": "华厦眼科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301268.XSHE": {
+    "code": "301268.XSHE",
+    "name": "铭利达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301275.XSHE": {
+    "code": "301275.XSHE",
+    "name": "汉朔科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301291.XSHE": {
+    "code": "301291.XSHE",
+    "name": "明阳电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301293.XSHE": {
+    "code": "301293.XSHE",
+    "name": "三博脑科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301297.XSHE": {
+    "code": "301297.XSHE",
+    "name": "富乐德",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301316.XSHE": {
+    "code": "301316.XSHE",
+    "name": "慧博云通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301327.XSHE": {
+    "code": "301327.XSHE",
+    "name": "华宝新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301339.XSHE": {
+    "code": "301339.XSHE",
+    "name": "苏交数智",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301345.XSHE": {
+    "code": "301345.XSHE",
+    "name": "涛涛车业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301363.XSHE": {
+    "code": "301363.XSHE",
+    "name": "美好医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301371.XSHE": {
+    "code": "301371.XSHE",
+    "name": "敷尔佳",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301381.XSHE": {
+    "code": "301381.XSHE",
+    "name": "赛维时代",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301389.XSHE": {
+    "code": "301389.XSHE",
+    "name": "隆扬电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301392.XSHE": {
+    "code": "301392.XSHE",
+    "name": "汇成真空",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301396.XSHE": {
+    "code": "301396.XSHE",
+    "name": "宏景科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301413.XSHE": {
+    "code": "301413.XSHE",
+    "name": "安培龙",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301421.XSHE": {
+    "code": "301421.XSHE",
+    "name": "波长光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301458.XSHE": {
+    "code": "301458.XSHE",
+    "name": "钧崴电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301487.XSHE": {
+    "code": "301487.XSHE",
+    "name": "盟固利",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301488.XSHE": {
+    "code": "301488.XSHE",
+    "name": "豪恩汽电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301489.XSHE": {
+    "code": "301489.XSHE",
+    "name": "思泉新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301500.XSHE": {
+    "code": "301500.XSHE",
+    "name": "飞南资源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301510.XSHE": {
+    "code": "301510.XSHE",
+    "name": "固高科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301511.XSHE": {
+    "code": "301511.XSHE",
+    "name": "德福科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301522.XSHE": {
+    "code": "301522.XSHE",
+    "name": "上大股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301550.XSHE": {
+    "code": "301550.XSHE",
+    "name": "斯菱智驱",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301551.XSHE": {
+    "code": "301551.XSHE",
+    "name": "无线传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301556.XSHE": {
+    "code": "301556.XSHE",
+    "name": "托普云农",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301563.XSHE": {
+    "code": "301563.XSHE",
+    "name": "云汉芯城",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301565.XSHE": {
+    "code": "301565.XSHE",
+    "name": "中仑新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301571.XSHE": {
+    "code": "301571.XSHE",
+    "name": "国科天成",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301584.XSHE": {
+    "code": "301584.XSHE",
+    "name": "建发致新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301589.XSHE": {
+    "code": "301589.XSHE",
+    "name": "诺瓦星云",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301592.XSHE": {
+    "code": "301592.XSHE",
+    "name": "六九一二",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301600.XSHE": {
+    "code": "301600.XSHE",
+    "name": "慧翰股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301602.XSHE": {
+    "code": "301602.XSHE",
+    "name": "超研股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301622.XSHE": {
+    "code": "301622.XSHE",
+    "name": "英思特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301626.XSHE": {
+    "code": "301626.XSHE",
+    "name": "苏州天脉",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301631.XSHE": {
+    "code": "301631.XSHE",
+    "name": "壹连科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301632.XSHE": {
+    "code": "301632.XSHE",
+    "name": "广东建科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301658.XSHE": {
+    "code": "301658.XSHE",
+    "name": "首航新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301662.XSHE": {
+    "code": "301662.XSHE",
+    "name": "宏工科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301665.XSHE": {
+    "code": "301665.XSHE",
+    "name": "泰禾股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "301678.XSHE": {
+    "code": "301678.XSHE",
+    "name": "新恒汇",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600006.XSHG": {
+    "code": "600006.XSHG",
+    "name": "东风股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600012.XSHG": {
+    "code": "600012.XSHG",
+    "name": "皖通高速",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600017.XSHG": {
+    "code": "600017.XSHG",
+    "name": "日照港",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600022.XSHG": {
+    "code": "600022.XSHG",
+    "name": "山东钢铁",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600033.XSHG": {
+    "code": "600033.XSHG",
+    "name": "福建高速",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600037.XSHG": {
+    "code": "600037.XSHG",
+    "name": "歌华有线",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600055.XSHG": {
+    "code": "600055.XSHG",
+    "name": "万东医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600056.XSHG": {
+    "code": "600056.XSHG",
+    "name": "中国医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600057.XSHG": {
+    "code": "600057.XSHG",
+    "name": "厦门象屿",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600058.XSHG": {
+    "code": "600058.XSHG",
+    "name": "五矿发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600059.XSHG": {
+    "code": "600059.XSHG",
+    "name": "古越龙山",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600063.XSHG": {
+    "code": "600063.XSHG",
+    "name": "皖维高新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600064.XSHG": {
+    "code": "600064.XSHG",
+    "name": "南京高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600072.XSHG": {
+    "code": "600072.XSHG",
+    "name": "中船科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600075.XSHG": {
+    "code": "600075.XSHG",
+    "name": "新疆天业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600094.XSHG": {
+    "code": "600094.XSHG",
+    "name": "大名城",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600113.XSHG": {
+    "code": "600113.XSHG",
+    "name": "浙江东日",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600114.XSHG": {
+    "code": "600114.XSHG",
+    "name": "东睦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600116.XSHG": {
+    "code": "600116.XSHG",
+    "name": "三峡水利",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600120.XSHG": {
+    "code": "600120.XSHG",
+    "name": "浙江东方",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600123.XSHG": {
+    "code": "600123.XSHG",
+    "name": "兰花科创",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600129.XSHG": {
+    "code": "600129.XSHG",
+    "name": "太极集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600133.XSHG": {
+    "code": "600133.XSHG",
+    "name": "东湖高新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600151.XSHG": {
+    "code": "600151.XSHG",
+    "name": "航天机电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600155.XSHG": {
+    "code": "600155.XSHG",
+    "name": "华创云信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600158.XSHG": {
+    "code": "600158.XSHG",
+    "name": "中体产业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600163.XSHG": {
+    "code": "600163.XSHG",
+    "name": "中闽能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600167.XSHG": {
+    "code": "600167.XSHG",
+    "name": "联美控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600179.XSHG": {
+    "code": "600179.XSHG",
+    "name": "安通控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600184.XSHG": {
+    "code": "600184.XSHG",
+    "name": "光电股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600185.XSHG": {
+    "code": "600185.XSHG",
+    "name": "珠免集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600186.XSHG": {
+    "code": "600186.XSHG",
+    "name": "莲花控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600201.XSHG": {
+    "code": "600201.XSHG",
+    "name": "生物股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600206.XSHG": {
+    "code": "600206.XSHG",
+    "name": "有研新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600210.XSHG": {
+    "code": "600210.XSHG",
+    "name": "紫江企业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600211.XSHG": {
+    "code": "600211.XSHG",
+    "name": "西藏药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600216.XSHG": {
+    "code": "600216.XSHG",
+    "name": "浙江医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600226.XSHG": {
+    "code": "600226.XSHG",
+    "name": "亨通股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600246.XSHG": {
+    "code": "600246.XSHG",
+    "name": "万通发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600248.XSHG": {
+    "code": "600248.XSHG",
+    "name": "陕建股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600252.XSHG": {
+    "code": "600252.XSHG",
+    "name": "中恒集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600258.XSHG": {
+    "code": "600258.XSHG",
+    "name": "首旅酒店",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600259.XSHG": {
+    "code": "600259.XSHG",
+    "name": "中稀有色",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600266.XSHG": {
+    "code": "600266.XSHG",
+    "name": "城建发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600267.XSHG": {
+    "code": "600267.XSHG",
+    "name": "海正药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600268.XSHG": {
+    "code": "600268.XSHG",
+    "name": "国电南自",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600269.XSHG": {
+    "code": "600269.XSHG",
+    "name": "赣粤高速",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600273.XSHG": {
+    "code": "600273.XSHG",
+    "name": "嘉化能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600285.XSHG": {
+    "code": "600285.XSHG",
+    "name": "羚锐制药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600301.XSHG": {
+    "code": "600301.XSHG",
+    "name": "华锡有色",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600305.XSHG": {
+    "code": "600305.XSHG",
+    "name": "恒顺醋业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600315.XSHG": {
+    "code": "600315.XSHG",
+    "name": "上海家化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600320.XSHG": {
+    "code": "600320.XSHG",
+    "name": "振华重工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600323.XSHG": {
+    "code": "600323.XSHG",
+    "name": "瀚蓝环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600325.XSHG": {
+    "code": "600325.XSHG",
+    "name": "华发股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600328.XSHG": {
+    "code": "600328.XSHG",
+    "name": "中盐化工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600330.XSHG": {
+    "code": "600330.XSHG",
+    "name": "天通股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600331.XSHG": {
+    "code": "600331.XSHG",
+    "name": "宏达股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600335.XSHG": {
+    "code": "600335.XSHG",
+    "name": "国机汽车",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600338.XSHG": {
+    "code": "600338.XSHG",
+    "name": "西藏珠峰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600345.XSHG": {
+    "code": "600345.XSHG",
+    "name": "长江通信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600353.XSHG": {
+    "code": "600353.XSHG",
+    "name": "旭光电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600361.XSHG": {
+    "code": "600361.XSHG",
+    "name": "创新新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600366.XSHG": {
+    "code": "600366.XSHG",
+    "name": "宁波韵升",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600373.XSHG": {
+    "code": "600373.XSHG",
+    "name": "中文传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600388.XSHG": {
+    "code": "600388.XSHG",
+    "name": "紫金龙净",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600389.XSHG": {
+    "code": "600389.XSHG",
+    "name": "江山股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600391.XSHG": {
+    "code": "600391.XSHG",
+    "name": "航发科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600395.XSHG": {
+    "code": "600395.XSHG",
+    "name": "盘江股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600399.XSHG": {
+    "code": "600399.XSHG",
+    "name": "抚顺特钢",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600403.XSHG": {
+    "code": "600403.XSHG",
+    "name": "大有能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600409.XSHG": {
+    "code": "600409.XSHG",
+    "name": "三友化工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600416.XSHG": {
+    "code": "600416.XSHG",
+    "name": "湘电股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600420.XSHG": {
+    "code": "600420.XSHG",
+    "name": "国药现代",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600422.XSHG": {
+    "code": "600422.XSHG",
+    "name": "昆药集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600428.XSHG": {
+    "code": "600428.XSHG",
+    "name": "中远海特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600446.XSHG": {
+    "code": "600446.XSHG",
+    "name": "金证股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600452.XSHG": {
+    "code": "600452.XSHG",
+    "name": "涪陵电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600456.XSHG": {
+    "code": "600456.XSHG",
+    "name": "宝钛股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600458.XSHG": {
+    "code": "600458.XSHG",
+    "name": "时代新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600459.XSHG": {
+    "code": "600459.XSHG",
+    "name": "贵研铂业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600461.XSHG": {
+    "code": "600461.XSHG",
+    "name": "洪城环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600475.XSHG": {
+    "code": "600475.XSHG",
+    "name": "华光环能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600478.XSHG": {
+    "code": "600478.XSHG",
+    "name": "科力远",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600480.XSHG": {
+    "code": "600480.XSHG",
+    "name": "凌云股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600490.XSHG": {
+    "code": "600490.XSHG",
+    "name": "鹏欣资源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600502.XSHG": {
+    "code": "600502.XSHG",
+    "name": "安徽建工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600507.XSHG": {
+    "code": "600507.XSHG",
+    "name": "方大特钢",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600508.XSHG": {
+    "code": "600508.XSHG",
+    "name": "上海能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600509.XSHG": {
+    "code": "600509.XSHG",
+    "name": "天富能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600528.XSHG": {
+    "code": "600528.XSHG",
+    "name": "中铁工业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600529.XSHG": {
+    "code": "600529.XSHG",
+    "name": "山东药玻",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600531.XSHG": {
+    "code": "600531.XSHG",
+    "name": "豫光金铅",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600550.XSHG": {
+    "code": "600550.XSHG",
+    "name": "保变电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600552.XSHG": {
+    "code": "600552.XSHG",
+    "name": "凯盛科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600556.XSHG": {
+    "code": "600556.XSHG",
+    "name": "天下秀",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600557.XSHG": {
+    "code": "600557.XSHG",
+    "name": "康缘药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600559.XSHG": {
+    "code": "600559.XSHG",
+    "name": "老白干酒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600572.XSHG": {
+    "code": "600572.XSHG",
+    "name": "康恩贝",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600575.XSHG": {
+    "code": "600575.XSHG",
+    "name": "淮河能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600577.XSHG": {
+    "code": "600577.XSHG",
+    "name": "精达股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600587.XSHG": {
+    "code": "600587.XSHG",
+    "name": "新华医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600596.XSHG": {
+    "code": "600596.XSHG",
+    "name": "新安股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600597.XSHG": {
+    "code": "600597.XSHG",
+    "name": "光明乳业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600612.XSHG": {
+    "code": "600612.XSHG",
+    "name": "老凤祥",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600618.XSHG": {
+    "code": "600618.XSHG",
+    "name": "氯碱化工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600619.XSHG": {
+    "code": "600619.XSHG",
+    "name": "海立股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600621.XSHG": {
+    "code": "600621.XSHG",
+    "name": "华鑫股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600623.XSHG": {
+    "code": "600623.XSHG",
+    "name": "华谊集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600629.XSHG": {
+    "code": "600629.XSHG",
+    "name": "华建集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600633.XSHG": {
+    "code": "600633.XSHG",
+    "name": "浙数文化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600635.XSHG": {
+    "code": "600635.XSHG",
+    "name": "大众公用",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600639.XSHG": {
+    "code": "600639.XSHG",
+    "name": "浦东金桥",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600640.XSHG": {
+    "code": "600640.XSHG",
+    "name": "国脉文化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600641.XSHG": {
+    "code": "600641.XSHG",
+    "name": "先导基电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600643.XSHG": {
+    "code": "600643.XSHG",
+    "name": "爱建集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600645.XSHG": {
+    "code": "600645.XSHG",
+    "name": "中源协和",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600649.XSHG": {
+    "code": "600649.XSHG",
+    "name": "城投控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600651.XSHG": {
+    "code": "600651.XSHG",
+    "name": "飞乐音响",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600654.XSHG": {
+    "code": "600654.XSHG",
+    "name": "中安科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600657.XSHG": {
+    "code": "600657.XSHG",
+    "name": "信达地产",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600662.XSHG": {
+    "code": "600662.XSHG",
+    "name": "外服控股",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600664.XSHG": {
+    "code": "600664.XSHG",
+    "name": "哈药股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600667.XSHG": {
+    "code": "600667.XSHG",
+    "name": "太极实业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600675.XSHG": {
+    "code": "600675.XSHG",
+    "name": "中华企业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600682.XSHG": {
+    "code": "600682.XSHG",
+    "name": "南京新百",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600686.XSHG": {
+    "code": "600686.XSHG",
+    "name": "金龙汽车",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600710.XSHG": {
+    "code": "600710.XSHG",
+    "name": "苏美达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600717.XSHG": {
+    "code": "600717.XSHG",
+    "name": "天津港",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600718.XSHG": {
+    "code": "600718.XSHG",
+    "name": "东软集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600726.XSHG": {
+    "code": "600726.XSHG",
+    "name": "华电能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600728.XSHG": {
+    "code": "600728.XSHG",
+    "name": "佳都科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600729.XSHG": {
+    "code": "600729.XSHG",
+    "name": "重百集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600739.XSHG": {
+    "code": "600739.XSHG",
+    "name": "辽宁成大",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600740.XSHG": {
+    "code": "600740.XSHG",
+    "name": "山西焦化",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600744.XSHG": {
+    "code": "600744.XSHG",
+    "name": "华银电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600746.XSHG": {
+    "code": "600746.XSHG",
+    "name": "江苏索普",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600750.XSHG": {
+    "code": "600750.XSHG",
+    "name": "华润江中",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600751.XSHG": {
+    "code": "600751.XSHG",
+    "name": "海航科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600757.XSHG": {
+    "code": "600757.XSHG",
+    "name": "长江传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600761.XSHG": {
+    "code": "600761.XSHG",
+    "name": "安徽合力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600771.XSHG": {
+    "code": "600771.XSHG",
+    "name": "广誉远",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600773.XSHG": {
+    "code": "600773.XSHG",
+    "name": "西藏城投",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600776.XSHG": {
+    "code": "600776.XSHG",
+    "name": "东方通信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600782.XSHG": {
+    "code": "600782.XSHG",
+    "name": "新钢股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600783.XSHG": {
+    "code": "600783.XSHG",
+    "name": "鲁信创投",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600787.XSHG": {
+    "code": "600787.XSHG",
+    "name": "中储股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600789.XSHG": {
+    "code": "600789.XSHG",
+    "name": "鲁抗医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600812.XSHG": {
+    "code": "600812.XSHG",
+    "name": "华北制药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600821.XSHG": {
+    "code": "600821.XSHG",
+    "name": "金开新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600827.XSHG": {
+    "code": "600827.XSHG",
+    "name": "百联股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600835.XSHG": {
+    "code": "600835.XSHG",
+    "name": "上海机电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600850.XSHG": {
+    "code": "600850.XSHG",
+    "name": "电科数字",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600859.XSHG": {
+    "code": "600859.XSHG",
+    "name": "王府井",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600864.XSHG": {
+    "code": "600864.XSHG",
+    "name": "哈投股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600866.XSHG": {
+    "code": "600866.XSHG",
+    "name": "星湖科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600867.XSHG": {
+    "code": "600867.XSHG",
+    "name": "通化东宝",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600869.XSHG": {
+    "code": "600869.XSHG",
+    "name": "远东股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600872.XSHG": {
+    "code": "600872.XSHG",
+    "name": "中炬高新",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600877.XSHG": {
+    "code": "600877.XSHG",
+    "name": "电科芯片",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600882.XSHG": {
+    "code": "600882.XSHG",
+    "name": "妙可蓝多",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600888.XSHG": {
+    "code": "600888.XSHG",
+    "name": "新疆众和",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600908.XSHG": {
+    "code": "600908.XSHG",
+    "name": "无锡银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600916.XSHG": {
+    "code": "600916.XSHG",
+    "name": "中国黄金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600928.XSHG": {
+    "code": "600928.XSHG",
+    "name": "西安银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600929.XSHG": {
+    "code": "600929.XSHG",
+    "name": "雪天盐业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600933.XSHG": {
+    "code": "600933.XSHG",
+    "name": "爱柯迪",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600956.XSHG": {
+    "code": "600956.XSHG",
+    "name": "新天绿能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600961.XSHG": {
+    "code": "600961.XSHG",
+    "name": "株冶集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600963.XSHG": {
+    "code": "600963.XSHG",
+    "name": "岳阳林纸",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600971.XSHG": {
+    "code": "600971.XSHG",
+    "name": "恒源煤电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600986.XSHG": {
+    "code": "600986.XSHG",
+    "name": "浙文互联",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600993.XSHG": {
+    "code": "600993.XSHG",
+    "name": "马应龙",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600996.XSHG": {
+    "code": "600996.XSHG",
+    "name": "贵广网络",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "600997.XSHG": {
+    "code": "600997.XSHG",
+    "name": "开滦股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601003.XSHG": {
+    "code": "601003.XSHG",
+    "name": "柳钢股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601020.XSHG": {
+    "code": "601020.XSHG",
+    "name": "华钰矿业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601022.XSHG": {
+    "code": "601022.XSHG",
+    "name": "宁波远洋",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601026.XSHG": {
+    "code": "601026.XSHG",
+    "name": "道生天合",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601033.XSHG": {
+    "code": "601033.XSHG",
+    "name": "永兴股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601038.XSHG": {
+    "code": "601038.XSHG",
+    "name": "一拖股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601068.XSHG": {
+    "code": "601068.XSHG",
+    "name": "中铝国际",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601069.XSHG": {
+    "code": "601069.XSHG",
+    "name": "西部黄金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601083.XSHG": {
+    "code": "601083.XSHG",
+    "name": "锦江航运",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601089.XSHG": {
+    "code": "601089.XSHG",
+    "name": "福元医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601096.XSHG": {
+    "code": "601096.XSHG",
+    "name": "宏盛华源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601101.XSHG": {
+    "code": "601101.XSHG",
+    "name": "昊华能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601107.XSHG": {
+    "code": "601107.XSHG",
+    "name": "四川成渝",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601126.XSHG": {
+    "code": "601126.XSHG",
+    "name": "四方股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601137.XSHG": {
+    "code": "601137.XSHG",
+    "name": "博威合金",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601187.XSHG": {
+    "code": "601187.XSHG",
+    "name": "厦门银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601200.XSHG": {
+    "code": "601200.XSHG",
+    "name": "上海环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601208.XSHG": {
+    "code": "601208.XSHG",
+    "name": "东材科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601222.XSHG": {
+    "code": "601222.XSHG",
+    "name": "林洋能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601311.XSHG": {
+    "code": "601311.XSHG",
+    "name": "骆驼股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601326.XSHG": {
+    "code": "601326.XSHG",
+    "name": "秦港股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601333.XSHG": {
+    "code": "601333.XSHG",
+    "name": "广深铁路",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601369.XSHG": {
+    "code": "601369.XSHG",
+    "name": "陕鼓动力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601375.XSHG": {
+    "code": "601375.XSHG",
+    "name": "中原证券",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601519.XSHG": {
+    "code": "601519.XSHG",
+    "name": "大智慧",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601528.XSHG": {
+    "code": "601528.XSHG",
+    "name": "瑞丰银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601568.XSHG": {
+    "code": "601568.XSHG",
+    "name": "北元化工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601595.XSHG": {
+    "code": "601595.XSHG",
+    "name": "上海电影",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601606.XSHG": {
+    "code": "601606.XSHG",
+    "name": "长城军工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601609.XSHG": {
+    "code": "601609.XSHG",
+    "name": "金田股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601619.XSHG": {
+    "code": "601619.XSHG",
+    "name": "嘉泽新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601636.XSHG": {
+    "code": "601636.XSHG",
+    "name": "旗滨集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601677.XSHG": {
+    "code": "601677.XSHG",
+    "name": "明泰铝业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601678.XSHG": {
+    "code": "601678.XSHG",
+    "name": "滨化股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601702.XSHG": {
+    "code": "601702.XSHG",
+    "name": "华峰铝业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601777.XSHG": {
+    "code": "601777.XSHG",
+    "name": "千里科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601778.XSHG": {
+    "code": "601778.XSHG",
+    "name": "晶科科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601801.XSHG": {
+    "code": "601801.XSHG",
+    "name": "皖新传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601858.XSHG": {
+    "code": "601858.XSHG",
+    "name": "中国科传",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601860.XSHG": {
+    "code": "601860.XSHG",
+    "name": "紫金银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601882.XSHG": {
+    "code": "601882.XSHG",
+    "name": "海天精工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601890.XSHG": {
+    "code": "601890.XSHG",
+    "name": "亚星锚链",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601900.XSHG": {
+    "code": "601900.XSHG",
+    "name": "南方传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601908.XSHG": {
+    "code": "601908.XSHG",
+    "name": "京运通",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601918.XSHG": {
+    "code": "601918.XSHG",
+    "name": "新集能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601921.XSHG": {
+    "code": "601921.XSHG",
+    "name": "浙版传媒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601949.XSHG": {
+    "code": "601949.XSHG",
+    "name": "中国出版",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601952.XSHG": {
+    "code": "601952.XSHG",
+    "name": "苏垦农发",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601963.XSHG": {
+    "code": "601963.XSHG",
+    "name": "重庆银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601965.XSHG": {
+    "code": "601965.XSHG",
+    "name": "中国汽研",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601969.XSHG": {
+    "code": "601969.XSHG",
+    "name": "海南矿业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "601975.XSHG": {
+    "code": "601975.XSHG",
+    "name": "招商南油",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603005.XSHG": {
+    "code": "603005.XSHG",
+    "name": "晶方科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603009.XSHG": {
+    "code": "603009.XSHG",
+    "name": "北特科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603013.XSHG": {
+    "code": "603013.XSHG",
+    "name": "亚普股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603014.XSHG": {
+    "code": "603014.XSHG",
+    "name": "威高血净",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603025.XSHG": {
+    "code": "603025.XSHG",
+    "name": "大豪科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603026.XSHG": {
+    "code": "603026.XSHG",
+    "name": "石大胜华",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603027.XSHG": {
+    "code": "603027.XSHG",
+    "name": "千禾味业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603033.XSHG": {
+    "code": "603033.XSHG",
+    "name": "三维股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603039.XSHG": {
+    "code": "603039.XSHG",
+    "name": "泛微网络",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603043.XSHG": {
+    "code": "603043.XSHG",
+    "name": "广州酒家",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603055.XSHG": {
+    "code": "603055.XSHG",
+    "name": "台华新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603057.XSHG": {
+    "code": "603057.XSHG",
+    "name": "紫燕食品",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603063.XSHG": {
+    "code": "603063.XSHG",
+    "name": "禾望电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603072.XSHG": {
+    "code": "603072.XSHG",
+    "name": "天和磁材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603083.XSHG": {
+    "code": "603083.XSHG",
+    "name": "剑桥科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603093.XSHG": {
+    "code": "603093.XSHG",
+    "name": "南华期货",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603099.XSHG": {
+    "code": "603099.XSHG",
+    "name": "长白山",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603100.XSHG": {
+    "code": "603100.XSHG",
+    "name": "川仪股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603103.XSHG": {
+    "code": "603103.XSHG",
+    "name": "横店影视",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603108.XSHG": {
+    "code": "603108.XSHG",
+    "name": "润达医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603118.XSHG": {
+    "code": "603118.XSHG",
+    "name": "共进股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603124.XSHG": {
+    "code": "603124.XSHG",
+    "name": "江南新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603127.XSHG": {
+    "code": "603127.XSHG",
+    "name": "昭衍新药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603132.XSHG": {
+    "code": "603132.XSHG",
+    "name": "金徽股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603162.XSHG": {
+    "code": "603162.XSHG",
+    "name": "海通发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603166.XSHG": {
+    "code": "603166.XSHG",
+    "name": "福达股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603169.XSHG": {
+    "code": "603169.XSHG",
+    "name": "兰石重装",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603171.XSHG": {
+    "code": "603171.XSHG",
+    "name": "税友股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603193.XSHG": {
+    "code": "603193.XSHG",
+    "name": "润本股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603194.XSHG": {
+    "code": "603194.XSHG",
+    "name": "中力股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603202.XSHG": {
+    "code": "603202.XSHG",
+    "name": "天有为",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603218.XSHG": {
+    "code": "603218.XSHG",
+    "name": "日月股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603219.XSHG": {
+    "code": "603219.XSHG",
+    "name": "富佳股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603220.XSHG": {
+    "code": "603220.XSHG",
+    "name": "中贝通信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603227.XSHG": {
+    "code": "603227.XSHG",
+    "name": "雪峰科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603236.XSHG": {
+    "code": "603236.XSHG",
+    "name": "移远通信",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603248.XSHG": {
+    "code": "603248.XSHG",
+    "name": "锡华科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603267.XSHG": {
+    "code": "603267.XSHG",
+    "name": "鸿远电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603279.XSHG": {
+    "code": "603279.XSHG",
+    "name": "景津装备",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603283.XSHG": {
+    "code": "603283.XSHG",
+    "name": "赛腾股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603297.XSHG": {
+    "code": "603297.XSHG",
+    "name": "永新光学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603299.XSHG": {
+    "code": "603299.XSHG",
+    "name": "苏盐井神",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603300.XSHG": {
+    "code": "603300.XSHG",
+    "name": "海南华铁",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603301.XSHG": {
+    "code": "603301.XSHG",
+    "name": "振德医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603305.XSHG": {
+    "code": "603305.XSHG",
+    "name": "旭升集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603306.XSHG": {
+    "code": "603306.XSHG",
+    "name": "华懋科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603317.XSHG": {
+    "code": "603317.XSHG",
+    "name": "天味食品",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603319.XSHG": {
+    "code": "603319.XSHG",
+    "name": "美湖股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603323.XSHG": {
+    "code": "603323.XSHG",
+    "name": "苏农银行",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603327.XSHG": {
+    "code": "603327.XSHG",
+    "name": "福蓉科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603328.XSHG": {
+    "code": "603328.XSHG",
+    "name": "依顿电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603337.XSHG": {
+    "code": "603337.XSHG",
+    "name": "杰克科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603355.XSHG": {
+    "code": "603355.XSHG",
+    "name": "莱克电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603358.XSHG": {
+    "code": "603358.XSHG",
+    "name": "华达科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603360.XSHG": {
+    "code": "603360.XSHG",
+    "name": "百傲化学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603376.XSHG": {
+    "code": "603376.XSHG",
+    "name": "大明电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603393.XSHG": {
+    "code": "603393.XSHG",
+    "name": "新天然气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603395.XSHG": {
+    "code": "603395.XSHG",
+    "name": "红四方",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603402.XSHG": {
+    "code": "603402.XSHG",
+    "name": "陕西旅游",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603406.XSHG": {
+    "code": "603406.XSHG",
+    "name": "天富龙",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603418.XSHG": {
+    "code": "603418.XSHG",
+    "name": "友升股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603456.XSHG": {
+    "code": "603456.XSHG",
+    "name": "九洲药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603477.XSHG": {
+    "code": "603477.XSHG",
+    "name": "巨星农牧",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603496.XSHG": {
+    "code": "603496.XSHG",
+    "name": "恒为科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603505.XSHG": {
+    "code": "603505.XSHG",
+    "name": "金石资源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603508.XSHG": {
+    "code": "603508.XSHG",
+    "name": "思维列控",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603516.XSHG": {
+    "code": "603516.XSHG",
+    "name": "淳中科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603530.XSHG": {
+    "code": "603530.XSHG",
+    "name": "神马电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603533.XSHG": {
+    "code": "603533.XSHG",
+    "name": "掌阅科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603556.XSHG": {
+    "code": "603556.XSHG",
+    "name": "海兴电力",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603567.XSHG": {
+    "code": "603567.XSHG",
+    "name": "珍宝岛",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603583.XSHG": {
+    "code": "603583.XSHG",
+    "name": "捷昌驱动",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603588.XSHG": {
+    "code": "603588.XSHG",
+    "name": "高能环境",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603599.XSHG": {
+    "code": "603599.XSHG",
+    "name": "广信股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603612.XSHG": {
+    "code": "603612.XSHG",
+    "name": "索通发展",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603613.XSHG": {
+    "code": "603613.XSHG",
+    "name": "国联股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603619.XSHG": {
+    "code": "603619.XSHG",
+    "name": "中曼石油",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603638.XSHG": {
+    "code": "603638.XSHG",
+    "name": "艾迪精密",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603662.XSHG": {
+    "code": "603662.XSHG",
+    "name": "柯力传感",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603663.XSHG": {
+    "code": "603663.XSHG",
+    "name": "三祥新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603667.XSHG": {
+    "code": "603667.XSHG",
+    "name": "五洲新春",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603678.XSHG": {
+    "code": "603678.XSHG",
+    "name": "火炬电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603690.XSHG": {
+    "code": "603690.XSHG",
+    "name": "至纯科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603693.XSHG": {
+    "code": "603693.XSHG",
+    "name": "江苏新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603698.XSHG": {
+    "code": "603698.XSHG",
+    "name": "航天工程",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603707.XSHG": {
+    "code": "603707.XSHG",
+    "name": "健友股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603713.XSHG": {
+    "code": "603713.XSHG",
+    "name": "密尔克卫",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603730.XSHG": {
+    "code": "603730.XSHG",
+    "name": "岱美股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603733.XSHG": {
+    "code": "603733.XSHG",
+    "name": "仙鹤股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603809.XSHG": {
+    "code": "603809.XSHG",
+    "name": "豪能股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603826.XSHG": {
+    "code": "603826.XSHG",
+    "name": "坤彩科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603866.XSHG": {
+    "code": "603866.XSHG",
+    "name": "桃李面包",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603871.XSHG": {
+    "code": "603871.XSHG",
+    "name": "嘉友国际",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603876.XSHG": {
+    "code": "603876.XSHG",
+    "name": "鼎胜新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603881.XSHG": {
+    "code": "603881.XSHG",
+    "name": "数据港",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603883.XSHG": {
+    "code": "603883.XSHG",
+    "name": "老百姓",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603887.XSHG": {
+    "code": "603887.XSHG",
+    "name": "城地香江",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603888.XSHG": {
+    "code": "603888.XSHG",
+    "name": "新华网",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603915.XSHG": {
+    "code": "603915.XSHG",
+    "name": "国茂股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603919.XSHG": {
+    "code": "603919.XSHG",
+    "name": "金徽酒",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603927.XSHG": {
+    "code": "603927.XSHG",
+    "name": "中科软",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603929.XSHG": {
+    "code": "603929.XSHG",
+    "name": "亚翔集成",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603950.XSHG": {
+    "code": "603950.XSHG",
+    "name": "长源东谷",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603983.XSHG": {
+    "code": "603983.XSHG",
+    "name": "丸美生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603992.XSHG": {
+    "code": "603992.XSHG",
+    "name": "松霖科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "603997.XSHG": {
+    "code": "603997.XSHG",
+    "name": "继峰股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605011.XSHG": {
+    "code": "605011.XSHG",
+    "name": "杭州热电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605020.XSHG": {
+    "code": "605020.XSHG",
+    "name": "永和股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605090.XSHG": {
+    "code": "605090.XSHG",
+    "name": "九丰能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605099.XSHG": {
+    "code": "605099.XSHG",
+    "name": "共创草坪",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605111.XSHG": {
+    "code": "605111.XSHG",
+    "name": "新洁能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605116.XSHG": {
+    "code": "605116.XSHG",
+    "name": "奥锐特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605118.XSHG": {
+    "code": "605118.XSHG",
+    "name": "力鼎光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605123.XSHG": {
+    "code": "605123.XSHG",
+    "name": "派克新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605196.XSHG": {
+    "code": "605196.XSHG",
+    "name": "华通线缆",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605198.XSHG": {
+    "code": "605198.XSHG",
+    "name": "安德利",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605296.XSHG": {
+    "code": "605296.XSHG",
+    "name": "神农集团",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605333.XSHG": {
+    "code": "605333.XSHG",
+    "name": "沪光股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605376.XSHG": {
+    "code": "605376.XSHG",
+    "name": "博迁新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605507.XSHG": {
+    "code": "605507.XSHG",
+    "name": "国邦医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605555.XSHG": {
+    "code": "605555.XSHG",
+    "name": "德昌股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "605599.XSHG": {
+    "code": "605599.XSHG",
+    "name": "菜百股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688001.XSHG": {
+    "code": "688001.XSHG",
+    "name": "华兴源创",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688003.XSHG": {
+    "code": "688003.XSHG",
+    "name": "天准科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688005.XSHG": {
+    "code": "688005.XSHG",
+    "name": "容百科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688006.XSHG": {
+    "code": "688006.XSHG",
+    "name": "杭可科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688016.XSHG": {
+    "code": "688016.XSHG",
+    "name": "心脉医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688025.XSHG": {
+    "code": "688025.XSHG",
+    "name": "杰普特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688029.XSHG": {
+    "code": "688029.XSHG",
+    "name": "南微医学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688031.XSHG": {
+    "code": "688031.XSHG",
+    "name": "星环科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688032.XSHG": {
+    "code": "688032.XSHG",
+    "name": "禾迈股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688048.XSHG": {
+    "code": "688048.XSHG",
+    "name": "长光华芯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688050.XSHG": {
+    "code": "688050.XSHG",
+    "name": "爱博医疗",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688062.XSHG": {
+    "code": "688062.XSHG",
+    "name": "迈威生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688063.XSHG": {
+    "code": "688063.XSHG",
+    "name": "派能科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688068.XSHG": {
+    "code": "688068.XSHG",
+    "name": "热景生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688083.XSHG": {
+    "code": "688083.XSHG",
+    "name": "中望软件",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688088.XSHG": {
+    "code": "688088.XSHG",
+    "name": "虹软科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688091.XSHG": {
+    "code": "688091.XSHG",
+    "name": "上海谊众",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688097.XSHG": {
+    "code": "688097.XSHG",
+    "name": "博众精工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688100.XSHG": {
+    "code": "688100.XSHG",
+    "name": "威胜信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688102.XSHG": {
+    "code": "688102.XSHG",
+    "name": "斯瑞新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688106.XSHG": {
+    "code": "688106.XSHG",
+    "name": "金宏气体",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688107.XSHG": {
+    "code": "688107.XSHG",
+    "name": "安路科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688110.XSHG": {
+    "code": "688110.XSHG",
+    "name": "东芯股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688116.XSHG": {
+    "code": "688116.XSHG",
+    "name": "天奈科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688123.XSHG": {
+    "code": "688123.XSHG",
+    "name": "聚辰股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688127.XSHG": {
+    "code": "688127.XSHG",
+    "name": "蓝特光学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688128.XSHG": {
+    "code": "688128.XSHG",
+    "name": "中国电研",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688131.XSHG": {
+    "code": "688131.XSHG",
+    "name": "皓元医药",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688139.XSHG": {
+    "code": "688139.XSHG",
+    "name": "海尔生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688141.XSHG": {
+    "code": "688141.XSHG",
+    "name": "杰华特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688146.XSHG": {
+    "code": "688146.XSHG",
+    "name": "中船特气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688147.XSHG": {
+    "code": "688147.XSHG",
+    "name": "微导纳米",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688150.XSHG": {
+    "code": "688150.XSHG",
+    "name": "莱特光电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688153.XSHG": {
+    "code": "688153.XSHG",
+    "name": "唯捷创芯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688158.XSHG": {
+    "code": "688158.XSHG",
+    "name": "优刻得",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688165.XSHG": {
+    "code": "688165.XSHG",
+    "name": "埃夫特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688167.XSHG": {
+    "code": "688167.XSHG",
+    "name": "炬光科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688177.XSHG": {
+    "code": "688177.XSHG",
+    "name": "百奥泰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688182.XSHG": {
+    "code": "688182.XSHG",
+    "name": "灿勤科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688190.XSHG": {
+    "code": "688190.XSHG",
+    "name": "云路股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688195.XSHG": {
+    "code": "688195.XSHG",
+    "name": "腾景科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688205.XSHG": {
+    "code": "688205.XSHG",
+    "name": "德科立",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688206.XSHG": {
+    "code": "688206.XSHG",
+    "name": "概伦电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688208.XSHG": {
+    "code": "688208.XSHG",
+    "name": "道通科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688232.XSHG": {
+    "code": "688232.XSHG",
+    "name": "新点软件",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688252.XSHG": {
+    "code": "688252.XSHG",
+    "name": "天德钰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688262.XSHG": {
+    "code": "688262.XSHG",
+    "name": "国芯科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688279.XSHG": {
+    "code": "688279.XSHG",
+    "name": "峰岹科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688289.XSHG": {
+    "code": "688289.XSHG",
+    "name": "圣湘生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688300.XSHG": {
+    "code": "688300.XSHG",
+    "name": "联瑞新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688306.XSHG": {
+    "code": "688306.XSHG",
+    "name": "均普智能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688321.XSHG": {
+    "code": "688321.XSHG",
+    "name": "微芯生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688326.XSHG": {
+    "code": "688326.XSHG",
+    "name": "经纬恒润",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688327.XSHG": {
+    "code": "688327.XSHG",
+    "name": "云从科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688332.XSHG": {
+    "code": "688332.XSHG",
+    "name": "中科蓝讯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688333.XSHG": {
+    "code": "688333.XSHG",
+    "name": "铂力特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688351.XSHG": {
+    "code": "688351.XSHG",
+    "name": "微电生理",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688352.XSHG": {
+    "code": "688352.XSHG",
+    "name": "颀中科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688353.XSHG": {
+    "code": "688353.XSHG",
+    "name": "华盛锂电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688362.XSHG": {
+    "code": "688362.XSHG",
+    "name": "甬矽电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688368.XSHG": {
+    "code": "688368.XSHG",
+    "name": "晶丰明源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688372.XSHG": {
+    "code": "688372.XSHG",
+    "name": "伟测科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688380.XSHG": {
+    "code": "688380.XSHG",
+    "name": "中微半导",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688382.XSHG": {
+    "code": "688382.XSHG",
+    "name": "益方生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688388.XSHG": {
+    "code": "688388.XSHG",
+    "name": "嘉元科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688390.XSHG": {
+    "code": "688390.XSHG",
+    "name": "固德威",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688392.XSHG": {
+    "code": "688392.XSHG",
+    "name": "骄成超声",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688400.XSHG": {
+    "code": "688400.XSHG",
+    "name": "凌云光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688403.XSHG": {
+    "code": "688403.XSHG",
+    "name": "汇成股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688408.XSHG": {
+    "code": "688408.XSHG",
+    "name": "中信博",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688409.XSHG": {
+    "code": "688409.XSHG",
+    "name": "富创精密",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688432.XSHG": {
+    "code": "688432.XSHG",
+    "name": "有研硅",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688433.XSHG": {
+    "code": "688433.XSHG",
+    "name": "华曙高科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688439.XSHG": {
+    "code": "688439.XSHG",
+    "name": "振华风光",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688443.XSHG": {
+    "code": "688443.XSHG",
+    "name": "智翔金泰",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688449.XSHG": {
+    "code": "688449.XSHG",
+    "name": "联芸科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688484.XSHG": {
+    "code": "688484.XSHG",
+    "name": "南芯科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688486.XSHG": {
+    "code": "688486.XSHG",
+    "name": "龙迅股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688502.XSHG": {
+    "code": "688502.XSHG",
+    "name": "茂莱光学",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688503.XSHG": {
+    "code": "688503.XSHG",
+    "name": "聚和材料",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688515.XSHG": {
+    "code": "688515.XSHG",
+    "name": "裕太微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688516.XSHG": {
+    "code": "688516.XSHG",
+    "name": "奥特维",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688519.XSHG": {
+    "code": "688519.XSHG",
+    "name": "南亚新材",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688522.XSHG": {
+    "code": "688522.XSHG",
+    "name": "纳睿雷达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688523.XSHG": {
+    "code": "688523.XSHG",
+    "name": "航天环宇",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688531.XSHG": {
+    "code": "688531.XSHG",
+    "name": "日联科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688536.XSHG": {
+    "code": "688536.XSHG",
+    "name": "思瑞浦",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688543.XSHG": {
+    "code": "688543.XSHG",
+    "name": "国科军工",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688545.XSHG": {
+    "code": "688545.XSHG",
+    "name": "兴福电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688548.XSHG": {
+    "code": "688548.XSHG",
+    "name": "广钢气体",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688549.XSHG": {
+    "code": "688549.XSHG",
+    "name": "中巨芯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688552.XSHG": {
+    "code": "688552.XSHG",
+    "name": "航天南湖",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688559.XSHG": {
+    "code": "688559.XSHG",
+    "name": "海目星",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688567.XSHG": {
+    "code": "688567.XSHG",
+    "name": "孚能科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688584.XSHG": {
+    "code": "688584.XSHG",
+    "name": "上海合晶",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688586.XSHG": {
+    "code": "688586.XSHG",
+    "name": "江航装备",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688591.XSHG": {
+    "code": "688591.XSHG",
+    "name": "泰凌微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688593.XSHG": {
+    "code": "688593.XSHG",
+    "name": "新相微",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688596.XSHG": {
+    "code": "688596.XSHG",
+    "name": "正帆科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688605.XSHG": {
+    "code": "688605.XSHG",
+    "name": "先锋精科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688612.XSHG": {
+    "code": "688612.XSHG",
+    "name": "威迈斯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688627.XSHG": {
+    "code": "688627.XSHG",
+    "name": "精智达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688630.XSHG": {
+    "code": "688630.XSHG",
+    "name": "芯碁微装",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688631.XSHG": {
+    "code": "688631.XSHG",
+    "name": "莱斯信息",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688639.XSHG": {
+    "code": "688639.XSHG",
+    "name": "华恒生物",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688652.XSHG": {
+    "code": "688652.XSHG",
+    "name": "京仪装备",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688658.XSHG": {
+    "code": "688658.XSHG",
+    "name": "悦康药业",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688660.XSHG": {
+    "code": "688660.XSHG",
+    "name": "电气风电",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688668.XSHG": {
+    "code": "688668.XSHG",
+    "name": "鼎通科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688686.XSHG": {
+    "code": "688686.XSHG",
+    "name": "奥普特",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688690.XSHG": {
+    "code": "688690.XSHG",
+    "name": "纳微科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688691.XSHG": {
+    "code": "688691.XSHG",
+    "name": "灿芯股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688698.XSHG": {
+    "code": "688698.XSHG",
+    "name": "伟创电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688700.XSHG": {
+    "code": "688700.XSHG",
+    "name": "东威科技",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688717.XSHG": {
+    "code": "688717.XSHG",
+    "name": "艾罗能源",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688726.XSHG": {
+    "code": "688726.XSHG",
+    "name": "拉普拉斯",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688766.XSHG": {
+    "code": "688766.XSHG",
+    "name": "普冉股份",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688776.XSHG": {
+    "code": "688776.XSHG",
+    "name": "国光电气",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688779.XSHG": {
+    "code": "688779.XSHG",
+    "name": "五矿新能",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688789.XSHG": {
+    "code": "688789.XSHG",
+    "name": "宏华数科",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688798.XSHG": {
+    "code": "688798.XSHG",
+    "name": "艾为电子",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  },
+  "688800.XSHG": {
+    "code": "688800.XSHG",
+    "name": "瑞可达",
+    "inclusion": "1900-01-01",
+    "source_date": "20261009"
+  }
+}
