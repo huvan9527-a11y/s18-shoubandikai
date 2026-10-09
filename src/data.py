@@ -66,7 +66,7 @@ class PublicData:
             js.eval(hk_js_decode)
             rows = js.call('d', r.text.split('=', 1)[1].split(';')[0].replace('"', ''))
             factors = get(zh_sina_a_stock_qfq_url.format(symbol(code))).text
-            factors = json.loads(factors.split('=', 1)[1].strip().rstrip(';'))['data']
+            factors = json.JSONDecoder().raw_decode(factors.split('=', 1)[1].lstrip())[0]['data']
             payload = {'rows': rows, 'factors': factors}
         if not path.exists():
             path.write_text(json.dumps(payload), encoding='utf-8')
@@ -136,8 +136,11 @@ class PublicData:
         def load(code):
             try:
                 self.daily(code)
+                self.errors.pop(code, None)
             except Exception as e:
                 self.errors[code] = f'{type(e).__name__}: {str(e)[:150]}'
+                if len(self.errors) <= 5:
+                    print(f'{code}: {self.errors[code]}', flush=True)
         with ThreadPoolExecutor(max_workers=6) as executor:
             futures = [executor.submit(load, code) for code in pool]
             for i, f in enumerate(as_completed(futures), 1):

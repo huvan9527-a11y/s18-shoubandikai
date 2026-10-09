@@ -11,6 +11,11 @@ on:
   schedule:
     - cron: '23 8,10 * * 1-5'
   workflow_dispatch:
+    inputs:
+      dates:
+        description: 'Completed dates separated by spaces; blank scans latest two trading days'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -38,7 +43,15 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Scan latest two completed trading days without credentials
         id: scan
-        run: python -u -m src.scan
+        env:
+          SCAN_DATES: ${{ inputs.dates }}
+        run: |
+          if [ -n "$SCAN_DATES" ]; then
+            read -r -a dates <<< "$SCAN_DATES"
+            python -u -m src.scan --dates "${dates[@]}"
+          else
+            python -u -m src.scan
+          fi
       - name: Replay verified completed minutes with public data
         if: success()
         run: python -u -m src.run

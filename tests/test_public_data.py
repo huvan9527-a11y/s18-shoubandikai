@@ -8,6 +8,21 @@ from src.data import PublicData, cent
 from src import run, paper
 
 class PublicDataTests(unittest.TestCase):
+    def test_sina_factor_json_ignores_trailing_javascript(self):
+        import json
+        from unittest.mock import Mock
+        with tempfile.TemporaryDirectory() as root:
+            p = PublicData(root)
+            hist = Mock(text='var data="compressed";')
+            factors = Mock(text='var qfq={"data":[{"d":"2026-10-09","f":"1.0"}]}\nvar extra=1;')
+            rows = [dict(date='2026-10-08',open=10,high=10,low=10,close=10,volume=100,amount=1000),
+                    dict(date='2026-10-09',open=11,high=11,low=11,close=11,volume=100,amount=1100)]
+            with patch('src.data.get', side_effect=[hist,factors]), patch('py_mini_racer.MiniRacer') as js:
+                js.return_value.call.return_value = rows
+                frame = p.daily('000001.XSHE')
+            self.assertEqual(len(frame), 2)
+            self.assertEqual(frame.iloc[-1].high_limit, 11)
+
     def test_price_limits_use_decimal_half_up(self):
         self.assertEqual(cent(10.005), 10.01)
         self.assertEqual(cent(11.55), 11.55)
