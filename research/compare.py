@@ -255,6 +255,12 @@ def run():
                      portfolio='200000 initial cash, 2 slots, max 2 daily buys, 1% buffer, prior-day amount participation 0.1%, whole lots and min5 commission; factor-based corporate-action proxy',
                      max_drawdown='daily closing equity with initial capital; intraday drawdown unavailable'))
     (OUT/'results.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2,allow_nan=False))
+    first_board=[e for e in events if e['component']=='FB_dip']
+    fb_portfolios=[portfolio(first_board,raw,days,buy,offset,sell) for buy in ('open','close')
+                   for offset,sell in ((1,'open'),(1,'close'),(2,'close'))]
+    (OUT/'first-board-portfolios.json').write_text(json.dumps(fb_portfolios,ensure_ascii=False,indent=2,allow_nan=False))
+    from research.report import generate
+    generate(OUT/'results.json')
     print(json.dumps(summary,ensure_ascii=False,indent=2),flush=True)
 
 if __name__=='__main__':run()
