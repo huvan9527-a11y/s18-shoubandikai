@@ -45,6 +45,7 @@ jobs:
         id: scan
         env:
           SCAN_DATES: ${{ inputs.dates }}
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY }}
         run: |
           if [ -n "$SCAN_DATES" ]; then
             read -r -a dates <<< "$SCAN_DATES"
@@ -63,7 +64,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add state/metadata outputs/signals-*
+          git add state/metadata outputs
+          if [ -f state/notifications.json ]; then git add state/notifications.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'chore: update S18 daily signals [skip ci]'
             git push origin HEAD:main

@@ -43,7 +43,15 @@
 
 `state/account.json` 保留为原20万元账本。扫描只提交成分快照和信号报告，不写入买卖或净值。
 
-## 本地检查
+## Server 酱推送
+
+在仓库 Actions Secrets 中添加 `SERVERCHAN_SENDKEY`（也兼容 `SERVERCHAN_KEY`、`SERVER_CHAN_SENDKEY`、`SCKEY`）。支持 SCT 开头的 Server 酱 Turbo Key 和 sctp 开头的 Server 酱 3 Key；不要把密钥写入源码。
+
+当前16:23、18:23工作流在扫描结束后推送本次扫描报告，包含候选代码、名称、组件、低开幅度和运行链接；零候选和数据失败也明确提示。消息为收盘后历史扫描，不是实时买卖指令，不代表成交。未配置密钥时跳过推送。
+
+相同日期、相同报告只发送一次，报告变化后重新发送。仅服务返回成功后才记录到 `state/notifications.json`，工作流保存该状态；失败返回非零并保留重试机会。服务接受发送不等于手机已收到。网络超时存在已发送但未确认的可能，下一次运行可能重复发送。
+
+## 本地检查命令
 
 ```bash
 python -m pip install -r requirements.txt
@@ -54,3 +62,4 @@ python -m src.run               # 兼容入口，同样执行日线/开盘扫描
 ```
 
 测试使用合成行情验证执行与记账，不构成历史收益回测。真实运行仍需公共行情接口可访问且数据完整。
+

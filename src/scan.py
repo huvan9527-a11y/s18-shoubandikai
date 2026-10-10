@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 from .data import PublicData, ROOT
 from .paper import DEFAULTS, new_account
 from .run import write_json
+from .notify import push_reports
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
@@ -22,6 +23,7 @@ def main(argv=None):
         raise ValueError('Future/incomplete day prohibited')
     dates = [dt.date.fromisoformat(x) for x in args.dates] if args.dates else provider.days(end_date=through, count=2)
     failed = False
+    reports = []
     for day in dates:
         if day > end:
             raise ValueError('Future/incomplete day prohibited')
@@ -46,7 +48,10 @@ def main(argv=None):
             lines += ['', f'前一日候选 {len(report["candidates"])} 只；开盘候选 {len(report["opening_candidates"])} 只。']
         (ROOT / f'outputs/signals-{day}.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         print('\n'.join(lines), flush=True)
-    return int(failed)
+        reports.append(report)
+    notified = push_reports(ROOT, reports)
+    return int(failed or not notified)
 
 if __name__ == '__main__':
     raise SystemExit(main())
+
