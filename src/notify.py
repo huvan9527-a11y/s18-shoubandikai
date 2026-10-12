@@ -66,3 +66,49 @@ def push_reports(root, reports):
         temporary.replace(path)
         print(f"ServerChan accepted: {day}", flush=True)
     return ok
+
+
+def push_opening_candidates(root, date, candidates, *, data_verified=False):
+    """Send a timely candidate alert; never claim execution or trust stale data."""
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+    now = dt.datetime.now(ZoneInfo("Asia/Shanghai"))
+    if now.date().isoformat() != date or not (now.hour == 9 and 25 <= now.minute <= 35):
+        raise ValueError("Opening alerts require the current session at 09:25-09:35 CST")
+    if not data_verified:
+        raise ValueError("Live auction data has not been verified; refuse actionable alert")
+    if not isinstance(candidates, list):
+        raise ValueError("Candidates must be a validated list")
+    report = dict(date=date, status="opening_verified", opening_candidates=candidates)
+    key = (os.getenv("SERVERCHAN_SENDKEY") or os.getenv("SERVERCHAN_KEY")
+           or os.getenv("SERVER_CHAN_SENDKEY") or os.getenv("SCKEY") or "").strip()
+    if not key:
+        print("Opening alert skipped: SendKey not configured", flush=True)
+        return False
+    url = endpoint(key)
+    path = Path(root) / "state/opening_notifications.json"
+    sent = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    digest = hashlib.sha256(json.dumps(report, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    if sent.get(date) == digest:
+        return True
+    lines = [f"S18 {date} 09:26竞价候选（非成交）", "",
+             "A仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。"]
+    for c in candidates:
+        lines.append(f"- {c['code']} {c.get('name','')} {c['component']}")
+    if not candidates:
+        lines.append("竞价确认候选为零。")
+    try:
+        resp = requests.post(url, data={"title": f"S18 {date} 09:26竞价候选 {len(candidates)}只",
+                                        "desp": "\n".join(lines)}, timeout=15)
+        resp.raise_for_status()
+        if resp.json().get("code") != 0:
+            raise ValueError("ServerChan rejected alert")
+    except (requests.RequestException, ValueError):
+        print("Opening alert failed; credential redacted", flush=True)
+        return False
+    sent[date] = digest
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(sent, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(path)
+    return True
