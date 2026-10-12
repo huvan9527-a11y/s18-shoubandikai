@@ -1,0 +1,40 @@
+name: S18 09:26 Auction Signal Push
+on:
+  schedule:
+    # 09:26 Asia/Shanghai = 01:26 UTC (China does not use DST)
+    - cron: '26 1 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: s18-opening-push
+  cancel-in-progress: false
+
+jobs:
+  opening-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+      SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+      SERVER_CHAN_SENDKEY: ${{ secrets.SERVER_CHAN_SENDKEY }}
+      SCKEY: ${{ secrets.SCKEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate and push opening signals
+        run: python -m src.opening_push
+      - name: Upload diagnostic report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s18-opening-failure-${{ github.run_id }}
+          path: outputs/
+          if-no-files-found: ignore
