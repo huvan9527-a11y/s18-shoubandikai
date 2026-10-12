@@ -1,8 +1,120 @@
 {
   "date": "2026-10-12",
-  "status": "failed_data_incomplete",
-  "error": "ValueError: Target-date daily unavailable/corporate action: 000420.XSHE",
-  "stock_errors": {},
-  "candidates": null,
-  "opening_candidates": null
+  "previous_day": "2026-10-09",
+  "status": "scanned",
+  "data_quality": "current_constituent_reference",
+  "temperature": {
+    "ICE": false,
+    "RUN": 0,
+    "MA20": -0.0474952577152723,
+    "M_DN": 0.002002002002002002,
+    "DEEP": false,
+    "FB_OK": true,
+    "LB_OK": true
+  },
+  "pool_size": 1000,
+  "history_loaded": 1000,
+  "validated_stocks": 993,
+  "omitted": [],
+  "candidates": [
+    {
+      "code": "000420.XSHE",
+      "name": "吉林化纤",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 3.81,
+      "money": 893374748.0
+    },
+    {
+      "code": "002181.XSHE",
+      "name": "粤传媒",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 9.39,
+      "money": 770568012.0
+    },
+    {
+      "code": "002317.XSHE",
+      "name": "众生药业",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 25.49,
+      "money": 1221113050.0
+    },
+    {
+      "code": "002675.XSHE",
+      "name": "东诚药业",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 13.89,
+      "money": 519170477.0
+    },
+    {
+      "code": "002979.XSHE",
+      "name": "雷赛智能",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 55.58,
+      "money": 692474167.0
+    },
+    {
+      "code": "600478.XSHG",
+      "name": "科力远",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 5.1,
+      "money": 308873445.0
+    },
+    {
+      "code": "600621.XSHG",
+      "name": "华鑫股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 14.48,
+      "money": 702519115.0
+    },
+    {
+      "code": "600812.XSHG",
+      "name": "华北制药",
+      "component": "LB",
+      "pri": 1,
+      "prev_close": 6.03,
+      "money": 687660547.0
+    },
+    {
+      "code": "600882.XSHG",
+      "name": "妙可蓝多",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 21.13,
+      "money": 316678834.0
+    },
+    {
+      "code": "601069.XSHG",
+      "name": "西部黄金",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 26.55,
+      "money": 712910470.0
+    }
+  ],
+  "opening_candidates": [
+    {
+      "code": "002979.XSHE",
+      "name": "雷赛智能",
+      "component": "FB_dip",
+      "pri": 0,
+      "prev_close": 55.58,
+      "money": 692474167.0,
+      "open": 54.3,
+      "gap": -0.023029866858582215,
+      "high_limit": 61.14,
+      "low_limit": 50.02
+    }
+  ],
+  "limitations": [
+    "使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。",
+    "市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。",
+    "信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。"
+  ]
 }
