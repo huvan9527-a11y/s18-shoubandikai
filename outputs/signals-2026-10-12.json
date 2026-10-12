@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-12",
+  "status": "failed_data_incomplete",
+  "error": "ValueError: Target-date daily unavailable/corporate action: 000420.XSHE",
+  "stock_errors": {},
+  "candidates": null,
+  "opening_candidates": null
+}
