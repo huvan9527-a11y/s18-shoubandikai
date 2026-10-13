@@ -1,0 +1,100 @@
+{
+  "mode": "RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL",
+  "date": "2026-10-13",
+  "checked_at": "2026-10-13T11:27:41.030748+08:00",
+  "previous_signal_date": "2026-10-12",
+  "data_quality": {
+    "signal_price_source": "sina_daily_unadjusted_close",
+    "auction_price_source": "tencent",
+    "verified": true
+  },
+  "candidates": 4,
+  "fresh_quote_count": 4,
+  "opening_rule_matches": 1,
+  "account_A_retrospective_top2": [
+    {
+      "code": "603533.XSHG",
+      "name": "掌阅科技",
+      "component": "LB",
+      "signal_date": "2026-10-12",
+      "signal_close": 27.98,
+      "open": 26.9,
+      "auction_prev_close": 27.98,
+      "quote_time": "20261013112738",
+      "gap_pct": -3.86,
+      "difference_pct": 0.0,
+      "status": "OPENING_RULE_MATCH"
+    }
+  ],
+  "account_B_prior_opening_candidates": [
+    {
+      "code": "002979.XSHE",
+      "name": "雷赛智能",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 55.58,
+      "prev_close": 55.58,
+      "money": 692474167.0,
+      "signal_date": "2026-10-09",
+      "open": 54.3,
+      "gap": -0.023029866858582215,
+      "high_limit": 61.14,
+      "low_limit": 50.02
+    }
+  ],
+  "stocks": [
+    {
+      "code": "600812.XSHG",
+      "name": "华北制药",
+      "component": "LB",
+      "signal_date": "2026-10-12",
+      "signal_close": 6.63,
+      "open": 6.56,
+      "auction_prev_close": 6.63,
+      "quote_time": "20261013112739",
+      "gap_pct": -1.056,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "601595.XSHG",
+      "name": "上海电影",
+      "component": "LB",
+      "signal_date": "2026-10-12",
+      "signal_close": 27.21,
+      "open": 26.94,
+      "auction_prev_close": 27.21,
+      "quote_time": "20261013112738",
+      "gap_pct": -0.992,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "603533.XSHG",
+      "name": "掌阅科技",
+      "component": "LB",
+      "signal_date": "2026-10-12",
+      "signal_close": 27.98,
+      "open": 26.9,
+      "auction_prev_close": 27.98,
+      "quote_time": "20261013112738",
+      "gap_pct": -3.86,
+      "difference_pct": 0.0,
+      "status": "OPENING_RULE_MATCH"
+    },
+    {
+      "code": "603992.XSHG",
+      "name": "松霖科技",
+      "component": "FB_dip",
+      "signal_date": "2026-10-12",
+      "signal_close": 20.94,
+      "open": 20.93,
+      "auction_prev_close": 20.94,
+      "quote_time": "20261013112739",
+      "gap_pct": -0.048,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    }
+  ],
+  "warning": "Uses current quote reported open, not archived 09:25 snapshot; no alerts, orders or fills"
+}

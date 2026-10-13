@@ -22,80 +22,100 @@
       "name": "吉林化纤",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 3.81,
       "prev_close": 3.81,
-      "money": 893374748.0
+      "money": 893374748.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "002181.XSHE",
       "name": "粤传媒",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 9.39,
       "prev_close": 9.39,
-      "money": 770568012.0
+      "money": 770568012.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "002317.XSHE",
       "name": "众生药业",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 25.49,
       "prev_close": 25.49,
-      "money": 1221113050.0
+      "money": 1221113050.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "002675.XSHE",
       "name": "东诚药业",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 13.89,
       "prev_close": 13.89,
-      "money": 519170477.0
+      "money": 519170477.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "002979.XSHE",
       "name": "雷赛智能",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 55.58,
       "prev_close": 55.58,
-      "money": 692474167.0
+      "money": 692474167.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "600478.XSHG",
       "name": "科力远",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 5.1,
       "prev_close": 5.1,
-      "money": 308873445.0
+      "money": 308873445.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "600621.XSHG",
       "name": "华鑫股份",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 14.48,
       "prev_close": 14.48,
-      "money": 702519115.0
+      "money": 702519115.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "600812.XSHG",
       "name": "华北制药",
       "component": "LB",
       "pri": 1,
+      "signal_close": 6.03,
       "prev_close": 6.03,
-      "money": 687660547.0
+      "money": 687660547.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "600882.XSHG",
       "name": "妙可蓝多",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 21.13,
       "prev_close": 21.13,
-      "money": 316678834.0
+      "money": 316678834.0,
+      "signal_date": "2026-10-09"
     },
     {
       "code": "601069.XSHG",
       "name": "西部黄金",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 26.55,
       "prev_close": 26.55,
-      "money": 712910470.0
+      "money": 712910470.0,
+      "signal_date": "2026-10-09"
     }
   ],
   "opening_candidates": [
@@ -104,14 +124,71 @@
       "name": "雷赛智能",
       "component": "FB_dip",
       "pri": 0,
+      "signal_close": 55.58,
       "prev_close": 55.58,
       "money": 692474167.0,
+      "signal_date": "2026-10-09",
       "open": 54.3,
       "gap": -0.023029866858582215,
       "high_limit": 61.14,
       "low_limit": 50.02
     }
   ],
+  "next_session": {
+    "signal_date": "2026-10-12",
+    "candidates": [
+      {
+        "code": "600812.XSHG",
+        "name": "华北制药",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 6.63,
+        "prev_close": 6.63,
+        "money": 1002097843.0,
+        "signal_date": "2026-10-12"
+      },
+      {
+        "code": "601595.XSHG",
+        "name": "上海电影",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 27.21,
+        "prev_close": 27.21,
+        "money": 753730740.0,
+        "signal_date": "2026-10-12"
+      },
+      {
+        "code": "603533.XSHG",
+        "name": "掌阅科技",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 27.98,
+        "prev_close": 27.98,
+        "money": 2096530444.0,
+        "signal_date": "2026-10-12"
+      },
+      {
+        "code": "603992.XSHG",
+        "name": "松霖科技",
+        "component": "FB_dip",
+        "pri": 0,
+        "signal_close": 20.94,
+        "prev_close": 20.94,
+        "money": 157046556.0,
+        "signal_date": "2026-10-12"
+      }
+    ],
+    "temperature": {
+      "ICE": false,
+      "RUN": 0,
+      "MA20": -0.06235352341048095,
+      "M_DN": 0.006006006006006006,
+      "DEEP": false,
+      "FB_OK": true,
+      "LB_OK": true
+    },
+    "price_source": "sina_daily_unadjusted_close"
+  },
   "limitations": [
     "使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。",
     "市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。",
