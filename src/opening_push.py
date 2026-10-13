@@ -107,11 +107,51 @@ def main():
     candidates = previous.get("candidates", [])
     quotes = quote_batch([c["code"] for c in candidates], now.date())
     if args.late_diagnostic:
-        diagnostics = {'mode': 'LATE_DIAGNOSTIC_ONLY', 'date': now.date().isoformat(),
-                       'checked_at': now.isoformat(), 'previous_signal_date': previous['date'],
-                       'candidates': len(candidates), 'fresh_quote_count': len(quotes),
-                       'warning': 'Quotes are not historical 09:25 snapshots; no trade signals or notifications'}
-        print(json.dumps(diagnostics, ensure_ascii=False), flush=True)
+        from .paper import COMPONENTS, band
+        from .data import price_limit
+        rows = []
+        for item in candidates:
+            q = quotes.get(item['code'])
+            row = {'code': item['code'], 'name': item['name'], 'component': item['component'],
+                   'signal_prev_close': item['prev_close']}
+            if not q:
+                row['status'] = 'MISSING_QUOTE'
+            else:
+                expected, observed = float(item['prev_close']), float(q['prev_close'])
+                gap = q['open'] / observed - 1 if observed > 0 else None
+                row.update(open=q['open'], auction_prev_close=observed,
+                           quote_time=q['quote_time'], gap_pct=round(gap * 100, 3) if gap is not None else None)
+                if expected <= 0 or observed <= 0 or abs(observed / expected - 1) > .003:
+                    row['status'] = 'PREV_CLOSE_MISMATCH'
+                elif re.search('ST|退', q['name'], re.I):
+                    row['status'] = 'ST_OR_DELIST'
+                else:
+                    cfg_local = DEFAULTS | json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
+                    lo, hi = COMPONENTS[item['component']]['gap']
+                    low_limit = price_limit(observed, -band(item['code']))
+                    high_limit = price_limit(observed, band(item['code']))
+                    if q['open'] > cfg_local['max_price']:
+                        row['status'] = 'PRICE_ABOVE_MAX'
+                    elif q['open'] >= high_limit:
+                        row['status'] = 'AT_UPPER_LIMIT'
+                    elif not lo - 1e-9 <= gap <= hi + 1e-9:
+                        row['status'] = 'GAP_OUTSIDE_RANGE'
+                    elif q['open'] <= low_limit * (1 + cfg_local['near_down']):
+                        row['status'] = 'TOO_CLOSE_TO_LOWER_LIMIT'
+                    else:
+                        row['status'] = 'OPENING_RULE_MATCH'
+            rows.append(row)
+        matched = [x for x in rows if x['status'] == 'OPENING_RULE_MATCH']
+        matched.sort(key=lambda x: (COMPONENTS[x['component']]['pri'], x['gap_pct'], x['code']))
+        diagnostics = {'mode': 'RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL',
+                       'date': now.date().isoformat(), 'checked_at': now.isoformat(),
+                       'previous_signal_date': previous['date'], 'candidates': len(candidates),
+                       'fresh_quote_count': len(quotes), 'opening_rule_matches': len(matched),
+                       'account_A_retrospective_top2': matched[:2],
+                       'account_B_prior_opening_candidates': previous.get('opening_candidates', [])[:2],
+                       'stocks': rows,
+                       'warning': 'Uses current quote reported open, not archived 09:25 snapshot; no alerts, orders or fills'}
+        print(json.dumps(diagnostics, ensure_ascii=False, indent=2), flush=True)
         return
     selected = make_opening_report(previous, now.date(), quotes)
     # B's T+1 queue uses yesterday's already confirmed opening signals, without a new low-gap filter.
