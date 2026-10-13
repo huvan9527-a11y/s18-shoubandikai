@@ -29,6 +29,45 @@ def price_limit(previous, rate):
     reference = Decimal(str(cent(previous)))
     return float((reference * (Decimal(1) + Decimal(str(rate)))).quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
 
+
+def normalize_minute_frame(frame, target_date, latest_complete_date):
+    """Validate execution windows and convert Eastmoney 1m volume from lots to shares."""
+    target_date = pd.Timestamp(target_date).date()
+    latest_complete_date = pd.Timestamp(latest_complete_date).date()
+    if target_date != latest_complete_date:
+        raise ValueError(f'target date {target_date} is not latest complete minute date {latest_complete_date}')
+    aliases = {'时间': 'time', '日期': 'time', '开盘': 'open', '最高': 'high',
+               '最低': 'low', '收盘': 'close', '成交量': 'volume', '成交额': 'money'}
+    df = frame.rename(columns={k: v for k, v in aliases.items() if k in frame.columns}).copy()
+    required = {'time', 'open', 'high', 'low', 'close', 'volume', 'money'}
+    if not required.issubset(df.columns):
+        raise ValueError('Minute columns missing: ' + ','.join(sorted(required - set(df.columns))))
+    df['time'] = pd.to_datetime(df['time'], errors='coerce')
+    if df['time'].isna().any() or any(x.date() != target_date for x in df['time']):
+        raise ValueError(f'minute data has wrong target date: {target_date}')
+    df = df.sort_values('time').drop_duplicates('time', keep='last')
+    for name in ('open', 'high', 'low', 'close', 'volume', 'money'):
+        df[name] = pd.to_numeric(df[name], errors='coerce')
+    if df[['open', 'high', 'low', 'close', 'volume', 'money']].isna().any().any():
+        raise ValueError('Invalid minute values')
+    df['volume'] *= 100
+    result = {}
+    for _, row in df.iterrows():
+        tm = row['time'].strftime('%H:%M')
+        bar = {f: float(row[f]) for f in ('open', 'high', 'low', 'close', 'volume', 'money')}
+        if any(bar[f] <= 0 for f in ('open', 'high', 'low', 'close')):
+            raise ValueError(f'Invalid or zero minute OHLC at {tm}')
+        if bar['low'] > bar['high'] or not bar['low'] <= bar['open'] <= bar['high'] or not bar['low'] <= bar['close'] <= bar['high']:
+            raise ValueError(f'Inconsistent minute OHLC at {tm}')
+        if bar['volume'] < 0 or bar['money'] < 0:
+            raise ValueError(f'Invalid minute liquidity at {tm}')
+        result[tm] = bar
+    required_times = [*(f'09:{i:02d}' for i in range(30, 37)), *(f'14:{i:02d}' for i in range(50, 58))]
+    missing = [tm for tm in required_times if tm not in result]
+    if missing:
+        raise ValueError('Incomplete minute windows; missing ' + ','.join(missing))
+    return result
+
 def get(url, **kwargs):
     error = None
     for _ in range(3):
@@ -232,3 +271,38 @@ class PublicData:
         report = self.scan(date, account, cfg)
         temp = report['temperature'] | {'data_provenance': report['limitations'], 'reference_only': True}
         return report['candidates'], temp
+
+    def session(self, date, candidates, positions, cfg):
+        """Build one validated daily/minute session for queued candidates and live holdings."""
+        target = pd.Timestamp(date).date()
+        if target != self.today:
+            raise ValueError(f'minute source only supports the current complete session, requested {target}')
+        codes = sorted({c['code'] for c in candidates} | set(positions))
+        candidate_names = {c['code']: c.get('name', c['code']) for c in candidates}
+        daily = {}
+        for code in codes:
+            frame = self.daily(code)
+            rows = frame[frame.time.dt.date == target]
+            if len(rows) != 1:
+                raise ValueError(f'Missing target-date daily row: {code}')
+            row = rows.iloc[0]
+            meta_name = self.names.get(code) or candidate_names.get(code) or positions.get(code, {}).get('name', code)
+            daily[code] = dict(open=float(row.open), close=float(row.close),
+                               high_limit=float(row.high_limit), low_limit=float(row.low_limit),
+                               paused=bool(row.paused), is_st=bool(re.search('ST|退', meta_name, re.I)),
+                               name=meta_name, factor=float(row.factor))
+        queue = opening_queue(candidates, daily, cfg)
+        needed = {c['code'] for c in queue}
+        needed.update(code for code in positions if not daily[code]['paused'])
+        minutes = {}
+        import akshare as ak
+        for code in sorted(needed):
+            try:
+                raw = ak.stock_zh_a_hist_min_em(
+                    symbol=code[:6], period='1',
+                    start_date=f'{target:%Y-%m-%d} 09:30:00',
+                    end_date=f'{target:%Y-%m-%d} 15:00:00', adjust='')
+                minutes[code] = normalize_minute_frame(raw, target, self.today)
+            except Exception as exc:
+                raise ValueError(f'Invalid public minute data for {code}: {exc}') from exc
+        return daily, minutes

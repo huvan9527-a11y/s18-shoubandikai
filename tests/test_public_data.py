@@ -5,9 +5,59 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 from src.data import PublicData, cent, price_limit
+from src import data
 from src import run, paper
 
 class PublicDataTests(unittest.TestCase):
+    def test_minute_normalization_converts_hands_to_shares_and_validates_day(self):
+        import pandas as pd
+        self.assertTrue(callable(getattr(data, 'normalize_minute_frame', None)))
+        rows = []
+        for tm in [*(f'09:{i:02d}' for i in range(30, 37)), *(f'14:{i:02d}' for i in range(50, 58))]:
+            rows.append(dict(时间=f'2026-10-13 {tm}:00', 开盘=10, 最高=10.1, 最低=9.9,
+                             收盘=10, 成交量=12, 成交额=12000))
+        normalized = data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 13), date(2026, 10, 13))
+        self.assertEqual(normalized['09:30']['volume'], 1200)
+        self.assertEqual(normalized['09:30']['money'], 12000)
+        with self.assertRaisesRegex(ValueError, 'target date'):
+            data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 12), date(2026, 10, 13))
+
+    def test_minute_normalization_rejects_missing_windows_zero_open_and_bad_ohlc(self):
+        import pandas as pd
+        self.assertTrue(callable(getattr(data, 'normalize_minute_frame', None)))
+        rows = []
+        for tm in [*(f'09:{i:02d}' for i in range(30, 37)), *(f'14:{i:02d}' for i in range(50, 58))]:
+            rows.append(dict(时间=f'2026-10-13 {tm}:00', 开盘=10, 最高=10.1, 最低=9.9,
+                             收盘=10, 成交量=12, 成交额=12000))
+        frame = pd.DataFrame(rows)
+        with self.assertRaisesRegex(ValueError, '14:57'):
+            data.normalize_minute_frame(frame.iloc[:-1], date(2026, 10, 13), date(2026, 10, 13))
+        frame.loc[0, '开盘'] = 0
+        with self.assertRaisesRegex(ValueError, 'zero|invalid'):
+            data.normalize_minute_frame(frame, date(2026, 10, 13), date(2026, 10, 13))
+        frame.loc[0, '开盘'] = 11
+        with self.assertRaisesRegex(ValueError, 'OHLC'):
+            data.normalize_minute_frame(frame, date(2026, 10, 13), date(2026, 10, 13))
+
+    def test_session_uses_candidate_name_to_exclude_st_stocks(self):
+        import pandas as pd
+        with tempfile.TemporaryDirectory() as root:
+            p = PublicData(root)
+            p.today = date(2026, 10, 13)
+            code = '000001.XSHE'
+            p.frames[code] = pd.DataFrame([dict(time=pd.Timestamp('2026-10-13'), open=9.5, close=9.6,
+                high_limit=11., low_limit=9., paused=0, factor=1.)])
+            c = dict(code=code, name='ST测试', component='FB_dip', pri=0, prev_close=10.,
+                     money=2e8, open=9.5, high_limit=11., low_limit=9.)
+            bars = pd.DataFrame([dict(时间=f'2026-10-13 {tm}:00', 开盘=10, 最高=10.1, 最低=9.9,
+                收盘=10, 成交量=12, 成交额=12000) for tm in
+                [*(f'09:{i:02d}' for i in range(30, 37)), *(f'14:{i:02d}' for i in range(50, 58))]])
+            with patch('akshare.stock_zh_a_hist_min_em', return_value=bars, create=True):
+                daily, minutes = p.session(date(2026, 10, 13), [c], {}, paper.DEFAULTS)
+            self.assertEqual(daily[code]['name'], 'ST测试')
+            self.assertTrue(daily[code]['is_st'])
+            self.assertNotIn(code, minutes)
+
     def test_sina_factor_json_ignores_trailing_javascript(self):
         import json
         from unittest.mock import Mock
