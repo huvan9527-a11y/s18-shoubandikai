@@ -66,7 +66,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add state/opening_notifications.json
+          if [ -f state/opening_notifications.json ]; then git add state/opening_notifications.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'chore: record S18 opening alert [skip ci]'
             git push origin HEAD:main
