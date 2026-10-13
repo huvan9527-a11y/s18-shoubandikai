@@ -55,19 +55,31 @@ def make_opening_report(yesterday, today, quote):
     cfg = DEFAULTS | json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
     from .data import price_limit
     marks = {}
+    rejected = []
     for c in candidates:
         q = quote.get(c["code"])
         if not q:
-            raise ValueError("Missing fresh 09:25 auction quote: " + c["code"])
-        if abs(q["prev_close"] / c["prev_close"] - 1) > .003:
-            raise ValueError("Auction previous close mismatch: " + c["code"])
+            rejected.append({"code": c["code"], "reason": "missing_fresh_auction_quote"})
+            continue
+        expected = float(c["prev_close"])
+        observed = float(q["prev_close"])
+        if expected <= 0 or abs(observed / expected - 1) > .003:
+            rejected.append({"code": c["code"], "reason": "previous_close_mismatch",
+                             "signal_prev_close": expected, "auction_prev_close": observed,
+                             "difference_pct": round((observed / expected - 1) * 100, 4) if expected > 0 else None})
+            continue
         from .paper import band
         rate = band(c["code"])
         marks[c["code"]] = dict(open=q["open"], high_limit=price_limit(q["prev_close"], rate),
                                 low_limit=price_limit(q["prev_close"], -rate),
                                 paused=False, is_st=bool(re.search("ST|退", q["name"], re.I)),
                                 name=q["name"])
-    return opening_queue(candidates, marks, cfg)
+    if rejected:
+        print("AUCTION_REJECTED " + json.dumps(rejected, ensure_ascii=False), flush=True)
+    verified = [c for c in candidates if c["code"] in marks]
+    if candidates and not verified:
+        raise ValueError("All auction candidates rejected; see AUCTION_REJECTED diagnostics")
+    return opening_queue(verified, marks, cfg)
 
 
 def main():
