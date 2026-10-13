@@ -1,6 +1,7 @@
 """09:26 CST verified Tencent auction snapshots -> ServerChan candidates, never fills."""
 import datetime as dt
 import json
+import argparse
 import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -83,9 +84,14 @@ def make_opening_report(yesterday, today, quote):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--late-diagnostic', action='store_true', help='Manual post-window report; no ServerChan or trading signals')
+    args = parser.parse_args()
     now = dt.datetime.now(TZ)
-    if now.weekday() >= 5 or now.hour != 9 or not 25 <= now.minute <= 35:
-        raise ValueError("09:26 alert must run in live morning window")
+    if now.weekday() >= 5:
+        raise ValueError('Trading weekdays only')
+    if not args.late_diagnostic and (now.hour != 9 or not 25 <= now.minute <= 35):
+        raise ValueError('09:26 alert must run in live morning window')
     files = sorted((ROOT / "outputs").glob("signals-????-??-??.json"), reverse=True)
     previous = None
     for path in files:
@@ -100,6 +106,13 @@ def main():
         raise ValueError("Previous signal report too old")
     candidates = previous.get("candidates", [])
     quotes = quote_batch([c["code"] for c in candidates], now.date())
+    if args.late_diagnostic:
+        diagnostics = {'mode': 'LATE_DIAGNOSTIC_ONLY', 'date': now.date().isoformat(),
+                       'checked_at': now.isoformat(), 'previous_signal_date': previous['date'],
+                       'candidates': len(candidates), 'fresh_quote_count': len(quotes),
+                       'warning': 'Quotes are not historical 09:25 snapshots; no trade signals or notifications'}
+        print(json.dumps(diagnostics, ensure_ascii=False), flush=True)
+        return
     selected = make_opening_report(previous, now.date(), quotes)
     # B's T+1 queue uses yesterday's already confirmed opening signals, without a new low-gap filter.
     b = previous.get("opening_candidates", [])[:2]
