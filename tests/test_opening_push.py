@@ -1,11 +1,40 @@
 import copy
 import datetime as dt
 import unittest
-from src.opening_push import evaluate_opening, make_opening_report
+from src.opening_push import evaluate_opening, make_opening_report, main
+from src import opening_push
 from src.signals import candidates
 import pandas as pd
 
 class OpeningTests(unittest.TestCase):
+    def test_live_window_includes_0925_and_0935_only(self):
+        self.assertTrue(callable(getattr(opening_push, 'in_live_window', None)))
+        self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25)))
+        self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 35, 59)))
+        self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 24, 59)))
+        self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 36)))
+
+    def test_late_run_skips_without_fetching_or_pushing(self):
+        from unittest.mock import patch
+        current = dt.datetime(2026, 10, 13, 9, 36)
+        fake = type('FakeDateTime', (), {'now': staticmethod(lambda tz: current)})
+        with patch('src.opening_push.dt.datetime', fake), \
+             patch('src.opening_push.quote_batch', side_effect=AssertionError('must skip before quote')), \
+             patch('builtins.print') as output:
+            self.assertEqual(main([]), 0)
+        self.assertIn('skipped', output.call_args.args[0].lower())
+
+    def test_primary_workflow_runs_paper_after_successful_scan(self):
+        from pathlib import Path
+        workflow = Path(__file__).parents[1] / '.github/workflows/s18-paper.yml'
+        text = workflow.read_text(encoding='utf-8')
+        scan = text.index('python -u -m src.scan')
+        replay = text.index('python -u -m src.run --paper-from-scan')
+        self.assertLess(scan, replay)
+        self.assertIn('if: success()', text[replay-150:replay])
+        self.assertIn('git add state/account.json state/metadata outputs logs', text)
+        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
+
     def setUp(self):
         self.day = dt.date(2026, 10, 13)
         self.c = dict(code='002181.XSHE', name='粤传媒', component='FB_dip', pri=0,
