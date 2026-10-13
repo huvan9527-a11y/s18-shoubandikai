@@ -1,0 +1,73 @@
+name: S18 开盘竞价提醒
+
+on:
+  schedule:
+    # 09:15 CST; warm dependencies before the 09:25-09:35 live quote window.
+    - cron: '15 1 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: s18-paper-account
+  cancel-in-progress: false
+
+jobs:
+  opening-alert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Wait for the live opening window
+        id: window
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import os
+          import time
+          from zoneinfo import ZoneInfo
+
+          tz = ZoneInfo('Asia/Shanghai')
+          now = dt.datetime.now(tz)
+          if now.weekday() >= 5:
+              print(f'Opening alert skipped on weekend: {now.isoformat()}')
+              live = False
+          else:
+              target = now.replace(hour=9, minute=25, second=0, microsecond=0)
+              deadline = now.replace(hour=9, minute=35, second=59, microsecond=0)
+              while now < target:
+                  time.sleep(min(10, (target - now).total_seconds()))
+                  now = dt.datetime.now(tz)
+              live = now <= deadline
+              if live:
+                  print(f'Opening alert window reached: {now.isoformat()}')
+              else:
+                  print(f'Opening alert skipped after live window: {now.isoformat()}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'live={str(live).lower()}\n')
+          PY
+      - name: Verify auction quotes and send opening candidates
+        if: steps.window.outputs.live == 'true'
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY || '' }}
+        run: python -u -m src.opening_push
+      - name: Persist opening notification deduplication state
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ -f state/opening_notifications.json ]; then git add state/opening_notifications.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: record S18 opening alert [skip ci]'
+            git push origin HEAD:main
+          fi
