@@ -1,7 +1,9 @@
 import copy
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 from datetime import date
 from src import run, paper
@@ -53,7 +55,11 @@ class RunnerTests(unittest.TestCase):
             provider = SingleSessionProvider()
             report = dict(date='2026-10-08', status='scanned',
                           opening_candidates=test_paper.ReplayTests().fixture()[0])
-            self.assertEqual(run.process_report(provider, a, paper.DEFAULTS, report, Path(root)), 'processed')
+            output = io.StringIO()
+            with redirect_stdout(output):
+                status = run.process_report(provider, a, paper.DEFAULTS, report, Path(root))
+            self.assertEqual(status, 'processed')
+            self.assertIn('new_fills=1', output.getvalue())
             self.assertEqual(a['start_date'], '2026-10-08')
             self.assertEqual(a['last_processed'], '2026-10-08')
             self.assertEqual(len(a['trades']), 1)

@@ -151,10 +151,14 @@ def process_report(provider, account, cfg, report, root):
             position['factor'] = daily[code]['factor']
     if working['days']:
         working['days'][-1]['temperature'] = report.get('temperature')
+    new_trades = working['trades'][len(account['trades']):]
     export(working, root, 'processed')
     (root / 'outputs/paper-status.json').unlink(missing_ok=True)
     account.clear()
     account.update(working)
+    fills = ','.join(f"{trade['side']}:{trade['code']}:{trade['amount']}" for trade in new_trades) or 'none'
+    print(f'Paper ledger processed: date={day}, new_fills={len(new_trades)}, fills={fills}, '
+          f'positions={len(working["positions"])}, equity={total_value(working):.2f}', flush=True)
     return 'processed'
 
 
