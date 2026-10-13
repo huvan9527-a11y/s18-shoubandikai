@@ -1,8 +1,84 @@
 {
-  "status": "waiting_for_configuration",
+  "status": "processed",
   "detail": "",
-  "last_day": {},
-  "cash": 200000.0,
-  "positions": {},
-  "equity": 200000.0
+  "last_day": {
+    "date": "2026-10-13",
+    "candidates": [
+      {
+        "code": "603533.XSHG",
+        "name": "掌阅科技",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 27.98,
+        "prev_close": 27.98,
+        "money": 2096530444.0,
+        "signal_date": "2026-10-12",
+        "open": 26.9,
+        "gap": -0.03859899928520383,
+        "high_limit": 30.78,
+        "low_limit": 25.18
+      }
+    ],
+    "queue": [
+      {
+        "code": "603533.XSHG",
+        "name": "掌阅科技",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 27.98,
+        "prev_close": 27.98,
+        "money": 2096530444.0,
+        "signal_date": "2026-10-12",
+        "open": 26.9,
+        "gap": -0.03859899928520383,
+        "high_limit": 30.78,
+        "low_limit": 25.18
+      }
+    ],
+    "events": [
+      {
+        "time": "09:34",
+        "event": "SUBMIT",
+        "code": "603533.XSHG",
+        "name": "掌阅科技",
+        "side": "buy",
+        "amount": 3700,
+        "limit": 26.97,
+        "low_limit": 25.18,
+        "high_limit": 30.78,
+        "submitted": "09:34",
+        "component": "LB"
+      },
+      {
+        "time": "09:35",
+        "event": "FILL",
+        "code": "603533.XSHG",
+        "amount": 3700
+      }
+    ],
+    "preparation_error": null,
+    "unfilled_at_close": [],
+    "temperature": {
+      "ICE": false,
+      "RUN": 0,
+      "MA20": -0.06235352341048095,
+      "M_DN": 0.006006006006006006,
+      "DEEP": false,
+      "FB_OK": true,
+      "LB_OK": true
+    }
+  },
+  "cash": 100186.05,
+  "positions": {
+    "603533.XSHG": {
+      "amount": 3700,
+      "entry_date": "2026-10-13",
+      "cost": 99813.95,
+      "mark": 27.2,
+      "name": "掌阅科技",
+      "component": "LB",
+      "factor": 1.0
+    }
+  },
+  "equity": 200826.05
 }

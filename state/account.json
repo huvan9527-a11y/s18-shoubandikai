@@ -1,12 +1,113 @@
 {
   "schema": 1,
   "initial_cash": 200000.0,
-  "cash": 200000.0,
-  "start_date": "2026-10-08",
-  "last_processed": null,
-  "positions": {},
-  "trades": [],
-  "equity": [],
-  "days": [],
+  "cash": 100186.05,
+  "start_date": "2026-10-13",
+  "last_processed": "2026-10-13",
+  "positions": {
+    "603533.XSHG": {
+      "amount": 3700,
+      "entry_date": "2026-10-13",
+      "cost": 99813.95,
+      "mark": 27.2,
+      "name": "掌阅科技",
+      "component": "LB",
+      "factor": 1.0
+    }
+  },
+  "trades": [
+    {
+      "date": "2026-10-13",
+      "time": "09:35",
+      "code": "603533.XSHG",
+      "side": "buy",
+      "amount": 3700,
+      "price": 26.97,
+      "gross": 99789.0,
+      "commission": 24.95,
+      "tax": 0.0,
+      "realised": 0.0,
+      "component": "LB",
+      "model": "next_minute_limit_assumption"
+    }
+  ],
+  "equity": [
+    {
+      "date": "2026-10-13",
+      "cash": 100186.05,
+      "market_value": 100640.0,
+      "equity": 200826.05,
+      "return_pct": 0.413
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-10-13",
+      "candidates": [
+        {
+          "code": "603533.XSHG",
+          "name": "掌阅科技",
+          "component": "LB",
+          "pri": 1,
+          "signal_close": 27.98,
+          "prev_close": 27.98,
+          "money": 2096530444.0,
+          "signal_date": "2026-10-12",
+          "open": 26.9,
+          "gap": -0.03859899928520383,
+          "high_limit": 30.78,
+          "low_limit": 25.18
+        }
+      ],
+      "queue": [
+        {
+          "code": "603533.XSHG",
+          "name": "掌阅科技",
+          "component": "LB",
+          "pri": 1,
+          "signal_close": 27.98,
+          "prev_close": 27.98,
+          "money": 2096530444.0,
+          "signal_date": "2026-10-12",
+          "open": 26.9,
+          "gap": -0.03859899928520383,
+          "high_limit": 30.78,
+          "low_limit": 25.18
+        }
+      ],
+      "events": [
+        {
+          "time": "09:34",
+          "event": "SUBMIT",
+          "code": "603533.XSHG",
+          "name": "掌阅科技",
+          "side": "buy",
+          "amount": 3700,
+          "limit": 26.97,
+          "low_limit": 25.18,
+          "high_limit": 30.78,
+          "submitted": "09:34",
+          "component": "LB"
+        },
+        {
+          "time": "09:35",
+          "event": "FILL",
+          "code": "603533.XSHG",
+          "amount": 3700
+        }
+      ],
+      "preparation_error": null,
+      "unfilled_at_close": [],
+      "temperature": {
+        "ICE": false,
+        "RUN": 0,
+        "MA20": -0.06235352341048095,
+        "M_DN": 0.006006006006006006,
+        "DEEP": false,
+        "FB_OK": true,
+        "LB_OK": true
+      }
+    }
+  ],
   "ice_hist": {}
 }
