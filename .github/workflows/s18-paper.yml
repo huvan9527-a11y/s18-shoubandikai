@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -45,7 +45,7 @@ jobs:
         id: scan
         env:
           SCAN_DATES: ${{ inputs.dates }}
-          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY }}
+          SERVERCHAN_SENDKEY: ${{ github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY) || '' }}
         run: |
           if [ -n "$SCAN_DATES" ]; then
             read -r -a dates <<< "$SCAN_DATES"
@@ -53,6 +53,9 @@ jobs:
           else
             python -u -m src.scan
           fi
+      - name: Replay validated paper account from latest successful scan
+        if: success()
+        run: python -u -m src.run --paper-from-scan
       - name: Review current opening with rebuilt close-date candidates
         if: success()
         run: |
@@ -70,12 +73,14 @@ jobs:
           for report in outputs/signals-*.md; do
             [ ! -f "$report" ] || cat "$report" >> "$GITHUB_STEP_SUMMARY"
           done
+          if [ -f outputs/latest.md ]; then cat outputs/latest.md >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f outputs/paper-status.json ]; then cat outputs/paper-status.json >> "$GITHUB_STEP_SUMMARY"; fi
       - name: Persist successful days and failure status
-        if: always()
+        if: always() && github.ref == 'refs/heads/main'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add state/metadata outputs
+          git add state/account.json state/metadata outputs logs
           if [ -f state/notifications.json ]; then git add state/notifications.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'chore: update S18 daily signals [skip ci]'

@@ -13,6 +13,12 @@ from .paper import opening_queue, DEFAULTS
 TZ = ZoneInfo("Asia/Shanghai")
 
 
+def in_live_window(now):
+    """Return whether a weekday run can still send a same-session opening alert."""
+    clock = (now.hour, now.minute, now.second)
+    return now.weekday() < 5 and (9, 25, 0) <= clock <= (9, 35, 59)
+
+
 def quote_batch(codes, day, fetch=requests.get):
     out = {}
     for start in range(0, len(codes), 50):
@@ -125,10 +131,9 @@ def main(argv=None):
     parser.add_argument('--late-diagnostic', action='store_true', help='Manual post-window report; no ServerChan or trading signals')
     args = parser.parse_args(argv)
     now = dt.datetime.now(TZ)
-    if now.weekday() >= 5:
-        raise ValueError('Trading weekdays only')
-    if not args.late_diagnostic and (now.hour != 9 or not 25 <= now.minute <= 35):
-        raise ValueError('09:26 alert must run in live morning window')
+    if not args.late_diagnostic and not in_live_window(now):
+        print(f'Opening alert skipped outside 09:25-09:35 live window: {now.isoformat()}')
+        return 0
     files = sorted((ROOT / "outputs").glob("signals-????-??-??.json"), reverse=True)
     previous = None
     for path in files:
