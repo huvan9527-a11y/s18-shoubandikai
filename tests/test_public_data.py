@@ -42,5 +42,30 @@ class PublicDataTests(unittest.TestCase):
         self.assertEqual(price_limit(8.45, -.1), 7.61)
         self.assertEqual(price_limit(10.25, .1), 11.28)
 
+class CloseDateTests(unittest.TestCase):
+    def test_scan_prepares_next_session_from_report_date(self):
+        import pandas as pd
+        from src.data import INDEX
+        with tempfile.TemporaryDirectory() as root:
+            provider=PublicData(root)
+            dates=pd.bdate_range(end='2026-10-12', periods=70)
+            provider.pool={f'{i:06d}.XSHE': dict(name='测试', inclusion='1900-01-01') for i in range(100)}
+            provider.names={c: '测试' for c in provider.pool}
+            provider.listed={c: date(2000,1,1) for c in provider.pool}
+            for code in list(provider.pool)+[INDEX]:
+                frame=pd.DataFrame(dict(time=dates,code=code,open=10.,close=10.,high_limit=11.,low_limit=9.,
+                                        money=2e8,paused=0,factor=1.,corporate_action=False))
+                frame.loc[frame.index[-1], 'close']=11.
+                provider.frames[code]=frame
+            with patch.object(provider, 'load_pool'), patch('src.data.signals.stock_flags') as flags:
+                flags.return_value=pd.DataFrame([dict(fb=True,lb=False,gd=False,close_t=11.,money=2e8)],index=['000001.XSHE'])
+                with patch('src.data.signals.candidates', return_value=[dict(code='000001.XSHE',name='测试',component='FB_dip',pri=0,signal_close=11.,prev_close=11.,money=2e8)]):
+                    result=provider.scan(date(2026,10,12),{},paper.DEFAULTS,after_close=True)
+            self.assertEqual(result['signal_date'],'2026-10-12')
+            self.assertEqual(result['candidates'][0]['signal_date'],'2026-10-12')
+            raw=flags.call_args.args[1]
+            self.assertEqual(raw['000001.XSHE'],11.)
+            self.assertEqual(flags.call_args.args[2],date(2026,10,12))
+
 if __name__ == '__main__':
     unittest.main()

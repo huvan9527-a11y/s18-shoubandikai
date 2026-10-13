@@ -135,9 +135,9 @@ def opening_queue(candidates, daily, cfg):
             continue
         if d['open'] > cfg['max_price'] or d['open'] >= d['high_limit']:
             continue
-        if abs(d['high_limit'] - c['prev_close'] * (1 + band(c['code']))) > .021:
+        if abs(d['high_limit'] - c.get('signal_close', c.get('prev_close')) * (1 + band(c['code']))) > .021:
             continue
-        gap = d['open'] / c['prev_close'] - 1
+        gap = d['open'] / c.get('signal_close', c.get('prev_close')) - 1
         lo, hi = COMPONENTS[c['component']]['gap']
         if lo - 1e-9 <= gap <= hi + 1e-9 and d['open'] > d['low_limit'] * (1 + cfg['near_down']):
             out.append(dict(c, open=d['open'], gap=gap, high_limit=d['high_limit'], low_limit=d['low_limit']))

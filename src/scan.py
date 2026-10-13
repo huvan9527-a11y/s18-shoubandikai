@@ -46,6 +46,11 @@ def main(argv=None):
             if not report['opening_candidates']:
                 lines.append('|—|无开盘候选|—|—|')
             lines += ['', f'前一日候选 {len(report["candidates"])} 只；开盘候选 {len(report["opening_candidates"])} 只。']
+            session = report.get('next_session')
+            if session:
+                lines += ['', f"下一交易日候选依据 {session['signal_date']} 收盘：{len(session['candidates'])} 只。",
+                          '|股票|名称|组件|信号日原始收盘价|', '|---|---|---|---:|']
+                lines += [f"|{c['code']}|{c['name']}|{c['component']}|{c['signal_close']:.2f}|" for c in session['candidates']]
         (ROOT / f'outputs/signals-{day}.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         print('\n'.join(lines), flush=True)
         reports.append(report)

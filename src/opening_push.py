@@ -49,44 +49,81 @@ def quote_batch(codes, day, fetch=requests.get):
     return out
 
 
-def make_opening_report(yesterday, today, quote):
-    candidates = yesterday.get("candidates")
-    if yesterday.get("status") != "scanned" or not isinstance(candidates, list):
-        raise ValueError("Yesterday's validated candidate report is required")
-    cfg = DEFAULTS | json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+def evaluate_opening(yesterday, today, quote):
+    """One date/price/rule path for live alerts and retrospective diagnostics."""
     from .data import price_limit
-    marks = {}
-    rejected = []
+    from .paper import COMPONENTS, band, positive
+    session = yesterday.get('next_session')
+    if yesterday.get('status') != 'scanned' or not isinstance(session, dict):
+        raise ValueError('Missing close-date next_session; regenerate daily report, never reuse prior-day candidates')
+    signal_date = session.get('signal_date')
+    if signal_date != yesterday.get('date') or not signal_date or dt.date.fromisoformat(signal_date) >= today:
+        raise ValueError('Candidate signal date must equal report close date and precede auction date')
+    candidates = session.get('candidates')
+    if not isinstance(candidates, list):
+        raise ValueError('Incomplete next-session candidates')
+    cfg = DEFAULTS | json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
+    selected, rows = [], []
     for c in candidates:
-        q = quote.get(c["code"])
-        if not q:
-            rejected.append({"code": c["code"], "reason": "missing_fresh_auction_quote"})
-            continue
-        expected = float(c["prev_close"])
-        observed = float(q["prev_close"])
-        if expected <= 0 or abs(observed / expected - 1) > .003:
-            rejected.append({"code": c["code"], "reason": "previous_close_mismatch",
-                             "signal_prev_close": expected, "auction_prev_close": observed,
-                             "difference_pct": round((observed / expected - 1) * 100, 4) if expected > 0 else None})
-            continue
-        from .paper import band
-        rate = band(c["code"])
-        marks[c["code"]] = dict(open=q["open"], high_limit=price_limit(q["prev_close"], rate),
-                                low_limit=price_limit(q["prev_close"], -rate),
-                                paused=False, is_st=bool(re.search("ST|退", q["name"], re.I)),
-                                name=q["name"])
+        row = dict(code=c['code'], name=c['name'], component=c['component'], signal_date=signal_date,
+                   signal_close=c.get('signal_close', c.get('prev_close')))
+        q = quote.get(c['code'])
+        try:
+            expected = float(row['signal_close'])
+            if c.get('signal_date', signal_date) != signal_date:
+                row['status'] = 'SIGNAL_DATE_MISMATCH'
+            elif not q:
+                row['status'] = 'MISSING_QUOTE'
+            elif not all(positive(q.get(k)) for k in ('open', 'prev_close')) or not positive(expected):
+                row['status'] = 'INVALID_PRICE'
+            else:
+                observed = float(q['prev_close'])
+                stamp = dt.datetime.strptime(q['quote_time'], '%Y%m%d%H%M%S')
+                gap = float(q['open']) / observed - 1
+                row.update(open=q['open'], auction_prev_close=observed, quote_time=q['quote_time'],
+                           gap_pct=round(gap * 100, 3), difference_pct=round((observed / expected - 1)*100, 4))
+                low, high = price_limit(observed, -band(c['code'])), price_limit(observed, band(c['code']))
+                lo, hi = COMPONENTS[c['component']]['gap']
+                if stamp.date() != today or (stamp.hour, stamp.minute) < (9, 25):
+                    row['status'] = 'STALE_QUOTE'
+                elif abs(observed / expected - 1) > .003:
+                    row['status'] = 'PREV_CLOSE_MISMATCH'
+                elif re.search('ST|退', q['name'], re.I):
+                    row['status'] = 'ST_OR_DELIST'
+                elif q['open'] > cfg['max_price']:
+                    row['status'] = 'PRICE_ABOVE_MAX'
+                elif q['open'] >= high:
+                    row['status'] = 'AT_UPPER_LIMIT'
+                elif not lo - 1e-9 <= gap <= hi + 1e-9:
+                    row['status'] = 'GAP_OUTSIDE_RANGE'
+                elif q['open'] <= low * (1 + cfg['near_down']):
+                    row['status'] = 'TOO_CLOSE_TO_LOWER_LIMIT'
+                else:
+                    row['status'] = 'OPENING_RULE_MATCH'
+                    selected.append(dict(c, open=q['open'], gap=gap, auction_prev_close=observed,
+                                         high_limit=high, low_limit=low))
+        except (KeyError, ValueError, TypeError, OverflowError) as exc:
+            row.update(status='INVALID_CANDIDATE', error=str(exc))
+        rows.append(row)
+    selected.sort(key=lambda c: (c['pri'], c['gap'], c['code']))
+    return selected, rows
+
+
+def make_opening_report(yesterday, today, quote):
+    selected, rows = evaluate_opening(yesterday, today, quote)
+    rejected = [r for r in rows if r['status'] in ('PREV_CLOSE_MISMATCH', 'INVALID_PRICE',
+                'INVALID_CANDIDATE', 'SIGNAL_DATE_MISMATCH', 'STALE_QUOTE', 'MISSING_QUOTE')]
     if rejected:
-        print("AUCTION_REJECTED " + json.dumps(rejected, ensure_ascii=False), flush=True)
-    verified = [c for c in candidates if c["code"] in marks]
-    if candidates and not verified:
-        raise ValueError("All auction candidates rejected; see AUCTION_REJECTED diagnostics")
-    return opening_queue(verified, marks, cfg)
+        print('AUCTION_REJECTED ' + json.dumps(rejected, ensure_ascii=False), flush=True)
+    if rows and len(rejected) == len(rows):
+        raise ValueError('All auction candidates rejected for data quality; not zero signals')
+    return selected
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--late-diagnostic', action='store_true', help='Manual post-window report; no ServerChan or trading signals')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     now = dt.datetime.now(TZ)
     if now.weekday() >= 5:
         raise ValueError('Trading weekdays only')
@@ -104,53 +141,29 @@ def main():
     age = (now.date() - dt.date.fromisoformat(previous["date"])).days
     if age > 4:
         raise ValueError("Previous signal report too old")
-    candidates = previous.get("candidates", [])
+    session = previous.get('next_session')
+    if not isinstance(session, dict):
+        raise ValueError('Legacy report has prior-day candidates; regenerate with src.scan before opening review')
+    candidates = session.get('candidates', [])
     quotes = quote_batch([c["code"] for c in candidates], now.date())
     if args.late_diagnostic:
-        from .paper import COMPONENTS, band
-        from .data import price_limit
-        rows = []
-        for item in candidates:
-            q = quotes.get(item['code'])
-            row = {'code': item['code'], 'name': item['name'], 'component': item['component'],
-                   'signal_prev_close': item['prev_close']}
-            if not q:
-                row['status'] = 'MISSING_QUOTE'
-            else:
-                expected, observed = float(item['prev_close']), float(q['prev_close'])
-                gap = q['open'] / observed - 1 if observed > 0 else None
-                row.update(open=q['open'], auction_prev_close=observed,
-                           quote_time=q['quote_time'], gap_pct=round(gap * 100, 3) if gap is not None else None)
-                if expected <= 0 or observed <= 0 or abs(observed / expected - 1) > .003:
-                    row['status'] = 'PREV_CLOSE_MISMATCH'
-                elif re.search('ST|退', q['name'], re.I):
-                    row['status'] = 'ST_OR_DELIST'
-                else:
-                    cfg_local = DEFAULTS | json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
-                    lo, hi = COMPONENTS[item['component']]['gap']
-                    low_limit = price_limit(observed, -band(item['code']))
-                    high_limit = price_limit(observed, band(item['code']))
-                    if q['open'] > cfg_local['max_price']:
-                        row['status'] = 'PRICE_ABOVE_MAX'
-                    elif q['open'] >= high_limit:
-                        row['status'] = 'AT_UPPER_LIMIT'
-                    elif not lo - 1e-9 <= gap <= hi + 1e-9:
-                        row['status'] = 'GAP_OUTSIDE_RANGE'
-                    elif q['open'] <= low_limit * (1 + cfg_local['near_down']):
-                        row['status'] = 'TOO_CLOSE_TO_LOWER_LIMIT'
-                    else:
-                        row['status'] = 'OPENING_RULE_MATCH'
-            rows.append(row)
+        selected, rows = evaluate_opening(previous, now.date(), quotes)
         matched = [x for x in rows if x['status'] == 'OPENING_RULE_MATCH']
-        matched.sort(key=lambda x: (COMPONENTS[x['component']]['pri'], x['gap_pct'], x['code']))
+        rank = {x['code']: i for i, x in enumerate(selected)}
+        matched.sort(key=lambda x: rank[x['code']])
         diagnostics = {'mode': 'RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL',
                        'date': now.date().isoformat(), 'checked_at': now.isoformat(),
-                       'previous_signal_date': previous['date'], 'candidates': len(candidates),
+                       'previous_signal_date': session['signal_date'],
+                       'data_quality': {'signal_price_source': session['price_source'],
+                                        'auction_price_source': 'tencent',
+                                        'verified': all(r['status'] not in ('PREV_CLOSE_MISMATCH', 'INVALID_PRICE', 'INVALID_CANDIDATE', 'MISSING_QUOTE', 'STALE_QUOTE', 'SIGNAL_DATE_MISMATCH') for r in rows)}, 'candidates': len(candidates),
                        'fresh_quote_count': len(quotes), 'opening_rule_matches': len(matched),
                        'account_A_retrospective_top2': matched[:2],
                        'account_B_prior_opening_candidates': previous.get('opening_candidates', [])[:2],
                        'stocks': rows,
                        'warning': 'Uses current quote reported open, not archived 09:25 snapshot; no alerts, orders or fills'}
+        from .run import write_json
+        write_json(ROOT / ('outputs/opening-review-' + now.date().isoformat() + '.json'), diagnostics)
         print(json.dumps(diagnostics, ensure_ascii=False, indent=2), flush=True)
         return
     selected = make_opening_report(previous, now.date(), quotes)

@@ -158,14 +158,14 @@ class PublicData:
                 if i % 50 == 0:
                     print(f'History coverage {i}/1000; failures={len(self.errors)}', flush=True)
 
-    def scan(self, date, account, cfg):
+    def scan(self, date, account, cfg, after_close=False):
         self.load_pool()
         if self.errors:
             raise ValueError(f'History incomplete: {len(self.errors)} stocks failed; cannot report zero signals')
         days = self.days(end_date=date, count=42)
         if not days or days[-1] != date or len(days) < 42:
             raise ValueError('Trading calendar stale or incomplete')
-        t = days[-2]
+        t = days[-1] if after_close else days[-2]
         usable = []
         omitted = []
         for code, meta in self.pool.items():
@@ -184,7 +184,7 @@ class PublicData:
         if not usable:
             raise ValueError('No validated history')
         combined = pd.concat(usable, ignore_index=True)
-        calendar = days[-42:-1]
+        calendar = days[-41:] if after_close else days[-42:-1]
         history = {}
         dn = None
         for prev, day in zip(calendar[:-1], calendar[1:]):
@@ -205,6 +205,12 @@ class PublicData:
                            DEEP=bool(ice and (run >= 2 or ma <= -.04)), FB_OK=bool(ma < 0 and dn < .03), LB_OK=bool(dn < .03))
         flags = signals.stock_flags(combined, {s: float(self.frames[s][self.frames[s].time.dt.date == t].close.iloc[0]) for s in combined.code.unique() if not self.frames[s][self.frames[s].time.dt.date == t].empty}, t)
         candidates = signals.candidates(flags, temperature, self.names, cfg['min_day_money'])
+        for c in candidates:
+            c['signal_date'] = str(t)
+        if after_close:
+            return dict(signal_date=str(t), candidates=candidates, temperature=temperature,
+                        price_source='sina_daily_unadjusted_close')
+        next_session = self.scan(date, account, cfg, after_close=True)
         marks = {}
         for c in candidates:
             rows = self.frames[c['code']][self.frames[c['code']].time.dt.date == date]
@@ -217,6 +223,7 @@ class PublicData:
         return dict(date=str(date), previous_day=str(t), status='scanned', data_quality='current_constituent_reference', temperature=temperature,
                     pool_size=len(self.pool), history_loaded=len(self.frames)-1, validated_stocks=len(flags), omitted=omitted,
                     candidates=candidates, opening_candidates=qualified,
+                    next_session=next_session,
                     limitations=['使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。',
                                  '市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。',
                                  '信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。'])

@@ -19,3 +19,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Diagnose late opening data (no push, no orders)
         run: python -m src.opening_push --late-diagnostic
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s18-opening-review-${{ github.run_id }}
+          path: outputs/opening-review-*.json

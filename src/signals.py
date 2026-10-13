@@ -65,6 +65,7 @@ def candidates(flags, temperature, names, min_money):
         for component, rule in COMPONENTS.items():
             if temperature[rule['day']] and bool(row[rule['stock']]):
                 out.append(dict(code=code, name=names[code], component=component,
-                                pri=rule['pri'], prev_close=float(row.close_t), money=float(row.money)))
+                                pri=rule['pri'], signal_close=float(row.close_t),
+                                prev_close=float(row.close_t), money=float(row.money)))
                 break
     return out
