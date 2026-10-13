@@ -1,5 +1,6 @@
 """S18 GitHub Actions entrypoint and atomic, restartable paper ledger."""
 import argparse
+import copy
 import csv
 import datetime as dt
 import json
@@ -48,8 +49,9 @@ def export(account, root, status, detail=''):
         f'- 账户权益：{total_value(account):,.2f} 元',
         f'- 累计收益：{(total_value(account) / account["initial_cash"] - 1) * 100:.2f}%',
         f'- 累计模拟成交：{len(account["trades"])} 笔', '',
-        '公共行情参考口径：历史成分及ST状态未完整还原；分钟数据缺失不计模拟成交。',
-        '所有成交均为撮合模型假设，不是券商成交回报。', '',
+        '公共行情参考口径：历史成分及ST状态未完整还原。免费分钟源仅保留近期交易日；无完整分钟数据时不计成交，也不补造历史。',
+        '所有成交均为撮合模型假设，不是券商成交回报。',
+        '查看明细：`outputs/latest.json`、`outputs/holdings.csv`、`logs/trades.csv`、`logs/equity.csv`。', '',
         '| 股票 | 名称 | 组件 | 股数 | 买入日 | 含费成本 | 最新价 |',
         '|---|---|---|---:|---|---:|---:|',
     ]
@@ -104,10 +106,63 @@ def process(provider, account, cfg, end_date, root):
         export(account, root, 'non_trading_day')
 
 
+def process_report(provider, account, cfg, report, root):
+    """Replay exactly one successful scan date; failed preflight never touches ledger exports."""
+    root = Path(root)
+    if report.get('status') != 'scanned' or not report.get('date'):
+        write_json(root / 'outputs/paper-status.json', dict(status='scan_not_successful',
+                   detail='扫描未成功；模拟账本未更新。', report_date=report.get('date')))
+        return 'scan_not_successful'
+    day = dt.date.fromisoformat(report['date'])
+    if account['last_processed']:
+        last = dt.date.fromisoformat(account['last_processed'])
+        if day <= last:
+            return 'up_to_date'
+        try:
+            intervening = provider.days(start_date=last + dt.timedelta(days=1), end_date=day)
+        except Exception as exc:
+            write_json(root / 'outputs/paper-status.json', dict(status='calendar_unavailable',
+                       detail=f'{type(exc).__name__}: {str(exc)[:250]}；账本保持不变。',
+                       last_processed=account['last_processed'], requested_date=str(day)))
+            return 'calendar_unavailable'
+        if intervening != [day]:
+            write_json(root / 'outputs/paper-status.json', dict(status='missed_trading_day',
+                       detail='检测到未处理交易日；为避免伪造分钟成交，账本保持不变。',
+                       last_processed=account['last_processed'], requested_date=str(day)))
+            return 'missed_trading_day'
+    candidates = report.get('opening_candidates')
+    if not isinstance(candidates, list):
+        write_json(root / 'outputs/paper-status.json', dict(status='invalid_scan_report',
+                   detail='扫描报告缺少有效开盘候选列表；账本保持不变。', report_date=str(day)))
+        return 'invalid_scan_report'
+    working = copy.deepcopy(account)
+    if not working['last_processed'] and not working['days'] and not working['trades'] and not working['positions']:
+        working['start_date'] = str(day)
+    try:
+        daily, minutes = provider.session(day, candidates, working['positions'], cfg)
+        if not replay_day(working, str(day), candidates, daily, minutes, cfg):
+            return 'up_to_date'
+    except Exception as exc:
+        write_json(root / 'outputs/paper-status.json', dict(status='invalid_session',
+                   detail=f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。', report_date=str(day)))
+        return 'invalid_session'
+    for code, position in working['positions'].items():
+        if 'factor' in daily[code]:
+            position['factor'] = daily[code]['factor']
+    if working['days']:
+        working['days'][-1]['temperature'] = report.get('temperature')
+    export(working, root, 'processed')
+    (root / 'outputs/paper-status.json').unlink(missing_ok=True)
+    account.clear()
+    account.update(working)
+    return 'processed'
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--end-date', help='Optional completed date; no future/incomplete day allowed')
     parser.add_argument('--initialize', action='store_true', help='Create only if no account exists; never reset')
+    parser.add_argument('--paper-from-scan', action='store_true', help='Replay the newest successful daily scan')
     args = parser.parse_args()
     cfg = DEFAULTS | json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
     path = ROOT / 'state/account.json'
@@ -117,6 +172,16 @@ def main():
     if args.initialize:
         export(account, ROOT, 'waiting_for_configuration')
         return 0
+    if args.paper_from_scan:
+        reports = sorted((ROOT / 'outputs').glob('signals-????-??-??.json'), reverse=True)
+        if not reports:
+            write_json(ROOT / 'outputs/paper-status.json', dict(status='scan_missing',
+                       detail='未找到扫描报告；模拟账本未更新。'))
+            return 1
+        report = json.loads(reports[0].read_text(encoding='utf-8'))
+        status = process_report(PublicData(), account, cfg, report, ROOT)
+        print(f'Paper ledger: {status}', flush=True)
+        return 0 if status in ('processed', 'up_to_date') else 1
     # The active strategy only scans daily/opening conditions; no minute replay.
     from .scan import main as scan_main
     return scan_main(['--end-date', args.end_date] if args.end_date else [])

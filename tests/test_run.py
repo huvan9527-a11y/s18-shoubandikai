@@ -1,4 +1,5 @@
 import copy
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -24,7 +25,80 @@ class Provider:
         return d, m
 
 
+class SingleSessionProvider:
+    def __init__(self, fail=False):
+        self.fail = fail
+        self.calls = []
+
+    def days(self, start_date=None, end_date=None, **kwargs):
+        return [date(2026, 10, 8)]
+
+    def session(self, day, candidates, positions, cfg):
+        self.calls.append((day, candidates, positions))
+        if self.fail:
+            raise ValueError('minute gap')
+        return test_paper.ReplayTests().fixture()[1:]
+
+
+class BrokenCalendarProvider(SingleSessionProvider):
+    def days(self, start_date=None, end_date=None, **kwargs):
+        raise OSError('calendar source unavailable')
+
+
 class RunnerTests(unittest.TestCase):
+    def test_report_replay_starts_at_first_valid_date_and_is_idempotent(self):
+        self.assertTrue(callable(getattr(run, 'process_report', None)))
+        with tempfile.TemporaryDirectory() as root:
+            a = paper.new_account('2026-10-01')
+            provider = SingleSessionProvider()
+            report = dict(date='2026-10-08', status='scanned',
+                          opening_candidates=test_paper.ReplayTests().fixture()[0])
+            self.assertEqual(run.process_report(provider, a, paper.DEFAULTS, report, Path(root)), 'processed')
+            self.assertEqual(a['start_date'], '2026-10-08')
+            self.assertEqual(a['last_processed'], '2026-10-08')
+            self.assertEqual(len(a['trades']), 1)
+            before = copy.deepcopy(a)
+            self.assertEqual(run.process_report(provider, a, paper.DEFAULTS, report, Path(root)), 'up_to_date')
+            self.assertEqual(a, before)
+
+    def test_bad_minutes_leave_account_and_published_files_unchanged(self):
+        self.assertTrue(callable(getattr(run, 'process_report', None)))
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            a = paper.new_account('2026-10-01')
+            run.export(a, root, 'waiting_for_configuration')
+            files = {p: p.read_bytes() for p in (root / 'state/account.json', root / 'outputs/latest.json',
+                     root / 'outputs/latest.md', root / 'outputs/holdings.csv', root / 'logs/trades.csv',
+                     root / 'logs/equity.csv')}
+            before = copy.deepcopy(a)
+            report = dict(date='2026-10-08', status='scanned',
+                          opening_candidates=test_paper.ReplayTests().fixture()[0])
+            status = run.process_report(SingleSessionProvider(fail=True), a, paper.DEFAULTS, report, root)
+            self.assertEqual(status, 'invalid_session')
+            self.assertEqual(a, before)
+            self.assertEqual({p: p.read_bytes() for p in files}, files)
+            self.assertTrue((root / 'outputs/paper-status.json').exists())
+
+    def test_non_scanned_report_cannot_change_paper_account(self):
+        self.assertTrue(callable(getattr(run, 'process_report', None)))
+        with tempfile.TemporaryDirectory() as root:
+            a = paper.new_account('2026-10-01')
+            before = copy.deepcopy(a)
+            result = run.process_report(SingleSessionProvider(), a, paper.DEFAULTS,
+                                        dict(date='2026-10-08', status='failed_data_incomplete'), Path(root))
+            self.assertEqual(result, 'scan_not_successful')
+            self.assertEqual(a, before)
+
+    def test_calendar_lookup_failure_is_reported_without_mutating_account(self):
+        a = paper.new_account('2026-10-01')
+        a['last_processed'] = '2026-10-07'
+        before = copy.deepcopy(a)
+        with tempfile.TemporaryDirectory() as root:
+            report = dict(date='2026-10-08', status='scanned', opening_candidates=[])
+            result = run.process_report(BrokenCalendarProvider(), a, paper.DEFAULTS, report, Path(root))
+            self.assertEqual(result, 'calendar_unavailable')
+            self.assertEqual(a, before)
+            self.assertEqual(json.loads((Path(root) / 'outputs/paper-status.json').read_text(encoding='utf-8'))['status'], 'calendar_unavailable')
     def test_catchup_and_repeated_run_preserve_cash(self):
         with tempfile.TemporaryDirectory() as root:
             a = paper.new_account('2026-10-08')
