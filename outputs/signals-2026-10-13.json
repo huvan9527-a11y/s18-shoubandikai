@@ -1,0 +1,3447 @@
+{
+  "date": "2026-10-13",
+  "previous_day": "2026-10-12",
+  "status": "scanned",
+  "data_quality": "current_constituent_reference",
+  "temperature": {
+    "ICE": false,
+    "RUN": 0,
+    "MA20": -0.06235352341048095,
+    "M_DN": 0.006006006006006006,
+    "DEEP": false,
+    "FB_OK": true,
+    "LB_OK": true
+  },
+  "pool_size": 1000,
+  "history_loaded": 1000,
+  "validated_stocks": 993,
+  "omitted": [],
+  "candidates": [
+    {
+      "code": "600812.XSHG",
+      "name": "华北制药",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 6.63,
+      "prev_close": 6.63,
+      "money": 1002097843.0,
+      "signal_date": "2026-10-12"
+    },
+    {
+      "code": "601595.XSHG",
+      "name": "上海电影",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 27.21,
+      "prev_close": 27.21,
+      "money": 753730740.0,
+      "signal_date": "2026-10-12"
+    },
+    {
+      "code": "603533.XSHG",
+      "name": "掌阅科技",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 27.98,
+      "prev_close": 27.98,
+      "money": 2096530444.0,
+      "signal_date": "2026-10-12"
+    },
+    {
+      "code": "603992.XSHG",
+      "name": "松霖科技",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 20.94,
+      "prev_close": 20.94,
+      "money": 157046556.0,
+      "signal_date": "2026-10-12"
+    }
+  ],
+  "opening_candidates": [
+    {
+      "code": "603533.XSHG",
+      "name": "掌阅科技",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 27.98,
+      "prev_close": 27.98,
+      "money": 2096530444.0,
+      "signal_date": "2026-10-12",
+      "open": 26.9,
+      "gap": -0.03859899928520383,
+      "high_limit": 30.78,
+      "low_limit": 25.18
+    }
+  ],
+  "next_session": {
+    "signal_date": "2026-10-13",
+    "candidates": [
+      {
+        "code": "000035.XSHE",
+        "name": "中国天楹",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.9,
+        "prev_close": 4.9,
+        "money": 209976056.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "000420.XSHE",
+        "name": "吉林化纤",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.74,
+        "prev_close": 3.74,
+        "money": 734440274.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "000628.XSHE",
+        "name": "高新发展",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 49.2,
+        "prev_close": 49.2,
+        "money": 447368749.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600012.XSHG",
+        "name": "皖通高速",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.79,
+        "prev_close": 16.79,
+        "money": 117599752.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600033.XSHG",
+        "name": "福建高速",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.76,
+        "prev_close": 3.76,
+        "money": 110851659.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600037.XSHG",
+        "name": "歌华有线",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.44,
+        "prev_close": 7.44,
+        "money": 214185306.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600056.XSHG",
+        "name": "中国医药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.07,
+        "prev_close": 9.07,
+        "money": 100237898.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600059.XSHG",
+        "name": "古越龙山",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.33,
+        "prev_close": 10.33,
+        "money": 662083450.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600063.XSHG",
+        "name": "皖维高新",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.33,
+        "prev_close": 5.33,
+        "money": 153699549.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600064.XSHG",
+        "name": "南京高科",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.92,
+        "prev_close": 7.92,
+        "money": 131054533.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600072.XSHG",
+        "name": "中船科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.51,
+        "prev_close": 9.51,
+        "money": 439885984.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600075.XSHG",
+        "name": "新疆天业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.61,
+        "prev_close": 4.61,
+        "money": 130573624.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600094.XSHG",
+        "name": "大名城",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.25,
+        "prev_close": 4.25,
+        "money": 137918345.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600113.XSHG",
+        "name": "浙江东日",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 28.55,
+        "prev_close": 28.55,
+        "money": 128360209.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600114.XSHG",
+        "name": "东睦股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.39,
+        "prev_close": 23.39,
+        "money": 235634300.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600120.XSHG",
+        "name": "浙江东方",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.7,
+        "prev_close": 4.7,
+        "money": 132931121.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600123.XSHG",
+        "name": "兰花科创",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.96,
+        "prev_close": 6.96,
+        "money": 139877530.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600129.XSHG",
+        "name": "太极集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.52,
+        "prev_close": 13.52,
+        "money": 102397503.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600151.XSHG",
+        "name": "航天机电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.97,
+        "prev_close": 8.97,
+        "money": 161095709.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600155.XSHG",
+        "name": "华创云信",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.95,
+        "prev_close": 5.95,
+        "money": 132870336.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600158.XSHG",
+        "name": "中体产业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.11,
+        "prev_close": 7.11,
+        "money": 212251395.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600163.XSHG",
+        "name": "中闽能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.53,
+        "prev_close": 5.53,
+        "money": 141535168.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600179.XSHG",
+        "name": "安通控股",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.39,
+        "prev_close": 4.39,
+        "money": 130859080.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600184.XSHG",
+        "name": "光电股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.45,
+        "prev_close": 16.45,
+        "money": 240996766.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600185.XSHG",
+        "name": "珠免集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.65,
+        "prev_close": 4.65,
+        "money": 108408505.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600186.XSHG",
+        "name": "莲花控股",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.43,
+        "prev_close": 10.43,
+        "money": 1279493114.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600201.XSHG",
+        "name": "生物股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.93,
+        "prev_close": 11.93,
+        "money": 182100778.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600206.XSHG",
+        "name": "有研新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 44.12,
+        "prev_close": 44.12,
+        "money": 3384209227.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600210.XSHG",
+        "name": "紫江企业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.67,
+        "prev_close": 6.67,
+        "money": 191230774.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600216.XSHG",
+        "name": "浙江医药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.19,
+        "prev_close": 12.19,
+        "money": 147815837.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600226.XSHG",
+        "name": "亨通股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.91,
+        "prev_close": 4.91,
+        "money": 341547094.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600246.XSHG",
+        "name": "万通发展",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.88,
+        "prev_close": 11.88,
+        "money": 882490339.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600252.XSHG",
+        "name": "中恒集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 2.25,
+        "prev_close": 2.25,
+        "money": 242086955.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600258.XSHG",
+        "name": "首旅酒店",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.06,
+        "prev_close": 11.06,
+        "money": 144990046.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600259.XSHG",
+        "name": "中稀有色",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 67.45,
+        "prev_close": 67.45,
+        "money": 484207410.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600266.XSHG",
+        "name": "城建发展",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.23,
+        "prev_close": 4.23,
+        "money": 141627245.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600267.XSHG",
+        "name": "海正药业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.52,
+        "prev_close": 11.52,
+        "money": 229790243.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600268.XSHG",
+        "name": "国电南自",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.09,
+        "prev_close": 10.09,
+        "money": 101869292.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600285.XSHG",
+        "name": "羚锐制药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 20.33,
+        "prev_close": 20.33,
+        "money": 313077737.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600315.XSHG",
+        "name": "上海家化",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.72,
+        "prev_close": 18.72,
+        "money": 201394024.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600320.XSHG",
+        "name": "振华重工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.31,
+        "prev_close": 4.31,
+        "money": 362464801.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600323.XSHG",
+        "name": "瀚蓝环境",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 29.88,
+        "prev_close": 29.88,
+        "money": 174020369.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600325.XSHG",
+        "name": "华发股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 2.79,
+        "prev_close": 2.79,
+        "money": 214165734.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600330.XSHG",
+        "name": "天通股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.38,
+        "prev_close": 23.38,
+        "money": 1935160346.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600331.XSHG",
+        "name": "宏达股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.51,
+        "prev_close": 11.51,
+        "money": 318795981.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600338.XSHG",
+        "name": "西藏珠峰",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.77,
+        "prev_close": 11.77,
+        "money": 261456458.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600345.XSHG",
+        "name": "长江通信",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 43.68,
+        "prev_close": 43.68,
+        "money": 260149628.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600353.XSHG",
+        "name": "旭光电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 25.41,
+        "prev_close": 25.41,
+        "money": 888526905.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600361.XSHG",
+        "name": "创新新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.48,
+        "prev_close": 3.48,
+        "money": 100558920.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600366.XSHG",
+        "name": "宁波韵升",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.8,
+        "prev_close": 10.8,
+        "money": 203811297.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600373.XSHG",
+        "name": "中文传媒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.95,
+        "prev_close": 7.95,
+        "money": 203631176.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600388.XSHG",
+        "name": "紫金龙净",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.25,
+        "prev_close": 16.25,
+        "money": 208712896.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600399.XSHG",
+        "name": "抚顺特钢",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.37,
+        "prev_close": 4.37,
+        "money": 162005357.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600403.XSHG",
+        "name": "大有能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.24,
+        "prev_close": 7.24,
+        "money": 699227278.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600409.XSHG",
+        "name": "三友化工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.07,
+        "prev_close": 6.07,
+        "money": 126233141.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600416.XSHG",
+        "name": "湘电股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.29,
+        "prev_close": 8.29,
+        "money": 101921716.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600428.XSHG",
+        "name": "中远海特",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.82,
+        "prev_close": 10.82,
+        "money": 302444493.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600446.XSHG",
+        "name": "金证股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.72,
+        "prev_close": 10.72,
+        "money": 178032684.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600452.XSHG",
+        "name": "涪陵电力",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.74,
+        "prev_close": 8.74,
+        "money": 117483731.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600458.XSHG",
+        "name": "时代新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.54,
+        "prev_close": 10.54,
+        "money": 224510098.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600459.XSHG",
+        "name": "贵研铂业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 17.56,
+        "prev_close": 17.56,
+        "money": 145404571.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600461.XSHG",
+        "name": "洪城环境",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.98,
+        "prev_close": 8.98,
+        "money": 231014864.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600478.XSHG",
+        "name": "科力远",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.86,
+        "prev_close": 4.86,
+        "money": 364424647.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600490.XSHG",
+        "name": "鹏欣资源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.54,
+        "prev_close": 6.54,
+        "money": 153319674.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600502.XSHG",
+        "name": "安徽建工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.39,
+        "prev_close": 4.39,
+        "money": 276170203.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600508.XSHG",
+        "name": "上海能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.34,
+        "prev_close": 10.34,
+        "money": 145664729.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600509.XSHG",
+        "name": "天富能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.15,
+        "prev_close": 7.15,
+        "money": 108423883.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600531.XSHG",
+        "name": "豫光金铅",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.92,
+        "prev_close": 10.92,
+        "money": 261751081.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600550.XSHG",
+        "name": "保变电气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.59,
+        "prev_close": 10.59,
+        "money": 764890707.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600552.XSHG",
+        "name": "凯盛科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.46,
+        "prev_close": 14.46,
+        "money": 562710046.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600556.XSHG",
+        "name": "天下秀",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.02,
+        "prev_close": 5.02,
+        "money": 520999434.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600559.XSHG",
+        "name": "老白干酒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.09,
+        "prev_close": 11.09,
+        "money": 234378841.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600572.XSHG",
+        "name": "康恩贝",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.37,
+        "prev_close": 4.37,
+        "money": 164080168.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600575.XSHG",
+        "name": "淮河能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.21,
+        "prev_close": 3.21,
+        "money": 107025457.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600577.XSHG",
+        "name": "精达股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.89,
+        "prev_close": 8.89,
+        "money": 1184729179.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600587.XSHG",
+        "name": "新华医疗",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.75,
+        "prev_close": 12.75,
+        "money": 130136162.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600596.XSHG",
+        "name": "新安股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.8,
+        "prev_close": 10.8,
+        "money": 367844952.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600619.XSHG",
+        "name": "海立股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.73,
+        "prev_close": 12.73,
+        "money": 246963819.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600621.XSHG",
+        "name": "华鑫股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.78,
+        "prev_close": 14.78,
+        "money": 1187537467.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600623.XSHG",
+        "name": "华谊集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.94,
+        "prev_close": 8.94,
+        "money": 233971135.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600629.XSHG",
+        "name": "华建集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 17.73,
+        "prev_close": 17.73,
+        "money": 446264174.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600633.XSHG",
+        "name": "浙数文化",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.43,
+        "prev_close": 10.43,
+        "money": 185440827.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600635.XSHG",
+        "name": "大众公用",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.42,
+        "prev_close": 4.42,
+        "money": 130116075.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600640.XSHG",
+        "name": "国脉文化",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.6,
+        "prev_close": 12.6,
+        "money": 157815095.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600641.XSHG",
+        "name": "先导基电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 45.33,
+        "prev_close": 45.33,
+        "money": 3296789229.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600645.XSHG",
+        "name": "中源协和",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.18,
+        "prev_close": 18.18,
+        "money": 135418261.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600654.XSHG",
+        "name": "中安科",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.07,
+        "prev_close": 3.07,
+        "money": 134007135.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600657.XSHG",
+        "name": "信达地产",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.13,
+        "prev_close": 3.13,
+        "money": 147866563.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600664.XSHG",
+        "name": "哈药股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.56,
+        "prev_close": 6.56,
+        "money": 3309638124.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600667.XSHG",
+        "name": "太极实业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 15.81,
+        "prev_close": 15.81,
+        "money": 1612088067.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600675.XSHG",
+        "name": "中华企业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 2.33,
+        "prev_close": 2.33,
+        "money": 104700129.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600686.XSHG",
+        "name": "金龙汽车",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.6,
+        "prev_close": 10.6,
+        "money": 358193053.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600710.XSHG",
+        "name": "苏美达",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.22,
+        "prev_close": 11.22,
+        "money": 109932285.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600717.XSHG",
+        "name": "天津港",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.43,
+        "prev_close": 4.43,
+        "money": 139356284.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600718.XSHG",
+        "name": "东软集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.49,
+        "prev_close": 8.49,
+        "money": 133759814.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600726.XSHG",
+        "name": "华电能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.84,
+        "prev_close": 4.84,
+        "money": 205118747.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600739.XSHG",
+        "name": "辽宁成大",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.21,
+        "prev_close": 10.21,
+        "money": 104657185.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600740.XSHG",
+        "name": "山西焦化",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.75,
+        "prev_close": 3.75,
+        "money": 114589251.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600744.XSHG",
+        "name": "华银电力",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.96,
+        "prev_close": 5.96,
+        "money": 210641102.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600746.XSHG",
+        "name": "江苏索普",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.38,
+        "prev_close": 7.38,
+        "money": 286716635.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600757.XSHG",
+        "name": "长江传媒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.7,
+        "prev_close": 7.7,
+        "money": 110244498.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600761.XSHG",
+        "name": "安徽合力",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.91,
+        "prev_close": 14.91,
+        "money": 102626409.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600771.XSHG",
+        "name": "广誉远",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.87,
+        "prev_close": 13.87,
+        "money": 105816133.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600773.XSHG",
+        "name": "西藏城投",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.35,
+        "prev_close": 9.35,
+        "money": 171432316.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600776.XSHG",
+        "name": "东方通信",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.1,
+        "prev_close": 12.1,
+        "money": 129839202.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600783.XSHG",
+        "name": "鲁信创投",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.81,
+        "prev_close": 13.81,
+        "money": 149751347.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600789.XSHG",
+        "name": "鲁抗医药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.83,
+        "prev_close": 7.83,
+        "money": 361727050.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600821.XSHG",
+        "name": "金开新能",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.54,
+        "prev_close": 5.54,
+        "money": 155687749.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600859.XSHG",
+        "name": "王府井",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.78,
+        "prev_close": 9.78,
+        "money": 100334475.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600864.XSHG",
+        "name": "哈投股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.99,
+        "prev_close": 5.99,
+        "money": 589418779.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600869.XSHG",
+        "name": "远东股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.54,
+        "prev_close": 16.54,
+        "money": 1576762940.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600872.XSHG",
+        "name": "中炬高新",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 17.72,
+        "prev_close": 17.72,
+        "money": 163662235.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600877.XSHG",
+        "name": "电科芯片",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.73,
+        "prev_close": 10.73,
+        "money": 121224105.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600882.XSHG",
+        "name": "妙可蓝多",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 19.91,
+        "prev_close": 19.91,
+        "money": 247801972.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600888.XSHG",
+        "name": "新疆众和",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.33,
+        "prev_close": 9.33,
+        "money": 354272865.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600908.XSHG",
+        "name": "无锡银行",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.9,
+        "prev_close": 5.9,
+        "money": 108694228.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600916.XSHG",
+        "name": "中国黄金",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.19,
+        "prev_close": 7.19,
+        "money": 101957264.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600933.XSHG",
+        "name": "爱柯迪",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.82,
+        "prev_close": 12.82,
+        "money": 167761335.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600961.XSHG",
+        "name": "株冶集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 21.47,
+        "prev_close": 21.47,
+        "money": 466288140.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600963.XSHG",
+        "name": "岳阳林纸",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.33,
+        "prev_close": 3.33,
+        "money": 102541630.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600971.XSHG",
+        "name": "恒源煤电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.34,
+        "prev_close": 8.34,
+        "money": 130331700.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600986.XSHG",
+        "name": "浙文互联",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.31,
+        "prev_close": 7.31,
+        "money": 371944467.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600993.XSHG",
+        "name": "马应龙",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.72,
+        "prev_close": 23.72,
+        "money": 195946298.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "600996.XSHG",
+        "name": "贵广网络",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.01,
+        "prev_close": 7.01,
+        "money": 153788125.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601020.XSHG",
+        "name": "华钰矿业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.46,
+        "prev_close": 18.46,
+        "money": 259931413.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601026.XSHG",
+        "name": "道生天合",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.94,
+        "prev_close": 14.94,
+        "money": 104104611.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601033.XSHG",
+        "name": "永兴股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.78,
+        "prev_close": 14.78,
+        "money": 100231120.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601069.XSHG",
+        "name": "西部黄金",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 25.92,
+        "prev_close": 25.92,
+        "money": 631118980.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601083.XSHG",
+        "name": "锦江航运",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.61,
+        "prev_close": 13.61,
+        "money": 152960519.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601101.XSHG",
+        "name": "昊华能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.91,
+        "prev_close": 12.91,
+        "money": 177176525.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601126.XSHG",
+        "name": "四方股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 33.68,
+        "prev_close": 33.68,
+        "money": 665108548.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601137.XSHG",
+        "name": "博威合金",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.0,
+        "prev_close": 18.0,
+        "money": 158000380.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601187.XSHG",
+        "name": "厦门银行",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.84,
+        "prev_close": 6.84,
+        "money": 203477092.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601208.XSHG",
+        "name": "东材科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 46.1,
+        "prev_close": 46.1,
+        "money": 2500370173.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601222.XSHG",
+        "name": "林洋能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.1,
+        "prev_close": 6.1,
+        "money": 173058611.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601333.XSHG",
+        "name": "广深铁路",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.07,
+        "prev_close": 3.07,
+        "money": 147676032.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601375.XSHG",
+        "name": "中原证券",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.96,
+        "prev_close": 3.96,
+        "money": 129368425.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601519.XSHG",
+        "name": "大智慧",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.53,
+        "prev_close": 9.53,
+        "money": 1505863188.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601595.XSHG",
+        "name": "上海电影",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 27.56,
+        "prev_close": 27.56,
+        "money": 1014018676.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601606.XSHG",
+        "name": "长城军工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 30.48,
+        "prev_close": 30.48,
+        "money": 666477048.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601609.XSHG",
+        "name": "金田股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.7,
+        "prev_close": 10.7,
+        "money": 311796236.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601636.XSHG",
+        "name": "旗滨集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.09,
+        "prev_close": 5.09,
+        "money": 173386366.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601677.XSHG",
+        "name": "明泰铝业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 15.51,
+        "prev_close": 15.51,
+        "money": 262656660.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601678.XSHG",
+        "name": "滨化股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.52,
+        "prev_close": 5.52,
+        "money": 257867872.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601777.XSHG",
+        "name": "千里科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.2,
+        "prev_close": 8.2,
+        "money": 229070478.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601778.XSHG",
+        "name": "晶科科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 3.34,
+        "prev_close": 3.34,
+        "money": 242347121.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601801.XSHG",
+        "name": "皖新传媒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.63,
+        "prev_close": 5.63,
+        "money": 136449726.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601858.XSHG",
+        "name": "中国科传",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.74,
+        "prev_close": 23.74,
+        "money": 608793611.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601860.XSHG",
+        "name": "紫金银行",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 2.56,
+        "prev_close": 2.56,
+        "money": 180904870.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601882.XSHG",
+        "name": "海天精工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 21.78,
+        "prev_close": 21.78,
+        "money": 142906482.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601890.XSHG",
+        "name": "亚星锚链",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.43,
+        "prev_close": 9.43,
+        "money": 438231012.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601900.XSHG",
+        "name": "南方传媒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.32,
+        "prev_close": 13.32,
+        "money": 342841588.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601918.XSHG",
+        "name": "新集能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.1,
+        "prev_close": 11.1,
+        "money": 756893781.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601921.XSHG",
+        "name": "浙版传媒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.84,
+        "prev_close": 7.84,
+        "money": 111903788.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601949.XSHG",
+        "name": "中国出版",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 6.06,
+        "prev_close": 6.06,
+        "money": 294450343.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601952.XSHG",
+        "name": "苏垦农发",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.01,
+        "prev_close": 9.01,
+        "money": 208912984.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601963.XSHG",
+        "name": "重庆银行",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.22,
+        "prev_close": 11.22,
+        "money": 143834559.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601965.XSHG",
+        "name": "中国汽研",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.85,
+        "prev_close": 13.85,
+        "money": 264210810.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "601975.XSHG",
+        "name": "招商南油",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.53,
+        "prev_close": 4.53,
+        "money": 1120017380.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603005.XSHG",
+        "name": "晶方科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.31,
+        "prev_close": 24.31,
+        "money": 579795411.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603009.XSHG",
+        "name": "北特科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 42.52,
+        "prev_close": 42.52,
+        "money": 218416834.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603025.XSHG",
+        "name": "大豪科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.53,
+        "prev_close": 13.53,
+        "money": 161582305.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603026.XSHG",
+        "name": "石大胜华",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 55.57,
+        "prev_close": 55.57,
+        "money": 717339474.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603039.XSHG",
+        "name": "泛微网络",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 34.68,
+        "prev_close": 34.68,
+        "money": 339718914.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603063.XSHG",
+        "name": "禾望电气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.92,
+        "prev_close": 24.92,
+        "money": 371199867.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603083.XSHG",
+        "name": "剑桥科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 186.11,
+        "prev_close": 186.11,
+        "money": 3939692999.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603093.XSHG",
+        "name": "南华期货",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.58,
+        "prev_close": 13.58,
+        "money": 382405254.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603103.XSHG",
+        "name": "横店影视",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.81,
+        "prev_close": 16.81,
+        "money": 130504631.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603108.XSHG",
+        "name": "润达医疗",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.07,
+        "prev_close": 10.07,
+        "money": 185228779.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603118.XSHG",
+        "name": "共进股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.17,
+        "prev_close": 14.17,
+        "money": 682492922.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603124.XSHG",
+        "name": "江南新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 109.15,
+        "prev_close": 109.15,
+        "money": 570570961.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603127.XSHG",
+        "name": "昭衍新药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 50.42,
+        "prev_close": 50.42,
+        "money": 1951812160.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603132.XSHG",
+        "name": "金徽股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.96,
+        "prev_close": 16.96,
+        "money": 118728398.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603162.XSHG",
+        "name": "海通发展",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.82,
+        "prev_close": 11.82,
+        "money": 577404260.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603171.XSHG",
+        "name": "税友股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 41.99,
+        "prev_close": 41.99,
+        "money": 412327203.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603218.XSHG",
+        "name": "日月股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.47,
+        "prev_close": 9.47,
+        "money": 160192699.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603220.XSHG",
+        "name": "中贝通信",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 15.79,
+        "prev_close": 15.79,
+        "money": 223848719.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603236.XSHG",
+        "name": "移远通信",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 70.39,
+        "prev_close": 70.39,
+        "money": 947838878.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603248.XSHG",
+        "name": "锡华科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 20.32,
+        "prev_close": 20.32,
+        "money": 297657476.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603267.XSHG",
+        "name": "鸿远电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 42.92,
+        "prev_close": 42.92,
+        "money": 196484142.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603283.XSHG",
+        "name": "赛腾股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 36.48,
+        "prev_close": 36.48,
+        "money": 394227160.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603300.XSHG",
+        "name": "海南华铁",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.58,
+        "prev_close": 4.58,
+        "money": 117751712.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603305.XSHG",
+        "name": "旭升集团",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 10.53,
+        "prev_close": 10.53,
+        "money": 195728195.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603306.XSHG",
+        "name": "华懋科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 64.75,
+        "prev_close": 64.75,
+        "money": 545858493.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603319.XSHG",
+        "name": "美湖股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 25.19,
+        "prev_close": 25.19,
+        "money": 255596719.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603323.XSHG",
+        "name": "苏农银行",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 4.48,
+        "prev_close": 4.48,
+        "money": 139698992.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603337.XSHG",
+        "name": "杰克科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 34.74,
+        "prev_close": 34.74,
+        "money": 131072549.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603355.XSHG",
+        "name": "莱克电气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 31.97,
+        "prev_close": 31.97,
+        "money": 103928739.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603358.XSHG",
+        "name": "华达科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 38.91,
+        "prev_close": 38.91,
+        "money": 358571340.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603360.XSHG",
+        "name": "百傲化学",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.06,
+        "prev_close": 12.06,
+        "money": 146225802.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603393.XSHG",
+        "name": "新天然气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.47,
+        "prev_close": 24.47,
+        "money": 139292515.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603395.XSHG",
+        "name": "红四方",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.47,
+        "prev_close": 24.47,
+        "money": 210510497.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603418.XSHG",
+        "name": "友升股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 49.5,
+        "prev_close": 49.5,
+        "money": 114694079.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603456.XSHG",
+        "name": "九洲药业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.6,
+        "prev_close": 16.6,
+        "money": 385489053.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603477.XSHG",
+        "name": "巨星农牧",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.67,
+        "prev_close": 13.67,
+        "money": 136019562.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603496.XSHG",
+        "name": "恒为科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.34,
+        "prev_close": 22.34,
+        "money": 115510346.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603505.XSHG",
+        "name": "金石资源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.21,
+        "prev_close": 13.21,
+        "money": 159748263.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603516.XSHG",
+        "name": "淳中科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 71.78,
+        "prev_close": 71.78,
+        "money": 303020885.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603530.XSHG",
+        "name": "神马电力",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 38.29,
+        "prev_close": 38.29,
+        "money": 126325466.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603533.XSHG",
+        "name": "掌阅科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 27.2,
+        "prev_close": 27.2,
+        "money": 1919990899.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603556.XSHG",
+        "name": "海兴电力",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.04,
+        "prev_close": 22.04,
+        "money": 117209177.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603567.XSHG",
+        "name": "珍宝岛",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 5.25,
+        "prev_close": 5.25,
+        "money": 123275428.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603583.XSHG",
+        "name": "捷昌驱动",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 26.99,
+        "prev_close": 26.99,
+        "money": 100620213.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603588.XSHG",
+        "name": "高能环境",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 13.9,
+        "prev_close": 13.9,
+        "money": 1172236992.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603612.XSHG",
+        "name": "索通发展",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 15.9,
+        "prev_close": 15.9,
+        "money": 143564024.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603613.XSHG",
+        "name": "国联股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.65,
+        "prev_close": 18.65,
+        "money": 175477406.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603619.XSHG",
+        "name": "中曼石油",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 20.48,
+        "prev_close": 20.48,
+        "money": 291716338.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603638.XSHG",
+        "name": "艾迪精密",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 19.8,
+        "prev_close": 19.8,
+        "money": 223035928.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603662.XSHG",
+        "name": "柯力传感",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 43.8,
+        "prev_close": 43.8,
+        "money": 144339474.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603663.XSHG",
+        "name": "三祥新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 37.25,
+        "prev_close": 37.25,
+        "money": 618126795.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603667.XSHG",
+        "name": "五洲新春",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 44.45,
+        "prev_close": 44.45,
+        "money": 420395086.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603678.XSHG",
+        "name": "火炬电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 37.72,
+        "prev_close": 37.72,
+        "money": 638550656.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603690.XSHG",
+        "name": "至纯科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.89,
+        "prev_close": 22.89,
+        "money": 1032810633.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603693.XSHG",
+        "name": "江苏新能",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.0,
+        "prev_close": 12.0,
+        "money": 141696387.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603698.XSHG",
+        "name": "航天工程",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 19.56,
+        "prev_close": 19.56,
+        "money": 237223552.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603713.XSHG",
+        "name": "密尔克卫",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 63.34,
+        "prev_close": 63.34,
+        "money": 194464033.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603730.XSHG",
+        "name": "岱美股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.87,
+        "prev_close": 9.87,
+        "money": 322208020.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603826.XSHG",
+        "name": "坤彩科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.5,
+        "prev_close": 14.5,
+        "money": 228736337.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603876.XSHG",
+        "name": "鼎胜新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.61,
+        "prev_close": 16.61,
+        "money": 237200872.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603881.XSHG",
+        "name": "数据港",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.4,
+        "prev_close": 22.4,
+        "money": 312075848.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603883.XSHG",
+        "name": "老百姓",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.44,
+        "prev_close": 14.44,
+        "money": 606260945.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603887.XSHG",
+        "name": "城地香江",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.23,
+        "prev_close": 8.23,
+        "money": 108905826.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603888.XSHG",
+        "name": "新华网",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 17.66,
+        "prev_close": 17.66,
+        "money": 273210660.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603919.XSHG",
+        "name": "金徽酒",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.33,
+        "prev_close": 16.33,
+        "money": 397855324.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603927.XSHG",
+        "name": "中科软",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.11,
+        "prev_close": 14.11,
+        "money": 139297314.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603929.XSHG",
+        "name": "亚翔集成",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 134.25,
+        "prev_close": 134.25,
+        "money": 470446414.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603950.XSHG",
+        "name": "长源东谷",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 45.62,
+        "prev_close": 45.62,
+        "money": 414755490.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603992.XSHG",
+        "name": "松霖科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.37,
+        "prev_close": 22.37,
+        "money": 405059171.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "603997.XSHG",
+        "name": "继峰股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.72,
+        "prev_close": 11.72,
+        "money": 600802918.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605011.XSHG",
+        "name": "杭州热电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.53,
+        "prev_close": 18.53,
+        "money": 252536360.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605020.XSHG",
+        "name": "永和股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 29.55,
+        "prev_close": 29.55,
+        "money": 244644041.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605090.XSHG",
+        "name": "九丰能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 30.52,
+        "prev_close": 30.52,
+        "money": 166791654.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605111.XSHG",
+        "name": "新洁能",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 46.78,
+        "prev_close": 46.78,
+        "money": 531377162.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605118.XSHG",
+        "name": "力鼎光电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 29.18,
+        "prev_close": 29.18,
+        "money": 111644163.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605123.XSHG",
+        "name": "派克新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 73.85,
+        "prev_close": 73.85,
+        "money": 100923094.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605196.XSHG",
+        "name": "华通线缆",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 32.42,
+        "prev_close": 32.42,
+        "money": 449387533.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605198.XSHG",
+        "name": "安德利",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 61.22,
+        "prev_close": 61.22,
+        "money": 181610496.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "605376.XSHG",
+        "name": "博迁新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 99.5,
+        "prev_close": 99.5,
+        "money": 1040030999.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688001.XSHG",
+        "name": "华兴源创",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 55.3,
+        "prev_close": 55.3,
+        "money": 649399610.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688003.XSHG",
+        "name": "天准科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 66.68,
+        "prev_close": 66.68,
+        "money": 227768050.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688005.XSHG",
+        "name": "容百科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.28,
+        "prev_close": 23.28,
+        "money": 363037688.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688006.XSHG",
+        "name": "杭可科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.6,
+        "prev_close": 18.6,
+        "money": 327843094.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688025.XSHG",
+        "name": "杰普特",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 387.0,
+        "prev_close": 387.0,
+        "money": 1287763775.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688029.XSHG",
+        "name": "南微医学",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 81.94,
+        "prev_close": 81.94,
+        "money": 156243627.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688031.XSHG",
+        "name": "星环科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 83.19,
+        "prev_close": 83.19,
+        "money": 377387646.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688048.XSHG",
+        "name": "长光华芯",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 209.0,
+        "prev_close": 209.0,
+        "money": 1938892512.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688062.XSHG",
+        "name": "迈威生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.94,
+        "prev_close": 22.94,
+        "money": 160688793.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688063.XSHG",
+        "name": "派能科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 40.27,
+        "prev_close": 40.27,
+        "money": 315471109.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688068.XSHG",
+        "name": "热景生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 77.11,
+        "prev_close": 77.11,
+        "money": 196106445.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688083.XSHG",
+        "name": "中望软件",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 51.62,
+        "prev_close": 51.62,
+        "money": 113126171.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688088.XSHG",
+        "name": "虹软科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 28.51,
+        "prev_close": 28.51,
+        "money": 112414235.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688097.XSHG",
+        "name": "博众精工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 38.09,
+        "prev_close": 38.09,
+        "money": 149407618.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688102.XSHG",
+        "name": "斯瑞新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 26.6,
+        "prev_close": 26.6,
+        "money": 257758274.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688106.XSHG",
+        "name": "金宏气体",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 23.54,
+        "prev_close": 23.54,
+        "money": 301559746.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688107.XSHG",
+        "name": "安路科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 25.25,
+        "prev_close": 25.25,
+        "money": 161246914.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688110.XSHG",
+        "name": "东芯股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 64.93,
+        "prev_close": 64.93,
+        "money": 1287334832.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688116.XSHG",
+        "name": "天奈科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 32.5,
+        "prev_close": 32.5,
+        "money": 308236403.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688123.XSHG",
+        "name": "聚辰股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 135.02,
+        "prev_close": 135.02,
+        "money": 1550977216.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688127.XSHG",
+        "name": "蓝特光学",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 53.78,
+        "prev_close": 53.78,
+        "money": 333650379.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688131.XSHG",
+        "name": "皓元医药",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 88.36,
+        "prev_close": 88.36,
+        "money": 516115767.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688139.XSHG",
+        "name": "海尔生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 34.45,
+        "prev_close": 34.45,
+        "money": 147294329.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688141.XSHG",
+        "name": "杰华特",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 82.15,
+        "prev_close": 82.15,
+        "money": 993681905.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688146.XSHG",
+        "name": "中船特气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 172.91,
+        "prev_close": 172.91,
+        "money": 1717943219.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688147.XSHG",
+        "name": "微导纳米",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 84.7,
+        "prev_close": 84.7,
+        "money": 1559744252.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688150.XSHG",
+        "name": "莱特光电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 33.16,
+        "prev_close": 33.16,
+        "money": 211674682.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688158.XSHG",
+        "name": "优刻得",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 27.38,
+        "prev_close": 27.38,
+        "money": 284671115.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688167.XSHG",
+        "name": "炬光科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 241.28,
+        "prev_close": 241.28,
+        "money": 1689452455.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688195.XSHG",
+        "name": "腾景科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 155.4,
+        "prev_close": 155.4,
+        "money": 907470378.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688205.XSHG",
+        "name": "德科立",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 178.0,
+        "prev_close": 178.0,
+        "money": 1302491418.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688206.XSHG",
+        "name": "概伦电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 33.2,
+        "prev_close": 33.2,
+        "money": 175112052.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688208.XSHG",
+        "name": "道通科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.06,
+        "prev_close": 24.06,
+        "money": 122150396.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688262.XSHG",
+        "name": "国芯科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.26,
+        "prev_close": 24.26,
+        "money": 190617592.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688279.XSHG",
+        "name": "峰岹科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 168.31,
+        "prev_close": 168.31,
+        "money": 353128732.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688300.XSHG",
+        "name": "联瑞新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 133.51,
+        "prev_close": 133.51,
+        "money": 931716090.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688306.XSHG",
+        "name": "均普智能",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.3,
+        "prev_close": 8.3,
+        "money": 148171409.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688321.XSHG",
+        "name": "微芯生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.8,
+        "prev_close": 22.8,
+        "money": 199376230.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688327.XSHG",
+        "name": "云从科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.6,
+        "prev_close": 9.6,
+        "money": 121726754.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688332.XSHG",
+        "name": "中科蓝讯",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 73.86,
+        "prev_close": 73.86,
+        "money": 259719565.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688333.XSHG",
+        "name": "铂力特",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 88.78,
+        "prev_close": 88.78,
+        "money": 599792459.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688352.XSHG",
+        "name": "颀中科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 14.9,
+        "prev_close": 14.9,
+        "money": 287820746.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688353.XSHG",
+        "name": "华盛锂电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 83.97,
+        "prev_close": 83.97,
+        "money": 491990720.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688362.XSHG",
+        "name": "甬矽电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 48.31,
+        "prev_close": 48.31,
+        "money": 631752794.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688368.XSHG",
+        "name": "晶丰明源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 100.45,
+        "prev_close": 100.45,
+        "money": 365564159.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688372.XSHG",
+        "name": "伟测科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 89.0,
+        "prev_close": 89.0,
+        "money": 714399957.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688380.XSHG",
+        "name": "中微半导",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 34.71,
+        "prev_close": 34.71,
+        "money": 280842815.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688382.XSHG",
+        "name": "益方生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 16.19,
+        "prev_close": 16.19,
+        "money": 169429707.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688388.XSHG",
+        "name": "嘉元科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 24.4,
+        "prev_close": 24.4,
+        "money": 583292542.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688390.XSHG",
+        "name": "固德威",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 53.0,
+        "prev_close": 53.0,
+        "money": 512675388.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688392.XSHG",
+        "name": "骄成超声",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 140.2,
+        "prev_close": 140.2,
+        "money": 550117716.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688400.XSHG",
+        "name": "凌云光",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 38.94,
+        "prev_close": 38.94,
+        "money": 287596995.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688403.XSHG",
+        "name": "汇成股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.19,
+        "prev_close": 18.19,
+        "money": 626336112.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688409.XSHG",
+        "name": "富创精密",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 155.22,
+        "prev_close": 155.22,
+        "money": 1126119522.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688433.XSHG",
+        "name": "华曙高科",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 67.38,
+        "prev_close": 67.38,
+        "money": 356564653.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688449.XSHG",
+        "name": "联芸科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 49.25,
+        "prev_close": 49.25,
+        "money": 297289004.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688484.XSHG",
+        "name": "南芯科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 30.1,
+        "prev_close": 30.1,
+        "money": 200007561.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688486.XSHG",
+        "name": "龙迅股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 43.87,
+        "prev_close": 43.87,
+        "money": 164795757.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688502.XSHG",
+        "name": "茂莱光学",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 379.58,
+        "prev_close": 379.58,
+        "money": 369448174.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688503.XSHG",
+        "name": "聚和材料",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 62.0,
+        "prev_close": 62.0,
+        "money": 715502317.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688515.XSHG",
+        "name": "裕太微",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 117.83,
+        "prev_close": 117.83,
+        "money": 240476692.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688516.XSHG",
+        "name": "奥特维",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 38.58,
+        "prev_close": 38.58,
+        "money": 230645485.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688519.XSHG",
+        "name": "南亚新材",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 263.0,
+        "prev_close": 263.0,
+        "money": 1530763975.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688531.XSHG",
+        "name": "日联科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 113.28,
+        "prev_close": 113.28,
+        "money": 465929984.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688536.XSHG",
+        "name": "思瑞浦",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 278.99,
+        "prev_close": 278.99,
+        "money": 1012002568.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688543.XSHG",
+        "name": "国科军工",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 43.66,
+        "prev_close": 43.66,
+        "money": 567262646.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688545.XSHG",
+        "name": "兴福电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 64.1,
+        "prev_close": 64.1,
+        "money": 386522277.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688548.XSHG",
+        "name": "广钢气体",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 28.04,
+        "prev_close": 28.04,
+        "money": 569484515.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688549.XSHG",
+        "name": "中巨芯",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 19.52,
+        "prev_close": 19.52,
+        "money": 630404825.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688552.XSHG",
+        "name": "航天南湖",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 28.9,
+        "prev_close": 28.9,
+        "money": 135741349.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688559.XSHG",
+        "name": "海目星",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 42.9,
+        "prev_close": 42.9,
+        "money": 383381509.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688567.XSHG",
+        "name": "孚能科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 9.55,
+        "prev_close": 9.55,
+        "money": 157835179.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688584.XSHG",
+        "name": "上海合晶",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 22.6,
+        "prev_close": 22.6,
+        "money": 184356381.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688586.XSHG",
+        "name": "江航装备",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 11.36,
+        "prev_close": 11.36,
+        "money": 114220191.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688591.XSHG",
+        "name": "泰凌微",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 27.91,
+        "prev_close": 27.91,
+        "money": 156226300.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688593.XSHG",
+        "name": "新相微",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 30.77,
+        "prev_close": 30.77,
+        "money": 456414611.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688596.XSHG",
+        "name": "正帆科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 53.38,
+        "prev_close": 53.38,
+        "money": 792779479.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688605.XSHG",
+        "name": "先锋精科",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 71.08,
+        "prev_close": 71.08,
+        "money": 314816397.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688612.XSHG",
+        "name": "威迈斯",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 30.59,
+        "prev_close": 30.59,
+        "money": 165279376.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688627.XSHG",
+        "name": "精智达",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 387.02,
+        "prev_close": 387.02,
+        "money": 1325930355.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688630.XSHG",
+        "name": "芯碁微装",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 351.0,
+        "prev_close": 351.0,
+        "money": 1295383739.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688639.XSHG",
+        "name": "华恒生物",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 18.24,
+        "prev_close": 18.24,
+        "money": 106217860.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688652.XSHG",
+        "name": "京仪装备",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 145.21,
+        "prev_close": 145.21,
+        "money": 1047062158.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688658.XSHG",
+        "name": "悦康药业",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 12.86,
+        "prev_close": 12.86,
+        "money": 181493910.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688660.XSHG",
+        "name": "电气风电",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 8.23,
+        "prev_close": 8.23,
+        "money": 191977766.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688668.XSHG",
+        "name": "鼎通科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 178.71,
+        "prev_close": 178.71,
+        "money": 819901921.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688686.XSHG",
+        "name": "奥普特",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 115.81,
+        "prev_close": 115.81,
+        "money": 165904463.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688690.XSHG",
+        "name": "纳微科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 42.02,
+        "prev_close": 42.02,
+        "money": 547361914.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688691.XSHG",
+        "name": "灿芯股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 51.53,
+        "prev_close": 51.53,
+        "money": 148864328.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688698.XSHG",
+        "name": "伟创电气",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 37.52,
+        "prev_close": 37.52,
+        "money": 106677109.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688700.XSHG",
+        "name": "东威科技",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 54.6,
+        "prev_close": 54.6,
+        "money": 635019487.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688717.XSHG",
+        "name": "艾罗能源",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 39.28,
+        "prev_close": 39.28,
+        "money": 321415434.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688726.XSHG",
+        "name": "拉普拉斯",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 40.19,
+        "prev_close": 40.19,
+        "money": 200170063.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688766.XSHG",
+        "name": "普冉股份",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 310.39,
+        "prev_close": 310.39,
+        "money": 2322287304.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688779.XSHG",
+        "name": "五矿新能",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 7.5,
+        "prev_close": 7.5,
+        "money": 300186319.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688798.XSHG",
+        "name": "艾为电子",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 49.47,
+        "prev_close": 49.47,
+        "money": 125258620.0,
+        "signal_date": "2026-10-13"
+      },
+      {
+        "code": "688800.XSHG",
+        "name": "瑞可达",
+        "component": "DEEP",
+        "pri": 2,
+        "signal_close": 50.63,
+        "prev_close": 50.63,
+        "money": 559105938.0,
+        "signal_date": "2026-10-13"
+      }
+    ],
+    "temperature": {
+      "ICE": true,
+      "RUN": 1,
+      "MA20": -0.05824548436619814,
+      "M_DN": 0.0020964360587002098,
+      "DEEP": true,
+      "FB_OK": true,
+      "LB_OK": true
+    },
+    "price_source": "sina_daily_unadjusted_close"
+  },
+  "limitations": [
+    "使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。",
+    "市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。",
+    "信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。"
+  ]
+}
