@@ -42,7 +42,7 @@
 - Consumes: 当前报告里的候选、账户持仓以及既有 `opening_queue` 资格筛选。
 
 - [ ] **Step 1: 写失败测试**，覆盖分钟字段规范化、每手 100 股换算、目标日期校验、缺少 09:30–09:36 或 14:50–14:57 数据、零开盘价和错误 OHLC。
-- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest tests.test_public_data -v`。
+- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest discover -s tests -p test_public_data.py -v`。
 - [ ] **Step 3: 实现单股分钟行情获取及严格规范化**；只请求合格候选和未停牌持仓，数据异常时报出股票和缺失时段，不把错误转成空行情。
 - [ ] **Step 4: 重跑针对性测试并确认通过**。
 - [ ] **Step 5: 提交**：`feat: add validated public minute data for paper replay`。
@@ -59,7 +59,7 @@
 - Existing invariant: `paper.replay_day` 完整预检后才变更账户；重复处理已完成日期必须是 no-op。
 
 - [ ] **Step 1: 写失败测试**，覆盖首次有效日期起账、有效买入/卖出登记、同日重复运行、旧/缺失行情拒绝、失败后账户与导出文件保持不变。
-- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest tests.test_run -v`。
+- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest discover -s tests -p test_run.py -v`。
 - [ ] **Step 3: 实现只处理已扫描的最新完整交易日**；首次运行以该日为账本起点，已有账本遇到缺失交易日或分钟缺口时保留原状态并给出明确状态，不将更新日期伪装成已连续处理。
 - [ ] **Step 4: 更新输出**，让 `latest.json/md`、`holdings.csv`、`trades.csv`、`equity.csv` 清楚显示有效起账日、最近处理日、现金、权益、持仓、成交数及数据失败原因。
 - [ ] **Step 5: 重跑针对性测试并确认通过**。
@@ -79,7 +79,7 @@
 - README 把 `outputs/latest.md` 定为人读入口，并链接 JSON、持仓、成交和净值文件。
 
 - [ ] **Step 1: 写失败测试**，覆盖 09:25/09:35 边界、窗口外跳过、跳过时没有推送；并检查主工作流在扫描后运行模拟账本。
-- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest tests.test_opening_push -v`。
+- [ ] **Step 2: 运行针对性测试并确认失败**：`python -m unittest discover -s tests -p test_opening_push.py -v`。
 - [ ] **Step 3: 修改提醒窗口守卫与工作流步骤**，让延迟到 09:35 之后的计划任务正常跳过；收盘任务只在扫描成功后调用模拟账本，失败时保留诊断产物。
 - [ ] **Step 4: 更新 README**，说明模拟成交模型、免费的分钟行情限制、错过交易日的行为及以后查看账户的直接路径。
 - [ ] **Step 5: 运行完整验证**：`python -m unittest discover -s tests -v`；检查 YAML 与输出文件差异。
