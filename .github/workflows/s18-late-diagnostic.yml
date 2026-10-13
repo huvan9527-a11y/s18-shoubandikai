@@ -1,0 +1,21 @@
+name: S18 Manual Late Diagnostic
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  late-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Diagnose late opening data (no push, no orders)
+        run: python -m src.opening_push --late-diagnostic
