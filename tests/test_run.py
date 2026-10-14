@@ -48,6 +48,46 @@ class BrokenCalendarProvider(SingleSessionProvider):
 
 
 class RunnerTests(unittest.TestCase):
+    def test_morning_process_persists_immediate_buys_and_is_idempotent(self):
+        self.assertTrue(callable(getattr(run, 'process_morning', None)))
+        class MorningProvider:
+            def morning_session(self, day, candidates, positions, cfg):
+                c, daily, minutes = test_paper.ReplayTests().fixture()
+                morning = {'000001.XSHE': {k: v for k, v in minutes['000001.XSHE'].items()
+                                            if k.startswith('09:')}}
+                return daily, morning
+        with tempfile.TemporaryDirectory() as root:
+            account = paper.new_account('2026-10-08')
+            candidates = test_paper.ReplayTests().fixture()[0]
+            self.assertEqual(run.process_morning(MorningProvider(), account, paper.DEFAULTS,
+                         '2026-10-08', candidates, Path(root)), 'morning_processed')
+            self.assertEqual(len(account['trades']), 1)
+            self.assertTrue((Path(root) / 'logs/trades.csv').exists())
+            self.assertEqual(json.loads((Path(root) / 'outputs/latest.json').read_text())['status'],
+                             'morning_processed')
+            before = copy.deepcopy(account)
+            self.assertEqual(run.process_morning(MorningProvider(), account, paper.DEFAULTS,
+                         '2026-10-08', candidates, Path(root)), 'up_to_date')
+            self.assertEqual(account, before)
+
+    def test_morning_data_failure_keeps_published_ledger_unchanged(self):
+        class BrokenMorningProvider:
+            def morning_session(self, day, candidates, positions, cfg):
+                raise ValueError('missing 09:36 bar')
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            account = paper.new_account('2026-10-08')
+            run.export(account, root, 'waiting_for_configuration')
+            before = copy.deepcopy(account)
+            files = {name: (Path(root) / name).read_bytes() for name in
+                     ('state/account.json', 'logs/trades.csv', 'outputs/latest.json',
+                      'outputs/latest.md', 'outputs/holdings.csv')}
+            result = run.process_morning(BrokenMorningProvider(), account, paper.DEFAULTS,
+                                         '2026-10-08', [], Path(root))
+            self.assertEqual(result, 'invalid_morning_session')
+            self.assertEqual(account, before)
+            self.assertEqual(files, {name: (Path(root) / name).read_bytes() for name in files})
+
     def test_report_replay_starts_at_first_valid_date_and_is_idempotent(self):
         self.assertTrue(callable(getattr(run, 'process_report', None)))
         with tempfile.TemporaryDirectory() as root:
@@ -137,3 +177,4 @@ class RunnerTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
