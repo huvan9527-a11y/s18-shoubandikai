@@ -30,10 +30,15 @@ class OpeningTests(unittest.TestCase):
     def test_opening_workflow_can_reach_morning_minutes_and_persist_ledger(self):
         from pathlib import Path
         workflow = Path(__file__).parents[1] / '.github/workflows/s18-opening-alert.yml'
+        legacy_workflow = workflow.with_name('s18-opening-0926.yml')
         text = workflow.read_text(encoding='utf-8')
         self.assertRegex(text, r'timeout-minutes:\s*(?:7[5-9]|[8-9]\d|[1-9]\d{2,})')
         self.assertIn('src.opening_push --paper-morning', text)
         self.assertIn('state/account.json', text)
+        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
+        self.assertIn('while true; do', text)
+        self.assertIn('sleep 45', text)
+        self.assertFalse(legacy_workflow.exists(), 'legacy 09:26 job can race the morning ledger workflow')
     def test_live_window_includes_0925_and_0935_only(self):
         self.assertTrue(callable(getattr(opening_push, 'in_live_window', None)))
         self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25)))
