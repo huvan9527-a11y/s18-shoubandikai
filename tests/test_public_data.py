@@ -9,6 +9,51 @@ from src import data
 from src import run, paper
 
 class PublicDataTests(unittest.TestCase):
+    def test_morning_minute_normalization_needs_only_complete_morning_window(self):
+        import pandas as pd
+        rows = [dict(时间=f'2026-10-14 09:{i:02d}:00', 开盘=10, 最高=10.1, 最低=9.9,
+                     收盘=10, 成交量=12, 成交额=12000) for i in range(30, 37)]
+        normalized = data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 14),
+                                                 date(2026, 10, 14), require_exit=False)
+        self.assertEqual(normalized['09:36']['volume'], 1200)
+        with self.assertRaisesRegex(ValueError, '09:36'):
+            data.normalize_minute_frame(pd.DataFrame(rows[:-1]), date(2026, 10, 14),
+                                        date(2026, 10, 14), require_exit=False)
+
+    def test_public_morning_session_fetches_current_window_only(self):
+        import pandas as pd
+        from unittest.mock import Mock
+        with tempfile.TemporaryDirectory() as root:
+            provider = PublicData(root)
+            provider.today = date(2026, 10, 14)
+            code = '000001.XSHE'
+            candidate = dict(code=code, name='测试', component='FB_dip', pri=0, prev_close=10.,
+                             signal_close=10., money=2e8, open=9.5, high_limit=11., low_limit=9.)
+            rows = [dict(时间=f'2026-10-14 09:{i:02d}:00', 开盘=9.5, 最高=9.52, 最低=9.48,
+                         收盘=9.5, 成交量=12, 成交额=12000) for i in range(30, 37)]
+            with patch('akshare.stock_zh_a_hist_min_em', return_value=pd.DataFrame(rows), create=True) as fetch:
+                daily, minutes = provider.morning_session(provider.today, [candidate], {}, paper.DEFAULTS)
+            self.assertEqual(fetch.call_args.kwargs['end_date'], '2026-10-14 09:37:00')
+            self.assertEqual(minutes[code]['09:36']['volume'], 1200)
+            self.assertEqual(daily[code]['open'], 9.5)
+
+    def test_missing_held_stock_morning_mark_does_not_block_candidate_fills(self):
+        import pandas as pd
+        with tempfile.TemporaryDirectory() as root:
+            provider = PublicData(root)
+            provider.today = date(2026, 10, 14)
+            code = '000001.XSHE'
+            held = '600000.XSHG'
+            candidate = dict(code=code, name='测试', component='FB_dip', pri=0, prev_close=10.,
+                             signal_close=10., money=2e8, open=9.5, high_limit=11., low_limit=9.)
+            rows = [dict(时间=f'2026-10-14 09:{i:02d}:00', 开盘=9.5, 最高=9.52, 最低=9.48,
+                         收盘=9.5, 成交量=12, 成交额=12000) for i in range(30, 37)]
+            with patch('akshare.stock_zh_a_hist_min_em', side_effect=[pd.DataFrame(rows),
+                       RuntimeError('held mark feed unavailable')], create=True):
+                _, minutes = provider.morning_session(provider.today, [candidate], {held: {}}, paper.DEFAULTS)
+            self.assertIn(code, minutes)
+            self.assertNotIn(held, minutes)
+
     def test_minute_normalization_converts_hands_to_shares_and_validates_day(self):
         import pandas as pd
         self.assertTrue(callable(getattr(data, 'normalize_minute_frame', None)))
@@ -119,3 +164,4 @@ class CloseDateTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
