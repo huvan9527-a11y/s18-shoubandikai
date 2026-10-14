@@ -7,6 +7,33 @@ from src.signals import candidates
 import pandas as pd
 
 class OpeningTests(unittest.TestCase):
+    def test_morning_paper_window_accepts_late_runner_until_ten(self):
+        self.assertTrue(callable(getattr(opening_push, 'in_morning_paper_window', None)))
+        self.assertTrue(opening_push.in_morning_paper_window(dt.datetime(2026, 10, 14, 9, 37)))
+        self.assertTrue(opening_push.in_morning_paper_window(dt.datetime(2026, 10, 14, 10, 0)))
+        self.assertFalse(opening_push.in_morning_paper_window(dt.datetime(2026, 10, 14, 10, 1)))
+        self.assertFalse(opening_push.in_morning_paper_window(dt.datetime(2026, 10, 17, 9, 37)))
+
+    def test_static_open_quote_remains_valid_during_morning_data_fetch(self):
+        checked_at = dt.datetime(2026, 10, 13, 9, 59, tzinfo=opening_push.TZ)
+        selected, rows = evaluate_opening(self.report, self.day, self.quotes, checked_at=checked_at)
+        self.assertEqual(rows[0]['status'], 'OPENING_RULE_MATCH')
+        self.assertEqual(len(selected), 1)
+
+    def test_morning_paper_requires_complete_candidate_quote_coverage(self):
+        second = dict(self.c, code='601069.XSHG', name='西部黄金', signal_close=25.48,
+                      prev_close=25.48)
+        self.report['next_session']['candidates'].append(second)
+        with self.assertRaisesRegex(ValueError, 'data incomplete'):
+            make_opening_report(self.report, self.day, self.quotes, strict_data=True)
+
+    def test_opening_workflow_can_reach_morning_minutes_and_persist_ledger(self):
+        from pathlib import Path
+        workflow = Path(__file__).parents[1] / '.github/workflows/s18-opening-alert.yml'
+        text = workflow.read_text(encoding='utf-8')
+        self.assertRegex(text, r'timeout-minutes:\s*(?:7[5-9]|[8-9]\d|[1-9]\d{2,})')
+        self.assertIn('src.opening_push --paper-morning', text)
+        self.assertIn('state/account.json', text)
     def test_live_window_includes_0925_and_0935_only(self):
         self.assertTrue(callable(getattr(opening_push, 'in_live_window', None)))
         self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25)))
@@ -92,3 +119,4 @@ class OpeningTests(unittest.TestCase):
         flags=pd.DataFrame([dict(fb=True,lb=False,gd=False,close_t=10.01,money=2e8)],index=['002181.XSHE'])
         result=candidates(flags,dict(FB_OK=True,LB_OK=True,DEEP=False),{'002181.XSHE':'粤传媒'},1e8)
         self.assertEqual(result[0]['signal_close'],result[0]['prev_close'])
+
