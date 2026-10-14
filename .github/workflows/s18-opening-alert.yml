@@ -16,11 +16,12 @@ concurrency:
 jobs:
   opening-alert:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Starts at 08:45, waits for the opening alert and completed 09:31-09:36 bars.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -61,13 +62,42 @@ jobs:
         env:
           SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY || '' }}
         run: python -u -m src.opening_push
-      - name: Persist opening notification deduplication state
-        if: success()
+      - name: Wait for completed morning minute bars
+        id: morning
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import os
+          import time
+          from zoneinfo import ZoneInfo
+
+          tz = ZoneInfo('Asia/Shanghai')
+          now = dt.datetime.now(tz)
+          if now.weekday() >= 5:
+              paper = False
+          else:
+              target = now.replace(hour=9, minute=37, second=0, microsecond=0)
+              deadline = now.replace(hour=10, minute=0, second=59, microsecond=0)
+              while now < target:
+                  time.sleep(min(10, (target - now).total_seconds()))
+                  now = dt.datetime.now(tz)
+              paper = now <= deadline
+          print(f'Morning minute replay eligible={paper}; current time={now.isoformat()}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'paper={str(paper).lower()}\n')
+          PY
+      - name: Record completed morning buys in the paper ledger
+        if: steps.morning.outputs.paper == 'true'
+        run: python -u -m src.opening_push --paper-morning
+      - name: Persist opening state and morning paper ledger
+        if: always() && github.ref == 'refs/heads/main'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- state/account.json logs outputs
           if [ -f state/opening_notifications.json ]; then git add state/opening_notifications.json; fi
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: record S18 opening alert [skip ci]'
+            git commit -m 'chore: persist S18 morning paper ledger [skip ci]'
             git push origin HEAD:main
           fi
+
