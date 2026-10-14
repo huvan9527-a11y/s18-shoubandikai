@@ -8,7 +8,7 @@ import os
 import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
-from .paper import DEFAULTS, new_account, replay_day, total_value
+from .paper import DEFAULTS, new_account, replay_day, replay_morning, total_value
 from .data import PublicData
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,13 +37,17 @@ def export(account, root, status, detail=''):
     held = [dict(code=code, **p) for code, p in account['positions'].items()]
     write_csv(root / 'outputs/holdings.csv', held, ['code', 'name', 'component', 'entry_date', 'amount', 'cost', 'mark', 'factor'])
     last = account['days'][-1] if account['days'] else {}
+    morning = account.get('morning_sessions', [])
+    latest_morning = morning[-1] if morning else None
     write_json(root / 'outputs/latest.json', dict(status=status, detail=detail, last_day=last,
                                                   cash=account['cash'], positions=account['positions'],
+                                                  morning_session=latest_morning,
                                                   equity=round(total_value(account), 2)))
     report = [
         '# S18 OPP3 · 20万元模拟仓', '',
         f'- 状态：`{status}`' + (f'；{detail}' if detail else ''),
         f'- 启动日期：{account["start_date"]}；已处理至：{account["last_processed"] or "尚未开始"}',
+        f'- 早盘分钟回放：{account.get("morning_processed_date") or "尚未处理"}',
         f'- 初始资金：{account["initial_cash"]:,.2f} 元',
         f'- 可用现金：{account["cash"]:,.2f} 元',
         f'- 账户权益：{total_value(account):,.2f} 元',
@@ -162,6 +166,59 @@ def process_report(provider, account, cfg, report, root):
     return 'processed'
 
 
+def process_morning(provider, account, cfg, day, candidates, root, expected_previous_date=None):
+    """Record completed morning-minute buys immediately without closing the trading day."""
+    root = Path(root)
+    day = dt.date.fromisoformat(str(day)).isoformat()
+    if account.get('last_processed') and day <= account['last_processed']:
+        return 'up_to_date'
+    if account.get('morning_processed_date') == day:
+        return 'up_to_date'
+    if (expected_previous_date and account.get('last_processed') and
+            account['last_processed'] != expected_previous_date):
+        write_json(root / 'outputs/paper-status.json', dict(
+            status='morning_anchor_mismatch',
+            detail='账本尚未处理前一交易日；早盘不入账，避免跨日补造成交。',
+            last_processed=account['last_processed'], expected_previous_date=expected_previous_date,
+            requested_date=day))
+        return 'morning_anchor_mismatch'
+    working = copy.deepcopy(account)
+    if not working['last_processed'] and not working['days'] and not working['trades'] and not working['positions']:
+        working['start_date'] = day
+    try:
+        daily, minutes = provider.morning_session(dt.date.fromisoformat(day), candidates,
+                                                 working['positions'], cfg)
+        if not replay_morning(working, day, candidates, daily, minutes, cfg):
+            return 'up_to_date'
+    except Exception as exc:
+        write_json(root / 'outputs/paper-status.json', dict(
+            status='invalid_morning_session',
+            detail=f'{type(exc).__name__}: {str(exc)[:300]}；早盘账本保持不变。',
+            report_date=day))
+        return 'invalid_morning_session'
+    before = len(account['trades'])
+    export(working, root, 'morning_processed')
+    (root / 'outputs/paper-status.json').unlink(missing_ok=True)
+    account.clear()
+    account.update(working)
+    new_trades = working['trades'][before:]
+    fills = ','.join(f"{trade['side']}:{trade['code']}:{trade['amount']}" for trade in new_trades) or 'none'
+    print(f'Morning paper ledger processed: date={day}, new_fills={len(new_trades)}, fills={fills}, '
+          f'positions={len(working["positions"])}, cash={working["cash"]:.2f}', flush=True)
+    return 'morning_processed'
+
+
+def process_morning_from_files(day, candidates, root=ROOT, expected_previous_date=None):
+    root = Path(root)
+    cfg = DEFAULTS | json.loads((root / 'config.json').read_text(encoding='utf-8'))
+    path = root / 'state/account.json'
+    account = json.loads(path.read_text(encoding='utf-8')) if path.exists() else new_account(cfg['start_date'])
+    if cfg['initial_cash'] != 200000 or account['initial_cash'] != 200000 or cfg['slots'] != 2 or cfg['max_new'] != 2:
+        raise ValueError('本模拟仓固定20万元、2槽、每日最多2只；不能热改初始资金。')
+    return process_morning(PublicData(root), account, cfg, day, candidates, root,
+                           expected_previous_date)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--end-date', help='Optional completed date; no future/incomplete day allowed')
@@ -193,3 +250,4 @@ def main():
 
 if __name__ == '__main__':
     raise SystemExit(main())
+
