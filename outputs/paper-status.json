@@ -1,0 +1,5 @@
+{
+  "status": "invalid_session",
+  "detail": "ValueError: Invalid public minute data for 002827.XSHE: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))；账本保持不变。",
+  "report_date": "2026-10-14"
+}
