@@ -1,4 +1,4 @@
-"""09:26 CST verified Tencent auction snapshots -> ServerChan candidates, never fills."""
+"""Verify Tencent opening data, alert candidates, and optionally book morning paper fills."""
 import datetime as dt
 import json
 import argparse
@@ -17,6 +17,12 @@ def in_live_window(now):
     """Return whether a weekday run can still send a same-session opening alert."""
     clock = (now.hour, now.minute, now.second)
     return now.weekday() < 5 and (9, 25, 0) <= clock <= (9, 35, 59)
+
+
+def in_morning_paper_window(now):
+    """Allow queued runners to replay completed 09:31-09:36 bars through 10:00."""
+    clock = (now.hour, now.minute, now.second)
+    return now.weekday() < 5 and (9, 37, 0) <= clock <= (10, 0, 59)
 
 
 def quote_batch(codes, day, fetch=requests.get):
@@ -55,7 +61,7 @@ def quote_batch(codes, day, fetch=requests.get):
     return out
 
 
-def evaluate_opening(yesterday, today, quote):
+def evaluate_opening(yesterday, today, quote, checked_at=None):
     """One date/price/rule path for live alerts and retrospective diagnostics."""
     from .data import price_limit
     from .paper import COMPONENTS, band, positive
@@ -85,12 +91,14 @@ def evaluate_opening(yesterday, today, quote):
             else:
                 observed = float(q['prev_close'])
                 stamp = dt.datetime.strptime(q['quote_time'], '%Y%m%d%H%M%S')
+                quote_time = stamp.replace(tzinfo=TZ)
                 gap = float(q['open']) / observed - 1
                 row.update(open=q['open'], auction_prev_close=observed, quote_time=q['quote_time'],
                            gap_pct=round(gap * 100, 3), difference_pct=round((observed / expected - 1)*100, 4))
                 low, high = price_limit(observed, -band(c['code'])), price_limit(observed, band(c['code']))
                 lo, hi = COMPONENTS[c['component']]['gap']
-                if stamp.date() != today or (stamp.hour, stamp.minute) < (9, 25):
+                if (stamp.date() != today or (stamp.hour, stamp.minute) < (9, 25) or
+                        (checked_at and quote_time > checked_at + dt.timedelta(seconds=30))):
                     row['status'] = 'STALE_QUOTE'
                 elif abs(observed / expected - 1) > .003:
                     row['status'] = 'PREV_CLOSE_MISMATCH'
@@ -115,12 +123,14 @@ def evaluate_opening(yesterday, today, quote):
     return selected, rows
 
 
-def make_opening_report(yesterday, today, quote):
-    selected, rows = evaluate_opening(yesterday, today, quote)
+def make_opening_report(yesterday, today, quote, checked_at=None, strict_data=False):
+    selected, rows = evaluate_opening(yesterday, today, quote, checked_at=checked_at)
     rejected = [r for r in rows if r['status'] in ('PREV_CLOSE_MISMATCH', 'INVALID_PRICE',
                 'INVALID_CANDIDATE', 'SIGNAL_DATE_MISMATCH', 'STALE_QUOTE', 'MISSING_QUOTE')]
     if rejected:
         print('AUCTION_REJECTED ' + json.dumps(rejected, ensure_ascii=False), flush=True)
+    if strict_data and rejected:
+        raise ValueError(f'Opening data incomplete for {len(rejected)} of {len(rows)} candidates')
     if rows and len(rejected) == len(rows):
         raise ValueError('All auction candidates rejected for data quality; not zero signals')
     return selected
@@ -129,9 +139,13 @@ def make_opening_report(yesterday, today, quote):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--late-diagnostic', action='store_true', help='Manual post-window report; no ServerChan or trading signals')
+    parser.add_argument('--paper-morning', action='store_true', help='Record same-day 09:31-09:36 public-minute paper fills')
     args = parser.parse_args(argv)
     now = dt.datetime.now(TZ)
-    if not args.late_diagnostic and not in_live_window(now):
+    if args.paper_morning and not in_morning_paper_window(now):
+        print(f'Morning paper replay skipped outside 09:37-10:00 window: {now.isoformat()}')
+        return 0
+    if not (args.late_diagnostic or args.paper_morning) and not in_live_window(now):
         print(f'Opening alert skipped outside 09:25-09:35 live window: {now.isoformat()}')
         return 0
     files = sorted((ROOT / "outputs").glob("signals-????-??-??.json"), reverse=True)
@@ -171,7 +185,17 @@ def main(argv=None):
         write_json(ROOT / ('outputs/opening-review-' + now.date().isoformat() + '.json'), diagnostics)
         print(json.dumps(diagnostics, ensure_ascii=False, indent=2), flush=True)
         return
-    selected = make_opening_report(previous, now.date(), quotes)
+    selected = make_opening_report(previous, now.date(), quotes,
+                                   checked_at=now if args.paper_morning else None,
+                                   strict_data=args.paper_morning)
+    if args.paper_morning:
+        from .run import process_morning_from_files
+        status = process_morning_from_files(now.date(), selected, ROOT,
+                                            expected_previous_date=session['signal_date'])
+        if status not in ('morning_processed', 'up_to_date'):
+            raise RuntimeError(f'Morning paper ledger was not updated: {status}')
+        print(f'Morning public-minute paper replay: status={status}, candidates={len(selected)}', flush=True)
+        return 0
     # B's T+1 queue uses yesterday's already confirmed opening signals, without a new low-gap filter.
     b = previous.get("opening_candidates", [])[:2]
     if b:
@@ -186,4 +210,5 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
+

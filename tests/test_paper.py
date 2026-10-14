@@ -72,6 +72,7 @@ class ReplayTests(unittest.TestCase):
         daily = {'000001.XSHE': dict(open=9.5, close=9.6, high_limit=11., low_limit=9., paused=0, is_st=False, name='测试')}
         bars = {}
         now = datetime(2026, 10, 8, 9, 31)
+        bars['09:30'] = dict(open=9.5, high=9.52, low=9.48, close=9.5, money=2e6, volume=200000)
         for k in range(6):
             t = (now + timedelta(minutes=k)).strftime('%H:%M')
             bars[t] = dict(open=9.5, high=9.52, low=9.48, close=9.5, money=2e6, volume=200000)
@@ -123,6 +124,49 @@ class ReplayTests(unittest.TestCase):
         self.assertEqual(len(a['positions']), 2)
         self.assertEqual(len(a['trades']), 2)
 
+    def test_morning_replay_records_buys_and_close_replay_does_not_repeat_them(self):
+        account = paper.new_account('2026-10-08')
+        candidates, daily, minutes = self.fixture()
+        morning = {'000001.XSHE': {k: v for k, v in minutes['000001.XSHE'].items()
+                                    if k.startswith('09:')}}
+        self.assertTrue(paper.replay_morning(account, '2026-10-08', candidates, daily,
+                                             morning, paper.DEFAULTS))
+        self.assertEqual(account['morning_processed_date'], '2026-10-08')
+        self.assertIsNone(account['last_processed'])
+        self.assertEqual(len(account['trades']), 1)
+        self.assertIn('000001.XSHE', account['positions'])
+        self.assertFalse(paper.replay_morning(account, '2026-10-08', candidates, daily,
+                                              morning, paper.DEFAULTS))
+        self.assertTrue(paper.replay_day(account, '2026-10-08', candidates, daily,
+                                         minutes, paper.DEFAULTS))
+        self.assertEqual(len(account['trades']), 1)
+        self.assertEqual(account['last_processed'], '2026-10-08')
+
+    def test_morning_replay_rejects_missing_bars_without_mutating_account(self):
+        account = paper.new_account('2026-10-08')
+        candidates, daily, minutes = self.fixture()
+        morning = {'000001.XSHE': dict(minutes['000001.XSHE'])}
+        morning['000001.XSHE'].pop('09:36')
+        before = copy.deepcopy(account)
+        with self.assertRaisesRegex(ValueError, '09:36'):
+            paper.replay_morning(account, '2026-10-08', candidates, daily, morning,
+                                 paper.DEFAULTS)
+        self.assertEqual(account, before)
+
+    def test_missing_held_mark_does_not_block_morning_candidate_fill(self):
+        account = paper.new_account('2026-10-08')
+        account['cash'] = 100000.
+        account['positions']['600000.XSHG'] = dict(amount=10000, entry_date='2026-10-07',
+            cost=100000., mark=10., name='旧持仓', component='LB')
+        candidates, daily, minutes = self.fixture()
+        morning = {'000001.XSHE': dict(minutes['000001.XSHE'])}
+        self.assertTrue(paper.replay_morning(account, '2026-10-08', candidates, daily,
+                                             morning, paper.DEFAULTS))
+        self.assertIn('000001.XSHE', account['positions'])
+        self.assertEqual(account['positions']['600000.XSHG']['mark'], 10.)
+        self.assertEqual(account['morning_sessions'][-1]['unmarked_positions'], ['600000.XSHG'])
+
 
 if __name__ == '__main__':
     unittest.main()
+

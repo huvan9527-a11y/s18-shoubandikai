@@ -17,7 +17,8 @@ COMPONENTS = {
 
 def new_account(start_date):
     return dict(schema=1, initial_cash=200000., cash=200000., start_date=start_date,
-                last_processed=None, positions={}, trades=[], equity=[], days=[], ice_hist={})
+                last_processed=None, morning_processed_date=None, morning_sessions=[],
+                positions={}, trades=[], equity=[], days=[], ice_hist={})
 
 
 def positive(x):
@@ -144,6 +145,82 @@ def opening_queue(candidates, daily, cfg):
     return sorted(out, key=lambda x: (x['pri'], x['gap'], x['code']))
 
 
+def replay_morning(account, date, candidates, daily, minutes, cfg):
+    """Persist only completed 09:31-09:36 buy fills; the closing replay remains pending."""
+    if date < account['start_date']:
+        raise ValueError('Date precedes paper account start')
+    if account.get('last_processed') and date <= account['last_processed']:
+        return False
+    if account.get('morning_processed_date') == date:
+        return False
+    queue = [c for c in opening_queue(candidates, daily, cfg) if c['code'] not in account['positions']]
+    required = [f'09:{i:02d}' for i in range(30, 37)]
+    for c in queue:
+        if any(tm not in minutes.get(c['code'], {}) for tm in required):
+            missing = [tm for tm in required if tm not in minutes.get(c['code'], {})]
+            raise ValueError(f"Missing candidate morning minutes: {c['code']} {','.join(missing)}")
+    for code, rows in minutes.items():
+        for tm, bar in rows.items():
+            if tm not in required:
+                continue
+            if not all(positive(bar.get(f)) for f in ('open', 'high', 'low', 'close')):
+                raise ValueError(f'Invalid minute OHLC: {code} {tm}')
+            if not all(math.isfinite(bar.get(f, float('nan'))) and bar[f] >= 0 for f in ('money', 'volume')):
+                raise ValueError(f'Invalid minute liquidity: {code} {tm}')
+            if not (bar['low'] <= bar['open'] <= bar['high'] and bar['low'] <= bar['close'] <= bar['high']):
+                raise ValueError(f'Inconsistent minute OHLC: {code} {tm}')
+    a = copy.deepcopy(account)
+    pending, selected, filled, attempts, events = {}, set(), set(), {}, []
+    for tm in [f'09:{i:02d}' for i in range(31, 37)]:
+        for code, p in a['positions'].items():
+            bar = minutes.get(code, {}).get(tm)
+            if bar and positive(bar.get('close')):
+                p['mark'] = bar['close']
+        for code, order in list(pending.items()):
+            bar = minutes[code].get(tm)
+            trade = match(a, order, bar, date, tm, cfg)
+            if trade:
+                filled.add(code)
+                events.append(dict(time=tm, event='FILL', code=code, amount=trade['amount']))
+                del pending[code]
+            else:
+                events.append(dict(time=tm, event='EXPIRE', code=code))
+                del pending[code]
+        if tm <= '09:35':
+            prior_tm = f'09:{int(tm[-2:]) - 1:02d}'
+            for c in queue:
+                code = c['code']
+                if len(set(a['positions']) | set(pending)) >= cfg['slots']:
+                    break
+                if code in a['positions'] or code in pending or code in filled:
+                    continue
+                if code not in selected and len(selected) >= cfg['max_new']:
+                    continue
+                if attempts.get(code, 0) >= 2:
+                    continue
+                bar, prior = minutes[code].get(tm), minutes[code].get(prior_tm)
+                if not bar or not prior:
+                    continue
+                order = make_buy(a, c, bar['close'], prior['money'], tm, cfg)
+                if order:
+                    selected.add(code)
+                    attempts[code] = attempts.get(code, 0) + 1
+                    pending[code] = order
+                    events.append(dict(time=tm, event='SUBMIT', **order))
+    for order in pending.values():
+        events.append(dict(time='09:36', event='EXPIRE', code=order['code']))
+    a['morning_processed_date'] = date
+    a.setdefault('morning_sessions', []).append(dict(date=date, candidates=candidates,
+                                                     queue=queue, events=events,
+                                                     unmarked_positions=sorted(set(a['positions']) - set(minutes)),
+                                                     unfilled_at_morning_close=list(pending.values())))
+    if a['cash'] < 0 or len(a['positions']) > cfg['slots']:
+        raise ValueError('Account invariant violated')
+    account.clear()
+    account.update(a)
+    return True
+
+
 def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error=None):
     if date < account['start_date']:
         raise ValueError('Date precedes paper account start')
@@ -169,7 +246,8 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
             required = [f'14:{i:02d}' for i in range(50, 58)]
             if any(t not in minutes.get(code, {}) for t in required):
                 raise ValueError('Missing held-stock exit minutes: ' + code)
-    queue = opening_queue(candidates, daily, cfg) if not preparation_error else []
+    morning_done = account.get('morning_processed_date') == date
+    queue = opening_queue(candidates, daily, cfg) if not preparation_error and not morning_done else []
     for c in queue:
         if any(f'09:{i:02d}' not in minutes.get(c['code'], {}) for i in range(31, 37)):
             raise ValueError('Missing candidate buy minutes: ' + c['code'])
@@ -193,7 +271,7 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
             elif order['side'] == 'buy' or order['limit'] > order['low_limit'] + 1e-8:
                 events.append(dict(time=tm, event='EXPIRE', code=code))
                 del pending[code]
-        if '09:31' <= tm <= '09:35':
+        if not morning_done and '09:31' <= tm <= '09:35':
             prior_tm = f'09:{int(tm[-2:]) - 1:02d}'
             for c in queue:
                 code = c['code']
@@ -246,3 +324,4 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
     account.clear()
     account.update(a)
     return True
+
