@@ -2,8 +2,8 @@ name: S18 开盘竞价提醒
 
 on:
   schedule:
-    # 09:15 CST; warm dependencies before the 09:25-09:35 live quote window.
-    - cron: '15 1 * * 1-5'
+    # 08:45 CST; buffer for runner queue delays, then wait until 09:25.
+    - cron: '45 0 * * 1-5'
   workflow_dispatch:
 
 permissions:

@@ -80,7 +80,7 @@ python -m src.run               # 兼容入口，同样执行日线/开盘扫描
 
 ## 09:26 开盘竞价提醒
 
-独立工作流 `.github/workflows/s18-opening-alert.yml` 在工作日北京时间09:15启动，安装行情依赖后等待09:25，在09:25—09:35窗口内读取主分支前一日已保存的 `next_session.candidates`，采集并校验腾讯竞价行情，再向Server酱发送候选提醒。推送仅表示经过竞价数据校验的候选，不代表模拟成交或券商订单。
+独立工作流 `.github/workflows/s18-opening-alert.yml` 在工作日北京时间08:45启动，安装行情依赖后等待09:25，在09:25—09:35窗口内读取主分支前一日已保存的 `next_session.candidates`，采集并校验腾讯竞价行情，再向Server酱发送候选提醒。推送仅表示经过竞价数据校验的候选，不代表模拟成交或券商订单。
 
 - 依赖安装或GitHub排队若延迟到09:35之后，任务会安全跳过，不发送过时提醒、不补成交。GitHub cron不能保证准点启动，具体启动时间请看Actions日志。
 - 运行需要配置Actions Secret：`SERVERCHAN_SENDKEY`（也兼容 `SERVERCHAN_KEY`、`SERVER_CHAN_SENDKEY`、`SCKEY`）。未配置时推送步骤会失败，不会静默报告已提醒。
