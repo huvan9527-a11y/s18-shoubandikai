@@ -55,12 +55,12 @@ jobs:
               else:
                   print(f'Opening alert skipped after live window: {now.isoformat()}')
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
-              output.write(f'live={str(live).lower()}\n')
+              output.write(f'live={str(live).lower()}\\n')
           PY
       - name: Verify auction quotes and send opening candidates
         if: steps.window.outputs.live == 'true'
         env:
-          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY || '' }}
+          SERVERCHAN_SENDKEY: ${{ github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY) || '' }}
         run: python -u -m src.opening_push
       - name: Wait for completed morning minute bars
         id: morning
@@ -84,11 +84,24 @@ jobs:
               paper = now <= deadline
           print(f'Morning minute replay eligible={paper}; current time={now.isoformat()}')
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
-              output.write(f'paper={str(paper).lower()}\n')
+              output.write(f'paper={str(paper).lower()}\\n')
           PY
       - name: Record completed morning buys in the paper ledger
         if: steps.morning.outputs.paper == 'true'
-        run: python -u -m src.opening_push --paper-morning
+        shell: bash
+        run: |
+          while true; do
+            if python -u -m src.opening_push --paper-morning; then
+              exit 0
+            fi
+            current=$(TZ=Asia/Shanghai date +%H%M)
+            if [ "$current" -ge 1001 ]; then
+              echo "Morning minute data remained unavailable through 10:00 CST"
+              exit 1
+            fi
+            echo "Morning minute data not complete yet; retrying in 45 seconds"
+            sleep 45
+          done
       - name: Persist opening state and morning paper ledger
         if: always() && github.ref == 'refs/heads/main'
         run: |
@@ -100,4 +113,3 @@ jobs:
             git commit -m 'chore: persist S18 morning paper ledger [skip ci]'
             git push origin HEAD:main
           fi
-
