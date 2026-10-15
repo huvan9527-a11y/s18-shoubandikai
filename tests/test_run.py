@@ -31,7 +31,6 @@ class SingleSessionProvider:
     def __init__(self, fail=False):
         self.fail = fail
         self.calls = []
-        self.fail_on = None
 
     def days(self, start_date=None, end_date=None, **kwargs):
         return [date(2026, 10, 8)]
@@ -46,6 +45,7 @@ class SingleSessionProvider:
 class CatchUpProvider:
     def __init__(self):
         self.calls = []
+        self.fail_on = None
 
     def days(self, start_date=None, end_date=None, **kwargs):
         out = []
