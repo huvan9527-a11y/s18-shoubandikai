@@ -110,6 +110,24 @@ class RunnerTests(unittest.TestCase):
             self.assertEqual(account, before)
             self.assertEqual(files, {name: (Path(root) / name).read_bytes() for name in files})
 
+    def test_report_replay_records_day_when_candidate_only_minute_feed_is_unavailable(self):
+        class CandidateFeedFailureProvider(SingleSessionProvider):
+            def session(self, day, candidates, positions, cfg):
+                _, daily, minutes = test_paper.ReplayTests().fixture()
+                code = candidates[0]['code']
+                daily[code]['minute_unavailable'] = True
+                minutes.pop(code, None)
+                return daily, minutes
+        with tempfile.TemporaryDirectory() as root:
+            account = paper.new_account('2026-10-08')
+            candidates = test_paper.ReplayTests().fixture()[0]
+            report = dict(date='2026-10-08', status='scanned', opening_candidates=candidates)
+            result = run.process_report(CandidateFeedFailureProvider(), account, paper.DEFAULTS, report, Path(root))
+            self.assertEqual(result, 'processed')
+            self.assertEqual(account['last_processed'], '2026-10-08')
+            self.assertEqual(account['days'][-1]['minute_unavailable_candidates'], [candidates[0]['code']])
+            self.assertEqual(account['trades'], [])
+
     def test_report_replay_starts_at_first_valid_date_and_is_idempotent(self):
         self.assertTrue(callable(getattr(run, 'process_report', None)))
         with tempfile.TemporaryDirectory() as root:

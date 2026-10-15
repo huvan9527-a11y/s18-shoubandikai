@@ -144,8 +144,14 @@ def process_report(provider, account, cfg, report, root):
         working['start_date'] = str(day)
     try:
         daily, minutes = provider.session(day, candidates, working['positions'], cfg)
-        if not replay_day(working, str(day), candidates, daily, minutes, cfg):
+        unavailable = sorted(code for code, row in daily.items() if row.get('minute_unavailable'))
+        replay_candidates = [c for c in candidates if c['code'] not in unavailable]
+        if unavailable:
+            print(f'Candidates without validated minute data are recorded as unfilled: {",".join(unavailable)}', flush=True)
+        if not replay_day(working, str(day), replay_candidates, daily, minutes, cfg):
             return 'up_to_date'
+        if unavailable:
+            working['days'][-1]['minute_unavailable_candidates'] = unavailable
     except Exception as exc:
         detail = f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。'
         print(f'Paper ledger blocked for {day}: {detail}', flush=True)
