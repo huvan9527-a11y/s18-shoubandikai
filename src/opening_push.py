@@ -148,7 +148,6 @@ def main(argv=None):
         return 0
     if not (args.late_diagnostic or args.paper_morning or args.prepare) and not in_live_window(now):
         raise RuntimeError(f'Opening alert could not run outside the 09:26-09:35 live window: {now.isoformat()}')
-        return 0
     files = sorted((ROOT / "outputs").glob("signals-????-??-??.json"), reverse=True)
     previous = None
     for path in files:
