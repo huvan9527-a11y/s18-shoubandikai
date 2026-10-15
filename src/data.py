@@ -2,6 +2,7 @@
 import datetime as dt
 import json
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from decimal import Decimal, ROUND_HALF_UP
 from io import StringIO, BytesIO
@@ -72,6 +73,19 @@ def normalize_minute_frame(frame, target_date, latest_available_date, require_ex
     if missing:
         raise ValueError('Incomplete minute windows; missing ' + ','.join(missing))
     return result
+
+def fetch_minute_frame(ak, **kwargs):
+    """Retry transient public-feed disconnects before marking a session unavailable."""
+    for attempt in range(4):
+        try:
+            return ak.stock_zh_a_hist_min_em(**kwargs)
+        except Exception:
+            if attempt == 3:
+                raise
+            delay = 2 ** attempt
+            print(f"Public minute feed disconnected; retry {attempt + 1}/3 in {delay}s", flush=True)
+            time.sleep(delay)
+
 
 def get(url, **kwargs):
     error = None
@@ -304,7 +318,7 @@ class PublicData:
         import akshare as ak
         for code in sorted(needed):
             try:
-                raw = ak.stock_zh_a_hist_min_em(
+                raw = fetch_minute_frame(ak,
                     symbol=code[:6], period='1',
                     start_date=f'{target:%Y-%m-%d} 09:30:00',
                     end_date=f'{target:%Y-%m-%d} 15:00:00', adjust='')
@@ -331,7 +345,7 @@ class PublicData:
         import akshare as ak
         for code in sorted(needed):
             try:
-                raw = ak.stock_zh_a_hist_min_em(
+                raw = fetch_minute_frame(ak,
                     symbol=code[:6], period='1',
                     start_date=f'{target:%Y-%m-%d} 09:30:00',
                     end_date=f'{target:%Y-%m-%d} 09:37:00', adjust='')

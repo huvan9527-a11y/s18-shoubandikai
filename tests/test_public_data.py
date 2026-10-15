@@ -67,6 +67,17 @@ class PublicDataTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'target date'):
             data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 12), date(2026, 10, 13))
 
+    def test_minute_feed_retries_transient_disconnect(self):
+        from unittest.mock import Mock
+        ak = Mock()
+        expected = object()
+        ak.stock_zh_a_hist_min_em.side_effect = [ConnectionError('remote disconnected'), expected]
+        with patch('src.data.time.sleep') as sleep:
+            result = data.fetch_minute_frame(ak, symbol='002827', period='1')
+        self.assertIs(result, expected)
+        self.assertEqual(ak.stock_zh_a_hist_min_em.call_count, 2)
+        sleep.assert_called_once_with(1)
+
     def test_recent_historical_minute_replay_requires_exact_date_and_complete_windows(self):
         import pandas as pd
         rows = []
