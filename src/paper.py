@@ -242,10 +242,15 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
         d = daily.get(code)
         if not d or not positive(d.get('close')):
             raise ValueError('Missing held-stock daily mark: ' + code)
+    unavailable_position_minutes = []
+    for code, p in account['positions'].items():
+        d = daily.get(code)
+        if not d or not positive(d.get('close')):
+            raise ValueError('Missing held-stock daily mark: ' + code)
         if not d['paused']:
             required = [f'14:{i:02d}' for i in range(50, 58)]
             if any(t not in minutes.get(code, {}) for t in required):
-                raise ValueError('Missing held-stock exit minutes: ' + code)
+                unavailable_position_minutes.append(code)
     morning_done = account.get('morning_processed_date') == date
     queue = opening_queue(candidates, daily, cfg) if not preparation_error and not morning_done else []
     for c in queue:
@@ -295,6 +300,8 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
                     events.append(dict(time=tm, event='SUBMIT', **order))
         if '14:50' <= tm <= '14:56':
             for code, p in list(a['positions'].items()):
+                if code in unavailable_position_minutes:
+                    continue
                 if p['entry_date'] >= date or code in pending or daily[code]['paused']:
                     continue
                 if attempts.get(('sell', code), 0) >= 5:
@@ -317,6 +324,7 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
                             equity=equity, return_pct=round((equity / a['initial_cash'] - 1) * 100, 4)))
     a['days'].append(dict(date=date, candidates=candidates, queue=queue, events=events,
                           preparation_error=preparation_error,
+                          minute_unavailable_positions=unavailable_position_minutes,
                           unfilled_at_close=list(pending.values())))
     a['last_processed'] = date
     if a['cash'] < 0 or len(a['positions']) > cfg['slots']:

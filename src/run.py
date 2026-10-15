@@ -144,11 +144,20 @@ def process_report(provider, account, cfg, report, root):
         working['start_date'] = str(day)
     try:
         daily, minutes = provider.session(day, candidates, working['positions'], cfg)
-        if not replay_day(working, str(day), candidates, daily, minutes, cfg):
+        unavailable = sorted(code for code, row in daily.items() if row.get('minute_unavailable'))
+        unavailable_candidates = sorted(set(unavailable) & {c['code'] for c in candidates})
+        replay_candidates = [c for c in candidates if c['code'] not in unavailable_candidates]
+        if unavailable_candidates:
+            print(f'Candidates without validated minute data are recorded as unfilled: {",".join(unavailable_candidates)}', flush=True)
+        if not replay_day(working, str(day), replay_candidates, daily, minutes, cfg):
             return 'up_to_date'
+        if unavailable_candidates:
+            working['days'][-1]['minute_unavailable_candidates'] = unavailable_candidates
     except Exception as exc:
+        detail = f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。'
+        print(f'Paper ledger blocked for {day}: {detail}', flush=True)
         write_json(root / 'outputs/paper-status.json', dict(status='invalid_session',
-                   detail=f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。', report_date=str(day)))
+                   detail=detail, report_date=str(day)))
         return 'invalid_session'
     for code, position in working['positions'].items():
         if 'factor' in daily[code]:
@@ -219,11 +228,30 @@ def process_morning_from_files(day, candidates, root=ROOT, expected_previous_dat
                            expected_previous_date)
 
 
+def process_reports_from_files(provider, account, cfg, root=ROOT):
+    """Replay every pending successful report oldest-first, stopping at the first unsafe day."""
+    root = Path(root)
+    reports = sorted((root / 'outputs').glob('signals-????-??-??.json'))
+    processed = False
+    for path in reports:
+        report = json.loads(path.read_text(encoding='utf-8'))
+        report_date = report.get('date')
+        if not report_date:
+            continue
+        if account.get('last_processed') and report_date <= account['last_processed']:
+            continue
+        status = process_report(provider, account, cfg, report, root)
+        print(f'Paper ledger: date={report_date}, status={status}', flush=True)
+        if status not in ('processed', 'up_to_date'):
+            return status
+        processed = processed or status == 'processed'
+    return 'processed' if processed else 'up_to_date'
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--end-date', help='Optional completed date; no future/incomplete day allowed')
     parser.add_argument('--initialize', action='store_true', help='Create only if no account exists; never reset')
-    parser.add_argument('--paper-from-scan', action='store_true', help='Replay the newest successful daily scan')
+    parser.add_argument('--paper-from-scan', action='store_true', help='Replay pending successful scans oldest-first')
     args = parser.parse_args()
     cfg = DEFAULTS | json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
     path = ROOT / 'state/account.json'
@@ -234,14 +262,12 @@ def main():
         export(account, ROOT, 'waiting_for_configuration')
         return 0
     if args.paper_from_scan:
-        reports = sorted((ROOT / 'outputs').glob('signals-????-??-??.json'), reverse=True)
+        reports = list((ROOT / 'outputs').glob('signals-????-??-??.json'))
         if not reports:
             write_json(ROOT / 'outputs/paper-status.json', dict(status='scan_missing',
                        detail='未找到扫描报告；模拟账本未更新。'))
             return 1
-        report = json.loads(reports[0].read_text(encoding='utf-8'))
-        status = process_report(PublicData(), account, cfg, report, ROOT)
-        print(f'Paper ledger: {status}', flush=True)
+        status = process_reports_from_files(PublicData(), account, cfg, ROOT)
         return 0 if status in ('processed', 'up_to_date') else 1
     # The active strategy only scans daily/opening conditions; no minute replay.
     from .scan import main as scan_main

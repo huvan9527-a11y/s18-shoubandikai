@@ -67,6 +67,33 @@ class PublicDataTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'target date'):
             data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 12), date(2026, 10, 13))
 
+    def test_minute_feed_retries_transient_disconnect(self):
+        from unittest.mock import Mock
+        ak = Mock()
+        expected = object()
+        ak.stock_zh_a_hist_min_em.side_effect = [ConnectionError('remote disconnected'), expected]
+        with patch('src.data.time.sleep') as sleep:
+            result = data.fetch_minute_frame(ak, symbol='002827', period='1')
+        self.assertIs(result, expected)
+        self.assertEqual(ak.stock_zh_a_hist_min_em.call_count, 2)
+        sleep.assert_called_once_with(1)
+
+    def test_recent_historical_minute_replay_requires_exact_date_and_complete_windows(self):
+        import pandas as pd
+        rows = []
+        for tm in [*(f'09:{i:02d}' for i in range(30, 37)), *(f'14:{i:02d}' for i in range(50, 58))]:
+            rows.append(dict(时间=f'2026-10-14 {tm}:00', 开盘=10, 最高=10.1, 最低=9.9,
+                             收盘=10, 成交量=12, 成交额=12000))
+        normalized = data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 14),
+                                                 date(2026, 10, 15), allow_historical=True)
+        self.assertEqual(normalized['09:30']['volume'], 1200)
+        with self.assertRaisesRegex(ValueError, 'target date'):
+            data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 13),
+                                        date(2026, 10, 15), allow_historical=True)
+        with self.assertRaisesRegex(ValueError, 'latest available'):
+            data.normalize_minute_frame(pd.DataFrame(rows), date(2026, 10, 14),
+                                        date(2026, 10, 15), allow_historical=False)
+
     def test_minute_normalization_rejects_missing_windows_zero_open_and_bad_ohlc(self):
         import pandas as pd
         self.assertTrue(callable(getattr(data, 'normalize_minute_frame', None)))

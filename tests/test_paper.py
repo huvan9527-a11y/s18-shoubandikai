@@ -104,14 +104,18 @@ class ReplayTests(unittest.TestCase):
         paper.replay_day(b, '2026-10-08', c, d, modified, paper.DEFAULTS)
         self.assertEqual(a['trades'], b['trades'])
 
-    def test_missing_held_data_leaves_account_unchanged(self):
+    def test_missing_held_minutes_keep_position_and_advance_with_daily_mark(self):
         c, d, m = self.fixture()
         a = paper.new_account('2026-10-08')
         paper.replay_day(a, '2026-10-08', c, d, m, paper.DEFAULTS)
-        before = copy.deepcopy(a)
-        with self.assertRaises(ValueError):
-            paper.replay_day(a, '2026-10-09', [], d, {}, paper.DEFAULTS)
-        self.assertEqual(a, before)
+        code = c[0]['code']
+        daily = {code: dict(d[code], close=10.25)}
+        paper.replay_day(a, '2026-10-09', [], daily, {}, paper.DEFAULTS)
+        self.assertEqual(a['last_processed'], '2026-10-09')
+        self.assertIn(code, a['positions'])
+        self.assertEqual(a['positions'][code]['mark'], 10.25)
+        self.assertEqual(a['days'][-1]['minute_unavailable_positions'], [code])
+        self.assertEqual(len(a['trades']), 1)
 
     def test_max_two_slots_even_with_simultaneous_orders(self):
         c, d, m = self.fixture()

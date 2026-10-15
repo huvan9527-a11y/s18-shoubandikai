@@ -23,7 +23,7 @@
 - 人读入口：[`outputs/latest.md`](outputs/latest.md)。GitHub 仓库页面打开该文件即可；Actions 运行摘要也附有该报告。
 - 账户状态：[`outputs/latest.json`](outputs/latest.json)；持仓：[`outputs/holdings.csv`](outputs/holdings.csv)；模拟成交：[`logs/trades.csv`](logs/trades.csv)；每日净值：[`logs/equity.csv`](logs/equity.csv)。Actions 运行页 artifact `s18-paper-reports-*` 保存这些文件。
 - 使用 AkShare/Eastmoney 免费1分钟不复权行情，接口约保留最近5个交易日。早盘只要求09:30—09:36完整分钟窗，日终回放另要求14:50—14:57退出窗；成交量从“手”换算为股。缺分钟、过期日、零开盘价或 OHLC 错误会拒绝当次撮合，不使用日线或合成数据补成交。
-- 首次成功撮合日成为账本起始日，不回填此前历史。已有账本漏过交易日时生成 `outputs/paper-status.json` 诊断并保持账户不变；同日重跑不会重复成交。
+- 首次成功撮合日成为账本起始日，不回填此前历史。已有账本按成功扫描报告的日期顺序补处理最近交易日；只有分钟行情完整且通过校验才记账。遇到缺失交易日、超出近期分钟保留范围或数据不完整时，在首个缺口停止并生成 `outputs/paper-status.json`，不跳过缺口、不合成成交；同日重跑不会重复成交。
 - 初始资金固定20万元、最多两只持仓。所有成交是 `src/paper.py` 的假设撮合，不是券商订单或成交回报。
 
 ## 保留的 S18 规则
@@ -46,7 +46,7 @@
 
 ## 模拟账本文件
 
-`state/account.json` 是权威账本；导出的账户摘要、持仓、成交和净值位于上方列出的 `outputs/` 与 `logs/` 文件。分钟来源不可回补历史，因此账本只验证并处理最新的完整交易日。
+`state/account.json` 是权威账本；导出的账户摘要、持仓、成交和净值位于上方列出的 `outputs/` 与 `logs/` 文件。公开分钟源只用于近期完整交易日；回放逐日读取已保存的扫描报告，并严格校验目标日期与分钟窗口。
 
 ## Server 酱推送
 
