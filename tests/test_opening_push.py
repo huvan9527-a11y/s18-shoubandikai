@@ -38,23 +38,31 @@ class OpeningTests(unittest.TestCase):
         self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
         self.assertIn('while true; do', text)
         self.assertIn('sleep 45', text)
+        self.assertIn("- cron: '0 0 * * 1-5'", text)
+        self.assertIn('Wait until 09:15 preparation', text)
+        self.assertIn('src.opening_push --prepare', text)
+        self.assertIn('Fail if the live opening window was missed', text)
+        self.assertIn('Fail if morning paper window was missed', text)
+        self.assertIn("output.write(f'live={str(live).lower()}\\n')", text)
+        self.assertIn("output.write(f'paper={str(paper).lower()}\\n')", text)
         self.assertFalse(legacy_workflow.exists(), 'legacy 09:26 job can race the morning ledger workflow')
-    def test_live_window_includes_0925_and_0935_only(self):
+    def test_live_window_includes_0926_and_0935_only(self):
         self.assertTrue(callable(getattr(opening_push, 'in_live_window', None)))
-        self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25)))
+        self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25, 59)))
+        self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 26)))
         self.assertTrue(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 35, 59)))
         self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 24, 59)))
         self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 36)))
 
-    def test_late_run_skips_without_fetching_or_pushing(self):
+    def test_late_run_fails_instead_of_reporting_successful_skip(self):
         from unittest.mock import patch
         current = dt.datetime(2026, 10, 13, 9, 36)
         fake = type('FakeDateTime', (), {'now': staticmethod(lambda tz: current)})
         with patch('src.opening_push.dt.datetime', fake), \
              patch('src.opening_push.quote_batch', side_effect=AssertionError('must skip before quote')), \
-             patch('builtins.print') as output:
-            self.assertEqual(main([]), 0)
-        self.assertIn('skipped', output.call_args.args[0].lower())
+             patch('builtins.print'):
+            with self.assertRaisesRegex(RuntimeError, 'could not run outside'):
+                main([])
 
     def test_primary_workflow_runs_paper_after_successful_scan(self):
         from pathlib import Path

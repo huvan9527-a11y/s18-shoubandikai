@@ -16,7 +16,7 @@ TZ = ZoneInfo("Asia/Shanghai")
 def in_live_window(now):
     """Return whether a weekday run can still send a same-session opening alert."""
     clock = (now.hour, now.minute, now.second)
-    return now.weekday() < 5 and (9, 25, 0) <= clock <= (9, 35, 59)
+    return now.weekday() < 5 and (9, 26, 0) <= clock <= (9, 35, 59)
 
 
 def in_morning_paper_window(now):
@@ -139,15 +139,15 @@ def make_opening_report(yesterday, today, quote, checked_at=None, strict_data=Fa
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--late-diagnostic', action='store_true', help='Manual post-window report; no ServerChan or trading signals')
+    parser.add_argument('--prepare', action='store_true', help='Validate the latest prior-session candidates before the opening window')
     parser.add_argument('--paper-morning', action='store_true', help='Record same-day 09:31-09:36 public-minute paper fills')
     args = parser.parse_args(argv)
     now = dt.datetime.now(TZ)
     if args.paper_morning and not in_morning_paper_window(now):
         print(f'Morning paper replay skipped outside 09:37-10:00 window: {now.isoformat()}')
         return 0
-    if not (args.late_diagnostic or args.paper_morning) and not in_live_window(now):
-        print(f'Opening alert skipped outside 09:25-09:35 live window: {now.isoformat()}')
-        return 0
+    if not (args.late_diagnostic or args.paper_morning or args.prepare) and not in_live_window(now):
+        raise RuntimeError(f'Opening alert could not run outside the 09:26-09:35 live window: {now.isoformat()}')
     files = sorted((ROOT / "outputs").glob("signals-????-??-??.json"), reverse=True)
     previous = None
     for path in files:
@@ -164,6 +164,11 @@ def main(argv=None):
     if not isinstance(session, dict):
         raise ValueError('Legacy report has prior-day candidates; regenerate with src.scan before opening review')
     candidates = session.get('candidates', [])
+    if not isinstance(candidates, list):
+        raise ValueError('Prepared next-session candidates are not a list')
+    if args.prepare:
+        print(f"Opening preparation ready: signal_date={session['signal_date']}, candidates={len(candidates)}", flush=True)
+        return 0
     quotes = quote_batch([c["code"] for c in candidates], now.date())
     if args.late_diagnostic:
         selected, rows = evaluate_opening(previous, now.date(), quotes)
