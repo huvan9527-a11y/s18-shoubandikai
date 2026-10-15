@@ -147,8 +147,10 @@ def process_report(provider, account, cfg, report, root):
         if not replay_day(working, str(day), candidates, daily, minutes, cfg):
             return 'up_to_date'
     except Exception as exc:
+        detail = f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。'
+        print(f'Paper ledger blocked for {day}: {detail}', flush=True)
         write_json(root / 'outputs/paper-status.json', dict(status='invalid_session',
-                   detail=f'{type(exc).__name__}: {str(exc)[:300]}；账本保持不变。', report_date=str(day)))
+                   detail=detail, report_date=str(day)))
         return 'invalid_session'
     for code, position in working['positions'].items():
         if 'factor' in daily[code]:
