@@ -72,7 +72,7 @@ jobs:
               else:
                   print(f'Opening alert skipped after live window: {now.isoformat()}')
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
-              output.write(f'live={str(live).lower()}\\n')
+              output.write(f'live={str(live).lower()}\n')
           PY
       - name: Fail if the live opening window was missed
         if: steps.window.outputs.live != 'true'
@@ -106,7 +106,7 @@ jobs:
               paper = now <= deadline
           print(f'Morning minute replay eligible={paper}; current time={now.isoformat()}')
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
-              output.write(f'paper={str(paper).lower()}\\n')
+              output.write(f'paper={str(paper).lower()}\n')
           PY
       - name: Fail if morning paper window was missed
         if: steps.morning.outputs.paper != 'true'
