@@ -1,6 +1,0 @@
-{
-  "status": "missed_trading_day",
-  "detail": "检测到未处理交易日；为避免伪造分钟成交，账本保持不变。",
-  "last_processed": "2026-10-13",
-  "requested_date": "2026-10-15"
-}

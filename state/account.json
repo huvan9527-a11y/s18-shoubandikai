@@ -3,13 +3,13 @@
   "initial_cash": 200000.0,
   "cash": 100186.05,
   "start_date": "2026-10-13",
-  "last_processed": "2026-10-13",
+  "last_processed": "2026-10-15",
   "positions": {
     "603533.XSHG": {
       "amount": 3700,
       "entry_date": "2026-10-13",
       "cost": 99813.95,
-      "mark": 27.2,
+      "mark": 29.01,
       "name": "掌阅科技",
       "component": "LB",
       "factor": 1.0
@@ -38,6 +38,20 @@
       "market_value": 100640.0,
       "equity": 200826.05,
       "return_pct": 0.413
+    },
+    {
+      "date": "2026-10-14",
+      "cash": 100186.05,
+      "market_value": 110704.0,
+      "equity": 210890.05,
+      "return_pct": 5.445
+    },
+    {
+      "date": "2026-10-15",
+      "cash": 100186.05,
+      "market_value": 107337.0,
+      "equity": 207523.05,
+      "return_pct": 3.7615
     }
   ],
   "days": [
@@ -103,6 +117,53 @@
         "RUN": 0,
         "MA20": -0.06235352341048095,
         "M_DN": 0.006006006006006006,
+        "DEEP": false,
+        "FB_OK": true,
+        "LB_OK": true
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "candidates": [],
+      "queue": [],
+      "events": [],
+      "preparation_error": null,
+      "minute_unavailable_positions": [
+        "603533.XSHG"
+      ],
+      "unfilled_at_close": [],
+      "minute_unavailable_candidates": [
+        "002827.XSHE",
+        "600664.XSHG"
+      ],
+      "temperature": {
+        "ICE": true,
+        "RUN": 1,
+        "MA20": -0.05824548436619814,
+        "M_DN": 0.002002002002002002,
+        "DEEP": true,
+        "FB_OK": true,
+        "LB_OK": true
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "candidates": [],
+      "queue": [],
+      "events": [],
+      "preparation_error": null,
+      "minute_unavailable_positions": [
+        "603533.XSHG"
+      ],
+      "unfilled_at_close": [],
+      "minute_unavailable_candidates": [
+        "600391.XSHG"
+      ],
+      "temperature": {
+        "ICE": false,
+        "RUN": 0,
+        "MA20": -0.06936766673373884,
+        "M_DN": 0.003003003003003003,
         "DEEP": false,
         "FB_OK": true,
         "LB_OK": true
