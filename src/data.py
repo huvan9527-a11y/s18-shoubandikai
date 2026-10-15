@@ -30,12 +30,15 @@ def price_limit(previous, rate):
     return float((reference * (Decimal(1) + Decimal(str(rate)))).quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
 
 
-def normalize_minute_frame(frame, target_date, latest_available_date, require_exit=True):
+def normalize_minute_frame(frame, target_date, latest_available_date, require_exit=True, allow_historical=False):
     """Validate execution windows and convert Eastmoney 1m volume from lots to shares."""
     target_date = pd.Timestamp(target_date).date()
     latest_available_date = pd.Timestamp(latest_available_date).date()
-    if target_date != latest_available_date:
+    lag_days = (latest_available_date - target_date).days
+    if target_date > latest_available_date or lag_days < 0 or (lag_days and not allow_historical):
         raise ValueError(f'target date {target_date} is not latest available minute date {latest_available_date}')
+    if lag_days > 7:
+        raise ValueError(f'target date {target_date} is outside recent minute retention window ending {latest_available_date}')
     aliases = {'时间': 'time', '日期': 'time', '开盘': 'open', '最高': 'high',
                '最低': 'low', '收盘': 'close', '成交量': 'volume', '成交额': 'money'}
     df = frame.rename(columns={k: v for k, v in aliases.items() if k in frame.columns}).copy()
@@ -277,8 +280,9 @@ class PublicData:
     def session(self, date, candidates, positions, cfg):
         """Build one validated daily/minute session for queued candidates and live holdings."""
         target = pd.Timestamp(date).date()
-        if target != self.today:
-            raise ValueError(f'minute source only supports the current complete session, requested {target}')
+        lag_days = (self.today - target).days
+        if target > self.today or lag_days > 7:
+            raise ValueError(f'minute source only supports recent complete sessions, requested {target} with latest {self.today}')
         codes = sorted({c['code'] for c in candidates} | set(positions))
         candidate_names = {c['code']: c.get('name', c['code']) for c in candidates}
         daily = {}
@@ -304,7 +308,7 @@ class PublicData:
                     symbol=code[:6], period='1',
                     start_date=f'{target:%Y-%m-%d} 09:30:00',
                     end_date=f'{target:%Y-%m-%d} 15:00:00', adjust='')
-                minutes[code] = normalize_minute_frame(raw, target, self.today)
+                minutes[code] = normalize_minute_frame(raw, target, self.today, allow_historical=True)
             except Exception as exc:
                 raise ValueError(f'Invalid public minute data for {code}: {exc}') from exc
         return daily, minutes
