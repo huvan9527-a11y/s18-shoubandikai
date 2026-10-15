@@ -31,6 +31,7 @@ class SingleSessionProvider:
     def __init__(self, fail=False):
         self.fail = fail
         self.calls = []
+        self.fail_on = None
 
     def days(self, start_date=None, end_date=None, **kwargs):
         return [date(2026, 10, 8)]
@@ -58,6 +59,8 @@ class CatchUpProvider:
 
     def session(self, day, candidates, positions, cfg):
         self.calls.append(day.isoformat())
+        if self.fail_on == day.isoformat():
+            raise ValueError('minute data unavailable')
         return test_paper.ReplayTests().fixture()[1:]
 
 
@@ -182,6 +185,23 @@ class RunnerTests(unittest.TestCase):
             before = copy.deepcopy(account)
             self.assertEqual(run.process_reports_from_files(provider, account, paper.DEFAULTS, root), 'up_to_date')
             self.assertEqual(account, before)
+
+    def test_paper_catchup_stops_at_first_incomplete_date(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            account = paper.new_account('2026-10-01')
+            account['last_processed'] = '2026-10-07'
+            cands = test_paper.ReplayTests().fixture()[0]
+            for day in ('2026-10-08', '2026-10-09'):
+                (root / 'outputs').mkdir(parents=True, exist_ok=True)
+                (root / 'outputs' / f'signals-{day}.json').write_text(json.dumps(
+                    dict(date=day, status='scanned', opening_candidates=cands)), encoding='utf-8')
+            provider = CatchUpProvider()
+            provider.fail_on = '2026-10-09'
+            status = run.process_reports_from_files(provider, account, paper.DEFAULTS, root)
+            self.assertEqual(status, 'invalid_session')
+            self.assertEqual(provider.calls, ['2026-10-08', '2026-10-09'])
+            self.assertEqual(account['last_processed'], '2026-10-08')
 
     def test_catchup_and_repeated_run_preserve_cash(self):
         with tempfile.TemporaryDirectory() as root:
