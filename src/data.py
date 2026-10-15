@@ -324,11 +324,10 @@ class PublicData:
                     end_date=f'{target:%Y-%m-%d} 15:00:00', adjust='')
                 minutes[code] = normalize_minute_frame(raw, target, self.today, allow_historical=True)
             except Exception as exc:
-                if code not in positions:
-                    daily[code]['minute_unavailable'] = True
-                    print(f'Candidate omitted from historical paper fills: {code}; minute feed unavailable ({type(exc).__name__})', flush=True)
-                    continue
-                raise ValueError(f'Invalid public minute data for held position {code}: {exc}') from exc
+                daily[code]['minute_unavailable'] = True
+                role = 'held position will be marked at daily close without simulated exit' if code in positions else 'candidate will be recorded unfilled'
+                print(f'Minute feed unavailable for {role}: {code} ({type(exc).__name__})', flush=True)
+                continue
         return daily, minutes
 
     def morning_session(self, date, candidates, positions, cfg):
