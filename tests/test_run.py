@@ -42,6 +42,25 @@ class SingleSessionProvider:
         return test_paper.ReplayTests().fixture()[1:]
 
 
+class CatchUpProvider:
+    def __init__(self):
+        self.calls = []
+
+    def days(self, start_date=None, end_date=None, **kwargs):
+        out = []
+        day = start_date
+        while day <= end_date:
+            if day.weekday() < 5:
+                out.append(day)
+            from datetime import timedelta
+            day += timedelta(days=1)
+        return out
+
+    def session(self, day, candidates, positions, cfg):
+        self.calls.append(day.isoformat())
+        return test_paper.ReplayTests().fixture()[1:]
+
+
 class BrokenCalendarProvider(SingleSessionProvider):
     def days(self, start_date=None, end_date=None, **kwargs):
         raise OSError('calendar source unavailable')
@@ -145,6 +164,25 @@ class RunnerTests(unittest.TestCase):
             self.assertEqual(result, 'calendar_unavailable')
             self.assertEqual(a, before)
             self.assertEqual(json.loads((Path(root) / 'outputs/paper-status.json').read_text(encoding='utf-8'))['status'], 'calendar_unavailable')
+    def test_paper_from_scan_replays_missed_reports_in_date_order(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            account = paper.new_account('2026-10-01')
+            account['last_processed'] = '2026-10-07'
+            cands = test_paper.ReplayTests().fixture()[0]
+            for day in ('2026-10-08', '2026-10-09'):
+                (root / 'outputs').mkdir(parents=True, exist_ok=True)
+                (root / 'outputs' / f'signals-{day}.json').write_text(json.dumps(
+                    dict(date=day, status='scanned', opening_candidates=cands)), encoding='utf-8')
+            provider = CatchUpProvider()
+            status = run.process_reports_from_files(provider, account, paper.DEFAULTS, root)
+            self.assertEqual(status, 'processed')
+            self.assertEqual(provider.calls, ['2026-10-08', '2026-10-09'])
+            self.assertEqual(account['last_processed'], '2026-10-09')
+            before = copy.deepcopy(account)
+            self.assertEqual(run.process_reports_from_files(provider, account, paper.DEFAULTS, root), 'up_to_date')
+            self.assertEqual(account, before)
+
     def test_catchup_and_repeated_run_preserve_cash(self):
         with tempfile.TemporaryDirectory() as root:
             a = paper.new_account('2026-10-08')
