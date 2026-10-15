@@ -2,8 +2,8 @@ name: S18 开盘竞价提醒
 
 on:
   schedule:
-    # 08:45 CST; buffer for runner queue delays, then wait until 09:25.
-    - cron: '45 0 * * 1-5'
+    # Start at 08:00 CST to allow runner setup; prepare at 09:15, alert from 09:26.
+    - cron: '0 0 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   opening-alert:
     runs-on: ubuntu-latest
-    # Starts at 08:45, waits for the opening alert and completed 09:31-09:36 bars.
+    # Starts at 08:00, prepares at 09:15, alerts at 09:26, then records completed morning bars.
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +29,23 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
+      - name: Wait until 09:15 preparation
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import time
+          from zoneinfo import ZoneInfo
+
+          tz = ZoneInfo('Asia/Shanghai')
+          now = dt.datetime.now(tz)
+          target = now.replace(hour=9, minute=15, second=0, microsecond=0)
+          while now < target:
+              time.sleep(min(10, (target - now).total_seconds()))
+              now = dt.datetime.now(tz)
+          print(f'Opening preparation starts: {now.isoformat()}')
+          PY
+      - name: Validate prior-session candidates
+        run: python -u -m src.opening_push --prepare
       - name: Wait for the live opening window
         id: window
         run: |
@@ -44,7 +61,7 @@ jobs:
               print(f'Opening alert skipped on weekend: {now.isoformat()}')
               live = False
           else:
-              target = now.replace(hour=9, minute=25, second=0, microsecond=0)
+              target = now.replace(hour=9, minute=26, second=0, microsecond=0)
               deadline = now.replace(hour=9, minute=35, second=59, microsecond=0)
               while now < target:
                   time.sleep(min(10, (target - now).total_seconds()))
@@ -57,6 +74,11 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
               output.write(f'live={str(live).lower()}\\n')
           PY
+      - name: Fail if the live opening window was missed
+        if: steps.window.outputs.live != 'true'
+        run: |
+          echo "Opening alert did not execute: runner missed the 09:26-09:35 window or live gate output was missing"
+          exit 1
       - name: Verify auction quotes and send opening candidates
         if: steps.window.outputs.live == 'true'
         env:
@@ -86,6 +108,11 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
               output.write(f'paper={str(paper).lower()}\\n')
           PY
+      - name: Fail if morning paper window was missed
+        if: steps.morning.outputs.paper != 'true'
+        run: |
+          echo "Morning paper ledger did not execute: runner missed the 09:37-10:00 window or paper gate output was missing"
+          exit 1
       - name: Record completed morning buys in the paper ledger
         if: steps.morning.outputs.paper == 'true'
         shell: bash
