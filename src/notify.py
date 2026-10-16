@@ -68,47 +68,109 @@ def push_reports(root, reports):
     return ok
 
 
+def _opening_alert_log(root, date):
+    path = Path(root) / "outputs" / f"opening-alert-{date}.json"
+    if path.exists():
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if payload.get("date") != date or not isinstance(payload.get("attempts"), list):
+            raise ValueError(f"Invalid opening alert audit log: {path.name}")
+    else:
+        payload = {"date": date, "attempts": []}
+    return path, payload
+
+
+def _save_opening_alert_log(path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+                         encoding="utf-8")
+    temporary.replace(path)
+
+
 def push_opening_candidates(root, date, candidates, *, data_verified=False):
-    """Send a timely candidate alert; never claim execution or trust stale data."""
+    """Send a timely candidate alert and persist its exact payload and outcome."""
     import datetime as dt
     from zoneinfo import ZoneInfo
-    now = dt.datetime.now(ZoneInfo("Asia/Shanghai"))
+    tz = ZoneInfo("Asia/Shanghai")
+    now = dt.datetime.now(tz)
     if now.date().isoformat() != date or not (now.hour == 9 and 25 <= now.minute <= 35):
         raise ValueError("Opening alerts require the current session at 09:25-09:35 CST")
     if not data_verified:
         raise ValueError("Live auction data has not been verified; refuse actionable alert")
     if not isinstance(candidates, list):
         raise ValueError("Candidates must be a validated list")
+
+    title = f"S18 {date} 09:26竞价候选 {len(candidates)}只"
+    lines = [f"S18 {date} 09:26竞价候选（非成交）", "",
+             "A仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。"]
+    for candidate in candidates:
+        lines.append(f"- {candidate['code']} {candidate.get('name', '')} {candidate['component']}")
+    if not candidates:
+        lines.append("竞价确认候选为零。")
+    body = "\n".join(lines)
     report = dict(date=date, status="opening_verified", opening_candidates=candidates)
+    digest = hashlib.sha256(json.dumps(report, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    path, audit = _opening_alert_log(root, date)
+    attempt = {
+        "attempt": len(audit["attempts"]) + 1,
+        "attempted_at": now.isoformat(),
+        "data_verified": True,
+        "candidate_count": len(candidates),
+        "candidates": candidates,
+        "message": {"title": title, "desp": body},
+        "payload_sha256": digest,
+        "delivery_status": "pending",
+    }
+    audit["attempts"].append(attempt)
+    _save_opening_alert_log(path, audit)
+
+    def finish(status, **details):
+        attempt["delivery_status"] = status
+        attempt.update(details)
+        _save_opening_alert_log(path, audit)
+
     key = (os.getenv("SERVERCHAN_SENDKEY") or os.getenv("SERVERCHAN_KEY")
            or os.getenv("SERVER_CHAN_SENDKEY") or os.getenv("SCKEY") or "").strip()
     if not key:
+        finish("not_configured")
         print("Opening alert skipped: SendKey not configured", flush=True)
         return False
-    url = endpoint(key)
-    path = Path(root) / "state/opening_notifications.json"
-    sent = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
-    digest = hashlib.sha256(json.dumps(report, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
-    if sent.get(date) == digest:
-        return True
-    lines = [f"S18 {date} 09:26竞价候选（非成交）", "",
-             "A仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。"]
-    for c in candidates:
-        lines.append(f"- {c['code']} {c.get('name','')} {c['component']}")
-    if not candidates:
-        lines.append("竞价确认候选为零。")
     try:
-        resp = requests.post(url, data={"title": f"S18 {date} 09:26竞价候选 {len(candidates)}只",
-                                        "desp": "\n".join(lines)}, timeout=15)
-        resp.raise_for_status()
-        if resp.json().get("code") != 0:
-            raise ValueError("ServerChan rejected alert")
-    except (requests.RequestException, ValueError):
+        url = endpoint(key)
+    except ValueError:
+        finish("failed", failure_reason="invalid_send_key")
+        print("Opening alert failed: invalid SendKey format; credential redacted", flush=True)
+        return False
+
+    state_path = Path(root) / "state/opening_notifications.json"
+    sent = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
+    if sent.get(date) == digest:
+        finish("duplicate_skipped", previously_accepted=True)
+        return True
+
+    try:
+        response = requests.post(url, data={"title": title, "desp": body}, timeout=15)
+        response.raise_for_status()
+        response_payload = response.json()
+        if not isinstance(response_payload, dict) or response_payload.get("code") != 0:
+            finish("failed", failure_reason="service_rejected")
+            print("Opening alert failed; credential redacted", flush=True)
+            return False
+    except requests.RequestException:
+        finish("failed", failure_reason="request_error")
         print("Opening alert failed; credential redacted", flush=True)
         return False
+    except ValueError:
+        finish("failed", failure_reason="invalid_service_response")
+        print("Opening alert failed; credential redacted", flush=True)
+        return False
+
+    accepted_at = dt.datetime.now(tz).isoformat()
+    finish("accepted", accepted_at=accepted_at)
     sent[date] = digest
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(sent, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    tmp.replace(path)
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = state_path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(sent, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(state_path)
+    print(f"Opening alert accepted: {date}; candidates={len(candidates)}", flush=True)
     return True
