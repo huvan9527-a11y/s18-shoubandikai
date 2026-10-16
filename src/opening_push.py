@@ -129,8 +129,14 @@ def make_opening_report(yesterday, today, quote, checked_at=None, strict_data=Fa
                 'INVALID_CANDIDATE', 'SIGNAL_DATE_MISMATCH', 'STALE_QUOTE', 'MISSING_QUOTE')]
     if rejected:
         print('AUCTION_REJECTED ' + json.dumps(rejected, ensure_ascii=False), flush=True)
-    if strict_data and rejected:
-        raise ValueError(f'Opening data incomplete for {len(rejected)} of {len(rows)} candidates')
+    # A previous-close mismatch is a candidate-level rejection, not a
+    # feed outage. Keep that stock out of selected, but let verified candidates
+    # proceed so one bad corporate-action/stale close cannot block the ledger.
+    blocking_rejected = [r for r in rejected if r['status'] != 'PREV_CLOSE_MISMATCH']
+    if strict_data and blocking_rejected:
+        raise ValueError(
+            f'Opening data incomplete for {len(blocking_rejected)} of {len(rows)} candidates'
+        )
     if rows and len(rejected) == len(rows):
         raise ValueError('All auction candidates rejected for data quality; not zero signals')
     return selected
