@@ -105,6 +105,14 @@ class OpeningTests(unittest.TestCase):
         self.assertEqual(rows[0]['status'], 'PREV_CLOSE_MISMATCH')
         self.assertEqual([c['code'] for c in selected], ['601069.XSHG'])
 
+    def test_morning_paper_excludes_prev_close_mismatch_without_blocking_valid_candidates(self):
+        second = dict(self.c, code='601069.XSHG', name='西部黄金', signal_close=25.48)
+        self.report['next_session']['candidates'].append(second)
+        self.quotes['601069.XSHG'] = dict(open=24.88, prev_close=25.60, name='西部黄金',
+                                           quote_time='20261013092500')
+        selected = make_opening_report(self.report, self.day, self.quotes, strict_data=True)
+        self.assertEqual([c['code'] for c in selected], [self.c['code']])
+
     def test_all_data_failures_are_not_zero_signal(self):
         self.c['signal_close'] = 9.39
         with self.assertRaisesRegex(ValueError, 'data quality'):
