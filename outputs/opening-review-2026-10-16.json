@@ -1,7 +1,7 @@
 {
   "mode": "RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL",
   "date": "2026-10-16",
-  "checked_at": "2026-10-16T12:21:08.411946+08:00",
+  "checked_at": "2026-10-16T12:32:44.939137+08:00",
   "previous_signal_date": "2026-10-15",
   "data_quality": {
     "signal_price_source": "sina_daily_unadjusted_close",
@@ -2898,7 +2898,7 @@
       "signal_close": 3.22,
       "open": 3.24,
       "auction_prev_close": 3.22,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 0.621,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -3132,7 +3132,7 @@
       "signal_close": 9.39,
       "open": 9.53,
       "auction_prev_close": 9.39,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 1.491,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -4627,7 +4627,7 @@
       "signal_close": 286.58,
       "open": 291.3,
       "auction_prev_close": 286.58,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 1.647,
       "difference_pct": 0.0,
       "status": "PRICE_ABOVE_MAX"
@@ -4744,7 +4744,7 @@
       "signal_close": 46.0,
       "open": 46.64,
       "auction_prev_close": 46.0,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 1.391,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -4822,7 +4822,7 @@
       "signal_close": 121.24,
       "open": 123.65,
       "auction_prev_close": 121.24,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 1.988,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -4913,7 +4913,7 @@
       "signal_close": 21.1,
       "open": 21.52,
       "auction_prev_close": 21.1,
-      "quote_time": "20261016120557",
+      "quote_time": "20261016120457",
       "gap_pct": 1.991,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -5212,7 +5212,7 @@
       "signal_close": 5.98,
       "open": 6.0,
       "auction_prev_close": 5.98,
-      "quote_time": "20261016120558",
+      "quote_time": "20261016120528",
       "gap_pct": 0.334,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -5953,7 +5953,7 @@
       "signal_close": 9.73,
       "open": 9.85,
       "auction_prev_close": 9.73,
-      "quote_time": "20261016120529",
+      "quote_time": "20261016120559",
       "gap_pct": 1.233,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -5992,7 +5992,7 @@
       "signal_close": 10.98,
       "open": 11.0,
       "auction_prev_close": 10.98,
-      "quote_time": "20261016120528",
+      "quote_time": "20261016120558",
       "gap_pct": 0.182,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -6954,7 +6954,7 @@
       "signal_close": 4.83,
       "open": 4.88,
       "auction_prev_close": 4.83,
-      "quote_time": "20261016120529",
+      "quote_time": "20261016120559",
       "gap_pct": 1.035,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -7110,7 +7110,7 @@
       "signal_close": 5.98,
       "open": 6.1,
       "auction_prev_close": 5.98,
-      "quote_time": "20261016120529",
+      "quote_time": "20261016120559",
       "gap_pct": 2.007,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -8007,7 +8007,7 @@
       "signal_close": 17.51,
       "open": 17.75,
       "auction_prev_close": 17.51,
-      "quote_time": "20261016120528",
+      "quote_time": "20261016120558",
       "gap_pct": 1.371,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
@@ -8098,7 +8098,7 @@
       "signal_close": 17.97,
       "open": 18.33,
       "auction_prev_close": 17.97,
-      "quote_time": "20261016120528",
+      "quote_time": "20261016120558",
       "gap_pct": 2.003,
       "difference_pct": 0.0,
       "status": "GAP_OUTSIDE_RANGE"
