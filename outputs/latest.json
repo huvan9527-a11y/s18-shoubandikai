@@ -1,115 +1,33 @@
 {
-  "status": "morning_processed",
+  "status": "processed",
   "detail": "",
   "last_day": {
-    "date": "2026-10-16",
-    "candidates": [
-      {
-        "code": "301175.XSHE",
-        "name": "中科环保",
-        "component": "DEEP",
-        "pri": 2,
-        "signal_close": 5.37,
-        "prev_close": 5.37,
-        "money": 139880147.0,
-        "signal_date": "2026-10-15",
-        "open": 5.2,
-        "gap": -0.03165735567970207,
-        "high_limit": 6.44,
-        "low_limit": 4.3
-      },
-      {
-        "code": "600686.XSHG",
-        "name": "金龙汽车",
-        "component": "DEEP",
-        "pri": 2,
-        "signal_close": 9.79,
-        "prev_close": 9.79,
-        "money": 147496473.0,
-        "signal_date": "2026-10-15",
-        "open": 9.49,
-        "gap": -0.03064351378958108,
-        "high_limit": 10.77,
-        "low_limit": 8.81
-      }
-    ],
-    "queue": [
-      {
-        "code": "301175.XSHE",
-        "name": "中科环保",
-        "component": "DEEP",
-        "pri": 2,
-        "signal_close": 5.37,
-        "prev_close": 5.37,
-        "money": 139880147.0,
-        "signal_date": "2026-10-15",
-        "open": 5.2,
-        "gap": -0.03165735567970207,
-        "high_limit": 6.44,
-        "low_limit": 4.3
-      },
-      {
-        "code": "600686.XSHG",
-        "name": "金龙汽车",
-        "component": "DEEP",
-        "pri": 2,
-        "signal_close": 9.79,
-        "prev_close": 9.79,
-        "money": 147496473.0,
-        "signal_date": "2026-10-15",
-        "open": 9.49,
-        "gap": -0.03064351378958108,
-        "high_limit": 10.77,
-        "low_limit": 8.81
-      }
-    ],
-    "events": [
-      {
-        "time": "09:31",
-        "event": "SUBMIT",
-        "code": "301175.XSHE",
-        "name": "中科环保",
-        "side": "buy",
-        "amount": 19100,
-        "limit": 5.19,
-        "low_limit": 4.3,
-        "high_limit": 6.44,
-        "submitted": "09:31",
-        "component": "DEEP"
-      },
-      {
-        "time": "09:32",
-        "event": "FILL",
-        "code": "301175.XSHE",
-        "amount": 19100
-      },
-      {
-        "time": "14:50",
-        "event": "SUBMIT",
-        "code": "603533.XSHG",
-        "side": "sell",
-        "amount": 3700,
-        "limit": 27.24,
-        "high_limit": 31.91,
-        "low_limit": 26.11,
-        "submitted": "14:50",
-        "component": "LB"
-      },
-      {
-        "time": "14:51",
-        "event": "FILL",
-        "code": "603533.XSHG",
-        "amount": 3700
-      }
-    ],
+    "date": "2026-10-19",
+    "candidates": [],
+    "queue": [],
+    "events": [],
     "preparation_error": null,
-    "minute_unavailable_positions": [],
+    "minute_unavailable_positions": [
+      "301175.XSHE",
+      "603305.XSHG"
+    ],
     "unfilled_at_close": [],
+    "minute_unavailable_candidates": [
+      "002326.XSHE",
+      "002416.XSHE",
+      "002639.XSHE",
+      "002882.XSHE",
+      "301127.XSHE",
+      "600252.XSHG",
+      "600641.XSHG",
+      "603305.XSHG",
+      "688388.XSHG"
+    ],
     "temperature": {
       "ICE": true,
-      "RUN": 1,
-      "MA20": -0.09397334535824908,
-      "M_DN": 0.005005005005005005,
+      "RUN": 2,
+      "MA20": -0.08792311731622604,
+      "M_DN": 0.001001001001001001,
       "DEEP": true,
       "FB_OK": true,
       "LB_OK": true
@@ -121,7 +39,7 @@
       "amount": 19100,
       "entry_date": "2026-10-16",
       "cost": 99153.78,
-      "mark": 5.28,
+      "mark": 5.35,
       "name": "中科环保",
       "component": "DEEP",
       "factor": 1.0
@@ -130,9 +48,10 @@
       "amount": 9400,
       "entry_date": "2026-10-19",
       "cost": 100041.0,
-      "mark": 10.47,
+      "mark": 10.74,
       "name": "旭升集团",
-      "component": "FB_dip"
+      "component": "FB_dip",
+      "factor": 1.0
     }
   },
   "morning_session": {
@@ -435,5 +354,5 @@
     "unmarked_positions": [],
     "unfilled_at_morning_close": []
   },
-  "equity": 201339.4
+  "equity": 205214.4
 }
