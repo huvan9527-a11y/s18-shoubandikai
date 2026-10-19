@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-19",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-19T09:26:10.028034+08:00",
+      "data_verified": true,
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "code": "603305.XSHG",
+          "name": "旭升集团",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 10.88,
+          "prev_close": 10.88,
+          "money": 370648759.0,
+          "signal_date": "2026-10-16",
+          "open": 10.65,
+          "gap": -0.021139705882353033,
+          "auction_prev_close": 10.88,
+          "high_limit": 11.97,
+          "low_limit": 9.79,
+          "account": "A"
+        },
+        {
+          "code": "600252.XSHG",
+          "name": "中恒集团",
+          "component": "DEEP",
+          "pri": 2,
+          "signal_close": 2.46,
+          "prev_close": 2.46,
+          "money": 845289212.0,
+          "signal_date": "2026-10-16",
+          "open": 2.34,
+          "gap": -0.04878048780487809,
+          "auction_prev_close": 2.46,
+          "high_limit": 2.71,
+          "low_limit": 2.21,
+          "account": "A"
+        },
+        {
+          "code": "301175.XSHE",
+          "name": "中科环保",
+          "component": "DEEP",
+          "pri": 2,
+          "signal_close": 5.37,
+          "prev_close": 5.37,
+          "money": 139880147.0,
+          "signal_date": "2026-10-15",
+          "open": 5.2,
+          "gap": -0.03165735567970207,
+          "high_limit": 6.44,
+          "low_limit": 4.3,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        },
+        {
+          "code": "600686.XSHG",
+          "name": "金龙汽车",
+          "component": "DEEP",
+          "pri": 2,
+          "signal_close": 9.79,
+          "prev_close": 9.79,
+          "money": 147496473.0,
+          "signal_date": "2026-10-15",
+          "open": 9.49,
+          "gap": -0.03064351378958108,
+          "high_limit": 10.77,
+          "low_limit": 8.81,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-10-19 09:26竞价候选 4只",
+        "desp": "S18 2026-10-19 09:26竞价候选（非成交）\n\nA仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。\n- 603305.XSHG 旭升集团 FB_dip\n- 600252.XSHG 中恒集团 DEEP\n- 301175.XSHE 中科环保 DEEP\n- 600686.XSHG 金龙汽车 DEEP"
+      },
+      "payload_sha256": "537388f75277c2b0a1eefdb1b1dafa7e26342bcb85cf041707ca2f8965078e1a",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-19T09:26:11.865003+08:00"
+    }
+  ]
+}
