@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-20",
+  "previous_day": "2026-10-19",
+  "status": "scanned",
+  "data_quality": "current_constituent_reference",
+  "temperature": {
+    "ICE": false,
+    "RUN": 0,
+    "MA20": -0.08111858718638965,
+    "M_DN": 0.004004004004004004,
+    "DEEP": false,
+    "FB_OK": true,
+    "LB_OK": true
+  },
+  "pool_size": 1000,
+  "history_loaded": 1000,
+  "validated_stocks": 994,
+  "omitted": [],
+  "candidates": [
+    {
+      "code": "002368.XSHE",
+      "name": "太极股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.75,
+      "prev_close": 12.75,
+      "money": 160659283.0,
+      "signal_date": "2026-10-19"
+    },
+    {
+      "code": "600686.XSHG",
+      "name": "金龙汽车",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 10.35,
+      "prev_close": 10.35,
+      "money": 351325955.0,
+      "signal_date": "2026-10-19"
+    },
+    {
+      "code": "601778.XSHG",
+      "name": "晶科科技",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.58,
+      "prev_close": 3.58,
+      "money": 692221445.0,
+      "signal_date": "2026-10-19"
+    },
+    {
+      "code": "603337.XSHG",
+      "name": "杰克科技",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 34.46,
+      "prev_close": 34.46,
+      "money": 183180866.0,
+      "signal_date": "2026-10-19"
+    }
+  ],
+  "opening_candidates": [],
+  "next_session": {
+    "signal_date": "2026-10-20",
+    "candidates": [
+      {
+        "code": "002881.XSHE",
+        "name": "美格智能",
+        "component": "FB_dip",
+        "pri": 0,
+        "signal_close": 38.51,
+        "prev_close": 38.51,
+        "money": 622415042.0,
+        "signal_date": "2026-10-20"
+      },
+      {
+        "code": "002929.XSHE",
+        "name": "润建股份",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 51.04,
+        "prev_close": 51.04,
+        "money": 1609985726.0,
+        "signal_date": "2026-10-20"
+      },
+      {
+        "code": "600267.XSHG",
+        "name": "海正药业",
+        "component": "LB",
+        "pri": 1,
+        "signal_close": 13.27,
+        "prev_close": 13.27,
+        "money": 769799338.0,
+        "signal_date": "2026-10-20"
+      }
+    ],
+    "temperature": {
+      "ICE": false,
+      "RUN": 0,
+      "MA20": -0.06722039700855487,
+      "M_DN": 0.001,
+      "DEEP": false,
+      "FB_OK": true,
+      "LB_OK": true
+    },
+    "price_source": "sina_daily_unadjusted_close"
+  },
+  "limitations": [
+    "使用当前中证1000成分及名称快照，历史被调出成分和历史ST状态无法完整还原。",
+    "市场温度使用上述可验证股票，非历史逐日完整成分；结果为参考口径，不能称为原聚宽口径的完整历史复现。",
+    "信号按历史日线和当日开盘条件筛选；不需要分钟K线，不计算撮合成交。"
+  ]
+}

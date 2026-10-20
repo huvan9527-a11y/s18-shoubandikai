@@ -1,0 +1,100 @@
+{
+  "mode": "RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL",
+  "date": "2026-10-20",
+  "checked_at": "2026-10-20T16:56:39.651095+08:00",
+  "previous_signal_date": "2026-10-19",
+  "data_quality": {
+    "signal_price_source": "sina_daily_unadjusted_close",
+    "auction_price_source": "tencent",
+    "verified": true
+  },
+  "candidates": 4,
+  "fresh_quote_count": 4,
+  "opening_rule_matches": 0,
+  "account_A_retrospective_top2": [],
+  "account_B_prior_opening_candidates": [
+    {
+      "code": "603305.XSHG",
+      "name": "旭升集团",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 10.88,
+      "prev_close": 10.88,
+      "money": 370648759.0,
+      "signal_date": "2026-10-16",
+      "open": 10.65,
+      "gap": -0.021139705882353033,
+      "high_limit": 11.97,
+      "low_limit": 9.79
+    },
+    {
+      "code": "600252.XSHG",
+      "name": "中恒集团",
+      "component": "DEEP",
+      "pri": 2,
+      "signal_close": 2.46,
+      "prev_close": 2.46,
+      "money": 845289212.0,
+      "signal_date": "2026-10-16",
+      "open": 2.34,
+      "gap": -0.04878048780487809,
+      "high_limit": 2.71,
+      "low_limit": 2.21
+    }
+  ],
+  "stocks": [
+    {
+      "code": "002368.XSHE",
+      "name": "太极股份",
+      "component": "FB_dip",
+      "signal_date": "2026-10-19",
+      "signal_close": 12.75,
+      "open": 13.12,
+      "auction_prev_close": 12.75,
+      "quote_time": "20261020161445",
+      "gap_pct": 2.902,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "600686.XSHG",
+      "name": "金龙汽车",
+      "component": "FB_dip",
+      "signal_date": "2026-10-19",
+      "signal_close": 10.35,
+      "open": 10.23,
+      "auction_prev_close": 10.35,
+      "quote_time": "20261020161451",
+      "gap_pct": -1.159,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "601778.XSHG",
+      "name": "晶科科技",
+      "component": "FB_dip",
+      "signal_date": "2026-10-19",
+      "signal_close": 3.58,
+      "open": 3.6,
+      "auction_prev_close": 3.58,
+      "quote_time": "20261020161458",
+      "gap_pct": 0.559,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "603337.XSHG",
+      "name": "杰克科技",
+      "component": "FB_dip",
+      "signal_date": "2026-10-19",
+      "signal_close": 34.46,
+      "open": 35.7,
+      "auction_prev_close": 34.46,
+      "quote_time": "20261020161450",
+      "gap_pct": 3.598,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    }
+  ],
+  "warning": "Uses current quote reported open, not archived 09:25 snapshot; no alerts, orders or fills"
+}

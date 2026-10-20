@@ -5638,16 +5638,6 @@
       "signal_date": "2026-10-16"
     },
     {
-      "code": "603083.XSHG",
-      "name": "剑桥科技",
-      "component": "DEEP",
-      "pri": 2,
-      "signal_close": 168.51,
-      "prev_close": 168.51,
-      "money": 3238837028.0,
-      "signal_date": "2026-10-16"
-    },
-    {
       "code": "603093.XSHG",
       "name": "南华期货",
       "component": "DEEP",

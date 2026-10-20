@@ -3,13 +3,13 @@
   "initial_cash": 200000.0,
   "cash": 2073.4,
   "start_date": "2026-10-13",
-  "last_processed": "2026-10-19",
+  "last_processed": "2026-10-20",
   "positions": {
     "301175.XSHE": {
       "amount": 19100,
       "entry_date": "2026-10-16",
       "cost": 99153.78,
-      "mark": 5.35,
+      "mark": 5.32,
       "name": "中科环保",
       "component": "DEEP",
       "factor": 1.0
@@ -18,7 +18,7 @@
       "amount": 9400,
       "entry_date": "2026-10-19",
       "cost": 100041.0,
-      "mark": 10.74,
+      "mark": 10.9,
       "name": "旭升集团",
       "component": "FB_dip",
       "factor": 1.0
@@ -117,6 +117,13 @@
       "market_value": 203141.0,
       "equity": 205214.4,
       "return_pct": 2.6072
+    },
+    {
+      "date": "2026-10-20",
+      "cash": 2073.4,
+      "market_value": 204072.0,
+      "equity": 206145.4,
+      "return_pct": 3.0727
     }
   ],
   "days": [
@@ -376,6 +383,27 @@
         "MA20": -0.08792311731622604,
         "M_DN": 0.001001001001001001,
         "DEEP": true,
+        "FB_OK": true,
+        "LB_OK": true
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "candidates": [],
+      "queue": [],
+      "events": [],
+      "preparation_error": null,
+      "minute_unavailable_positions": [
+        "301175.XSHE",
+        "603305.XSHG"
+      ],
+      "unfilled_at_close": [],
+      "temperature": {
+        "ICE": false,
+        "RUN": 0,
+        "MA20": -0.08111858718638965,
+        "M_DN": 0.004004004004004004,
+        "DEEP": false,
         "FB_OK": true,
         "LB_OK": true
       }
