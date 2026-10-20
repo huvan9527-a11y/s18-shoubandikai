@@ -382,7 +382,7 @@
     }
   ],
   "ice_hist": {},
-  "morning_processed_date": "2026-10-19",
+  "morning_processed_date": "2026-10-20",
   "morning_sessions": [
     {
       "date": "2026-10-19",
@@ -682,6 +682,16 @@
         }
       ],
       "unmarked_positions": [],
+      "unfilled_at_morning_close": []
+    },
+    {
+      "date": "2026-10-20",
+      "candidates": [],
+      "queue": [],
+      "events": [],
+      "unmarked_positions": [
+        "603305.XSHG"
+      ],
       "unfilled_at_morning_close": []
     }
   ]

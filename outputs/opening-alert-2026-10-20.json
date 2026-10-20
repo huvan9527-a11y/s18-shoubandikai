@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-20",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-20T09:26:02.071555+08:00",
+      "data_verified": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "code": "603305.XSHG",
+          "name": "旭升集团",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 10.88,
+          "prev_close": 10.88,
+          "money": 370648759.0,
+          "signal_date": "2026-10-16",
+          "open": 10.65,
+          "gap": -0.021139705882353033,
+          "high_limit": 11.97,
+          "low_limit": 9.79,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        },
+        {
+          "code": "600252.XSHG",
+          "name": "中恒集团",
+          "component": "DEEP",
+          "pri": 2,
+          "signal_close": 2.46,
+          "prev_close": 2.46,
+          "money": 845289212.0,
+          "signal_date": "2026-10-16",
+          "open": 2.34,
+          "gap": -0.04878048780487809,
+          "high_limit": 2.71,
+          "low_limit": 2.21,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-10-20 09:26竞价候选 2只",
+        "desp": "S18 2026-10-20 09:26竞价候选（非成交）\n\nA仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。\n- 603305.XSHG 旭升集团 FB_dip\n- 600252.XSHG 中恒集团 DEEP"
+      },
+      "payload_sha256": "852a3ac824ee031998374c895a27af98f23f18534df3424255e9b0b02bfe78a7",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-20T09:26:04.617074+08:00"
+    }
+  ]
+}
