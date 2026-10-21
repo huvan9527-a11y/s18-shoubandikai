@@ -1,7 +1,7 @@
 {
   "mode": "RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL",
   "date": "2026-10-21",
-  "checked_at": "2026-10-21T16:58:19.622594+08:00",
+  "checked_at": "2026-10-21T18:54:07.121544+08:00",
   "previous_signal_date": "2026-10-20",
   "data_quality": {
     "signal_price_source": "sina_daily_unadjusted_close",
