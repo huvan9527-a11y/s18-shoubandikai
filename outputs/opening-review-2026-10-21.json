@@ -1,0 +1,58 @@
+{
+  "mode": "RETROSPECTIVE_OPEN_REVIEW_NOT_LIVE_SIGNAL",
+  "date": "2026-10-21",
+  "checked_at": "2026-10-21T16:58:19.622594+08:00",
+  "previous_signal_date": "2026-10-20",
+  "data_quality": {
+    "signal_price_source": "sina_daily_unadjusted_close",
+    "auction_price_source": "tencent",
+    "verified": true
+  },
+  "candidates": 3,
+  "fresh_quote_count": 3,
+  "opening_rule_matches": 0,
+  "account_A_retrospective_top2": [],
+  "account_B_prior_opening_candidates": [],
+  "stocks": [
+    {
+      "code": "002881.XSHE",
+      "name": "美格智能",
+      "component": "FB_dip",
+      "signal_date": "2026-10-20",
+      "signal_close": 38.51,
+      "open": 38.12,
+      "auction_prev_close": 38.51,
+      "quote_time": "20261021161442",
+      "gap_pct": -1.013,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "002929.XSHE",
+      "name": "润建股份",
+      "component": "LB",
+      "signal_date": "2026-10-20",
+      "signal_close": 51.04,
+      "open": 53.12,
+      "auction_prev_close": 51.04,
+      "quote_time": "20261021161442",
+      "gap_pct": 4.075,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    },
+    {
+      "code": "600267.XSHG",
+      "name": "海正药业",
+      "component": "LB",
+      "signal_date": "2026-10-20",
+      "signal_close": 13.27,
+      "open": 13.68,
+      "auction_prev_close": 13.27,
+      "quote_time": "20261021161459",
+      "gap_pct": 3.09,
+      "difference_pct": 0.0,
+      "status": "GAP_OUTSIDE_RANGE"
+    }
+  ],
+  "warning": "Uses current quote reported open, not archived 09:25 snapshot; no alerts, orders or fills"
+}
