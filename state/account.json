@@ -9,7 +9,7 @@
       "amount": 19100,
       "entry_date": "2026-10-16",
       "cost": 99153.78,
-      "mark": 5.32,
+      "mark": 5.33,
       "name": "中科环保",
       "component": "DEEP",
       "factor": 1.0
@@ -18,7 +18,7 @@
       "amount": 9400,
       "entry_date": "2026-10-19",
       "cost": 100041.0,
-      "mark": 10.9,
+      "mark": 10.89,
       "name": "旭升集团",
       "component": "FB_dip",
       "factor": 1.0
@@ -410,7 +410,7 @@
     }
   ],
   "ice_hist": {},
-  "morning_processed_date": "2026-10-20",
+  "morning_processed_date": "2026-10-21",
   "morning_sessions": [
     {
       "date": "2026-10-19",
@@ -720,6 +720,14 @@
       "unmarked_positions": [
         "603305.XSHG"
       ],
+      "unfilled_at_morning_close": []
+    },
+    {
+      "date": "2026-10-21",
+      "candidates": [],
+      "queue": [],
+      "events": [],
+      "unmarked_positions": [],
       "unfilled_at_morning_close": []
     }
   ]
