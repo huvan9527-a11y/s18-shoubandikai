@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-22",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-22T09:26:01.893767+08:00",
+      "data_verified": true,
+      "candidate_count": 0,
+      "candidates": [],
+      "message": {
+        "title": "S18 2026-10-22 09:26竞价候选 0只",
+        "desp": "S18 2026-10-22 09:26竞价候选（非成交）\n\nA仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。\n竞价确认候选为零。"
+      },
+      "payload_sha256": "0b71420634c630788404fbb056b4e11363f88cba65798fa170f13c1ce1dc818c",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-22T09:26:03.801360+08:00"
+    }
+  ]
+}
