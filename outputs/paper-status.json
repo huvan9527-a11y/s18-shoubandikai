@@ -1,0 +1,7 @@
+{
+  "status": "morning_anchor_mismatch",
+  "detail": "账本尚未处理前一交易日；早盘不入账，避免跨日补造成交。",
+  "last_processed": "2026-10-21",
+  "expected_previous_date": "2026-10-22",
+  "requested_date": "2026-10-23"
+}
