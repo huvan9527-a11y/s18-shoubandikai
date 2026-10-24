@@ -102,7 +102,7 @@ def push_opening_candidates(root, date, candidates, *, data_verified=False):
 
     title = f"S18 {date} 09:26竞价候选 {len(candidates)}只"
     lines = [f"S18 {date} 09:26竞价候选（非成交）", "",
-             "A仓：今日09:31-09:35仍须核验分钟行情；B仓：仅按昨日已确认信号执行。"]
+             "A仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。"]
     for candidate in candidates:
         lines.append(f"- {candidate['code']} {candidate.get('name', '')} {candidate['component']}")
     if not candidates:
@@ -174,3 +174,4 @@ def push_opening_candidates(root, date, candidates, *, data_verified=False):
     temporary.replace(state_path)
     print(f"Opening alert accepted: {date}; candidates={len(candidates)}", flush=True)
     return True
+

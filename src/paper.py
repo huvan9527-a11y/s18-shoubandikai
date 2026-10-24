@@ -11,7 +11,7 @@ DEFAULTS = dict(initial_cash=200000, slots=2, max_new=2, max_price=190,
 COMPONENTS = {
     'FB_dip': dict(day='FB_OK', stock='fb', gap=(-.07, -.02), pri=0),
     'LB': dict(day='LB_OK', stock='lb', gap=(-.04, -.02), pri=1),
-    'DEEP': dict(day='DEEP', stock='gd', gap=(-.09, -.03), pri=2),
+    'DEEP': dict(day='DEEP', stock='gd', gap=(-.07, -.03), pri=2),
 }
 
 
@@ -332,4 +332,5 @@ def replay_day(account, date, candidates, daily, minutes, cfg, preparation_error
     account.clear()
     account.update(a)
     return True
+
 

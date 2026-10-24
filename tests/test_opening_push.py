@@ -27,25 +27,13 @@ class OpeningTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'data incomplete'):
             make_opening_report(self.report, self.day, self.quotes, strict_data=True)
 
-    def test_opening_workflow_can_reach_morning_minutes_and_persist_ledger(self):
+    def test_opening_workflow_uses_open_price_accounts(self):
         from pathlib import Path
-        workflow = Path(__file__).parents[1] / '.github/workflows/s18-opening-alert.yml'
-        legacy_workflow = workflow.with_name('s18-opening-0926.yml')
-        text = workflow.read_text(encoding='utf-8')
-        self.assertRegex(text, r'timeout-minutes:\s*(?:7[5-9]|[8-9]\d|[1-9]\d{2,})')
-        self.assertIn('src.opening_push --paper-morning', text)
-        self.assertIn('state/account.json', text)
-        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
-        self.assertIn('while true; do', text)
-        self.assertIn('sleep 45', text)
-        self.assertIn("- cron: '0 0 * * 1-5'", text)
-        self.assertIn('Wait until 09:15 preparation', text)
-        self.assertIn('src.opening_push --prepare', text)
-        self.assertIn('Fail if the live opening window was missed', text)
-        self.assertIn('Fail if morning paper window was missed', text)
-        self.assertIn("output.write(f'live={str(live).lower()}\\n')", text)
-        self.assertIn("output.write(f'paper={str(paper).lower()}\\n')", text)
-        self.assertFalse(legacy_workflow.exists(), 'legacy 09:26 job can race the morning ledger workflow')
+        text = (Path(__file__).parents[1] / '.github/workflows/s18-opening-alert.yml').read_text()
+        self.assertIn('src.daily_accounts open', text)
+        self.assertNotIn('src.opening_push --paper-morning', text)
+        self.assertIn('state/daily_accounts.json', text)
+
     def test_live_window_includes_0926_and_0935_only(self):
         self.assertTrue(callable(getattr(opening_push, 'in_live_window', None)))
         self.assertFalse(opening_push.in_live_window(dt.datetime(2026, 10, 13, 9, 25, 59)))
@@ -69,9 +57,9 @@ class OpeningTests(unittest.TestCase):
         workflow = Path(__file__).parents[1] / '.github/workflows/s18-paper.yml'
         text = workflow.read_text(encoding='utf-8')
         scan = text.index('python -u -m src.scan')
-        replay = text.index('python -u -m src.run --paper-from-scan')
-        self.assertLess(scan, replay)
-        self.assertIn('if: success()', text[replay-150:replay])
+        close = text.index('python -u -m src.daily_accounts close')
+        self.assertLess(close, scan)
+        self.assertNotIn('src.run --paper-from-scan', text)
         self.assertIn('git add state/account.json state/metadata outputs logs', text)
         self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
 
@@ -140,4 +128,5 @@ class OpeningTests(unittest.TestCase):
         flags=pd.DataFrame([dict(fb=True,lb=False,gd=False,close_t=10.01,money=2e8)],index=['002181.XSHE'])
         result=candidates(flags,dict(FB_OK=True,LB_OK=True,DEEP=False),{'002181.XSHE':'粤传媒'},1e8)
         self.assertEqual(result[0]['signal_close'],result[0]['prev_close'])
+
 
