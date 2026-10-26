@@ -1,0 +1,37 @@
+{
+  "A": {
+    "fills": [
+      {
+        "date": "2026-10-26",
+        "time": "15:00",
+        "side": "sell",
+        "code": "301175.XSHE",
+        "name": "中科环保",
+        "amount": 19100,
+        "price": 5.31,
+        "commission": 25.36,
+        "tax": 50.71,
+        "realised": 2191.15,
+        "model": "daily_close_price_assumption"
+      },
+      {
+        "date": "2026-10-26",
+        "time": "15:00",
+        "side": "sell",
+        "code": "603305.XSHG",
+        "name": "旭升集团",
+        "amount": 9400,
+        "price": 11.03,
+        "commission": 25.92,
+        "tax": 51.84,
+        "realised": 3563.24,
+        "model": "daily_close_price_assumption"
+      }
+    ],
+    "blocked": []
+  },
+  "B": {
+    "fills": [],
+    "blocked": []
+  }
+}

@@ -1,0 +1,851 @@
+{
+  "schema": 2,
+  "model": "opening_price_next_session_close",
+  "migration": "A preserves legacy cash, holdings and trades; old fills are not rewritten. B starts independently.",
+  "A": {
+    "schema": 1,
+    "initial_cash": 200000.0,
+    "cash": 207022.57,
+    "start_date": "2026-10-13",
+    "last_processed": "2026-10-26",
+    "positions": {},
+    "trades": [
+      {
+        "date": "2026-10-13",
+        "time": "09:35",
+        "code": "603533.XSHG",
+        "side": "buy",
+        "amount": 3700,
+        "price": 26.97,
+        "gross": 99789.0,
+        "commission": 24.95,
+        "tax": 0.0,
+        "realised": 0.0,
+        "component": "LB",
+        "model": "next_minute_limit_assumption"
+      },
+      {
+        "date": "2026-10-16",
+        "time": "09:32",
+        "code": "301175.XSHE",
+        "side": "buy",
+        "amount": 19100,
+        "price": 5.19,
+        "gross": 99129.0,
+        "commission": 24.78,
+        "tax": 0.0,
+        "realised": 0.0,
+        "component": "DEEP",
+        "model": "next_minute_limit_assumption"
+      },
+      {
+        "date": "2026-10-16",
+        "time": "14:51",
+        "code": "603533.XSHG",
+        "side": "sell",
+        "amount": 3700,
+        "price": 27.34,
+        "gross": 101158.0,
+        "commission": 25.29,
+        "tax": 50.58,
+        "realised": 1268.18,
+        "component": "LB",
+        "model": "next_minute_limit_assumption"
+      },
+      {
+        "date": "2026-10-19",
+        "time": "09:32",
+        "code": "603305.XSHG",
+        "side": "buy",
+        "amount": 9400,
+        "price": 10.64,
+        "gross": 100016.0,
+        "commission": 25.0,
+        "tax": 0.0,
+        "realised": 0.0,
+        "component": "FB_dip",
+        "model": "next_minute_limit_assumption"
+      },
+      {
+        "date": "2026-10-26",
+        "time": "15:00",
+        "side": "sell",
+        "code": "301175.XSHE",
+        "name": "中科环保",
+        "amount": 19100,
+        "price": 5.31,
+        "commission": 25.36,
+        "tax": 50.71,
+        "realised": 2191.15,
+        "model": "daily_close_price_assumption"
+      },
+      {
+        "date": "2026-10-26",
+        "time": "15:00",
+        "side": "sell",
+        "code": "603305.XSHG",
+        "name": "旭升集团",
+        "amount": 9400,
+        "price": 11.03,
+        "commission": 25.92,
+        "tax": 51.84,
+        "realised": 3563.24,
+        "model": "daily_close_price_assumption"
+      }
+    ],
+    "equity": [
+      {
+        "date": "2026-10-13",
+        "cash": 100186.05,
+        "market_value": 100640.0,
+        "equity": 200826.05,
+        "return_pct": 0.413
+      },
+      {
+        "date": "2026-10-14",
+        "cash": 100186.05,
+        "market_value": 110704.0,
+        "equity": 210890.05,
+        "return_pct": 5.445
+      },
+      {
+        "date": "2026-10-15",
+        "cash": 100186.05,
+        "market_value": 107337.0,
+        "equity": 207523.05,
+        "return_pct": 3.7615
+      },
+      {
+        "date": "2026-10-16",
+        "cash": 102114.4,
+        "market_value": 100275.0,
+        "equity": 202389.4,
+        "return_pct": 1.1947
+      },
+      {
+        "date": "2026-10-19",
+        "cash": 2073.4,
+        "market_value": 203141.0,
+        "equity": 205214.4,
+        "return_pct": 2.6072
+      },
+      {
+        "date": "2026-10-20",
+        "cash": 2073.4,
+        "market_value": 204072.0,
+        "equity": 206145.4,
+        "return_pct": 3.0727
+      },
+      {
+        "date": "2026-10-21",
+        "cash": 2073.4,
+        "market_value": 202465.0,
+        "equity": 204538.4,
+        "return_pct": 2.2692
+      },
+      {
+        "date": "2026-10-26",
+        "equity": 207022.57,
+        "cash": 207022.57,
+        "return_pct": 3.5113
+      }
+    ],
+    "days": [
+      {
+        "date": "2026-10-13",
+        "candidates": [
+          {
+            "code": "603533.XSHG",
+            "name": "掌阅科技",
+            "component": "LB",
+            "pri": 1,
+            "signal_close": 27.98,
+            "prev_close": 27.98,
+            "money": 2096530444.0,
+            "signal_date": "2026-10-12",
+            "open": 26.9,
+            "gap": -0.03859899928520383,
+            "high_limit": 30.78,
+            "low_limit": 25.18
+          }
+        ],
+        "queue": [
+          {
+            "code": "603533.XSHG",
+            "name": "掌阅科技",
+            "component": "LB",
+            "pri": 1,
+            "signal_close": 27.98,
+            "prev_close": 27.98,
+            "money": 2096530444.0,
+            "signal_date": "2026-10-12",
+            "open": 26.9,
+            "gap": -0.03859899928520383,
+            "high_limit": 30.78,
+            "low_limit": 25.18
+          }
+        ],
+        "events": [
+          {
+            "time": "09:34",
+            "event": "SUBMIT",
+            "code": "603533.XSHG",
+            "name": "掌阅科技",
+            "side": "buy",
+            "amount": 3700,
+            "limit": 26.97,
+            "low_limit": 25.18,
+            "high_limit": 30.78,
+            "submitted": "09:34",
+            "component": "LB"
+          },
+          {
+            "time": "09:35",
+            "event": "FILL",
+            "code": "603533.XSHG",
+            "amount": 3700
+          }
+        ],
+        "preparation_error": null,
+        "unfilled_at_close": [],
+        "temperature": {
+          "ICE": false,
+          "RUN": 0,
+          "MA20": -0.06235352341048095,
+          "M_DN": 0.006006006006006006,
+          "DEEP": false,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-14",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "preparation_error": null,
+        "minute_unavailable_positions": [
+          "603533.XSHG"
+        ],
+        "unfilled_at_close": [],
+        "minute_unavailable_candidates": [
+          "002827.XSHE",
+          "600664.XSHG"
+        ],
+        "temperature": {
+          "ICE": true,
+          "RUN": 1,
+          "MA20": -0.05824548436619814,
+          "M_DN": 0.002002002002002002,
+          "DEEP": true,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-15",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "preparation_error": null,
+        "minute_unavailable_positions": [
+          "603533.XSHG"
+        ],
+        "unfilled_at_close": [],
+        "minute_unavailable_candidates": [
+          "600391.XSHG"
+        ],
+        "temperature": {
+          "ICE": false,
+          "RUN": 0,
+          "MA20": -0.06936766673373884,
+          "M_DN": 0.003003003003003003,
+          "DEEP": false,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-16",
+        "candidates": [
+          {
+            "code": "301175.XSHE",
+            "name": "中科环保",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 5.37,
+            "prev_close": 5.37,
+            "money": 139880147.0,
+            "signal_date": "2026-10-15",
+            "open": 5.2,
+            "gap": -0.03165735567970207,
+            "high_limit": 6.44,
+            "low_limit": 4.3
+          },
+          {
+            "code": "600686.XSHG",
+            "name": "金龙汽车",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 9.79,
+            "prev_close": 9.79,
+            "money": 147496473.0,
+            "signal_date": "2026-10-15",
+            "open": 9.49,
+            "gap": -0.03064351378958108,
+            "high_limit": 10.77,
+            "low_limit": 8.81
+          }
+        ],
+        "queue": [
+          {
+            "code": "301175.XSHE",
+            "name": "中科环保",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 5.37,
+            "prev_close": 5.37,
+            "money": 139880147.0,
+            "signal_date": "2026-10-15",
+            "open": 5.2,
+            "gap": -0.03165735567970207,
+            "high_limit": 6.44,
+            "low_limit": 4.3
+          },
+          {
+            "code": "600686.XSHG",
+            "name": "金龙汽车",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 9.79,
+            "prev_close": 9.79,
+            "money": 147496473.0,
+            "signal_date": "2026-10-15",
+            "open": 9.49,
+            "gap": -0.03064351378958108,
+            "high_limit": 10.77,
+            "low_limit": 8.81
+          }
+        ],
+        "events": [
+          {
+            "time": "09:31",
+            "event": "SUBMIT",
+            "code": "301175.XSHE",
+            "name": "中科环保",
+            "side": "buy",
+            "amount": 19100,
+            "limit": 5.19,
+            "low_limit": 4.3,
+            "high_limit": 6.44,
+            "submitted": "09:31",
+            "component": "DEEP"
+          },
+          {
+            "time": "09:32",
+            "event": "FILL",
+            "code": "301175.XSHE",
+            "amount": 19100
+          },
+          {
+            "time": "14:50",
+            "event": "SUBMIT",
+            "code": "603533.XSHG",
+            "side": "sell",
+            "amount": 3700,
+            "limit": 27.24,
+            "high_limit": 31.91,
+            "low_limit": 26.11,
+            "submitted": "14:50",
+            "component": "LB"
+          },
+          {
+            "time": "14:51",
+            "event": "FILL",
+            "code": "603533.XSHG",
+            "amount": 3700
+          }
+        ],
+        "preparation_error": null,
+        "minute_unavailable_positions": [],
+        "unfilled_at_close": [],
+        "temperature": {
+          "ICE": true,
+          "RUN": 1,
+          "MA20": -0.09397334535824908,
+          "M_DN": 0.005005005005005005,
+          "DEEP": true,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-19",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "preparation_error": null,
+        "minute_unavailable_positions": [
+          "301175.XSHE",
+          "603305.XSHG"
+        ],
+        "unfilled_at_close": [],
+        "minute_unavailable_candidates": [
+          "002326.XSHE",
+          "002416.XSHE",
+          "002639.XSHE",
+          "002882.XSHE",
+          "301127.XSHE",
+          "600252.XSHG",
+          "600641.XSHG",
+          "603305.XSHG",
+          "688388.XSHG"
+        ],
+        "temperature": {
+          "ICE": true,
+          "RUN": 2,
+          "MA20": -0.08792311731622604,
+          "M_DN": 0.001001001001001001,
+          "DEEP": true,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-20",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "preparation_error": null,
+        "minute_unavailable_positions": [
+          "301175.XSHE",
+          "603305.XSHG"
+        ],
+        "unfilled_at_close": [],
+        "temperature": {
+          "ICE": false,
+          "RUN": 0,
+          "MA20": -0.08111858718638965,
+          "M_DN": 0.004004004004004004,
+          "DEEP": false,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      },
+      {
+        "date": "2026-10-21",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "preparation_error": null,
+        "minute_unavailable_positions": [
+          "301175.XSHE",
+          "603305.XSHG"
+        ],
+        "unfilled_at_close": [],
+        "temperature": {
+          "ICE": false,
+          "RUN": 0,
+          "MA20": -0.06722039700855487,
+          "M_DN": 0.001,
+          "DEEP": false,
+          "FB_OK": true,
+          "LB_OK": true
+        }
+      }
+    ],
+    "ice_hist": {},
+    "morning_processed_date": "2026-10-22",
+    "morning_sessions": [
+      {
+        "date": "2026-10-19",
+        "candidates": [
+          {
+            "code": "603305.XSHG",
+            "name": "旭升集团",
+            "component": "FB_dip",
+            "pri": 0,
+            "signal_close": 10.88,
+            "prev_close": 10.88,
+            "money": 370648759.0,
+            "signal_date": "2026-10-16",
+            "open": 10.65,
+            "gap": -0.021139705882353033,
+            "auction_prev_close": 10.88,
+            "high_limit": 11.97,
+            "low_limit": 9.79
+          },
+          {
+            "code": "600252.XSHG",
+            "name": "中恒集团",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 2.46,
+            "prev_close": 2.46,
+            "money": 845289212.0,
+            "signal_date": "2026-10-16",
+            "open": 2.34,
+            "gap": -0.04878048780487809,
+            "auction_prev_close": 2.46,
+            "high_limit": 2.71,
+            "low_limit": 2.21
+          },
+          {
+            "code": "002326.XSHE",
+            "name": "永太科技",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 16.54,
+            "prev_close": 16.54,
+            "money": 481783041.0,
+            "signal_date": "2026-10-16",
+            "open": 15.8,
+            "gap": -0.044740024183796745,
+            "auction_prev_close": 16.54,
+            "high_limit": 18.19,
+            "low_limit": 14.89
+          },
+          {
+            "code": "002639.XSHE",
+            "name": "雪人集团",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 15.66,
+            "prev_close": 15.66,
+            "money": 2523430106.0,
+            "signal_date": "2026-10-16",
+            "open": 14.99,
+            "gap": -0.04278416347381864,
+            "auction_prev_close": 15.66,
+            "high_limit": 17.23,
+            "low_limit": 14.09
+          },
+          {
+            "code": "002882.XSHE",
+            "name": "金龙羽",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 24.07,
+            "prev_close": 24.07,
+            "money": 453414494.0,
+            "signal_date": "2026-10-16",
+            "open": 23.27,
+            "gap": -0.0332363938512672,
+            "auction_prev_close": 24.07,
+            "high_limit": 26.48,
+            "low_limit": 21.66
+          },
+          {
+            "code": "301127.XSHE",
+            "name": "武汉天源",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 13.44,
+            "prev_close": 13.44,
+            "money": 455287587.0,
+            "signal_date": "2026-10-16",
+            "open": 13.0,
+            "gap": -0.03273809523809523,
+            "auction_prev_close": 13.44,
+            "high_limit": 16.13,
+            "low_limit": 10.75
+          },
+          {
+            "code": "600641.XSHG",
+            "name": "先导基电",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 40.3,
+            "prev_close": 40.3,
+            "money": 1736248407.0,
+            "signal_date": "2026-10-16",
+            "open": 39.0,
+            "gap": -0.032258064516129004,
+            "auction_prev_close": 40.3,
+            "high_limit": 44.33,
+            "low_limit": 36.27
+          },
+          {
+            "code": "002416.XSHE",
+            "name": "爱施德",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 9.39,
+            "prev_close": 9.39,
+            "money": 144805739.0,
+            "signal_date": "2026-10-16",
+            "open": 9.09,
+            "gap": -0.03194888178913746,
+            "auction_prev_close": 9.39,
+            "high_limit": 10.33,
+            "low_limit": 8.45
+          },
+          {
+            "code": "688388.XSHG",
+            "name": "嘉元科技",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 24.6,
+            "prev_close": 24.6,
+            "money": 1219662123.0,
+            "signal_date": "2026-10-16",
+            "open": 23.86,
+            "gap": -0.030081300813008194,
+            "auction_prev_close": 24.6,
+            "high_limit": 29.52,
+            "low_limit": 19.68
+          }
+        ],
+        "queue": [
+          {
+            "code": "603305.XSHG",
+            "name": "旭升集团",
+            "component": "FB_dip",
+            "pri": 0,
+            "signal_close": 10.88,
+            "prev_close": 10.88,
+            "money": 370648759.0,
+            "signal_date": "2026-10-16",
+            "open": 10.65,
+            "gap": -0.021139705882353033,
+            "auction_prev_close": 10.88,
+            "high_limit": 11.97,
+            "low_limit": 9.79
+          },
+          {
+            "code": "600252.XSHG",
+            "name": "中恒集团",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 2.46,
+            "prev_close": 2.46,
+            "money": 845289212.0,
+            "signal_date": "2026-10-16",
+            "open": 2.34,
+            "gap": -0.04878048780487809,
+            "auction_prev_close": 2.46,
+            "high_limit": 2.71,
+            "low_limit": 2.21
+          },
+          {
+            "code": "002326.XSHE",
+            "name": "永太科技",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 16.54,
+            "prev_close": 16.54,
+            "money": 481783041.0,
+            "signal_date": "2026-10-16",
+            "open": 15.8,
+            "gap": -0.044740024183796745,
+            "auction_prev_close": 16.54,
+            "high_limit": 18.19,
+            "low_limit": 14.89
+          },
+          {
+            "code": "002639.XSHE",
+            "name": "雪人集团",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 15.66,
+            "prev_close": 15.66,
+            "money": 2523430106.0,
+            "signal_date": "2026-10-16",
+            "open": 14.99,
+            "gap": -0.04278416347381864,
+            "auction_prev_close": 15.66,
+            "high_limit": 17.23,
+            "low_limit": 14.09
+          },
+          {
+            "code": "002882.XSHE",
+            "name": "金龙羽",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 24.07,
+            "prev_close": 24.07,
+            "money": 453414494.0,
+            "signal_date": "2026-10-16",
+            "open": 23.27,
+            "gap": -0.0332363938512672,
+            "auction_prev_close": 24.07,
+            "high_limit": 26.48,
+            "low_limit": 21.66
+          },
+          {
+            "code": "301127.XSHE",
+            "name": "武汉天源",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 13.44,
+            "prev_close": 13.44,
+            "money": 455287587.0,
+            "signal_date": "2026-10-16",
+            "open": 13.0,
+            "gap": -0.03273809523809523,
+            "auction_prev_close": 13.44,
+            "high_limit": 16.13,
+            "low_limit": 10.75
+          },
+          {
+            "code": "600641.XSHG",
+            "name": "先导基电",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 40.3,
+            "prev_close": 40.3,
+            "money": 1736248407.0,
+            "signal_date": "2026-10-16",
+            "open": 39.0,
+            "gap": -0.032258064516129004,
+            "auction_prev_close": 40.3,
+            "high_limit": 44.33,
+            "low_limit": 36.27
+          },
+          {
+            "code": "002416.XSHE",
+            "name": "爱施德",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 9.39,
+            "prev_close": 9.39,
+            "money": 144805739.0,
+            "signal_date": "2026-10-16",
+            "open": 9.09,
+            "gap": -0.03194888178913746,
+            "auction_prev_close": 9.39,
+            "high_limit": 10.33,
+            "low_limit": 8.45
+          },
+          {
+            "code": "688388.XSHG",
+            "name": "嘉元科技",
+            "component": "DEEP",
+            "pri": 2,
+            "signal_close": 24.6,
+            "prev_close": 24.6,
+            "money": 1219662123.0,
+            "signal_date": "2026-10-16",
+            "open": 23.86,
+            "gap": -0.030081300813008194,
+            "auction_prev_close": 24.6,
+            "high_limit": 29.52,
+            "low_limit": 19.68
+          }
+        ],
+        "events": [
+          {
+            "time": "09:31",
+            "event": "SUBMIT",
+            "code": "603305.XSHG",
+            "name": "旭升集团",
+            "side": "buy",
+            "amount": 9400,
+            "limit": 10.64,
+            "low_limit": 9.79,
+            "high_limit": 11.97,
+            "submitted": "09:31",
+            "component": "FB_dip"
+          },
+          {
+            "time": "09:32",
+            "event": "FILL",
+            "code": "603305.XSHG",
+            "amount": 9400
+          }
+        ],
+        "unmarked_positions": [],
+        "unfilled_at_morning_close": []
+      },
+      {
+        "date": "2026-10-20",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "unmarked_positions": [
+          "603305.XSHG"
+        ],
+        "unfilled_at_morning_close": []
+      },
+      {
+        "date": "2026-10-21",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "unmarked_positions": [],
+        "unfilled_at_morning_close": []
+      },
+      {
+        "date": "2026-10-22",
+        "candidates": [],
+        "queue": [],
+        "events": [],
+        "unmarked_positions": [],
+        "unfilled_at_morning_close": []
+      }
+    ]
+  },
+  "B": {
+    "schema": 1,
+    "initial_cash": 200000.0,
+    "cash": 200000.0,
+    "start_date": "2026-10-26",
+    "last_processed": "2026-10-26",
+    "morning_processed_date": null,
+    "morning_sessions": [],
+    "positions": {},
+    "trades": [],
+    "equity": [
+      {
+        "date": "2026-10-26",
+        "equity": 200000.0,
+        "cash": 200000.0,
+        "return_pct": 0.0
+      }
+    ],
+    "days": [],
+    "ice_hist": {}
+  },
+  "sessions": {
+    "2026-10-26-close": {
+      "A": {
+        "fills": [
+          {
+            "date": "2026-10-26",
+            "time": "15:00",
+            "side": "sell",
+            "code": "301175.XSHE",
+            "name": "中科环保",
+            "amount": 19100,
+            "price": 5.31,
+            "commission": 25.36,
+            "tax": 50.71,
+            "realised": 2191.15,
+            "model": "daily_close_price_assumption"
+          },
+          {
+            "date": "2026-10-26",
+            "time": "15:00",
+            "side": "sell",
+            "code": "603305.XSHG",
+            "name": "旭升集团",
+            "amount": 9400,
+            "price": 11.03,
+            "commission": 25.92,
+            "tax": 51.84,
+            "realised": 3563.24,
+            "model": "daily_close_price_assumption"
+          }
+        ],
+        "blocked": []
+      },
+      "B": {
+        "fills": [],
+        "blocked": []
+      }
+    }
+  },
+  "notifications": {
+    "2026-10-26-close": true
+  }
+}

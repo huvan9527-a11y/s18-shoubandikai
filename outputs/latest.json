@@ -1,55 +1,14 @@
 {
-  "status": "morning_processed",
-  "detail": "",
-  "last_day": {
-    "date": "2026-10-21",
-    "candidates": [],
-    "queue": [],
-    "events": [],
-    "preparation_error": null,
-    "minute_unavailable_positions": [
-      "301175.XSHE",
-      "603305.XSHG"
-    ],
-    "unfilled_at_close": [],
-    "temperature": {
-      "ICE": false,
-      "RUN": 0,
-      "MA20": -0.06722039700855487,
-      "M_DN": 0.001,
-      "DEEP": false,
-      "FB_OK": true,
-      "LB_OK": true
-    }
+  "A": {
+    "cash": 207022.57,
+    "equity": 207022.57,
+    "positions": {},
+    "last_processed": "2026-10-26"
   },
-  "cash": 2073.4,
-  "positions": {
-    "301175.XSHE": {
-      "amount": 19100,
-      "entry_date": "2026-10-16",
-      "cost": 99153.78,
-      "mark": 5.28,
-      "name": "中科环保",
-      "component": "DEEP",
-      "factor": 1.0
-    },
-    "603305.XSHG": {
-      "amount": 9400,
-      "entry_date": "2026-10-19",
-      "cost": 100041.0,
-      "mark": 10.96,
-      "name": "旭升集团",
-      "component": "FB_dip",
-      "factor": 1.0
-    }
-  },
-  "morning_session": {
-    "date": "2026-10-22",
-    "candidates": [],
-    "queue": [],
-    "events": [],
-    "unmarked_positions": [],
-    "unfilled_at_morning_close": []
-  },
-  "equity": 205945.4
+  "B": {
+    "cash": 200000.0,
+    "equity": 200000.0,
+    "positions": {},
+    "last_processed": "2026-10-26"
+  }
 }
