@@ -9,7 +9,9 @@ on:
       - 'requirements.txt'
       - '.github/workflows/**'
   schedule:
-    - cron: '23 8,10 * * 1-5'
+    # 14:47预热，16:05开始准备，目标17:00发送；17:17/18:17失败重试。
+    - cron: '47 6 * * 1-5'
+    - cron: '17 9,10 * * 1-5'
   workflow_dispatch:
     inputs:
       dates:
@@ -27,7 +29,7 @@ concurrency:
 jobs:
   paper:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,6 +43,19 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Test execution and ledger protections
         run: python -m unittest discover -s tests -v
+      - name: Wait for completed daily bars on the prewarmed scheduled run
+        if: github.event_name == 'schedule' && github.event.schedule == '47 6 * * 1-5'
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import time
+          from zoneinfo import ZoneInfo
+          now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          target = now.replace(hour=16,minute=5,second=0,microsecond=0)
+          while now < target:
+              time.sleep(min(10,(target-now).total_seconds()))
+              now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          PY
       - name: Reconcile saved intraday ledger without historical fill replay
         id: close
         env:
@@ -51,13 +66,16 @@ jobs:
         if: success() || failure()
         env:
           SCAN_DATES: ${{ inputs.dates }}
+          NOTIFY_AT: ${{ github.event_name == 'schedule' && '17:00' || '' }}
           SERVERCHAN_SENDKEY: ${{ github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY) || '' }}
         run: |
+          notify_args=()
+          if [ -n "$NOTIFY_AT" ]; then notify_args+=(--notify-at "$NOTIFY_AT"); fi
           if [ -n "$SCAN_DATES" ]; then
             read -r -a dates <<< "$SCAN_DATES"
-            python -u -m src.scan --dates "${dates[@]}"
+            python -u -m src.scan --dates "${dates[@]}" "${notify_args[@]}"
           else
-            python -u -m src.scan
+            python -u -m src.scan "${notify_args[@]}"
           fi
       - name: Publish report to run summary
         if: always()

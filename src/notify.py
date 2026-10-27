@@ -41,7 +41,11 @@ def push_reports(root, reports):
             continue
         failed = report["status"] != "scanned"
         count = len(report.get("opening_candidates") or [])
-        title = f"S18 {day} 扫描失败" if failed else f"S18 {day} 历史扫描：{count}只开盘候选"
+        session = report.get("next_session") or {}
+        upcoming = session.get("candidates") or []
+        title = (f"S18 {day} 扫描失败" if failed else
+                 f"S18 明日预选 {len(upcoming)}只｜{day}盘后" if session else
+                 f"S18 {day} 历史扫描：{count}只开盘候选")
         body = (Path(root) / f"outputs/signals-{day}.md").read_text()
         body += "\n\n这是收盘后历史信号扫描，不是实时买入通知；候选不代表成交，也没有执行卖出。\n"
         run = os.getenv("GITHUB_RUN_ID")

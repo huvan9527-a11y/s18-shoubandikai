@@ -216,6 +216,81 @@ class PublicData:
                 if i % 50 == 0:
                     print(f'History coverage {i}/1000; failures={len(self.errors)}', flush=True)
 
+
+    def fb_mainboard(self):
+        """Additional FB-only universe; never replace the original temperature pool."""
+        if hasattr(self, '_fb_mainboard'):
+            return self._fb_mainboard
+        path = self.root / 'state/metadata' / f'fb-mainboard-{self.today}.json'
+        if path.exists():
+            rows = json.loads(path.read_text())
+        else:
+            base = 'https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.'
+            total = int(get(base+'getHQNodeStockCount', params={'node':'hs_a'}).json())
+            if not 4000 <= total <= 15000:
+                raise ValueError('Mainboard source universe count invalid')
+            def page(n):
+                result = get(base+'getHQNodeData', params=dict(node='hs_a',page=n,num=100,sort='symbol',asc=1)).json()
+                if not isinstance(result, list):
+                    raise ValueError('Mainboard universe page invalid')
+                return result
+            with ThreadPoolExecutor(max_workers=4) as executor:
+                pages = list(executor.map(page, range(1,(total+99)//100+1)))
+            rows = [r for page_rows in pages for r in page_rows]
+            if len(rows) != total or len({r.get('symbol') for r in rows}) != total:
+                raise ValueError('Mainboard source universe incomplete/duplicated')
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(rows,ensure_ascii=False),encoding='utf-8')
+        result = {}
+        for row in rows:
+            code, name = str(row.get('code','')), str(row.get('name','')).strip()
+            if (len(code)==6 and code.isdigit() and
+                    code.startswith(('600','601','603','605','000','001','002','003')) and
+                    name and not re.search('ST|退',name,re.I)):
+                inst = code_id(code)
+                result[inst] = dict(code=inst,name=name,inclusion='1900-01-01')
+        if len(result) < 2000:
+            raise ValueError('Mainboard non-ST universe implausibly small')
+        self._fb_mainboard = result
+        return result
+
+    def additional_fb_candidates(self, date, temperature, cfg):
+        extra = {c:m for c,m in self.fb_mainboard().items() if c not in self.pool}
+        if not getattr(self, '_fb_history_loaded', False):
+            def load(code):
+                try:
+                    self.daily(code)
+                    self.errors.pop(code,None)
+                except Exception as exc:
+                    self.errors[code] = type(exc).__name__ + ': extra FB history unavailable'
+            with ThreadPoolExecutor(max_workers=6) as executor:
+                for i,_ in enumerate(executor.map(load,extra),1):
+                    if i % 100 == 0:
+                        print(f'FB-only extra history {i}/{len(extra)}',flush=True)
+            self._fb_history_loaded = True
+        missing = [c for c in extra if c not in self.frames]
+        if missing:
+            raise ValueError(f'FB extra history incomplete: {len(missing)}')
+        usable, raw = [], {}
+        for code,meta in extra.items():
+            self.names[code] = meta['name']
+            if self.listed[code] > date-dt.timedelta(days=250):
+                continue
+            df = self.frames[code]
+            df = df[df.time.dt.date <= date].copy()
+            rows = df[df.time.dt.date == date]
+            if len(rows) != 1:
+                raise ValueError('FB extra target-date bar missing: '+code)
+            raw[code] = float(rows.iloc[0].close)
+            for field in ('open','close','high_limit','low_limit'):
+                df[field] *= df.factor
+            usable.append(df)
+        if not usable:
+            return []
+        flags = signals.stock_flags(pd.concat(usable,ignore_index=True),raw,date)
+        fb_only = dict(temperature,LB_OK=False,DEEP=False)
+        return signals.candidates(flags,fb_only,self.names,cfg['min_day_money'])
+
     def scan(self, date, account, cfg, after_close=False):
         self.load_pool()
         if self.errors:
@@ -263,11 +338,14 @@ class PublicData:
                            DEEP=bool(ice and (run >= 2 or ma <= -.04)), FB_OK=bool(ma < 0 and dn < .03), LB_OK=bool(dn < .03))
         flags = signals.stock_flags(combined, {s: float(self.frames[s][self.frames[s].time.dt.date == t].close.iloc[0]) for s in combined.code.unique() if not self.frames[s][self.frames[s].time.dt.date == t].empty}, t)
         candidates = signals.candidates(flags, temperature, self.names, cfg['min_day_money'])
+        if cfg.get('fb_expand_mainboard', False):
+            candidates += self.additional_fb_candidates(t, temperature, cfg)
         for c in candidates:
             c['signal_date'] = str(t)
         if after_close:
             return dict(signal_date=str(t), candidates=candidates, temperature=temperature,
-                        price_source='sina_daily_unadjusted_close')
+                        price_source='sina_daily_unadjusted_close',
+                        fb_universe='original_plus_mainboard_nonST' if cfg.get('fb_expand_mainboard') else 'original')
         next_session = self.scan(date, account, cfg, after_close=True)
         marks = {}
         for c in candidates:

@@ -2,6 +2,7 @@
 import argparse
 import datetime as dt
 import json
+import time
 from zoneinfo import ZoneInfo
 from .data import PublicData, ROOT
 from .paper import DEFAULTS, new_account
@@ -12,6 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--dates', nargs='+')
     parser.add_argument('--end-date')
+    parser.add_argument('--notify-at', help='Beijing HH:MM; scheduled scan prepares first, then sends at this time')
     args = parser.parse_args(argv)
     provider = PublicData()
     cfg = DEFAULTS | json.loads((ROOT / 'config.json').read_text())
@@ -54,6 +56,11 @@ def main(argv=None):
         (ROOT / f'outputs/signals-{day}.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         print('\n'.join(lines), flush=True)
         reports.append(report)
+    if args.notify_at:
+        hh, mm = map(int,args.notify_at.split(':'))
+        target = dt.datetime.now(ZoneInfo('Asia/Shanghai')).replace(hour=hh,minute=mm,second=0,microsecond=0)
+        while dt.datetime.now(target.tzinfo) < target:
+            time.sleep(min(10,(target-dt.datetime.now(target.tzinfo)).total_seconds()))
     notified = push_reports(ROOT, reports)
     return int(failed or not notified)
 
