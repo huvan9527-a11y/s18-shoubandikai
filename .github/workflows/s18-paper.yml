@@ -9,8 +9,8 @@ on:
       - 'requirements.txt'
       - '.github/workflows/**'
   schedule:
-    # 14:47预热，16:05开始准备，目标17:00发送；17:17/18:17失败重试。
-    - cron: '47 6 * * 1-5'
+    # 13:07预热，16:05开始准备，目标17:00发送；17:17/18:17失败重试。
+    - cron: '7 5 * * 1-5'
     - cron: '17 9,10 * * 1-5'
   workflow_dispatch:
     inputs:
@@ -23,13 +23,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: s18-paper-account
+  group: s18-preview
   cancel-in-progress: false
 
 jobs:
   paper:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 270
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,7 +44,7 @@ jobs:
       - name: Test execution and ledger protections
         run: python -m unittest discover -s tests -v
       - name: Wait for completed daily bars on the prewarmed scheduled run
-        if: github.event_name == 'schedule' && github.event.schedule == '47 6 * * 1-5'
+        if: github.event_name == 'schedule' && github.event.schedule == '7 5 * * 1-5'
         run: |
           python - <<'PY'
           import datetime as dt
@@ -56,11 +56,19 @@ jobs:
               time.sleep(min(10,(target-now).total_seconds()))
               now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
           PY
-      - name: Reconcile saved intraday ledger without historical fill replay
-        id: close
-        env:
-          SERVERCHAN_SENDKEY: ${{ github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY) || '' }}
-        run: python -u -m src.daily_accounts close
+      - name: Review saved account without executing or replaying trades
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('state/daily_accounts.json')
+          if path.exists():
+              state = json.loads(path.read_text())
+              for name in ('A','B'):
+                  print(name, 'cash=',state[name]['cash'],'positions=',len(state[name]['positions']))
+          else:
+              print('No captured account yet; preview scan does not create trades')
+          PY
       - name: Scan latest two completed trading days without credentials
         id: scan
         if: success() || failure()
@@ -90,11 +98,14 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add state/account.json state/metadata outputs logs
-          if [ -f state/daily_accounts.json ]; then git add state/daily_accounts.json; fi
+          git add state/metadata
+          for file in outputs/signals-*.json outputs/signals-*.md; do
+            [ ! -f "$file" ] || git add "$file"
+          done
           if [ -f state/notifications.json ]; then git add state/notifications.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'chore: update S18 daily signals [skip ci]'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
       - uses: actions/upload-artifact@v4
