@@ -843,9 +843,20 @@
         "fills": [],
         "blocked": []
       }
+    },
+    "2026-10-27-open": {
+      "A": {
+        "fills": [],
+        "blocked": []
+      },
+      "B": {
+        "fills": [],
+        "blocked": []
+      }
     }
   },
   "notifications": {
-    "2026-10-26-close": true
+    "2026-10-26-close": true,
+    "2026-10-27-open": true
   }
 }

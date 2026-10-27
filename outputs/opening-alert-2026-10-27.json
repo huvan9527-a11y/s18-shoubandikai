@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-27",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-27T09:26:01.716832+08:00",
+      "data_verified": true,
+      "candidate_count": 0,
+      "candidates": [],
+      "message": {
+        "title": "S18 2026-10-27 09:26竞价候选 0只",
+        "desp": "S18 2026-10-27 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n竞价确认候选为零。"
+      },
+      "payload_sha256": "8de3b97be563a9e698cc43ac9838572ecc5ae9d850a699e7410e1b55da9b9017",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-27T09:26:03.527649+08:00"
+    }
+  ]
+}
