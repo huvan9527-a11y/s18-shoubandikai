@@ -42,6 +42,8 @@ def main(argv=None):
             lines += ['- 错误：'+report['error'], '- 未完成扫描，不能解释为零信号。']
         else:
             lines += ['- 股票池：'+str(report['pool_size']), '- 温度：`'+json.dumps(report['temperature'])+'`']
+            if cfg.get('fb_expand_mainboard'):
+                lines += ['- FB_dip候选池：原池＋沪深全主板非ST；LB、DEEP与市场温度维持原池。']
             lines += ['- '+x for x in report['limitations']]
             lines += ['', '|股票|名称|组件|开盘低开幅度|', '|---|---|---|---:|']
             for c in report['opening_candidates']:
