@@ -1,0 +1,65 @@
+name: S18 收盘现场记账
+on:
+  schedule:
+    # 北京时间12:47预热，等待15:00最终报价；不改变原开盘和晚间任务。
+    - cron: '47 4 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: s18-paper-account
+  cancel-in-progress: false
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Wait for final closing quote
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import time
+          from zoneinfo import ZoneInfo
+          now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          target = now.replace(hour=15, minute=0, second=5, microsecond=0)
+          while now < target:
+              time.sleep(min(10, (target-now).total_seconds()))
+              now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          PY
+      - name: Capture final quote and book next-session exits
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY }}
+        run: |
+          while true; do
+            if python -u -m src.daily_accounts capture-close; then exit 0; fi
+            current=$(TZ=Asia/Shanghai date +%H%M)
+            if [ "$current" -ge 1511 ]; then exit 1; fi
+            sleep 10
+          done
+      - name: Persist captured quotes and accounts even if notification fails
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- state/daily_accounts.json logs outputs
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: persist S18 captured closing ledger [skip ci]'
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s18-close-${{ github.run_id }}
+          path: |
+            state/daily_accounts.json
+            outputs/
+            logs/

@@ -142,16 +142,46 @@ def notify(root, state, key_id, report):
     save(root, state)
 
 
+def close_quotes(codes, now, fetch=requests.get):
+    """Capture final same-session Tencent quotes; never reconstruct old fills."""
+    import re
+    result = {}
+    for start in range(0, len(codes), 50):
+        batch = codes[start:start+50]
+        symbols = [('sh' if c.startswith('6') else 'sz') + c[:6] for c in batch]
+        response = fetch('https://qt.gtimg.cn/q=' + ','.join(symbols),
+                         timeout=12, headers={'User-Agent': 'Mozilla/5.0'})
+        response.raise_for_status()
+        for symbol, raw in re.findall(r'v_(s[hz]\d{6})="([^"]*)"', response.content.decode('gbk', errors='replace')):
+            code = next((c for c in batch if c[:6] == symbol[2:]), None)
+            fields = raw.split('~')
+            if code is None or len(fields) < 49 or fields[2] != symbol[2:]:
+                continue
+            try:
+                stamp = dt.datetime.strptime(fields[30], '%Y%m%d%H%M%S').replace(tzinfo=TZ)
+                price, lower, volume = float(fields[3]), float(fields[48]), float(fields[6])
+                if (stamp.date() != now.date() or stamp.hour != 15 or
+                        not 0 <= (now-stamp).total_seconds() <= 900 or
+                        not positive(price) or not positive(lower) or volume < 0):
+                    continue
+                result[code] = dict(close=price, low_limit=lower, paused=volume == 0,
+                                    quote_time=stamp.isoformat(), source='tencent_final_quote')
+            except (ValueError, IndexError):
+                continue
+    if set(result) != set(codes):
+        raise ValueError('Final close quote missing/unconfirmed: ' + ','.join(sorted(set(codes)-set(result))))
+    return result
+
+
 def execute(mode, root=ROOT, now=None):
     root = Path(root)
     now = now or dt.datetime.now(TZ)
     day = now.date().isoformat()
     state = load_accounts(root)
-    key_id = day+'-'+mode
+    key_id = day+'-'+('close' if mode == 'capture-close' else mode)
     if key_id in state['sessions']:
         notify(root, state, key_id, state['sessions'][key_id])
         return
-    provider = PublicData(root)
     # Opening daily index bars may not exist at 09:30; use an exchange calendar.
     import akshare as ak
     calendar = [dt.date.fromisoformat(str(x)[:10]) for x in ak.tool_trade_date_hist_sina()['trade_date']]
@@ -179,24 +209,39 @@ def execute(mode, root=ROOT, now=None):
             stamp = dt.datetime.strptime(q['quote_time'], '%Y%m%d%H%M%S').replace(tzinfo=TZ)
             if abs((now-stamp).total_seconds()) > 90:
                 raise ValueError('Opening quote stale: '+code)
+        write_json(root/f'outputs/evidence-{day}-open.json', dict(captured_at=now.isoformat(), quotes=quotes,
+                   signal_date=previous_day, A_candidates=a_candidates, B_candidates=b_candidates))
         selected = make_opening_report(previous, now.date(), quotes, checked_at=now, strict_data=True)
         for name, candidates in [('A', selected), ('B', b_candidates)]:
             fills, blocked = buy(working[name], candidates, quotes, day, cfg, name=='A')
             report[name] = dict(fills=fills, blocked=blocked)
-    else:
-        if now.hour < 16:
-            raise ValueError('Wait until daily close data is complete (16:00)')
+    elif mode == 'capture-close':
+        if not (now.hour == 15 and now.minute <= 10):
+            raise ValueError('Close capture requires 15:00-15:10; no historical backfill')
+        codes = sorted({code for name in ('A','B') for code in working[name]['positions']})
+        daily = close_quotes(codes, now)
+        write_json(root/f'outputs/evidence-{day}-close.json',
+                   dict(captured_at=now.isoformat(), quotes=daily, model='final_quote_capture'))
         for name in ('A','B'):
-            daily = {}
-            for code in working[name]['positions']:
-                frame = provider.daily(code)
-                rows = frame[frame.time.dt.date == now.date()]
-                if len(rows) != 1:
-                    raise ValueError('Missing target-date close: '+code)
-                r = rows.iloc[0]
-                daily[code] = dict(close=float(r.close), low_limit=float(r.low_limit), paused=bool(r.paused))
             fills, blocked = close_account(working[name], day, daily, cfg)
-            report[name] = dict(fills=fills, blocked=blocked)
+            for fill in fills:
+                fill['model'] = 'captured_final_close_assumption'
+            report[name] = dict(fills=fills, blocked=blocked, status='captured_at_close')
+    else:
+        # Evening reconciliation reads the saved ledger only. Never fetch old
+        # minute/daily prices to invent a missed intraday execution.
+        if now.hour < 16:
+            print('Close reconciliation waits until 16:00; no execution attempted')
+            return
+        for name in ('A','B'):
+            blocked = [dict(code=code, reason='MISSED_CLOSE_CAPTURE: no captured final quote; position retained')
+                       for code in working[name]['positions']]
+            report[name] = dict(fills=[], blocked=blocked, status='missed_close_capture')
+        working['sessions'][key_id] = report
+        save(root, working)
+        write_json(root/f'outputs/execution-{key_id}.json', report)
+        print('MISSED_CLOSE_CAPTURE: ledger retained; no historical fill replay')
+        return
     working['sessions'][key_id] = report
     save(root, working)
     write_json(root/f'outputs/execution-{key_id}.json', report)
@@ -205,7 +250,7 @@ def execute(mode, root=ROOT, now=None):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('mode', choices=['open','close'])
+    p.add_argument('mode', choices=['open','close','capture-close'])
     execute(p.parse_args().mode)
 
 if __name__ == '__main__':
