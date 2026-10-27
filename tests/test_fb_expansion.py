@@ -56,3 +56,13 @@ class FBUniverseExpansion(unittest.TestCase):
             flags=pd.DataFrame(dict(fb=[True],lb=[True],gd=[True],close_t=[10.],money=[2e8]),index=[code])
             with patch.object(p,'fb_mainboard',return_value={code:dict(name='extra')}),patch.object(data.signals,'stock_flags',return_value=flags):
                 self.assertEqual(p.additional_fb_candidates(day,dict(FB_OK=False,LB_OK=True,DEEP=True),DEFAULTS),[])
+
+    def test_missing_date_is_isolated_like_original_pool(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=data.PublicData(tmp);p.pool={};p.names={};p._fb_history_loaded=True
+            code='605258.XSHG';day=dt.date(2026,10,27)
+            p.listed={code:dt.date(2000,1,1)}
+            p.frames={code:pd.DataFrame(dict(time=[pd.Timestamp('2026-10-23')],close=[10.]))}
+            with patch.object(p,'fb_mainboard',return_value={code:dict(name='demo')}):
+                self.assertEqual(p.additional_fb_candidates(day,dict(FB_OK=True),DEFAULTS),[])
+            self.assertIn(code,p.fb_omitted)

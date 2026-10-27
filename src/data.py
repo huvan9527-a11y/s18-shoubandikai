@@ -280,7 +280,9 @@ class PublicData:
             df = df[df.time.dt.date <= date].copy()
             rows = df[df.time.dt.date == date]
             if len(rows) != 1:
-                raise ValueError('FB extra target-date bar missing: '+code)
+                self.fb_omitted = getattr(self,'fb_omitted',{})
+                self.fb_omitted[code] = 'target-date bar unavailable; excluded like incomplete original-pool history'
+                continue
             raw[code] = float(rows.iloc[0].close)
             for field in ('open','close','high_limit','low_limit'):
                 df[field] *= df.factor
@@ -345,7 +347,8 @@ class PublicData:
         if after_close:
             return dict(signal_date=str(t), candidates=candidates, temperature=temperature,
                         price_source='sina_daily_unadjusted_close',
-                        fb_universe='original_plus_mainboard_nonST' if cfg.get('fb_expand_mainboard') else 'original')
+                        fb_universe='original_plus_mainboard_nonST' if cfg.get('fb_expand_mainboard') else 'original',
+                        fb_omitted=getattr(self,'fb_omitted',{}))
         next_session = self.scan(date, account, cfg, after_close=True)
         marks = {}
         for c in candidates:

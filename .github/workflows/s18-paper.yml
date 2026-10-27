@@ -69,7 +69,7 @@ jobs:
           NOTIFY_AT: ${{ github.event_name == 'schedule' && '17:00' || '' }}
           SERVERCHAN_SENDKEY: ${{ github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY) || '' }}
         run: |
-          notify_args=()
+          notify_args=(--latest-notification)
           if [ -n "$NOTIFY_AT" ]; then notify_args+=(--notify-at "$NOTIFY_AT"); fi
           if [ -n "$SCAN_DATES" ]; then
             read -r -a dates <<< "$SCAN_DATES"

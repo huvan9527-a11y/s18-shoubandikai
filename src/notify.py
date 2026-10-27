@@ -52,6 +52,7 @@ def push_reports(root, reports):
         repo = os.getenv("GITHUB_REPOSITORY")
         if run and repo:
             body += f"\n[查看本次运行](https://github.com/{repo}/actions/runs/{run})\n"
+        response = None
         try:
             response = requests.post(url, data={"title": title, "desp": body}, timeout=15)
             response.raise_for_status()
@@ -60,7 +61,17 @@ def push_reports(root, reports):
                 raise ValueError("Service rejected notification")
         except (requests.RequestException, ValueError):
             # Do not log exception strings: requests errors can contain the SendKey URL.
-            print(f"ServerChan failed: {day}; credential redacted", flush=True)
+            status = getattr(response, 'status_code', None)
+            detail = ''
+            try:
+                error_payload = response.json() if response is not None else {}
+                if isinstance(error_payload,dict):
+                    message = str(error_payload.get('message') or error_payload.get('info') or error_payload.get('msg') or '')[:180]
+                    message = re.sub(r'https?://\\S+', '[redacted_url]', message.replace(key,'[redacted]'))
+                    detail = f"; service_code={error_payload.get('code')}; message={message}"
+            except Exception:
+                pass
+            print(f"ServerChan failed: {day}; HTTP={status}{detail}; credential redacted", flush=True)
             ok = False
             continue
         sent[day] = digest

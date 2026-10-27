@@ -13,6 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--dates', nargs='+')
     parser.add_argument('--end-date')
+    parser.add_argument('--latest-notification', action='store_true', help='Only notify the newest report; keep both reports on disk')
     parser.add_argument('--notify-at', help='Beijing HH:MM; scheduled scan prepares first, then sends at this time')
     args = parser.parse_args(argv)
     provider = PublicData()
@@ -61,7 +62,7 @@ def main(argv=None):
         target = dt.datetime.now(ZoneInfo('Asia/Shanghai')).replace(hour=hh,minute=mm,second=0,microsecond=0)
         while dt.datetime.now(target.tzinfo) < target:
             time.sleep(min(10,(target-dt.datetime.now(target.tzinfo)).total_seconds()))
-    notified = push_reports(ROOT, reports)
+    notified = push_reports(ROOT, reports[-1:] if args.latest_notification else reports)
     return int(failed or not notified)
 
 if __name__ == '__main__':
