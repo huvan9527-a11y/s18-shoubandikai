@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-27",
+  "status": "failed_data_incomplete",
+  "error": "ValueError: FB extra target-date bar missing: 605258.XSHG",
+  "stock_errors": {},
+  "candidates": null,
+  "opening_candidates": null
+}

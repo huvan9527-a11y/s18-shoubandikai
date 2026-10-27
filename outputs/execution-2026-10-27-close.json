@@ -1,0 +1,12 @@
+{
+  "A": {
+    "fills": [],
+    "blocked": [],
+    "status": "missed_close_capture"
+  },
+  "B": {
+    "fills": [],
+    "blocked": [],
+    "status": "missed_close_capture"
+  }
+}

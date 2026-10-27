@@ -853,6 +853,18 @@
         "fills": [],
         "blocked": []
       }
+    },
+    "2026-10-27-close": {
+      "A": {
+        "fills": [],
+        "blocked": [],
+        "status": "missed_close_capture"
+      },
+      "B": {
+        "fills": [],
+        "blocked": [],
+        "status": "missed_close_capture"
+      }
     }
   },
   "notifications": {
