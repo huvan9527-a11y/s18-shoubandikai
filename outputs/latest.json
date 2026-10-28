@@ -1,14 +1,32 @@
 {
   "A": {
-    "cash": 207022.57,
-    "equity": 207022.57,
-    "positions": {},
+    "cash": 103548.71,
+    "equity": 206996.71000000002,
+    "positions": {
+      "600626.XSHG": {
+        "name": "申达股份",
+        "component": "FB_dip",
+        "amount": 26800,
+        "entry_date": "2026-10-28",
+        "cost": 103473.86,
+        "mark": 3.86
+      }
+    },
     "last_processed": "2026-10-26"
   },
   "B": {
-    "cash": 200000.0,
-    "equity": 200000.0,
-    "positions": {},
+    "cash": 101095.28,
+    "equity": 199975.28,
+    "positions": {
+      "603331.XSHG": {
+        "name": "百达精工",
+        "component": "FB_dip",
+        "amount": 8000,
+        "entry_date": "2026-10-28",
+        "cost": 98904.72,
+        "mark": 12.36
+      }
+    },
     "last_processed": "2026-10-26"
   }
 }

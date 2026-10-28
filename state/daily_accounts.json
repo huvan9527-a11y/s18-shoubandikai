@@ -5,10 +5,19 @@
   "A": {
     "schema": 1,
     "initial_cash": 200000.0,
-    "cash": 207022.57,
+    "cash": 103548.71,
     "start_date": "2026-10-13",
     "last_processed": "2026-10-26",
-    "positions": {},
+    "positions": {
+      "600626.XSHG": {
+        "name": "申达股份",
+        "component": "FB_dip",
+        "amount": 26800,
+        "entry_date": "2026-10-28",
+        "cost": 103473.86,
+        "mark": 3.86
+      }
+    },
     "trades": [
       {
         "date": "2026-10-13",
@@ -91,6 +100,18 @@
         "tax": 51.84,
         "realised": 3563.24,
         "model": "daily_close_price_assumption"
+      },
+      {
+        "date": "2026-10-28",
+        "time": "09:30",
+        "side": "buy",
+        "code": "600626.XSHG",
+        "name": "申达股份",
+        "amount": 26800,
+        "price": 3.86,
+        "commission": 25.86,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
       }
     ],
     "equity": [
@@ -788,13 +809,35 @@
   "B": {
     "schema": 1,
     "initial_cash": 200000.0,
-    "cash": 200000.0,
+    "cash": 101095.28,
     "start_date": "2026-10-26",
     "last_processed": "2026-10-26",
     "morning_processed_date": null,
     "morning_sessions": [],
-    "positions": {},
-    "trades": [],
+    "positions": {
+      "603331.XSHG": {
+        "name": "百达精工",
+        "component": "FB_dip",
+        "amount": 8000,
+        "entry_date": "2026-10-28",
+        "cost": 98904.72,
+        "mark": 12.36
+      }
+    },
+    "trades": [
+      {
+        "date": "2026-10-28",
+        "time": "09:30",
+        "side": "buy",
+        "code": "603331.XSHG",
+        "name": "百达精工",
+        "amount": 8000,
+        "price": 12.36,
+        "commission": 24.72,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
+      }
+    ],
     "equity": [
       {
         "date": "2026-10-26",
@@ -865,10 +908,47 @@
         "blocked": [],
         "status": "missed_close_capture"
       }
+    },
+    "2026-10-28-open": {
+      "A": {
+        "fills": [
+          {
+            "date": "2026-10-28",
+            "time": "09:30",
+            "side": "buy",
+            "code": "600626.XSHG",
+            "name": "申达股份",
+            "amount": 26800,
+            "price": 3.86,
+            "commission": 25.86,
+            "tax": 0,
+            "model": "verified_open_price_assumption"
+          }
+        ],
+        "blocked": []
+      },
+      "B": {
+        "fills": [
+          {
+            "date": "2026-10-28",
+            "time": "09:30",
+            "side": "buy",
+            "code": "603331.XSHG",
+            "name": "百达精工",
+            "amount": 8000,
+            "price": 12.36,
+            "commission": 24.72,
+            "tax": 0,
+            "model": "verified_open_price_assumption"
+          }
+        ],
+        "blocked": []
+      }
     }
   },
   "notifications": {
     "2026-10-26-close": true,
-    "2026-10-27-open": true
+    "2026-10-27-open": true,
+    "2026-10-28-open": true
   }
 }

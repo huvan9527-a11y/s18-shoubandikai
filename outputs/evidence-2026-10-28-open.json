@@ -1,0 +1,270 @@
+{
+  "captured_at": "2026-10-28T09:30:04.757290+08:00",
+  "quotes": {
+    "000888.XSHE": {
+      "open": 10.15,
+      "prev_close": 10.1,
+      "name": "峨眉山Ａ",
+      "quote_time": "20261028093003"
+    },
+    "001400.XSHE": {
+      "open": 87.02,
+      "prev_close": 80.28,
+      "name": "江顺科技",
+      "quote_time": "20261028093003"
+    },
+    "002011.XSHE": {
+      "open": 11.26,
+      "prev_close": 11.37,
+      "name": "盾安环境",
+      "quote_time": "20261028093003"
+    },
+    "002093.XSHE": {
+      "open": 7.79,
+      "prev_close": 7.93,
+      "name": "国脉科技",
+      "quote_time": "20261028093003"
+    },
+    "002187.XSHE": {
+      "open": 6.18,
+      "prev_close": 5.92,
+      "name": "广百股份",
+      "quote_time": "20261028093003"
+    },
+    "002205.XSHE": {
+      "open": 11.4,
+      "prev_close": 11.4,
+      "name": "国统股份",
+      "quote_time": "20261028093003"
+    },
+    "002284.XSHE": {
+      "open": 9.59,
+      "prev_close": 9.67,
+      "name": "亚太股份",
+      "quote_time": "20261028093003"
+    },
+    "002823.XSHE": {
+      "open": 13.56,
+      "prev_close": 13.49,
+      "name": "凯中精密",
+      "quote_time": "20261028093003"
+    },
+    "600303.XSHG": {
+      "open": 3.08,
+      "prev_close": 3.11,
+      "name": "曙光股份",
+      "quote_time": "20261028093003"
+    },
+    "600626.XSHG": {
+      "open": 3.86,
+      "prev_close": 3.94,
+      "name": "申达股份",
+      "quote_time": "20261028093002"
+    },
+    "600828.XSHG": {
+      "open": 4.73,
+      "prev_close": 4.47,
+      "name": "茂业商业",
+      "quote_time": "20261028093004"
+    },
+    "603331.XSHG": {
+      "open": 12.36,
+      "prev_close": 12.61,
+      "name": "百达精工",
+      "quote_time": "20261028093004"
+    },
+    "603370.XSHG": {
+      "open": 30.79,
+      "prev_close": 30.81,
+      "name": "华新精科",
+      "quote_time": "20261028093004"
+    },
+    "603565.XSHG": {
+      "open": 12.58,
+      "prev_close": 12.58,
+      "name": "中谷物流",
+      "quote_time": "20261028093002"
+    },
+    "603758.XSHG": {
+      "open": 10.63,
+      "prev_close": 10.73,
+      "name": "秦安股份",
+      "quote_time": "20261028093002"
+    },
+    "605333.XSHG": {
+      "open": 19.52,
+      "prev_close": 19.91,
+      "name": "沪光股份",
+      "quote_time": "20261028093003"
+    }
+  },
+  "signal_date": "2026-10-27",
+  "A_candidates": [
+    {
+      "code": "002011.XSHE",
+      "name": "盾安环境",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 11.37,
+      "prev_close": 11.37,
+      "money": 312692600.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "002093.XSHE",
+      "name": "国脉科技",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 7.93,
+      "prev_close": 7.93,
+      "money": 525082759.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "605333.XSHG",
+      "name": "沪光股份",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 19.91,
+      "prev_close": 19.91,
+      "money": 370270233.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "000888.XSHE",
+      "name": "峨眉山Ａ",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 10.1,
+      "prev_close": 10.1,
+      "money": 514333250.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "001400.XSHE",
+      "name": "江顺科技",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 80.28,
+      "prev_close": 80.28,
+      "money": 148195570.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "002187.XSHE",
+      "name": "广百股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 5.92,
+      "prev_close": 5.92,
+      "money": 209233886.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "002205.XSHE",
+      "name": "国统股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 11.4,
+      "prev_close": 11.4,
+      "money": 129420267.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "002284.XSHE",
+      "name": "亚太股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 9.67,
+      "prev_close": 9.67,
+      "money": 477655503.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "002823.XSHE",
+      "name": "凯中精密",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 13.49,
+      "prev_close": 13.49,
+      "money": 302045945.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "600303.XSHG",
+      "name": "曙光股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.11,
+      "prev_close": 3.11,
+      "money": 250252483.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "600626.XSHG",
+      "name": "申达股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.94,
+      "prev_close": 3.94,
+      "money": 244587830.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "600828.XSHG",
+      "name": "茂业商业",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.47,
+      "prev_close": 4.47,
+      "money": 118112558.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "603370.XSHG",
+      "name": "华新精科",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 30.81,
+      "prev_close": 30.81,
+      "money": 318696226.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "603565.XSHG",
+      "name": "中谷物流",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.58,
+      "prev_close": 12.58,
+      "money": 392124082.0,
+      "signal_date": "2026-10-27"
+    },
+    {
+      "code": "603758.XSHG",
+      "name": "秦安股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 10.73,
+      "prev_close": 10.73,
+      "money": 133730606.0,
+      "signal_date": "2026-10-27"
+    }
+  ],
+  "B_candidates": [
+    {
+      "code": "603331.XSHG",
+      "name": "百达精工",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.91,
+      "prev_close": 12.91,
+      "money": 375015492.0,
+      "signal_date": "2026-10-26",
+      "open": 12.48,
+      "gap": -0.03330751355538342,
+      "high_limit": 14.2,
+      "low_limit": 11.62
+    }
+  ]
+}
