@@ -52,16 +52,20 @@ class OpeningTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'could not run outside'):
                 main([])
 
-    def test_primary_workflow_runs_paper_after_successful_scan(self):
+    def test_preview_and_close_workflows_are_separate(self):
         from pathlib import Path
-        workflow = Path(__file__).parents[1] / '.github/workflows/s18-paper.yml'
-        text = workflow.read_text(encoding='utf-8')
-        scan = text.index('python -u -m src.scan')
-        close = text.index('python -u -m src.daily_accounts close')
-        self.assertLess(close, scan)
-        self.assertNotIn('src.run --paper-from-scan', text)
-        self.assertIn('git add state/account.json state/metadata outputs logs', text)
-        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", text)
+        folder = Path(__file__).parents[1] / '.github/workflows'
+        preview = (folder / 's18-paper.yml').read_text(encoding='utf-8')
+        closing = (folder / 's18-close-capture.yml').read_text(encoding='utf-8')
+        self.assertIn('python -u -m src.scan', preview)
+        self.assertNotIn('src.daily_accounts close', preview)
+        self.assertNotIn('src.run --paper-from-scan', preview)
+        self.assertIn('group: s18-preview', preview)
+        self.assertIn('git add state/metadata', preview)
+        self.assertNotIn('git add state/account.json', preview)
+        self.assertIn('src.daily_accounts capture-close', closing)
+        self.assertIn('group: s18-paper-account', closing)
+        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", preview)
 
     def setUp(self):
         self.day = dt.date(2026, 10, 13)
