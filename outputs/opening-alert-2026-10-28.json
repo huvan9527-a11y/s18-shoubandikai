@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-28",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-28T09:26:01.871245+08:00",
+      "data_verified": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "code": "600626.XSHG",
+          "name": "申达股份",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 3.94,
+          "prev_close": 3.94,
+          "money": 244587830.0,
+          "signal_date": "2026-10-27",
+          "open": 3.86,
+          "gap": -0.020304568527918843,
+          "auction_prev_close": 3.94,
+          "high_limit": 4.33,
+          "low_limit": 3.55,
+          "account": "A"
+        },
+        {
+          "code": "603331.XSHG",
+          "name": "百达精工",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 12.91,
+          "prev_close": 12.91,
+          "money": 375015492.0,
+          "signal_date": "2026-10-26",
+          "open": 12.48,
+          "gap": -0.03330751355538342,
+          "high_limit": 14.2,
+          "low_limit": 11.62,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-10-28 09:26竞价候选 2只",
+        "desp": "S18 2026-10-28 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 600626.XSHG 申达股份 FB_dip\n- 603331.XSHG 百达精工 FB_dip"
+      },
+      "payload_sha256": "450397ec96fea02f8322f2e1feb322b72ea40f7a58d0de0660169cd98e96b989",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-28T09:26:03.650319+08:00"
+    }
+  ]
+}
