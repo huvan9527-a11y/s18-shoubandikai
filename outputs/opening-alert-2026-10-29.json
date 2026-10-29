@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-29",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-29T09:26:01.893380+08:00",
+      "data_verified": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "code": "000670.XSHE",
+          "name": "盈方微",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 7.08,
+          "prev_close": 7.08,
+          "money": 533638585.0,
+          "signal_date": "2026-10-28",
+          "open": 6.8,
+          "gap": -0.039548022598870136,
+          "auction_prev_close": 7.08,
+          "high_limit": 7.79,
+          "low_limit": 6.37,
+          "account": "A"
+        },
+        {
+          "code": "600626.XSHG",
+          "name": "申达股份",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 3.94,
+          "prev_close": 3.94,
+          "money": 244587830.0,
+          "signal_date": "2026-10-27",
+          "open": 3.86,
+          "gap": -0.020304568527918843,
+          "high_limit": 4.33,
+          "low_limit": 3.55,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-10-29 09:26竞价候选 2只",
+        "desp": "S18 2026-10-29 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 000670.XSHE 盈方微 FB_dip\n- 600626.XSHG 申达股份 FB_dip"
+      },
+      "payload_sha256": "ef1534209549d7542bd252e7c22d4b9cda53c6eca2b1159e8aed152a2398ba54",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-29T09:26:03.988212+08:00"
+    }
+  ]
+}
