@@ -20,7 +20,7 @@ def ice_day(first, second):
     idx = [s for s in idx if a.loc[s, 'paused'] == 0 and b.loc[s, 'paused'] == 0
            and pd.notna(a.loc[s, 'close']) and pd.notna(b.loc[s, 'close'])]
     if len(idx) < 100:
-        raise ValueError('Temperature valid stock count below 100')
+        raise ValueError(f'Temperature valid stock count below 100: valid={len(idx)}, first_rows={len(first)}, second_rows={len(second)}, dates={list(second.time.dt.date.unique()) if not second.empty else []}')
     ret = (b.loc[idx, 'close'] / a.loc[idx, 'close'] - 1).clip(-.2, .2)
     previous_up = a.loc[idx, 'close'] >= a.loc[idx, 'high_limit'] - EPS
     dn = float((b.loc[idx, 'close'] <= b.loc[idx, 'low_limit'] + EPS).mean())
@@ -69,3 +69,4 @@ def candidates(flags, temperature, names, min_money):
                                 prev_close=float(row.close_t), money=float(row.money)))
                 break
     return out
+

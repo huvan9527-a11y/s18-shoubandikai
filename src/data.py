@@ -161,6 +161,46 @@ class PublicData:
         self.frames[code] = df
         return df
 
+    def refresh_final_bars(self, codes, day):
+        """Supplement lagging daily history with validated same-day final quotes."""
+        now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+        if day != now.date() or now.hour < 16:
+            return
+        missing = [c for c in codes if c in self.frames and
+                   not (self.frames[c].time.dt.date == day).any()]
+        for start in range(0, len(missing), 50):
+            batch = missing[start:start+50]
+            response = get('https://qt.gtimg.cn/q=' + ','.join(symbol(c) for c in batch))
+            by_symbol = {symbol(c): c for c in batch}
+            for sym, raw in re.findall(r'v_(s[hz]\d{6})="([^"]*)"', response.content.decode('gbk', errors='replace')):
+                code = by_symbol.get(sym)
+                f = raw.split('~')
+                if not code or len(f) < 49:
+                    continue
+                try:
+                    stamp = dt.datetime.strptime(f[30], '%Y%m%d%H%M%S')
+                    close, previous, opening, high, low = map(float, (f[3],f[4],f[5],f[33],f[34]))
+                    volume, amount, upper, lower = map(float, (f[6],f[37],f[47],f[48]))
+                    if (stamp.date() != day or stamp.hour < 15 or stamp.replace(tzinfo=now.tzinfo) > now or volume <= 0 or
+                        not all(pd.notna(v) and float('-inf') < v < float('inf') for v in
+                                (close,previous,opening,high,low,volume,amount,upper,lower)) or
+                        not 0 < lower <= low <= min(opening,close) <= max(opening,close) <= high <= upper or amount <= 0):
+                        continue
+                    df = self.frames[code]
+                    prior = df[df.time.dt.date < day].iloc[-1]
+                    if abs(float(prior.close)-previous) > .011:
+                        continue  # Corporate action or missing prior bar: do not infer adjustment.
+                    row = dict(time=pd.Timestamp(day), date=str(day), open=opening, close=close,
+                               high=high, low=low, volume=volume*100, amount=amount*10000,
+                               money=amount*10000, paused=0, code=code, factor=1.,
+                               high_limit=upper, low_limit=lower, corporate_action=False)
+                    self.frames[code] = pd.concat([df,pd.DataFrame([row])],ignore_index=True)
+                except (ValueError, IndexError):
+                    continue
+        if missing:
+            updated = sum((self.frames[c].time.dt.date == day).any() for c in missing)
+            print(f'FINAL_BAR_REFRESH {day}: supplemented={updated}/{len(missing)}; source=tencent_final_quote', flush=True)
+
     def days(self, start_date=None, end_date=None, count=None):
         df = self.daily(INDEX)
         dates = [x.date() for x in df.time]
@@ -268,6 +308,7 @@ class PublicData:
                     if i % 100 == 0:
                         print(f'FB-only extra history {i}/{len(extra)}',flush=True)
             self._fb_history_loaded = True
+        self.refresh_final_bars(extra, date)
         missing = [c for c in extra if c not in self.frames]
         if missing:
             raise ValueError(f'FB extra history incomplete: {len(missing)}')
@@ -300,6 +341,7 @@ class PublicData:
         days = self.days(end_date=date, count=42)
         if not days or days[-1] != date or len(days) < 42:
             raise ValueError('Trading calendar stale or incomplete')
+        self.refresh_final_bars(self.pool, date)
         t = days[-1] if after_close else days[-2]
         usable = []
         omitted = []
@@ -346,7 +388,7 @@ class PublicData:
             c['signal_date'] = str(t)
         if after_close:
             return dict(signal_date=str(t), candidates=candidates, temperature=temperature,
-                        price_source='sina_daily_unadjusted_close',
+                        price_source='sina_daily_with_verified_tencent_final_quote_supplement',
                         fb_universe='original_plus_mainboard_nonST' if cfg.get('fb_expand_mainboard') else 'original',
                         fb_omitted=getattr(self,'fb_omitted',{}))
         next_session = self.scan(date, account, cfg, after_close=True)
@@ -439,4 +481,5 @@ class PublicData:
                     raise ValueError(f'Invalid public morning minute data for {code}: {exc}') from exc
                 print(f'Morning mark unavailable for existing position {code}: {type(exc).__name__}', flush=True)
         return daily, minutes
+
 
