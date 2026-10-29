@@ -65,8 +65,12 @@ def main(argv=None):
         while dt.datetime.now(target.tzinfo) < target:
             time.sleep(min(10,(target-dt.datetime.now(target.tzinfo)).total_seconds()))
     notified = push_reports(ROOT, reports[-1:] if args.latest_notification else reports)
-    return int(failed or not notified)
+    write_json(ROOT / 'outputs/scan-delivery.json', dict(scan_failed=failed, notification_delivered=bool(notified)))
+    if not notified:
+        print('::warning::扫描结果已保存；通知未送达，详见outputs/scan-delivery.json。不会因此重做扫描。', flush=True)
+    return int(failed)
 
 if __name__ == '__main__':
     raise SystemExit(main())
+
 

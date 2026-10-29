@@ -31,6 +31,12 @@ def push_reports(root, reports):
         return False
     path = Path(root) / "state/notifications.json"
     sent = json.loads(path.read_text()) if path.exists() else {}
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+    delivery_day = dt.datetime.now(ZoneInfo('Asia/Shanghai')).date().isoformat()
+    if sent.get('_quota_blocked_day') == delivery_day:
+        print('ServerChan deferred: daily quota already exhausted; reports saved', flush=True)
+        return False
     ok = True
     for report in reports:
         day = report["date"]
@@ -69,10 +75,18 @@ def push_reports(root, reports):
                     message = str(error_payload.get('message') or error_payload.get('info') or error_payload.get('msg') or '')[:180]
                     message = re.sub(r'https?://\\S+', '[redacted_url]', message.replace(key,'[redacted]'))
                     detail = f"; service_code={error_payload.get('code')}; message={message}"
+                    if error_payload.get('code') == 40001 and ('发送次数' in message or 'quota' in message.lower()):
+                        sent['_quota_blocked_day'] = delivery_day
+                        path.parent.mkdir(parents=True, exist_ok=True)
+                        temporary = path.with_suffix('.tmp')
+                        temporary.write_text(json.dumps(sent, ensure_ascii=False, indent=2), encoding='utf-8')
+                        temporary.replace(path)
             except Exception:
                 pass
             print(f"ServerChan failed: {day}; HTTP={status}{detail}; credential redacted", flush=True)
             ok = False
+            if sent.get('_quota_blocked_day') == delivery_day:
+                break
             continue
         sent[day] = digest
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -189,4 +203,5 @@ def push_opening_candidates(root, date, candidates, *, data_verified=False):
     temporary.replace(state_path)
     print(f"Opening alert accepted: {date}; candidates={len(candidates)}", flush=True)
     return True
+
 

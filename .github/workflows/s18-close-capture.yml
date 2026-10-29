@@ -35,7 +35,30 @@ jobs:
               time.sleep(min(10, (target-now).total_seconds()))
               now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
           PY
+      - name: Check delayed closing runner
+        id: close_window
+        run: |
+          python - <<'PYCODE'
+          import datetime as dt
+          import json
+          import os
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          live = now.hour == 15 and now.minute <= 10
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'live={str(live).lower()}\n')
+          if not live:
+              status = dict(status='missed_close_capture', captured_at=now.isoformat(),
+                            message='收盘采集窗口已错过；未记卖出，持仓保留，未进行历史补成交')
+              Path('outputs').mkdir(exist_ok=True)
+              Path(f'outputs/close-missed-{now.date()}.json').write_text(json.dumps(status, ensure_ascii=False))
+              print('::warning::收盘任务延迟，错过15:00–15:10窗口；持仓保留，详见close-missed报告')
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+                  f.write('## 收盘未执行\n任务延迟，错过采集窗口。未记卖出，持仓保留；本次不是结算成功。\n')
+          PYCODE
       - name: Capture final quote and book next-session exits
+        if: steps.close_window.outputs.live == 'true'
         env:
           SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY }}
         run: |
@@ -63,3 +86,4 @@ jobs:
             state/daily_accounts.json
             outputs/
             logs/
+

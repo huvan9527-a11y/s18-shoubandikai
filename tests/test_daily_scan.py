@@ -17,9 +17,10 @@ class DailyScanTests(unittest.TestCase):
             provider.session.side_effect = AssertionError('Minute data must not be requested')
             provider.scan.return_value = dict(status='scanned', pool_size=1000,
                 temperature={}, limitations=[], candidates=[], opening_candidates=[])
-            with patch.object(scan, 'ROOT', root), patch.object(scan, 'PublicData', return_value=provider), patch.object(scan, 'push_reports', return_value=True) as notify:
+            with patch.object(scan, 'ROOT', root), patch.object(scan, 'PublicData', return_value=provider), patch.object(scan, 'push_reports', return_value=False) as notify:
                 result = scan.main(['--dates', '2026-10-08', '2026-10-09'])
             self.assertEqual(result, 0)
+            self.assertFalse(json.loads((root/'outputs/scan-delivery.json').read_text())['notification_delivered'])
             notify.assert_called_once()
             self.assertEqual(len(notify.call_args.args[1]), 2)
             self.assertEqual(provider.scan.call_count, 2)
@@ -32,4 +33,5 @@ class DailyScanTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 

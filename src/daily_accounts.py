@@ -122,9 +122,22 @@ def save(root, state):
 def notify(root, state, key_id, report):
     if state['notifications'].get(key_id):
         return
+    # 无成交/阻断时不占用推送额度。失败按会话每日最多尝试一次。
+    if not any(report[n]['fills'] or report[n].get('blocked') for n in ('A','B')):
+        return
+    attempted_day = dt.datetime.now(TZ).date().isoformat()
+    attempts = state.setdefault('notification_attempts', {})
+    if attempts.get(key_id, {}).get('date') == attempted_day:
+        print('Notification deferred: already attempted today; ledger saved', flush=True)
+        return
+    def deferred(reason):
+        attempts[key_id] = dict(date=attempted_day, status='deferred', reason=reason)
+        save(root, state)
+        print('::warning::模拟账本已保存，成交推送未送达；详见state/daily_accounts.json notification_attempts', flush=True)
     key = next((os.getenv(k) for k in ('SERVERCHAN_SENDKEY','SERVERCHAN_KEY','SERVER_CHAN_SENDKEY','SCKEY') if os.getenv(k)), '')
     if not key:
-        raise RuntimeError('模拟成交已保存，但未配置成交推送密钥；重跑仅重试推送')
+        deferred('not_configured')
+        return
     lines = ['模拟成交已记账（非券商成交）']
     for name in ('A','B'):
         rows = report[name]['fills']
@@ -137,7 +150,9 @@ def notify(root, state, key_id, report):
         if r.json().get('code') != 0:
             raise ValueError()
     except (requests.RequestException, ValueError):
-        raise RuntimeError('模拟成交已保存，Server酱推送失败；重跑仅重试推送') from None
+        deferred('service_or_network_failure')
+        return
+    attempts[key_id] = dict(date=attempted_day, status='accepted')
     state['notifications'][key_id] = True
     save(root, state)
 
@@ -255,3 +270,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
