@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-29",
+  "status": "failed_data_incomplete",
+  "error": "ValueError: Temperature valid stock count below 100",
+  "stock_errors": {},
+  "candidates": null,
+  "opening_candidates": null
+}
