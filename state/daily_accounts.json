@@ -5,7 +5,7 @@
   "A": {
     "schema": 1,
     "initial_cash": 200000.0,
-    "cash": 103548.71,
+    "cash": 1523.21,
     "start_date": "2026-10-13",
     "last_processed": "2026-10-26",
     "positions": {
@@ -16,6 +16,14 @@
         "entry_date": "2026-10-28",
         "cost": 103473.86,
         "mark": 3.86
+      },
+      "000670.XSHE": {
+        "name": "盈方微",
+        "component": "FB_dip",
+        "amount": 15000,
+        "entry_date": "2026-10-29",
+        "cost": 102025.5,
+        "mark": 6.8
       }
     },
     "trades": [
@@ -110,6 +118,18 @@
         "amount": 26800,
         "price": 3.86,
         "commission": 25.86,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
+      },
+      {
+        "date": "2026-10-29",
+        "time": "09:30",
+        "side": "buy",
+        "code": "000670.XSHE",
+        "name": "盈方微",
+        "amount": 15000,
+        "price": 6.8,
+        "commission": 25.5,
         "tax": 0,
         "model": "verified_open_price_assumption"
       }
@@ -809,7 +829,7 @@
   "B": {
     "schema": 1,
     "initial_cash": 200000.0,
-    "cash": 101095.28,
+    "cash": 1212.32,
     "start_date": "2026-10-26",
     "last_processed": "2026-10-26",
     "morning_processed_date": null,
@@ -822,6 +842,14 @@
         "entry_date": "2026-10-28",
         "cost": 98904.72,
         "mark": 12.36
+      },
+      "600626.XSHG": {
+        "name": "申达股份",
+        "component": "FB_dip",
+        "amount": 26700,
+        "entry_date": "2026-10-29",
+        "cost": 99882.96,
+        "mark": 3.74
       }
     },
     "trades": [
@@ -834,6 +862,18 @@
         "amount": 8000,
         "price": 12.36,
         "commission": 24.72,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
+      },
+      {
+        "date": "2026-10-29",
+        "time": "09:30",
+        "side": "buy",
+        "code": "600626.XSHG",
+        "name": "申达股份",
+        "amount": 26700,
+        "price": 3.74,
+        "commission": 24.96,
         "tax": 0,
         "model": "verified_open_price_assumption"
       }
@@ -944,11 +984,48 @@
         ],
         "blocked": []
       }
+    },
+    "2026-10-29-open": {
+      "A": {
+        "fills": [
+          {
+            "date": "2026-10-29",
+            "time": "09:30",
+            "side": "buy",
+            "code": "000670.XSHE",
+            "name": "盈方微",
+            "amount": 15000,
+            "price": 6.8,
+            "commission": 25.5,
+            "tax": 0,
+            "model": "verified_open_price_assumption"
+          }
+        ],
+        "blocked": []
+      },
+      "B": {
+        "fills": [
+          {
+            "date": "2026-10-29",
+            "time": "09:30",
+            "side": "buy",
+            "code": "600626.XSHG",
+            "name": "申达股份",
+            "amount": 26700,
+            "price": 3.74,
+            "commission": 24.96,
+            "tax": 0,
+            "model": "verified_open_price_assumption"
+          }
+        ],
+        "blocked": []
+      }
     }
   },
   "notifications": {
     "2026-10-26-close": true,
     "2026-10-27-open": true,
-    "2026-10-28-open": true
+    "2026-10-28-open": true,
+    "2026-10-29-open": true
   }
 }

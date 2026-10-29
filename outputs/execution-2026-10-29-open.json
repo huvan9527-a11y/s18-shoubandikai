@@ -1,0 +1,36 @@
+{
+  "A": {
+    "fills": [
+      {
+        "date": "2026-10-29",
+        "time": "09:30",
+        "side": "buy",
+        "code": "000670.XSHE",
+        "name": "盈方微",
+        "amount": 15000,
+        "price": 6.8,
+        "commission": 25.5,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
+      }
+    ],
+    "blocked": []
+  },
+  "B": {
+    "fills": [
+      {
+        "date": "2026-10-29",
+        "time": "09:30",
+        "side": "buy",
+        "code": "600626.XSHG",
+        "name": "申达股份",
+        "amount": 26700,
+        "price": 3.74,
+        "commission": 24.96,
+        "tax": 0,
+        "model": "verified_open_price_assumption"
+      }
+    ],
+    "blocked": []
+  }
+}
