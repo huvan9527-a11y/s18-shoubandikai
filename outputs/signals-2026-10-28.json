@@ -527,7 +527,7 @@
       "FB_OK": true,
       "LB_OK": true
     },
-    "price_source": "sina_daily_unadjusted_close",
+    "price_source": "sina_daily_with_verified_tencent_final_quote_supplement",
     "fb_universe": "original_plus_mainboard_nonST",
     "fb_omitted": {
       "605258.XSHG": "target-date bar unavailable; excluded like incomplete original-pool history"
