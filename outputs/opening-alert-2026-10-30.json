@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-30",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-10-30T09:26:13.920034+08:00",
+      "data_verified": true,
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "code": "002277.XSHE",
+          "name": "友阿股份",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 5.53,
+          "prev_close": 5.53,
+          "money": 413593417.0,
+          "signal_date": "2026-10-29",
+          "open": 5.26,
+          "gap": -0.048824593128390714,
+          "auction_prev_close": 5.53,
+          "high_limit": 6.08,
+          "low_limit": 4.98,
+          "account": "A"
+        },
+        {
+          "code": "603382.XSHG",
+          "name": "海阳科技",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 19.87,
+          "prev_close": 19.87,
+          "money": 251381009.0,
+          "signal_date": "2026-10-29",
+          "open": 19.2,
+          "gap": -0.03371917463512841,
+          "auction_prev_close": 19.87,
+          "high_limit": 21.86,
+          "low_limit": 17.88,
+          "account": "A"
+        },
+        {
+          "code": "000670.XSHE",
+          "name": "盈方微",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 7.08,
+          "prev_close": 7.08,
+          "money": 533638585.0,
+          "signal_date": "2026-10-28",
+          "open": 6.8,
+          "gap": -0.039548022598870136,
+          "high_limit": 7.79,
+          "low_limit": 6.37,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-10-30 09:26竞价候选 3只",
+        "desp": "S18 2026-10-30 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 002277.XSHE 友阿股份 FB_dip\n- 603382.XSHG 海阳科技 FB_dip\n- 000670.XSHE 盈方微 FB_dip"
+      },
+      "payload_sha256": "a047c5d8de8c6dac0a77654846445060bfd734527b3eb189727ae35c6e049a08",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-10-30T09:26:15.940224+08:00"
+    }
+  ]
+}
