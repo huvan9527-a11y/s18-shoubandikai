@@ -1020,6 +1020,16 @@
         ],
         "blocked": []
       }
+    },
+    "2026-10-30-open": {
+      "A": {
+        "fills": [],
+        "blocked": []
+      },
+      "B": {
+        "fills": [],
+        "blocked": []
+      }
     }
   },
   "notifications": {
