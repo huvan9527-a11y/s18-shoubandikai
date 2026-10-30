@@ -1,0 +1,46 @@
+name: S18 17点预选状态
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['S18 日线与开盘信号扫描']
+    types: [completed]
+    branches: [main]
+  push:
+    paths: ['postclose.py', 'tests/test_postclose.py', '.github/workflows/postclose.yml']
+permissions:
+  contents: write
+concurrency:
+  group: s18-postclose-notice
+  cancel-in-progress: false
+jobs:
+  notice:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Publish persisted result or explicit waiting status
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY || secrets.SERVERCHAN_KEY || secrets.SERVER_CHAN_SENDKEY || secrets.SCKEY || secrets.SENDKEY }}
+        run: python -u postclose.py --kind s18 --phase ${{ github.event_name == 'workflow_run' && 'update' || 'initial' }}
+      - name: Persist bulletin and delivery acknowledgement
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for file in outputs/postclose-*.json outputs/postclose-*.md state/postclose_notifications.json; do
+            [ ! -f "$file" ] || git add "$file"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record post-close bulletin and delivery [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+

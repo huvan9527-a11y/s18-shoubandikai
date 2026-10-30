@@ -13,6 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--dates', nargs='+')
     parser.add_argument('--end-date')
+    parser.add_argument('--no-notify', action='store_true', help='Persist reports only; independent deadline task handles notifications')
     parser.add_argument('--latest-notification', action='store_true', help='Only notify the newest report; keep both reports on disk')
     parser.add_argument('--notify-at', help='Beijing HH:MM; scheduled scan prepares first, then sends at this time')
     args = parser.parse_args(argv)
@@ -24,7 +25,7 @@ def main(argv=None):
     through = dt.date.fromisoformat(args.end_date) if args.end_date else end
     if through > end:
         raise ValueError('Future/incomplete day prohibited')
-    dates = [dt.date.fromisoformat(x) for x in args.dates] if args.dates else provider.days(end_date=through, count=2)
+    dates = [dt.date.fromisoformat(x) for x in args.dates] if args.dates else provider.days(end_date=through, count=1)
     failed = False
     reports = []
     for day in dates:
@@ -59,6 +60,9 @@ def main(argv=None):
         (ROOT / f'outputs/signals-{day}.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         print('\n'.join(lines), flush=True)
         reports.append(report)
+    if args.no_notify:
+        write_json(ROOT / 'outputs/scan-delivery.json', dict(scan_failed=failed, notification_delegated=True))
+        return int(failed)
     if args.notify_at:
         hh, mm = map(int,args.notify_at.split(':'))
         target = dt.datetime.now(ZoneInfo('Asia/Shanghai')).replace(hour=hh,minute=mm,second=0,microsecond=0)
@@ -72,5 +76,6 @@ def main(argv=None):
 
 if __name__ == '__main__':
     raise SystemExit(main())
+
 
 

@@ -6,6 +6,16 @@ from unittest.mock import Mock, patch
 from src import scan
 
 class DailyScanTests(unittest.TestCase):
+    def test_delegated_notification_does_not_wait_or_send(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'config.json').write_text('{}')
+            provider=Mock()
+            provider.scan.return_value=dict(status='scanned',pool_size=1000,temperature={},limitations=[],candidates=[],opening_candidates=[])
+            with patch.object(scan,'ROOT',root),patch.object(scan,'PublicData',return_value=provider),patch.object(scan,'push_reports') as sender,patch.object(scan.time,'sleep') as sleep:
+                result=scan.main(['--dates','2026-10-30','--no-notify','--notify-at','23:59'])
+            self.assertEqual(result,0);sender.assert_not_called();sleep.assert_not_called()
+            self.assertTrue(json.loads((root/'outputs/scan-delivery.json').read_text())['notification_delegated'])
+
     def test_daily_scan_succeeds_without_any_minute_provider_or_ledger_write(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -33,5 +43,6 @@ class DailyScanTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 

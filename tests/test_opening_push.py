@@ -65,7 +65,11 @@ class OpeningTests(unittest.TestCase):
         self.assertNotIn('git add state/account.json', preview)
         self.assertIn('src.daily_accounts capture-close', closing)
         self.assertIn('group: s18-paper-account', closing)
-        self.assertIn("github.ref == 'refs/heads/main' && (secrets.SERVERCHAN_SENDKEY", preview)
+        self.assertIn('--no-notify', preview)
+        self.assertNotIn('secrets.SERVERCHAN_SENDKEY', preview)
+        notice=(folder/'postclose.yml').read_text()
+        self.assertIn('secrets.SERVERCHAN_SENDKEY', notice)
+        self.assertNotIn('src.daily_accounts', notice)
 
     def setUp(self):
         self.day = dt.date(2026, 10, 13)
@@ -132,5 +136,6 @@ class OpeningTests(unittest.TestCase):
         flags=pd.DataFrame([dict(fb=True,lb=False,gd=False,close_t=10.01,money=2e8)],index=['002181.XSHE'])
         result=candidates(flags,dict(FB_OK=True,LB_OK=True,DEEP=False),{'002181.XSHE':'粤传媒'},1e8)
         self.assertEqual(result[0]['signal_close'],result[0]['prev_close'])
+
 
 
