@@ -19,6 +19,12 @@
         "phase": "update",
         "digest": "0abb3d3bf5f103f3062cfb4ea5a89ccae2f4a4fadf8f0d3bcef14d1cb753867c",
         "delivery": "quota_blocked"
+      },
+      {
+        "at": "2026-10-30T23:29:37.406978+08:00",
+        "phase": "update",
+        "digest": "0abb3d3bf5f103f3062cfb4ea5a89ccae2f4a4fadf8f0d3bcef14d1cb753867c",
+        "delivery": "quota_blocked"
       }
     ],
     "quota_blocked": true
