@@ -1030,6 +1030,16 @@
         "fills": [],
         "blocked": []
       }
+    },
+    "2026-11-02-open": {
+      "A": {
+        "fills": [],
+        "blocked": []
+      },
+      "B": {
+        "fills": [],
+        "blocked": []
+      }
     }
   },
   "notifications": {
