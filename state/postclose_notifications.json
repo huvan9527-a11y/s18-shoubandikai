@@ -28,5 +28,17 @@
       }
     ],
     "quota_blocked": true
+  },
+  "2026-11-02": {
+    "accepted": [],
+    "attempts": [
+      {
+        "at": "2026-11-02T17:04:37.310515+08:00",
+        "phase": "update",
+        "digest": "8bb62d9d29122723c868100066b6976becf421455941a2b2e8cdb215aba32ef0",
+        "delivery": "failed",
+        "error_type": "HTTPError"
+      }
+    ]
   }
 }
