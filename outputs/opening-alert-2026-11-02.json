@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-02",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-11-02T09:26:15.170466+08:00",
+      "data_verified": true,
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "code": "600215.XSHG",
+          "name": "派斯林",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 6.37,
+          "prev_close": 6.37,
+          "money": 270423118.0,
+          "signal_date": "2026-10-30",
+          "open": 5.99,
+          "gap": -0.05965463108320246,
+          "auction_prev_close": 6.37,
+          "high_limit": 7.01,
+          "low_limit": 5.73,
+          "account": "A"
+        },
+        {
+          "code": "000676.XSHE",
+          "name": "智度股份",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 6.61,
+          "prev_close": 6.61,
+          "money": 536148622.0,
+          "signal_date": "2026-10-30",
+          "open": 6.42,
+          "gap": -0.02874432677760974,
+          "auction_prev_close": 6.61,
+          "high_limit": 7.27,
+          "low_limit": 5.95,
+          "account": "A"
+        },
+        {
+          "code": "002277.XSHE",
+          "name": "友阿股份",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 5.53,
+          "prev_close": 5.53,
+          "money": 413593417.0,
+          "signal_date": "2026-10-29",
+          "open": 5.26,
+          "gap": -0.048824593128390714,
+          "high_limit": 6.08,
+          "low_limit": 4.98,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        },
+        {
+          "code": "603382.XSHG",
+          "name": "海阳科技",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 19.87,
+          "prev_close": 19.87,
+          "money": 251381009.0,
+          "signal_date": "2026-10-29",
+          "open": 19.2,
+          "gap": -0.03371917463512841,
+          "high_limit": 21.86,
+          "low_limit": 17.88,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-11-02 09:26竞价候选 4只",
+        "desp": "S18 2026-11-02 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 600215.XSHG 派斯林 FB_dip\n- 000676.XSHE 智度股份 FB_dip\n- 002277.XSHE 友阿股份 FB_dip\n- 603382.XSHG 海阳科技 FB_dip"
+      },
+      "payload_sha256": "f04935b641f6b7a0051a21e9eb4059735a44374bad4ed7e7a04b7e09d98a0441",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-11-02T09:26:16.994906+08:00"
+    }
+  ]
+}
