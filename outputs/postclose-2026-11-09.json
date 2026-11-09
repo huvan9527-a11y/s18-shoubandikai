@@ -1,11 +1,192 @@
 {
   "date": "2026-11-09",
   "kind": "s18",
-  "status": "waiting",
-  "count": null,
-  "candidates": [],
-  "note": "当天扫描尚未完成或尚未启动，不能解释为无信号。",
-  "checked_at": "2026-11-09T17:22:36.382521+08:00",
+  "status": "ready",
+  "count": 18,
+  "candidates": [
+    {
+      "code": "002488.XSHE",
+      "name": "金固股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 7.48,
+      "prev_close": 7.48,
+      "money": 457314077.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002913.XSHE",
+      "name": "奥士康",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 58.42,
+      "prev_close": 58.42,
+      "money": 436136680.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "600776.XSHG",
+      "name": "东方通信",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.22,
+      "prev_close": 12.22,
+      "money": 401380817.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "000026.XSHE",
+      "name": "飞亚达",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 20.19,
+      "prev_close": 20.19,
+      "money": 286888406.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "000823.XSHE",
+      "name": "超声电子",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 17.86,
+      "prev_close": 17.86,
+      "money": 1527101195.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "001331.XSHE",
+      "name": "胜通能源",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 31.35,
+      "prev_close": 31.35,
+      "money": 199579495.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "001388.XSHE",
+      "name": "信通电子",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 23.29,
+      "prev_close": 23.29,
+      "money": 267349459.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "001390.XSHE",
+      "name": "古麒绒材",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 17.39,
+      "prev_close": 17.39,
+      "money": 151852103.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002124.XSHE",
+      "name": "天邦食品",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 2.2,
+      "prev_close": 2.2,
+      "money": 355056014.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002596.XSHE",
+      "name": "海南瑞泽",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.48,
+      "prev_close": 3.48,
+      "money": 240886234.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002638.XSHE",
+      "name": "勤上股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.33,
+      "prev_close": 4.33,
+      "money": 144354492.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002864.XSHE",
+      "name": "盘龙药业",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 22.21,
+      "prev_close": 22.21,
+      "money": 167056112.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "002931.XSHE",
+      "name": "锋龙股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 43.86,
+      "prev_close": 43.86,
+      "money": 933899819.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "600121.XSHG",
+      "name": "郑州煤电",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.73,
+      "prev_close": 4.73,
+      "money": 687387385.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "600408.XSHG",
+      "name": "安泰集团",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.32,
+      "prev_close": 3.32,
+      "money": 316903632.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "600609.XSHG",
+      "name": "金杯汽车",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.48,
+      "prev_close": 3.48,
+      "money": 281400437.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "600792.XSHG",
+      "name": "云煤能源",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.2,
+      "prev_close": 4.2,
+      "money": 548034657.0,
+      "signal_date": "2026-11-09"
+    },
+    {
+      "code": "603920.XSHG",
+      "name": "世运电路",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 33.58,
+      "prev_close": 33.58,
+      "money": 671740430.0,
+      "signal_date": "2026-11-09"
+    }
+  ],
+  "note": "收盘候选，仍需次日竞价/开盘条件确认；不是成交。",
+  "checked_at": "2026-11-09T17:47:15.995721+08:00",
   "target_first_report": "17:00",
   "phase": "update"
 }

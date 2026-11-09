@@ -50,6 +50,13 @@
         "digest": "e68c8d2c542cd9be2e074bbe48b00e77c27199f6d3292e75a96ed635681abe09",
         "delivery": "failed",
         "error_type": "HTTPError"
+      },
+      {
+        "at": "2026-11-09T17:47:15.995721+08:00",
+        "phase": "update",
+        "digest": "df1db755b5401cb6929e8bbb6002dae5d76d93427609929d2df406ca2ce10f9d",
+        "delivery": "failed",
+        "error_type": "HTTPError"
       }
     ]
   }
