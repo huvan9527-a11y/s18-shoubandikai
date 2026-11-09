@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-09",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-11-09T09:26:02.235959+08:00",
+      "data_verified": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "code": "002081.XSHE",
+          "name": "金螳螂",
+          "component": "LB",
+          "pri": 1,
+          "signal_close": 4.73,
+          "prev_close": 4.73,
+          "money": 177030183.0,
+          "signal_date": "2026-11-05",
+          "open": 4.59,
+          "gap": -0.029598308668076223,
+          "high_limit": 5.2,
+          "low_limit": 4.26,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        },
+        {
+          "code": "600206.XSHG",
+          "name": "有研新材",
+          "component": "LB",
+          "pri": 1,
+          "signal_close": 38.39,
+          "prev_close": 38.39,
+          "money": 3516575122.0,
+          "signal_date": "2026-11-05",
+          "open": 37.3,
+          "gap": -0.028392810627767773,
+          "high_limit": 42.23,
+          "low_limit": 34.55,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-11-09 09:26竞价候选 2只",
+        "desp": "S18 2026-11-09 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 002081.XSHE 金螳螂 LB\n- 600206.XSHG 有研新材 LB"
+      },
+      "payload_sha256": "40f9dd07d67f2723013dc02bc134334ae707f7fa6d4382677df75dfe73dede81",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-11-09T09:26:04.175446+08:00"
+    }
+  ]
+}
