@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-09",
+  "kind": "s18",
+  "status": "waiting",
+  "count": null,
+  "candidates": [],
+  "note": "当天扫描尚未完成或尚未启动，不能解释为无信号。",
+  "checked_at": "2026-11-09T17:22:36.382521+08:00",
+  "target_first_report": "17:00",
+  "phase": "update"
+}

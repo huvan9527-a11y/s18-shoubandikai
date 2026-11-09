@@ -40,5 +40,17 @@
         "error_type": "HTTPError"
       }
     ]
+  },
+  "2026-11-09": {
+    "accepted": [],
+    "attempts": [
+      {
+        "at": "2026-11-09T17:22:36.382521+08:00",
+        "phase": "update",
+        "digest": "e68c8d2c542cd9be2e074bbe48b00e77c27199f6d3292e75a96ed635681abe09",
+        "delivery": "failed",
+        "error_type": "HTTPError"
+      }
+    ]
   }
 }
