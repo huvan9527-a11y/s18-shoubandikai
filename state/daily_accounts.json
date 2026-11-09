@@ -1040,6 +1040,16 @@
         "fills": [],
         "blocked": []
       }
+    },
+    "2026-11-09-open": {
+      "A": {
+        "fills": [],
+        "blocked": []
+      },
+      "B": {
+        "fills": [],
+        "blocked": []
+      }
     }
   },
   "notifications": {

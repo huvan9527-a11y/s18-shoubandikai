@@ -1,0 +1,210 @@
+{
+  "captured_at": "2026-11-09T09:30:04.989250+08:00",
+  "quotes": {
+    "000595.XSHE": {
+      "open": 5.62,
+      "prev_close": 5.38,
+      "name": "新能股份",
+      "quote_time": "20261109093006"
+    },
+    "001258.XSHE": {
+      "open": 10.26,
+      "prev_close": 9.57,
+      "name": "立新能源",
+      "quote_time": "20261109093006"
+    },
+    "001316.XSHE": {
+      "open": 29.08,
+      "prev_close": 27.82,
+      "name": "润贝航科",
+      "quote_time": "20261109093006"
+    },
+    "002081.XSHE": {
+      "open": 4.5,
+      "prev_close": 4.44,
+      "name": "金 螳 螂",
+      "quote_time": "20261109093006"
+    },
+    "002310.XSHE": {
+      "open": 2.55,
+      "prev_close": 2.32,
+      "name": "东方新能",
+      "quote_time": "20261109093006"
+    },
+    "002929.XSHE": {
+      "open": 67.77,
+      "prev_close": 63.11,
+      "name": "润建股份",
+      "quote_time": "20261109093003"
+    },
+    "002973.XSHE": {
+      "open": 11.6,
+      "prev_close": 10.78,
+      "name": "侨银股份",
+      "quote_time": "20261109093003"
+    },
+    "600156.XSHG": {
+      "open": 7.78,
+      "prev_close": 7.07,
+      "name": "华升股份",
+      "quote_time": "20261109093005"
+    },
+    "600206.XSHG": {
+      "open": 38.85,
+      "prev_close": 38.29,
+      "name": "有研新材",
+      "quote_time": "20261109093005"
+    },
+    "600207.XSHG": {
+      "open": 5.37,
+      "prev_close": 4.88,
+      "name": "安彩高科",
+      "quote_time": "20261109093006"
+    },
+    "600371.XSHG": {
+      "open": 12.29,
+      "prev_close": 12.39,
+      "name": "万向德农",
+      "quote_time": "20261109093004"
+    },
+    "600540.XSHG": {
+      "open": 4.59,
+      "prev_close": 4.58,
+      "name": "新赛股份",
+      "quote_time": "20261109093004"
+    }
+  },
+  "signal_date": "2026-11-06",
+  "A_candidates": [
+    {
+      "code": "002929.XSHE",
+      "name": "润建股份",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 63.11,
+      "prev_close": 63.11,
+      "money": 2595074887.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "000595.XSHE",
+      "name": "新能股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 5.38,
+      "prev_close": 5.38,
+      "money": 109199616.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "001258.XSHE",
+      "name": "立新能源",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 9.57,
+      "prev_close": 9.57,
+      "money": 315751720.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "001316.XSHE",
+      "name": "润贝航科",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 27.82,
+      "prev_close": 27.82,
+      "money": 226022984.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "002310.XSHE",
+      "name": "东方新能",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 2.32,
+      "prev_close": 2.32,
+      "money": 278521813.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "002973.XSHE",
+      "name": "侨银股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 10.78,
+      "prev_close": 10.78,
+      "money": 181109185.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "600156.XSHG",
+      "name": "华升股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 7.07,
+      "prev_close": 7.07,
+      "money": 277372627.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "600207.XSHG",
+      "name": "安彩高科",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.88,
+      "prev_close": 4.88,
+      "money": 171085120.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "600371.XSHG",
+      "name": "万向德农",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.39,
+      "prev_close": 12.39,
+      "money": 804874824.0,
+      "signal_date": "2026-11-06"
+    },
+    {
+      "code": "600540.XSHG",
+      "name": "新赛股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.58,
+      "prev_close": 4.58,
+      "money": 463027840.0,
+      "signal_date": "2026-11-06"
+    }
+  ],
+  "B_candidates": [
+    {
+      "code": "002081.XSHE",
+      "name": "金螳螂",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 4.73,
+      "prev_close": 4.73,
+      "money": 177030183.0,
+      "signal_date": "2026-11-05",
+      "open": 4.59,
+      "gap": -0.029598308668076223,
+      "high_limit": 5.2,
+      "low_limit": 4.26
+    },
+    {
+      "code": "600206.XSHG",
+      "name": "有研新材",
+      "component": "LB",
+      "pri": 1,
+      "signal_close": 38.39,
+      "prev_close": 38.39,
+      "money": 3516575122.0,
+      "signal_date": "2026-11-05",
+      "open": 37.3,
+      "gap": -0.028392810627767773,
+      "high_limit": 42.23,
+      "low_limit": 34.55
+    }
+  ]
+}
