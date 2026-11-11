@@ -1,0 +1,8 @@
+{
+  "date": "2026-11-11",
+  "status": "failed_data_incomplete",
+  "error": "ValueError: Mainboard source universe incomplete/duplicated",
+  "stock_errors": {},
+  "candidates": null,
+  "opening_candidates": null
+}
