@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-11",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-11-11T09:28:52.474951+08:00",
+      "data_verified": true,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "code": "600792.XSHG",
+          "name": "云煤能源",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 4.2,
+          "prev_close": 4.2,
+          "money": 548034657.0,
+          "signal_date": "2026-11-09",
+          "open": 4.08,
+          "gap": -0.02857142857142858,
+          "high_limit": 4.62,
+          "low_limit": 3.78,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-11-11 09:26竞价候选 1只",
+        "desp": "S18 2026-11-11 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 600792.XSHG 云煤能源 FB_dip"
+      },
+      "payload_sha256": "d868b63fafc01582a81ab14fd1aa374eaae424ce301653dc82c01c2ea8959f25",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-11-11T09:28:54.225302+08:00"
+    }
+  ]
+}
