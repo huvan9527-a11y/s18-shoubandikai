@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-11-11T09:30:04.835444+08:00",
+  "quotes": {
+    "600792.XSHG": {
+      "open": 4.24,
+      "prev_close": 4.3,
+      "name": "云煤能源",
+      "quote_time": "20261111093002"
+    }
+  },
+  "signal_date": "2026-11-10",
+  "A_candidates": [],
+  "B_candidates": [
+    {
+      "code": "600792.XSHG",
+      "name": "云煤能源",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 4.2,
+      "prev_close": 4.2,
+      "money": 548034657.0,
+      "signal_date": "2026-11-09",
+      "open": 4.08,
+      "gap": -0.02857142857142858,
+      "high_limit": 4.62,
+      "low_limit": 3.78
+    }
+  ]
+}
