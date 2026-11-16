@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-16",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempted_at": "2026-11-16T09:26:10.704429+08:00",
+      "data_verified": true,
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "code": "002042.XSHE",
+          "name": "华孚时尚",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 3.62,
+          "prev_close": 3.62,
+          "money": 460664085.0,
+          "signal_date": "2026-11-13",
+          "open": 3.54,
+          "gap": -0.02209944751381221,
+          "auction_prev_close": 3.62,
+          "high_limit": 3.98,
+          "low_limit": 3.26,
+          "account": "A"
+        },
+        {
+          "code": "300684.XSHE",
+          "name": "中石科技",
+          "component": "DEEP",
+          "pri": 2,
+          "signal_close": 62.78,
+          "prev_close": 62.78,
+          "money": 1635626895.0,
+          "signal_date": "2026-11-13",
+          "open": 60.0,
+          "gap": -0.04428161834979294,
+          "auction_prev_close": 62.78,
+          "high_limit": 75.34,
+          "low_limit": 50.22,
+          "account": "A"
+        },
+        {
+          "code": "601606.XSHG",
+          "name": "长城军工",
+          "component": "FB_dip",
+          "pri": 0,
+          "signal_close": 32.62,
+          "prev_close": 32.62,
+          "money": 2157328294.0,
+          "signal_date": "2026-11-12",
+          "open": 31.64,
+          "gap": -0.030042918454935563,
+          "high_limit": 35.88,
+          "low_limit": 29.36,
+          "account": "B",
+          "note": "T+1 opening plan, not a fill"
+        }
+      ],
+      "message": {
+        "title": "S18 2026-11-16 09:26竞价候选 3只",
+        "desp": "S18 2026-11-16 09:26竞价候选（非成交）\n\nA仓：09:30按已核验开盘价模拟买入；B仓：按昨日已确认信号开盘模拟买入。成交记账后另行推送。\n- 002042.XSHE 华孚时尚 FB_dip\n- 300684.XSHE 中石科技 DEEP\n- 601606.XSHG 长城军工 FB_dip"
+      },
+      "payload_sha256": "6de26c595b7b2199e3eae2a9bf8491f2803350fdf9da32d0879cfc20c7eb8480",
+      "delivery_status": "accepted",
+      "accepted_at": "2026-11-16T09:26:12.602449+08:00"
+    }
+  ]
+}
