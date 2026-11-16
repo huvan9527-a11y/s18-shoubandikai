@@ -3199,7 +3199,7 @@
     },
     {
       "code": "301015.XSHE",
-      "name": "百洋医药",
+      "name": "百洋制药",
       "component": "DEEP",
       "pri": 2,
       "signal_close": 25.06,
@@ -10109,7 +10109,7 @@
       },
       {
         "code": "301015.XSHE",
-        "name": "百洋医药",
+        "name": "百洋制药",
         "component": "DEEP",
         "pri": 2,
         "signal_close": 24.82,
