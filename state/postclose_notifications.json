@@ -59,5 +59,22 @@
         "error_type": "HTTPError"
       }
     ]
+  },
+  "2026-11-16": {
+    "accepted": [
+      {
+        "digest": "1910eb39b5bde7e91ee1899284830dce63ecc74a1aaf6cbb8e640ab8e1feae95",
+        "at": "2026-11-16T17:14:31.327183+08:00",
+        "status": "waiting"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-16T17:14:31.327183+08:00",
+        "phase": "update",
+        "digest": "1910eb39b5bde7e91ee1899284830dce63ecc74a1aaf6cbb8e640ab8e1feae95",
+        "delivery": "accepted"
+      }
+    ]
   }
 }
