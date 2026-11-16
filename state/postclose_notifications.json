@@ -66,6 +66,11 @@
         "digest": "1910eb39b5bde7e91ee1899284830dce63ecc74a1aaf6cbb8e640ab8e1feae95",
         "at": "2026-11-16T17:14:31.327183+08:00",
         "status": "waiting"
+      },
+      {
+        "digest": "9e3e4a85eb96dbf4af5dc40e2e02ae96d0d3daf5937a4c2bc8562ff9fa983b93",
+        "at": "2026-11-16T17:31:48.796562+08:00",
+        "status": "ready"
       }
     ],
     "attempts": [
@@ -73,6 +78,12 @@
         "at": "2026-11-16T17:14:31.327183+08:00",
         "phase": "update",
         "digest": "1910eb39b5bde7e91ee1899284830dce63ecc74a1aaf6cbb8e640ab8e1feae95",
+        "delivery": "accepted"
+      },
+      {
+        "at": "2026-11-16T17:31:48.796562+08:00",
+        "phase": "update",
+        "digest": "9e3e4a85eb96dbf4af5dc40e2e02ae96d0d3daf5937a4c2bc8562ff9fa983b93",
         "delivery": "accepted"
       }
     ]
