@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-18",
+  "kind": "s18",
+  "status": "ready",
+  "count": 20,
+  "candidates": [
+    {
+      "code": "002194.XSHE",
+      "name": "武汉凡谷",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 9.31,
+      "prev_close": 9.31,
+      "money": 166126062.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002929.XSHE",
+      "name": "润建股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 53.76,
+      "prev_close": 53.76,
+      "money": 1799247950.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "600186.XSHG",
+      "name": "莲花控股",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 8.98,
+      "prev_close": 8.98,
+      "money": 1696162775.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "603220.XSHG",
+      "name": "中贝通信",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 15.62,
+      "prev_close": 15.62,
+      "money": 797651527.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "603887.XSHG",
+      "name": "城地香江",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 8.18,
+      "prev_close": 8.18,
+      "money": 381726887.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "000158.XSHE",
+      "name": "常山北明",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.43,
+      "prev_close": 12.43,
+      "money": 919356472.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "000815.XSHE",
+      "name": "美利云",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 14.31,
+      "prev_close": 14.31,
+      "money": 1023883312.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "000889.XSHE",
+      "name": "中嘉博创",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.38,
+      "prev_close": 3.38,
+      "money": 185586796.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "000980.XSHE",
+      "name": "众泰汽车",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 1.67,
+      "prev_close": 1.67,
+      "money": 372748468.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002042.XSHE",
+      "name": "华孚时尚",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.96,
+      "prev_close": 3.96,
+      "money": 637167068.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002197.XSHE",
+      "name": "证通电子",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 6.11,
+      "prev_close": 6.11,
+      "money": 229285580.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002272.XSHE",
+      "name": "川润股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 12.58,
+      "prev_close": 12.58,
+      "money": 633356770.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002463.XSHE",
+      "name": "沪电股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 80.19,
+      "prev_close": 80.19,
+      "money": 8186049499.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002916.XSHE",
+      "name": "深南电路",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 201.19,
+      "prev_close": 201.19,
+      "money": 2666632885.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "002955.XSHE",
+      "name": "鸿合科技",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 27.39,
+      "prev_close": 27.39,
+      "money": 178355627.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "600156.XSHG",
+      "name": "华升股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 8.09,
+      "prev_close": 8.09,
+      "money": 448939593.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "600162.XSHG",
+      "name": "香江控股",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 3.29,
+      "prev_close": 3.29,
+      "money": 492627965.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "600839.XSHG",
+      "name": "四川长虹",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 5.68,
+      "prev_close": 5.68,
+      "money": 589539910.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "603629.XSHG",
+      "name": "利通电子",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 60.93,
+      "prev_close": 60.93,
+      "money": 2115359486.0,
+      "signal_date": "2026-11-18"
+    },
+    {
+      "code": "603985.XSHG",
+      "name": "恒润股份",
+      "component": "FB_dip",
+      "pri": 0,
+      "signal_close": 14.73,
+      "prev_close": 14.73,
+      "money": 203075333.0,
+      "signal_date": "2026-11-18"
+    }
+  ],
+  "note": "收盘候选，仍需次日竞价/开盘条件确认；不是成交。",
+  "checked_at": "2026-11-18T22:04:07.092435+08:00",
+  "target_first_report": "17:00",
+  "phase": "update"
+}
