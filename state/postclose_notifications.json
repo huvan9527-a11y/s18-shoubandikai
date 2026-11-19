@@ -104,5 +104,22 @@
         "delivery": "accepted"
       }
     ]
+  },
+  "2026-11-19": {
+    "accepted": [
+      {
+        "digest": "1f990a462e59d11647b3e405e0b5850ac91817a9fe1fabe66b6737359c317d86",
+        "at": "2026-11-19T17:04:25.948914+08:00",
+        "status": "ready"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-19T17:04:25.948914+08:00",
+        "phase": "update",
+        "digest": "1f990a462e59d11647b3e405e0b5850ac91817a9fe1fabe66b6737359c317d86",
+        "delivery": "accepted"
+      }
+    ]
   }
 }
