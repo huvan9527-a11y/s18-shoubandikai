@@ -121,5 +121,22 @@
         "delivery": "accepted"
       }
     ]
+  },
+  "2026-11-23": {
+    "accepted": [
+      {
+        "digest": "0cd07fa0b1567aaee1e55934c630b2957597aaf5c8c9c4688380f59243943ab4",
+        "at": "2026-11-23T17:02:04.013514+08:00",
+        "status": "waiting"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-23T17:02:04.013514+08:00",
+        "phase": "update",
+        "digest": "0cd07fa0b1567aaee1e55934c630b2957597aaf5c8c9c4688380f59243943ab4",
+        "delivery": "accepted"
+      }
+    ]
   }
 }
